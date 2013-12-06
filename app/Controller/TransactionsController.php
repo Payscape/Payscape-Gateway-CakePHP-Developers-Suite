@@ -13,7 +13,7 @@ class TransactionsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator', 'Session');
 
 /**
  * index method
@@ -55,8 +55,8 @@ class TransactionsController extends AppController {
 				$this->Session->setFlash(__('The transaction could not be saved. Please, try again.'));
 			}
 		}
-		$keys = $this->Transaction->Key->find('list');
-		$this->set(compact('keys'));
+	//	$keys = $this->Transaction->Key->find('list');
+	//	$this->set(compact('keys'));
 	}
 
 /**
@@ -81,8 +81,8 @@ class TransactionsController extends AppController {
 			$options = array('conditions' => array('Transaction.' . $this->Transaction->primaryKey => $id));
 			$this->request->data = $this->Transaction->find('first', $options);
 		}
-		$keys = $this->Transaction->Key->find('list');
-		$this->set(compact('keys'));
+	//	$keys = $this->Transaction->Key->find('list');
+	//	$this->set(compact('keys'));
 	}
 
 /**

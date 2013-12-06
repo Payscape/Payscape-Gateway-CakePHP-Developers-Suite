@@ -1,3 +1,8 @@
+<?php 
+
+$base_url = $this->base;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,12 +11,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-  <?php echo $title_for_layout; ?>
+  <title><?php echo $title_for_layout; ?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    
+    <?php 
+    // New UI CSS below
+    echo $this->Html->css('bootstrap.css');
+    echo $this->Html->css('jumbotron-narrow.css');
+    echo $this->Html->css('custom.css');
+    
+    ?>
 
     <!-- Custom styles for this template -->
     <link href="assets/css/jumbotron-narrow.css" rel="stylesheet">
@@ -24,6 +36,10 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    <?php 
+    echo $this->Html->meta('icon');
+    ?>
+    
   </head>
 
   <body>
@@ -31,21 +47,34 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li class="active"><a href="/">Home</a></li>
+          <li>
+          	<?php echo $this->Html->link('View Transactions', array('controller' => 'transactions', 'action' => 'index')); ?>
+          </li> 
+                    <li>
+          	<?php echo $this->Html->link('New Transaction', array('controller' => 'transactions', 'action' => 'add')); ?>
+          </li>
         </ul>
         <h3 class="text-muted">Payscape Lab</h3>
       </div>
 
       <div class="jumbotron">
         <h1>Payscape Development Lab</h1>
+        		<?php 
+		$description = "Payscape Advisor";
+		echo $this->Html->link(
+					$this->Html->image('payscape_home_logo.png', array('alt' => $description, 'border' => '0')),
+					'http://www.payscape.com/',
+					array('target' => '_blank', 'escape' => false)
+				);
+			?>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
       </div>
 
-      <div class="row">
-<?php echo $this->Session->flash(); ?>        
+      <div class="span9">
+      <div class="span4"><?php echo $this->Session->flash(); ?></div>
+      
 <?php echo $this->fetch('content'); ?>
         
       </div>
@@ -53,24 +82,30 @@
       <div class="footer">
         <p>&copy; Payscape Advisors 2013</p>
       </div>
-
-    </div> <!-- /container -->
 <footer>
-		<?php echo $this->Html->link(
-					$this->Html->image('payscape', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
+		<?php 
+		$description = "Payscape Advisor";
+		echo $this->Html->link(
+					$this->Html->image('payscape_footer_logo.png', array('alt' => $description, 'border' => '0')),
+					'http://www.payscape.com/',
 					array('target' => '_blank', 'escape' => false)
 				);
-			?>
+		?>
 
 
 </footer>
+<?php echo $this->element('sql_dump'); ?>
+    </div> <!-- /container -->
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     
+    <?php 
+    echo $this->Html->script('bootstrap', array('inline' => false));
     
-<?php echo $this->element('sql_dump'); ?>    
+    ?>
+    
   </body>
 </html>

@@ -1,5 +1,8 @@
 <div class="transactions index">
 	<h2><?php echo __('Transactions'); ?></h2>
+	
+	<?php if(count($transactions > 0)){?>
+	
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -67,6 +70,9 @@
 		</td>
 	</tr>
 <?php endforeach; ?>
+<?php } else { ?>
+	<tr><td colspan="25">No current Transactions to display</td></tr>
+<?php } ?>	
 	</table>
 	<p>
 	<?php

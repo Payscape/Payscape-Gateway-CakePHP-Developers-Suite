@@ -3,8 +3,11 @@
 	<fieldset>
 		<legend><?php echo __('Add Transaction'); ?></legend>
 	<?php
-		echo $this->Form->input('type');
-		echo $this->Form->input('key_id');
+		echo $this->Form->input('type', array('class'=>'trans')); ?>
+		
+<div class="input text required"><label for="TransactionKeyId">Key ID</label><input name="data[Transaction][key_id]" maxlength="150" type="text" id="TransactionKeyId" required="required"/>		
+<?php
+		//echo $this->Form->input('key_id');
 		echo $this->Form->input('hash');
 		echo $this->Form->input('time');
 		echo $this->Form->input('ccnumber');

@@ -1,0 +1,8 @@
+
+You browser doesn't support native upload. Try the latest version of Firefox or Safari. 
+
+properties/view
+    photos link does not work
+                        <a href="javascript:void(0);" id="photos" onclick="loadTabs1('photos');" class="current">Photos <span class="arr"></span></a>   
+    calendar link does not work
+                        

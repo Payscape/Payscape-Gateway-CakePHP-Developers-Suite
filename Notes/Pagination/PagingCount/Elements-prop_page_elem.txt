@@ -1,0 +1,78 @@
+
+	here is how we can display paging information.
+
+
+	<?php 
+
+//debug($this->Paginator);
+
+/*
+	$paginatorRequest = $this->Paginator->request;
+	debug($paginatorRequest);
+	exit();
+*/	
+	/*
+	$paginatorRequestParams = $this->Paginator->request->params['paging'];
+	debug($paginatorRequestParams);
+	exit();
+	*/
+
+	$propertyCount = $this->Paginator->request->params['paging']['Property']['count'];
+	$propertyPageCount = $this->Paginator->request->params['paging']['Property']['pageCount'];
+	$page = $this->Paginator->request->params['paging']['Property']['page'];
+
+//	echo "Page $page of $propertyPageCount pages";
+//	echo "<br> $propertyCount listings match your search.";
+	
+	$page_message = "Page " . $page . " of $propertyPageCount pages";
+	$match_search_message = "<br>" . $propertyCount . " listings match your search.";
+?>
+<div id="ajxPage" class="row paging results-counter results-paging" style="float:right; width:400px;">
+		
+<?php 
+		echo $this->Paginator->first('First');
+                if($this->Paginator->hasPrev()){                 
+                    echo $this->Paginator->prev(__('Previous'), array(), null, array('class' => 'prev disabled'));
+                }
+		echo $this->Paginator->numbers(array('separator' => '', 'modulus' => 5));
+                if($this->Paginator->hasNext()){                
+                    echo $this->Paginator->next(__('Next'), array(), null, array('class' => 'next disabled'));
+                }
+		echo $this->Paginator->last('Last');         
+?>
+<pre>
+<br><span><?php echo $page_message; ?>
+<?php echo $match_search_message; ?></span>
+</pre>
+
+	
+				
+				</div>
+
+<script type="text/javascript">
+$('#ajxPage span a').on({
+   click:function(evt){
+        evt.preventDefault();
+        //refresh_results( );
+        
+       	$('#ajxResults, #ajxResultsP').animate({opacity:0.5});
+
+	// stop the previous call
+	if (results_jqXHR) {
+		results_jqXHR.abort( );
+	}
+
+	results_jqXHR = $.post(
+		$(this).attr('href'),
+		$('#SearchResultsForm').serialize( ),
+		function (res) {
+			return_data = $.parseJSON(res);
+			update_content(false);
+			results_jqXHR = false;
+		}
+	); 
+		
+
+   } 
+});
+</script>

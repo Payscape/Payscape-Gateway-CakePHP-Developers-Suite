@@ -1,0 +1,12 @@
+
+
+http://localhost:8082/vfish22.localdomain/public_html/properties/availability/906
+this hits the availability method on Properties Controller. 
+
+
+it's clunky and doesn't know the current date. 
+but then neither does BT. 
+just tell the user "hey, that date is in the past!
+or use jQuery to give all of the divs in the past 
+a class of "inaccessible" and dim them out. 
+

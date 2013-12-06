@@ -1,0 +1,109 @@
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : Console
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\
+---------------------------------------------------------------
+Current Paths:
+
+ -app: Console
+ -working: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+ -root: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+ -core: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib
+
+Changing Paths:
+
+Your working path should be the same as your application path to change your pat
+h use the '-app' param.
+Example: -app relative/path/to/myapp or -app /absolute/path/to/myapp
+
+Available Shells:
+
+[CORE] acl, api, bake, command_list, console, i18n, schema, test, testsuite, upg
+rade, x_x_x_acl_extras
+
+To run an app or core command, type cake shell_name [args]
+To run a plugin command, type cake Plugin.shell_name [args]
+To get help on a specific command, type cake shell_name --help
+
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\app" acl_extras aco_sync
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\app\
+---------------------------------------------------------------
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake
+
+
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : Console
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\
+---------------------------------------------------------------
+Current Paths:
+
+ -app: Console
+ -working: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+ -root: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+ -core: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib
+
+Changing Paths:
+
+Your working path should be the same as your application path to change your pat
+h use the '-app' param.
+Example: -app relative/path/to/myapp or -app /absolute/path/to/myapp
+
+Available Shells:
+
+[CORE] acl, acl_extras, api, bake, command_list, console, i18n, schema, test, te
+stsuite, upgrade
+
+To run an app or core command, type cake shell_name [args]
+To run a plugin command, type cake Plugin.shell_name [args]
+To get help on a specific command, type cake shell_name --help
+
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\app" acl_extras aco_sync
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\app\
+---------------------------------------------------------------
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_
+sync
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Warning Error: Argument 1 passed to Component::startup() must be an instance of
+Controller, null given, called in C:\xampp\htdocs\fishbake.localdomain\cake2.2.2
+\lib\Cake\Console\Command\AclExtrasShell.php on line 80 and defined in [C:\xampp
+\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Controller\Component.php, line 1
+19]
+
+Aco Update Complete
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#

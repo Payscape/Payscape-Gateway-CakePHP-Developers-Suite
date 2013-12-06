@@ -1,0 +1,335 @@
+line 76
+
+<div class="extended-search" id="accordion">
+                <div class="s-title">
+                    <span class="right"></span>
+                    <h3>Home Size</h3>
+                </div>
+                <div class="search-category">
+                    <div class="category-inputs">
+                        <div class="row">
+                            <?php echo $this->Form->input('Search.bedrooms.min', array('type' => 'hidden')); ?>
+                            <?php echo $this->Form->input('Search.bedrooms.max', array('type' => 'hidden')); ?>
+                            <label class="block-label">Bedrooms</label>
+                            <span id="bedrooms">
+                                <div id="BedMin" class="min"></div><div id="BedMax" class="max"></div>
+                            </span>
+                            <div id="slider-range-Bed"></div>
+                        </div>
+                        <div class="row">
+                            <?php echo $this->Form->input('Search.bathrooms.min', array('type' => 'hidden')); ?>
+                            <?php echo $this->Form->input('Search.bathrooms.max', array('type' => 'hidden')); ?>
+                            <label class="block-label">Bathrooms</label>
+                            <span id="bathrooms">
+                                <div id="BathMin" class="min"></div><div id="BathMax" class="max"></div>
+                            </span>
+                            <div id="slider-range-Bath"></div>
+                        </div>
+                        <div class="row">
+                            <?php echo $this->Form->input('Search.square_footage.min', array('type' => 'hidden')); ?>
+                            <?php echo $this->Form->input('Search.square_footage.max', array('type' => 'hidden')); ?>
+                            <label class="block-label">Square Feet</label>
+                            <span id="square_footage">
+                                <div id="SqFtMin" class="min"></div><div id="SqFtMax" class="max"></div>
+                            </span>
+                            <div id="slider-range-SqFt"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-title">
+                    <span class="right"></span>
+                    <h3>Price</h3>
+                </div>
+                <div class="search-category">
+                    <div class="category-inputs">
+                        <div class="row">
+                            <?php echo $this->Form->input('Search.daily_rate.min', array('type' => 'hidden')); ?>
+                            <?php echo $this->Form->input('Search.daily_rate.max', array('type' => 'hidden')); ?>
+                            <span id="rate_daily">
+                                <div id="dailyRateMin" class="min"></div><div id="dailyRateMax" class="max"></div>
+                            </span>
+                            <div id="slider-range-price"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-title">
+                    <span class="right"></span>
+                    <h3>Amenities</h3>
+                </div>
+                <div class="search-category" id ="AmenityCheck">
+                    <?php echo $this->Form->input('amenities', array('multiple' => 'checkbox', 'div' => false, 'options' => $amenities)); ?>
+                </div>
+                <div class="clear"></div>
+        </div><!-- .extended-search -->
+        
+        <div class="search-options" id="search-ui">
+        <?php
+            if (isset($savedsearches)) {
+                if ( ! isset($savedsearches[0]) || ($savedsearches[0] != "empty")) {
+                    ?>
+
+            <div class="row">searching saved criteria:<br>
+                <?php echo $this->Form->input('saved_search_id', array('type' => 'select', 'label' => false, 'style' => 'width:200px', 'empty' => 'Saved Searches', 'options' => $savedsearches)); ?>
+            </div>
+
+                    <?php
+                }
+
+                ?>
+
+            <div class="row">
+                <label class="left">
+                    <?php echo $this->Html->link('Save Search', array('controller' => 'searches', 'action' => 'popup'), array('class' => 'thickbox')); ?>
+             <?php echo $this->Html->link('Save Search', array( 'controller' => 'searches', 'action' => 'save_search'), array('class' => 'SaveSearch')); ?>
+                            
+                </label>
+            </div>
+
+                <?php
+            }
+        ?>
+<!-- 76 -->     
+<!-- .extended-search -->
+            <!-- .extended-search -->
+        </div>     
+        
+
+
+<!-- .map-cnt -->
+
+        <div class="map-cnt">
+            <div class="row">
+                    <?php echo $this->Form->input('redo_search_map', array('type' => 'checkbox', 'label' => 'Redo Search in Map', 'class'=>'checkbox', 'checked'=>true));?>
+            </div>
+            <div id="sm_map_canvas" style="width:221px;height:208px;"></div>
+
+            <?php
+                $lat_lngs = array( );
+                echo $this->Html->scriptblock('
+                    // initialize our map as soon as possible
+                    var sm_mapOptions = {
+                        center: new google.maps.LatLng(52, -125),
+                        zoom: 1,
+                        maxZoom: 15,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+                    };
+                    var sm_map = new google.maps.Map(document.getElementById("sm_map_canvas"), sm_mapOptions);
+                    var sm_bounds = new google.maps.LatLngBounds( );
+
+                    var user_activity = false;
+                    google.maps.event.addListener(sm_map, "mouseover", function( ) {
+                        user_activity = true;
+                    });
+                    google.maps.event.addListener(sm_map, "zoom_changed", function( ) {
+                        if (redo_search) {
+                            map_update(sm_map.getBounds( ));
+                        }
+                    });
+                    google.maps.event.addListener(sm_map, "dragend", function( ) {
+                        if (redo_search) {
+                            map_update(sm_map.getBounds( ));
+                        }
+
+                        if ( ! redo_search && user_activity && ! moved) {
+                            moved = true;
+                            show_redo_search_box( );
+                        }
+                    });
+                ');
+            ?>
+
+        </div>  <!-- search-options -->
+        
+        
+        <!-- search-result-content -->
+        
+        div class="search-result-content" style="width1000px;">
+<div style="overflow:hidden; width:50px;">
+stuff a div in here?
+            <?php //echo $this->element('result-sidebar'); ?>
+
+            here, lets put some stuff in here two. 
+            if this ends up in the left column......
+</div>
+<div><a>
+<H3>aafr!</H3>
+</a></div>
+<div class="clear"></div>
+
+            <div class="search-data">
+                <div class="sort-by-cnt">
+                    <?php echo $this->Form->select('sort', array(
+                            'id' => 'Newest',
+                            'asc' => 'Low to High',
+                            'desc' => 'High to Low',
+                        ), array(
+                            'empty' => 'Sort By',
+                            'style' => 'width: 120px',
+                        )); ?>
+                </div>
+
+<!-- ====== DESC LIST ================================================================ -->
+
+                <div id="ajxResults" class="searchresult searchresult-lists"></div>
+
+<!-- ====== PHOTO LIST ================================================================ -->
+
+                <div id="ajxResultsP" class="searchresult searchresult-photo-lists" style="display:none" ></div>
+
+<!-- ====== MAP ================================================================ -->
+
+                <div id="properties-box-map" class="searchresult searchresult-map" style="display:none">
+                    <div class="map" id="map_canvas" style="width:100%;height:600px;"></div>
+                    <?php echo $this->Form->input('map_ne', array('type' => 'hidden')); ?>
+                    <?php echo $this->Form->input('map_sw', array('type' => 'hidden')); ?>
+                    <?php echo $this->Form->input('map_zoom', array('type' => 'hidden')); ?>
+
+                    <?php
+                        echo $this->Html->scriptblock('
+                            // initialize our map as soon as possible
+                            var mapOptions = {
+                                mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+                            };
+                            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+                            bounds = new google.maps.LatLngBounds( );
+
+                            google.maps.event.addListener(map, "zoom_changed", function( ) {
+                                if (redo_search) {
+                                    map_update(map.getBounds( ));
+                                }
+                            });
+                            google.maps.event.addListener(map, "dragend", function( ) {
+                                if (redo_search) {
+                                    map_update(map.getBounds( ));
+                                }
+                            });
+                        ');
+                    ?>
+                </div>
+         
+                <div id="ajxPageOld" class="paging results-counter results-paging">
+            
+                       <?php
+            /*
+                  $this->Paginator->first('First');
+                
+
+                    if($this->Paginator->hasPrev()){
+                        echo $this->Paginator->prev(__('Previous'), array(), null, array('class' => 'prev disabled'));
+                        
+                    }
+
+                    echo $this->Paginator->numbers(array('separator' => ' XXX ', 'modulus' => 5));
+
+                    if($this->Paginator->hasNext()){
+                      
+                        echo $this->Paginator->next(__('Next'), array(), null, array('class' => 'next disabled'));
+                    
+                    }
+           
+                    echo $this->Paginator->last('Last');
+                    
+                    echo $this->Paginator->counter(
+                    ' {:start} to {:end} of {:count} listings ' 
+);
+              */
+?>
+      
+                
+                
+                </div>
+
+<div class="row paging-links">
+        
+   <div class="results-counter">
+   <br>ajxSize:<br>
+   <div id="ajxSize">
+          <script type="text/javascript">
+            
+                $( page ).each(function( index ) {
+                console.log( index + ": " + $(this).text() );
+                });
+                </script>
+   </div>
+
+    
+        
+
+
+   </div>
+
+ 
+
+     
+     <div id="ajxPage" class="pull-right results-paging">    
+     <p> pull-right results-paging</p>
+                <?php
+                /*
+                    echo $this->Paginator->first('First');
+                
+
+                    if($this->Paginator->hasPrev()){
+                        echo $this->Paginator->prev(__('Previous'), array(), null, array('class' => 'prev disabled'));
+                        
+                    }
+
+                    echo $this->Paginator->numbers(array('separator' => ' ', 'modulus' => 5));
+
+                    if($this->Paginator->hasNext()){
+                      
+                        echo $this->Paginator->next(__('Next'), array(), null, array('class' => 'next disabled'));
+                    
+                    }
+                
+                    echo $this->Paginator->last('Last');
+                    */
+                ?>  
+                
+         
+    </div>
+ 
+</div>          
+
+
+                    <script type="text/javascript">
+                    $('#ajxPage span a').on({
+                        click:function(evt){
+                            evt.preventDefault();
+
+                            $('#ajxResults, #ajxResultsP').animate({opacity:0.5});
+
+                            $.post(
+                                $(this).attr('href'),
+                                $('#SearchResultsForm').serialize( ),
+                                function (res) {
+                                    return_data = $.parseJSON(res);
+                                    update_content(false);
+                                    results_jqXHR = false;
+                                }
+                            );
+
+                        }
+                    
+                    
+                    });
+                    </script>
+                    <script type="text/javascript">
+
+                    var page_num = <?php echo $post_page;?> 
+                    //$page_number = filter_var($_POST["page"]
+    
+                    var paginationMessage = "<?php echo $this->Paginator->counter( ' {:start} to {:end} of {:count} listings ' ); ?>"
+                        $("#paginationMessage").html(paginationMessage);
+                     $('#ajxSize').html(page_num);
+                        
+                    </script>
+    
+
+
+
+                    
+                    
+                
+                </div><!-- .search-data -->
+            </div>    

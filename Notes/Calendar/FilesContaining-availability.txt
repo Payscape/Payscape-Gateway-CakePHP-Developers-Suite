@@ -1,0 +1,10 @@
+Search "availability" (4 hits in 2 files)
+  C:\TriuNaturals\VacationFishProject\Vfish Backup\backup-vacatoinfish.com-3-15-2013\public_html\Controller\PropertiesController.php (2 hits)
+	Line 889: 	function availability($prop_id, $year = null) {
+	Line 918: 		$page = m('Page')->findBySlug('availability');
+  C:\TriuNaturals\VacationFishProject\Vfish Backup\backup-vacatoinfish.com-3-15-2013\public_html\Controller\ReservationsController.php (2 hits)
+	Line 39: 			$this->redirect(array('controller' => 'properties', 'action' => 'availability', $this->request->data['Reservation']['property_id']));
+	Line 67: 			$this->redirect(array('controller' => 'properties', 'action' => 'availability', $data['property_id']));
+	
+	
+	

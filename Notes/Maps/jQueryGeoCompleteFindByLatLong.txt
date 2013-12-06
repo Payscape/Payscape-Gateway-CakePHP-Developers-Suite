@@ -1,0 +1,66 @@
+jQuery GeoComplete - init location by lat and long
+
+up vote
+2
+down vote
+favorite
+Any idea how to init location (so the pin is dropped) with GeoComplete?
+
+ $("#geocomplete").geocomplete({
+    map: ".map_canvas",
+    location: [52.4078567, 16.92718339999999], // is it centring the map, no pin thought
+    markerOptions: {
+        draggable: true
+    },
+    details: "form",
+    types: ["geocode", "establishment"]
+
+});
+The example above does centring the map, but is it not dropping a pin. Why?
+Online demo here: http://testowy.site44.com/
+
+jquery google-maps maps
+share|improve this question
+asked Oct 20 '12 at 0:24
+
+User789
+98311755
+1 Answer activeoldestvotes
+up vote
+2
+down vote
+accepted
+The pin does not appear to be placed when you specify a longitude and latitude on initialization.
+
+The alternative is to remove the location option from the initialization, and do a once-off search of your default location just after you have created the geocomplete instance:
+
+// Run this function once after the first search
+$("#geocomplete").geocomplete(options)
+  .one("geocode:result", function(event, result){
+
+    // Set the zoom level you require for the default map
+    var map = $("#geocomplete").geocomplete("map");
+    map.setZoom(13);
+
+    // Optionally empty the geocomplete input field
+    $("#geocomplete").val("");
+
+});
+Followed by a find by address:
+
+$("#geocomplete").geocomplete("find", "Poznań, Poland");
+Or by longitude and latitude:
+
+var lat_and_long = "52.4078567, 16.9271833";
+$("#geocomplete").geocomplete("find", lat_and_long);
+share|improve this answer
+edited Oct 21 '12 at 20:48
+
+answered Oct 20 '12 at 14:49
+
+mccannf
+5,4152421
+The marker missing is a known issue btw: github.com/ubilabs/geocomplete/issues/13 – mccannf Oct 20 '12 at 14:54
+Can you do find by LAT and LON, not by location name? – User789 Oct 21 '12 at 19:50
+1	  
+@NewUser - yes. See edited answer. – mccannf Oct 21 '12 at 20:48

@@ -1,0 +1,5 @@
+
+CTP FILES
+Setup syntax highlighting for .ctp files:
+Window > Preferences > General > Appearance > content Types > 
+Text > PHP Content type > Add.. , then put in *.ctp.

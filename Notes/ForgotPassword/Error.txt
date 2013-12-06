@@ -1,0 +1,38 @@
+now we check to see if the Forgots nodes exist
+
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aco controllers/Forgots
+OK, the nodes have been created, but our redirect is going to change:token
+this may be the fly in the ointment. 
+
+
+
+# cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aco
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aco
+
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aco controllers/PaymentMethods
+
+Warning (512): DbAcl::check() - 
+Failed ARO/ACO node lookup in permissions check.  
+
+Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 3
+)
+
+Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 176
+)
+
+
+well, this is getting clearer. 
+it appears the nodes for Forgots /index and /change 
+were never created, although the permissions were set for them 
+without a hitch. 
+
+so let's create the nodes
+
+

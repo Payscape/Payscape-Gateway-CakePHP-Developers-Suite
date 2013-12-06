@@ -1,0 +1,27 @@
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#  cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Aco Update Complete
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console#
+
+
+Did this work?
+
+We can use WinMerge to check the two SQL files to see if there have been changes made. 
+There were no records in the database when this was run. 

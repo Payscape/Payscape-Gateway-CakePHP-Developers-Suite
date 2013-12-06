@@ -1,0 +1,14 @@
+ALTER TABLE `properties` 
+ADD `deposit` DECIMAL( 10, 2 ) NULL DEFAULT '0.00' 
+AFTER `weekend_rate`
+
+
+for Properties / View / details
+
+
+    <?php
+     $deposit = $property['Property']['deposit'];
+     if($deposit>0){ ?>
+  <div class="row"> <span class="lbl"><?php echo __('Deposit: '); ?></span><span class="value">$<?php echo $deposit; ?></span></div>
+                                                      
+     <?php } ?>  

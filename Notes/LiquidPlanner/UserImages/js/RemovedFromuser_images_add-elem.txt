@@ -1,0 +1,28 @@
+This was at loco1
+<script>
+$(function() {
+	
+		var uid = <?php echo $user_id; ?>;
+		$.post(ROOT_URL + "userimages/count",
+		{ user_id: uid },
+
+		function (respond) {
+		$("#image_count_edit").html(respond);
+		
+});
+
+		return false;
+});
+</script>
+<?php
+
+$cnt_prop_img = $count;
+$this->Html->scriptblock('var site_url = "'.Router::url(array('controller' => 'userimages', 'action' => 'add', $user_id)).'";', array('inline' => false));
+$this->Html->scriptblock('var counters = '.($cnt_prop_img + 1).';', array('inline' => false));
+
+echo $this->Html->script('tabs');
+echo $this->Html->scriptblock('do_onload_new("ddpagetabs","sc1","0");');
+
+
+
+?>

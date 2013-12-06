@@ -1,0 +1,190 @@
+Working out the knots in Delete Reservation. 
+
+User clicks to edit, then clicks the Delete button. 
+
+Reservations / delete
+
+	if ($this->_confirm_accessibility($res_id)
+	$res_id was missing because every reservation in the calendar has its own reservation. 
+	so we feed the $res_id in a field outside of the Cake app. 
+	
+Reservations / _confirm_accessibility	
+	if ( ! ($res = $this->Reservation->is_accessible($res_id, $this->user['User']['id']))) 
+		
+Reservation / is_accessible( $res_id, $user_id )
+
+	if ($res && ($this->Property->is_accessible($res['Reservation']['property_id'], $user_id))) {
+	
+Property / is_accessible($property_id, $user_id)	
+	
+	
+
+in Properties / availability
+
+foreach ($avail as $res){
+	
+	debug($res)
+	
+	array(
+	'id' => '2',
+	'property_id' => '886',
+	'name' => 'Arvie Barvie',
+	'email' => 'arvie@barvie.com',
+	'phone' => '555 234 2235',
+	'fax' => '',
+	'comments' => null,	<-- lookie here!
+	'unavailable' => '0',
+	'start_date' => '2013-07-04',
+	'end_date' => '2013-07-08'
+
+}
+
+here is the array for Reservation / add
+
+Array
+(
+    [Reservation] => Array
+        (
+            [property_id] => 886
+            [start_date] => 07-02-2013
+            [end_date] => 07-02-2013
+            [name] => Arvie Barvie
+            [email] => arvie@barvie.com
+            [phone] => 444 333 1234
+            [fax] => 
+        )
+
+)
+
+this is the array for Reservation / edit 
+
+Array
+(
+    [EditReservation2] => Array
+        (
+            [id] => 2
+            [property_id] => 886
+            [start_date] => 07-04-2013
+            [end_date] => 07-08-2013
+            [name] => Arvie Barvie
+            [email] => arvie@barvie.com
+        )
+
+)
+
+this is the array for Reservation / delete 
+
+Array
+(
+    [delete] => Delete This Reservation
+    [DeleteReservation2] => Array
+        (
+            [id] => 2
+            [property_id] => 886
+        )
+
+)
+
+this is why we are getting undefined index "Reservation" 
+when we attempt to delete, and most likely the same thing
+when we attempt to edit. easy to fix. 
+
+also, we want to pass the year in the form for delete 
+so that we can redirect to properties/availability/$project_id/$year
+so, the year has to be exposed in the html in a form input
+
+let's see what is going on in $res
+
+
+The view that holds the Reservation modal is 
+Properties/availability
+
+here is where our reservation calendar lives. 
+
+
+
+
+The URL to make reservations, and check availability 
+
+properties/availability/$property_id/$year
+
+http://localhost:8082/vfish22.localdomain/public_html/properties/availability/886/2013#resmodal
+
+it appears this may actually be functional. 
+
+We want to add Phone to the form and even possibly Fax. 
+
+Quite possibly reservations will be made for people who 
+are not logged in members, so as much contact info as 
+necessary should be logged with the reservation. 
+
+what is the method for checking reservations?
+
+if the date has been reserved, make the hyperlink go to 
+a popup just like the one for reservation that displays 
+the information. 
+
+1 add Availability link in the left column widget
+2 add the form CSS we just worked with on 
+the How it Works page that gives the label a nice margin. 
+
+"Availability"
+Properties/view
+Properties/create_calendar
+Properties/availability
+
+"Reservation"
+Elements/calendar
+Emails/html/property_contact
+Properties/create_basic/more_info
+Properties/admin_view
+Prooperties/availability
+Properties/calendar
+Properties/create_basic
+Properties/create_calendar
+Properties/view
+Reservations/admin_edit
+Reservations/admin_index
+Reservations/admin_view
+
+Validation in Model?
+we need to review this. 
+currently we are getting this error for these three fields
+
+Could not find validation handler text for name
+Could not find validation handler text for email
+Could not find validation handler text for phone
+
+
+Woo hoo! this actually is working. 
+We can add a reservation, and it displays as reserved 
+on the Properties/availability view. 
+when we click the date, the modal displays 
+name, start date end date and email
+
+'name' => array(
+			'text' => array(
+				'rule' => array('text'),
+				'message' => 'Enter name',
+				'allowEmpty' => false,
+				'required' => true,	
+				),	
+			),
+		'email' => array(
+					'text' => array(
+							'rule' => array('text'),
+							'message' => 'Enter email address',
+							'allowEmpty' => false,
+							'required' => true,
+					),
+			),
+				
+		'phone' => array(
+			'text' => array(
+				'rule' => array('text'),
+				'message' => 'Enter phone',
+				'allowEmpty' => false,
+				'required' => true,
+				),
+			),
+

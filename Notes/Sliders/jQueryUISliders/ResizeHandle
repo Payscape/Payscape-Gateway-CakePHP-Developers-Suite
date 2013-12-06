@@ -1,0 +1,141 @@
+Using jQuery UI
+
+benfrain...
+Slider in UI - how to set handle size? Answered
+in Using jQuery UI  •  3 years ago  
+I am using the Slider part of the jQuery UI and I'd like to know if there is a way of resizing the handle to a set size? 
+ 
+The jQuery documentation indicates that 'ui-slider-handle' is the CSS class name that should be used to tweak the handle.
+
+However, I have tried to make the handle a fixed size (e.g. 30px wide) using this class but tweaking the CSS seems to have no effect - looking in the JS it seems there is some calculation to produce the handle size and that the handle size is dynamic (based on slider pane contents) - is this the case?
+
+Is there a way to keep the slider working the same way but have a set handle size?
+2 Reply
+Replies(10)
+
+ 
+rdworth
+Re: Slider in UI - how to set handle size?
+3 years ago
+I assume you tried
+Copy code
+.ui-slider-handle { width: 30px; }
+
+and didn't have any luck because of css specificity. The rule in the slider css is more specific so it wins. You can override it with the same specificity
+Copy code
+.ui-slider .ui-slider-handle { width: 30px; }
+
+Note also that a slider handle's position is related to its width. A slider handle by default has a width of 1.2em and to center the handle over its position (rather than left-aligning it) it's given a negative left margin of 1/2 that, or -0.6em; So if you want a width of 30px:
+Copy code
+.ui-slider .ui-slider-handle { width: 30px; margin-left: -15px; }
+
+Example: http://jsbin.com/ejuyi
+ 
+benfrain...
+Re: Slider in UI - how to set handle size?
+3 years ago
+You're example is exactly how I want it - however, using the CSS you have provided doesn't solve the issue for me. There must be some other style overiding it.
+
+I am using the 'dark hive' jQuery UI theme which I am amending to my needs. In the jquery-ui-1.8rc3.custom.css style sheet the only rules relating to 'slider' are:
+
+Copy code
+/* Slider*/
+----------------------------------
+.ui-slider { position: relative; text-align: left; }
+.ui-slider .ui-slider-handle { position: absolute; z-index: 2; height: 8px; cursor: default; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
+
+I then have some other rules in my main style sheet relating to the slider. These are:
+
+Copy code
+/* Slide Section: START */
+
+#who-frame >div.who { padding: 10px !important; }
+        .scroll-pane { overflow: auto; width: 99%; float:left; }
+        .scroll-content { width: 1464px; float: left; }
+        .scroll-content-item { width: 100px; height: 100px; float: left; margin: 10px; font-size: 3em; line-height: 96px; text-align: center; }
+        * html .scroll-content-item { display: inline; } /* IE6 float double margin bug */
+        .scroll-bar-wrap { clear: left; padding: 0 4px 0 2px; margin: 0 -1px -1px -1px; }
+        .scroll-bar-wrap .ui-slider { padding-top: 1px; margin-left: auto; margin-bottom: 0; margin-right: auto; margin-top: -20px; background: none; border:0; height: 16px;  }
+        .scroll-bar-wrap .ui-handle-helper-parent { position: relative; height: 100%; margin: 0 auto; }
+        .scroll-bar-wrap .ui-slider-handle { top:.2em; height: 1.5em; }
+        .scroll-bar-wrap .ui-slider-handle .ui-icon { margin: -8px auto 0; position: relative; top: 50%; }
+        .ui-slider .ui-slider-handle { width: 30px; margin-left: -15px; }
+        
+/* Slide Section: END */
+
+As you can see I have added the rule you suggested but the handle remains the same size. Perhaps you would be so kind as to point out my error?
+
+Thanks in advance.
+ 
+rdworth
+Re: Slider in UI - how to set handle size?
+3 years ago
+Can't see anything from here. Can you create a minimal example on jsbin.com? You can reference the dark-hive theme with http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/dark-hive/jquery-ui.css
+ 
+benfrain...
+Re: Slider in UI - how to set handle size?
+3 years ago
+Hi, thanks for taking a look at this. I just uploaded an example on my own server. I've included the graphics used in my slider just in case there is something relevant there.
+
+[test page removed now problem fixed]
+
+Sure it's something simple but I can't for the life of me see it!
+
+This also shows the problem I'm having with the text below not being hidden when scrolling along but that's another problem entirely!
+ 
+suhajdab
+Re: Slider in UI - how to set handle size?
+3 years ago
+For the problem below the slider:
+Try setting a height: 170px on the .scroll-pane div so it's high enough to fit both top and bottom part of content and remove position: absolute from the .porttext
+
+Seemed to do the trick in ff anyways... :)
+
+Balázs Suhajda
+frontend developer
+ 
+rdworth
+Re: Slider in UI - how to set handle size?
+3 years ago
+slide.js is setting the width all over the place, right on the the element
+ 
+benfrain...
+Re: Slider in UI - how to set handle size?
+3 years ago
+Thanks gentleman, all sorted now. 
+
+@ Robert, that was it! I just edited out the '//size scrollbar and handle proportionally' part of the slide.js and the handle is behaving as desired. Thanks for that.
+
+@ Balázs - great stuff, thanks for replying. Was tearing my (admittedly not much left) hair out!
+
+ 
+uplinkk
+Re: Slider in UI - how to set handle size?
+2 years ago
+@ benfrain.com 
+
+I've the same problem! i didn't see the @ Robert answer..
+
+I have the same script with the '//size scrollbar and handle proportionally' .. what should i need to change?
+I want the handle will have smaller width (something like half of the current width)
+
+Thanks!
+ 
+jenspj
+Re: Slider in UI - how to set handle size?
+1 year ago
+   
+
+ $(document).ready(function(){
+
+ $('.ui-slider-handle').height(50)  
+
+})
+
+
+ 
+satejsahu
+Re: Slider in UI - how to set handle size?
+4 months ago
+Thanks guys! works for me

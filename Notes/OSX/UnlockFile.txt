@@ -1,0 +1,13 @@
+To test, I created a new file and then locked it. I then entered your command and received the same message you received. So it seems your guess about the file being locked is correct.
+
+You can try to unlock the file using Finder:
+
+1) In the Finder Go menu, choose Go to Folder.
+
+2) Type in the path to the folder that contains the file, and then click Go.
+
+3) In the window that opens, select the file and then select Get Info from the Finder File menu.
+
+4) In the panel that opens, uncheck the Locked box in the General section of the panel.
+
+(This can also be accomplished from Terminal using the SetFile command, but unless you've installed the Developer Tools, I don't think you have this command on your system.)

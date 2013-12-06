@@ -1,0 +1,45 @@
+jQuery :first vs. .first()
+
+up vote
+16
+down vote
+favorite
+6
+The .first() method was added in jQuery 1.4.
+
+The :first selector has been around since 1.0.
+
+From the docs:
+
+:first
+
+The :first pseudo-class is equivalent to :eq(0). It could also be written as :lt(1). While this matches only a single element, :first-child can match more than one: One for each parent.
+
+.first()
+
+Given a jQuery object that represents a set of DOM elements, the .first() method constructs a new jQuery object from the first matching element.
+
+It seems that .first() is a filter that returns another jQuery object, while :first is just a selector.
+
+But, they can both be used to accomplish the same thing.
+
+So, when should one be used instead of the other? Performance? Please provide examples.
+
+jquery performance
+share|improve this question
+edited Feb 24 '12 at 8:25
+
+Chuck Norris
+7,08852460	
+asked Feb 22 '10 at 17:31
+
+ScottE
+9,77474089
+3 Answers activeoldestvotes
+up vote
+20
+down vote
+accepted
+.first() can be used select the first element in a jQuery collection.
+
+Basically, it avoids to do a new query or 

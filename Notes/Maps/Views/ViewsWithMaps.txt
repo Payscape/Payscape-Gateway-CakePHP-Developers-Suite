@@ -1,0 +1,68 @@
+
+result-sidebar.ctp
+
+Search "google.map" (43 hits in 9 files)
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Elements\result-sidebar.ctp (8 hits)
+	Line 29: 						//center: new google.maps.LatLng(52, -125),
+	Line 30: 						center: new google.maps.LatLng( 37.1000, -120.2167 ),
+	Line 35: 						mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+	Line 37: 					var sm_map = new google.maps.Map(document.getElementById("sm_map_canvas"), sm_mapOptions);
+	Line 38: 					var sm_bounds = new google.maps.LatLngBounds( );
+	Line 42: 					google.maps.event.addListener(sm_map, "mouseover", function( ) {
+	Line 45: 					google.maps.event.addListener(sm_map, "zoom_changed", function( ) {
+	Line 50: 					google.maps.event.addListener(sm_map, "dragend", function( ) {
+
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Properties\create_basic.ctp (4 hits)
+	Line 23: 				google.maps.event.addListener(marker, "mouseup", function( ) {
+	Line 53: 				google.maps.event.addListener(circle, "center_changed", function( ) {
+	Line 61: 				google.maps.event.addListener(circle, "radius_changed", function( ) {
+	Line 69: 				google.maps.event.addListenerOnce(area_map, "bounds_changed", function( ) {
+
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Properties\create_one.ctp (1 hit)
+	Line 16: 				google.maps.event.addListener(marker, "mouseup", function( ) {
+
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Properties\view.ctp (5 hits)
+	Line 210:                         var center = new google.maps.LatLng(parseFloat(circle_opts[0]), parseFloat(circle_opts[1]));
+	Line 216:                             mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite
+	Line 219:                         map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	Line 222:                             var circle = new google.maps.Circle({
+	Line 232:                             google.maps.event.trigger(map, "resize");
+
+results.ctp
+
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Searches\results.ctp (5 hits)
+	Line 229: 								mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+	Line 231: 							map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	Line 232: 							bounds = new google.maps.LatLngBounds( );
+	Line 234: 							google.maps.event.addListener(map, "zoom_changed", function( ) {
+	Line 239: 							google.maps.event.addListener(map, "dragend", function( ) {
+
+
+
+
+
+
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Searches\results4-03-2013.ctp (5 hits)
+	Line 169: 								mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+	Line 171: 							map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	Line 172: 							bounds = new google.maps.LatLngBounds( );
+	Line 174: 							google.maps.event.addListener(map, "zoom_changed", function( ) {
+	Line 179: 							google.maps.event.addListener(map, "dragend", function( ) {
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Searches\results4-30-2013.ctp (5 hits)
+	Line 169: 								mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+	Line 171: 							map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	Line 172: 							bounds = new google.maps.LatLngBounds( );
+	Line 174: 							google.maps.event.addListener(map, "zoom_changed", function( ) {
+	Line 179: 							google.maps.event.addListener(map, "dragend", function( ) {
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Searches\results5-08-2013.ctp (5 hits)
+	Line 196: 								mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+	Line 198: 							map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	Line 199: 							bounds = new google.maps.LatLngBounds( );
+	Line 201: 							google.maps.event.addListener(map, "zoom_changed", function( ) {
+	Line 206: 							google.maps.event.addListener(map, "dragend", function( ) {
+  C:\xampp1.7.2\xampp\htdocs\vfish22.localdomain\app\View\Searches\results5-14-2013.ctp (5 hits)
+	Line 256: 								mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+	Line 258: 							map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	Line 259: 							bounds = new google.maps.LatLngBounds( );
+	Line 261: 							google.maps.event.addListener(map, "zoom_changed", function( ) {
+	Line 266: 							google.maps.event.addListener(map, "dragend", function( ) {

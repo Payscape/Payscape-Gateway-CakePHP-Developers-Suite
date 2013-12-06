@@ -1,0 +1,10 @@
+	stephen@vacationfish.com
+
+	smareches
+	veracini13
+	
+	to view the Repositories View
+	Window/Show View/Other/Git Repositories
+	
+	to view History
+	Team > Show in Resource History

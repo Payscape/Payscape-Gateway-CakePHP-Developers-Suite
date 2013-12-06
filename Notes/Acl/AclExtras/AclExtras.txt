@@ -1,0 +1,68 @@
+We put AclExtras shell in 
+    cake2.2.2/libs/Cake/Console/Command
+    this fired up the Help functions. 
+    
+    when we go to the Console and run 
+    "cake" we get to see the paths and shells that are loaded. 
+    
+    next we used 
+    
+    cake -app "C:\xampp\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+    
+    
+    cake -app "C:\xampp1.7.2\xampp\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+      
+    
+    Cake tells us that the database config file is missing, 
+    and that Cake wants to see an AppModel file in the Cake\Models folder. 
+    
+    so we added the load Plugin directive in the app/Config/bootstrap file
+    put the database file in there, and we have the plugin in app/Plugin
+    
+    let's see what happens. 
+    
+    
+    4/03/2013 8:53 PM
+    
+    
+
+
+
+Acl Extras Acl Extras provides a console app that helps you manage DbAcl 
+records more easily. Its main feature and purpose is to make generating 
+Aco nodes for all your controllers and actions easier. It also includes 
+some helper methods for verifying and recovering corrupted trees. 
+
+Installation Clone the repo or download a tarball and install it into 
+app/Plugin/AclExtras or in any of your pluginPaths. 
+
+Usage You can find a list of commands by running Console/cake/AclExtras.AclExtras -h 
+from your command line. 
+
+Setting up the contorller 
+
+You'll need to configure AuthComponent to use the Actions authorization 
+method. In your beforeFilter add the following: 
+
+$this->Auth->authorize = 'actions'; $this->Auth->actionPath = 'controllers/'; 
+
+Issues If you find an issue in the code or want to 
+suggest something, please use the tickets at 
+http://github.com/markstory/acl_extras/issues 
+
+License Acl Extras is licensed under the MIT license. 
+
+let's create a bootstrap for our Console. 
+Then add this to it.
+
+CakePlugin::load('AclExtras');
+
+./Console/cake AclExtras.AclExtras -h
+./Console/cake AclExtras.AclExtras aco_sync -h
+
+is cake a command or an address here?
+
+C:\>cake -app "C:\xampp\htdocs\Nublet\app" AclExtras.AclExtras aco_sync
+
+
+

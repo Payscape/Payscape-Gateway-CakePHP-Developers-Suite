@@ -1,0 +1,62 @@
+echo $this->Html->script('jquery-1.7.2.min');
+
+do not include the js, Cake is already going 
+to put that in. 
+
+something is conflicting with our sort divs, 
+they were working previously, 
+but not sure if it is because of the new 
+jQuery uploader. 
+
+shouuld be easy enough to test. 
+load the create_photos.ctp that we have 
+previously, 
+/or/ load the default layout
+which may be the problem as well. 
+
+<!-- bof: upload photos scripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script src="<?php echo $this->base; ?>/js/properties/vendor/jquery.ui.widget"></script> 
+    <script src="<?php echo $this->base; ?>/js/properties/javascript-templates/tmpl.min"></script>
+    <script src="<?php echo $this->base; ?>/js/properties/load-image/load-image.min"></script>
+    <script src="<?php echo $this->base; ?>/js/properties/canvas-to-blob/canvas-to-blob.min"></script>
+    <script src="<?php echo $this->base; ?>/js/properties/bootstrap.min"></script>
+    <script src="<?php echo $this->base; ?>/js/properties/bootstrap-gallery/bootstrap-image-gallery.min"></script> 
+    <script src="<?php echo $this->base; ?>/js/properties/jquery.iframe-transport"></script>
+    <script src="<?php echo $this->base; ?>/js/properties/jquery.fileupload.js"></script>
+    <script src="<?php echo $this->base; ?>/js/properties/jquery.fileupload-fp"></script>
+    <script src="<?php echo $this->base; ?>/js/properties/jquery.fileupload-ui"></script>
+    <script src="<?php echo $this->base; ?>/js/properties/main.js"></script>
+
+<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
+<!--[if gte IE 8]><script src="js/cors/jquery.xdr-transport.js"></script><![endif]-->
+
+
+<!-- eof: upload photos scripts -->
+
+
+here is the correct version
+
+    <?php
+    /* scripts for jQueryUpload */
+    
+    echo $this->Html->script('/properties/vendor/jquery.ui.widget');
+    echo $this->Html->script('/properties/javascript-templates/tmpl.min');
+    echo $this->Html->script('/properties/load-image/load-image.min');
+    echo $this->Html->script('/properties/canvas-to-blob/canvas-to-blob.min');
+    echo $this->Html->script('/properties/bootstrap-gallery/bootstrap-image-gallery.min');
+    echo $this->Html->script('/properties/jquery.iframe-transport');
+    echo $this->Html->script('/properties/jquery.fileupload');
+    echo $this->Html->script('/properties/jquery.fileupload-fp');
+    echo $this->Html->script('/properties/jquery.fileupload-ui');
+    echo $this->Html->script('/properties/properties/main');
+    
+    ?>
+
+<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
+<!--[if gte IE 8]>
+<?php 
+echo $this->Html->script('/properties/cors/jquery.xdr-transport');
+?>
+<![endif]-->

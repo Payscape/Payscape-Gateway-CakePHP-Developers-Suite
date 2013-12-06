@@ -1,0 +1,24 @@
+
+ALTER TABLE `properties`  
+ADD `minimum_nights` 
+INT(2) NULL DEFAULT '1' 
+AFTER `weekend_rate`
+
+CREATE TABLE IF NOT EXISTS 
+`nights` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `property_id` int(11) unsigned NOT NULL,
+  `parent_id` int(11) unsigned DEFAULT NULL,
+  `minimum_nights` int(4) NOT NULL,
+  `start_date` date NOT NULL COMMENT 'inclusive',
+  `end_date` date NOT NULL COMMENT 'inclusive',
+  `repetition` text,
+  `repeat_until` date DEFAULT NULL COMMENT 'inclusive',
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  `weight` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+ 
+) 
+
+ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

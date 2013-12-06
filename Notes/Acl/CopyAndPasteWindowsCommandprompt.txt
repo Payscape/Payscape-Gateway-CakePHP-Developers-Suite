@@ -1,0 +1,14 @@
+Copy & Paste in XP Command Prompt
+Topic(s): WinXP Pro Tips
+I feel that this is more for advanced users/developers who sometimes need to copy and paste commands into the Windows XP command prompt or vice versa. By default in Windows XP, the mouse option for copying and pasting is off.
+
+To enable the mouse option in the command prompt for copy and paste, do the following:
+Goto Start > Run
+Type cmd
+Click on the small C:\ icon on the top left hand corner of the command prompt window and click on Properties
+Under the section Edit Options, ensure that both QuickEdit Mode and Insert Mode options are checked.
+Click on OK
+Select "Save properties for future windows with same title" so that in future, all your command prompts activated using Step 1 will have this option enabled.
+Click on OK
+
+That's it... Now, whenever you need to copy anything in the command prompt, just left-click, drag, and right-click. To paste, just right-click

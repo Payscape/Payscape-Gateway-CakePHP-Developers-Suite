@@ -1,0 +1,23 @@
+   function getgeo($id = null) {
+    	// if the user hits this function, then they've gone on to the view page
+    	// so remove the dates
+    	   	
+    	$this->layout = 'ajax';
+    	$return = array('status' => 0);
+    
+    	if ( ! empty($this->request->data)) {
+    		extract($this->request->data);
+
+    		$this->loadModel('Geoname');
+
+    			$sql = "SELECT asciiname, state_name, country_name FROM geonames WHERE id = $geonameid;";    					
+    			$geoname = $this->Geoname->query($sql);
+    		
+    			$return['city'] = $geoname[0]['geonames']['asciiname'];
+    			$return['state'] = $geoname[0]['geonames']['state_name'];
+    			$return['country'] = $geoname[0]['geonames']['country_name'];
+    			$return['status'] = 1;    		
+    	}
+    
+    	echo json_encode($return);
+    }

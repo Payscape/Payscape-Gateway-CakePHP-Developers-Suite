@@ -1,0 +1,15 @@
+Thanks! that did the trick!
+
+Maybe this would be something for the developers, that it would nice
+to have a possibility to set SQL parameters centrally...
+
+bye
+Marcus.
+
+On Dec 26 2008, 8:58 am, "raphaele.gior...@gmail.com"
+<raphaele.gior...@gmail.com> wrote:
+> I should have add that in emergency you can add line 129 of \cake\libs
+> \model\db_acl.php that line to solve your pb
+> $db->query('SET SQL_BIG_SELECTS=1');
+> i'm looking for a correct way of doing it !
+> 

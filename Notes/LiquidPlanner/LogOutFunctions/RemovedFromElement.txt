@@ -1,0 +1,4 @@
+<span class="btn" id="hide_show4<?php echo $piv_next; ?>">Add Another</span> Alternative Minimum Nights Stay #<?php echo $piv_next; ?>
+
+<span class="btn" id="hide_show<?php echo $minimum_night_counter3; ?>">Add Another</span> Alternate Minimum Nights Stay #<?php echo $minimum_night_counter_display; ?>
+ 

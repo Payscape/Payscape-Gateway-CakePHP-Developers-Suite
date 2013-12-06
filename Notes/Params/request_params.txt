@@ -1,0 +1,21 @@
+
+echo "<BR>PARAMS!"
+echo "<pre>"
+$params_results = $this->request->params;
+
+foreach($request_params as $key => $value){
+    echo key: $key value: $value;
+echo "</pre>";    
+}
+
+PARAMS!
+key: plugin value: 
+key: controller value: searches
+key: action value: results
+key: named value: Array
+key: pass value: Array
+key: isAjax value: 
+Warning (2): Cannot modify header information - 
+headers already sent by (output started at 
+C:\xampp\htdocs\vacationfish.localdomain\app\Controller\SearchesController.php:736) 
+[CORE\Cake\Network\CakeResponse.php, line 398]

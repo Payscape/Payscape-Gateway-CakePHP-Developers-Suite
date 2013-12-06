@@ -1,0 +1,8 @@
+
+resize jQuery UI sliders
+
+.ui-slider .ui-slider-handle { width: 30px; margin-left: -15px; }
+
+
+.ui-slider .ui-slider-handle { width: 20px; margin-left: -10px; background-image: url('img/jquery.ui-slider/slider20.png'); }
+

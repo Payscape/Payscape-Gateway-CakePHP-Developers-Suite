@@ -1,0 +1,10 @@
+
+http://dev.vacationfish.com/wishlistitems/add/32153
+
+on dev, the wishlist icon on search results 
+links to login-pop, which does not fire now. 
+an older version has been uploaded that does not 
+have the correct URL to the images. 
+
+http://dev.vacationfish.com/img/files/32153/images/1047805000.jpg
+http://dev.vacationfish.com/img/files/501/32153/images/1047805000.jpg

@@ -1,0 +1,37 @@
+
+
+Edit image description parts
+
+	<div class="row">
+	
+		<div class="span8">
+			pix
+		
+		</div>
+	
+		<div class="span8">
+			thumbnails
+		
+		</div>
+	
+	</div>
+	
+	
+	
+	
+	<div>
+
+
+
+
+
+
+
+Sort / Delete tabs
+
+
+
+Sort Functions
+
+
+Delete Functions

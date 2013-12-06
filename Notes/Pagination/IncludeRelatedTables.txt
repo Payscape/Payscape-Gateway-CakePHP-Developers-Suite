@@ -1,0 +1,11 @@
+
+here is how we can include Related tables and their content. 
+by adding 'contain' => array('State'), 
+
+we expose all of the fields in the State model
+
+	$this->paginate = array(
+			'total_properties' => $total_properties,	
+			'Property' => array(
+				'contain' => array(
+					'State',

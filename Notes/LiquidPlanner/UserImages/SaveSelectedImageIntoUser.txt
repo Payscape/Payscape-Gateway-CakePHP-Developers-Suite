@@ -1,0 +1,11 @@
+ 1 add
+    We have Upload Images working and saves records in UserImages
+    
+ 2 edit
+	$this->User->id=$user_id;
+	$this->User->saveField("fb_image", $fb_image);
+    Build Edit - user slects image
+    
+ 3 remove
+    Build Delete - user deletes selected images
+    

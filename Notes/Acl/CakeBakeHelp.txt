@@ -1,0 +1,300 @@
+
+        bake fixture
+                bakes fixtures. run 'bake fixture help' for more info.
+
+        bake test
+                bakes unit tests. run 'bake test help' for more info.
+
+
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake\console
+# bake model help
+'bake' is not recognized as an internal or external command,
+operable program or batch file.
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake\console
+# cake bake model help
+
+♀
+Welcome to CakePHP v1.3.14 Console
+---------------------------------------------------------------
+App : console
+Path: C:\xampp\htdocs\vacationfish.localdomain\cake\console
+---------------------------------------------------------------
+---------------------------------------------------------------
+Usage: cake bake model <arg1>
+---------------------------------------------------------------
+Arguments:
+
+<name>
+        Name of the model to bake. Can use Plugin.name
+        as a shortcut for plugin baking.
+
+Params:
+
+-connection <config>
+        set db config <config>. uses 'default' if none is specified
+
+Commands:
+
+model
+        bakes model in interactive mode.
+
+model <name>
+        bakes model file with no associations or validation
+
+model all
+        bakes all model files with associations and validation
+
+
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake\console
+# cake bake model Wishlist
+
+♀
+Welcome to CakePHP v1.3.14 Console
+---------------------------------------------------------------
+App : console
+Path: C:\xampp\htdocs\vacationfish.localdomain\cake\console
+---------------------------------------------------------------
+
+Warning: include_once(C:\xampp\htdocs\vacationfish.localdomain\cake\console\conf
+ig\database.php): failed to open stream: No such file or directory in C:\xampp\h
+tdocs\vacationfish.localdomain\cake\libs\model\connection_manager.php on line 23
+
+
+Call Stack:
+    0.0021     544032   1. {main}() C:\xampp\htdocs\vacationfish.localdomain\cak
+e\console\cake.php:0
+    0.0022     544816   2. ShellDispatcher->ShellDispatcher() C:\xampp\htdocs\va
+cationfish.localdomain\cake\console\cake.php:665
+    0.0418    2772440   3. ShellDispatcher->dispatch() C:\xampp\htdocs\vacationf
+ish.localdomain\cake\console\cake.php:139
+    0.2643    5414552   4. ModelTask->execute() C:\xampp\htdocs\vacationfish.loc
+aldomain\cake\console\cake.php:361
+    0.2643    5414680   5. App->import() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\console\libs\tasks\model.php:77
+    0.2644    5415360   6. App->__find() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\configure.php:962
+    0.2653    5416744   7. App->__load() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\configure.php:1026
+    0.3139    6271112   8. require('C:\xampp\htdocs\vacationfish.localdomain\cak
+e\libs\model\model.php') C:\xampp\htdocs\vacationfish.localdomain\cake\libs\conf
+igure.php:1067
+    0.3483    6969200   9. App->import() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\model\model.php:28
+    0.3484    6970016  10. App->__find() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\configure.php:962
+    0.3488    6970536  11. App->__load() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\configure.php:1026
+    0.3679    7042864  12. require('C:\xampp\htdocs\vacationfish.localdomain\cak
+e\libs\model\connection_manager.php') C:\xampp\htdocs\vacationfish.localdomain\c
+ake\libs\configure.php:1067
+
+
+Warning: include_once(): Failed opening 'C:\xampp\htdocs\vacationfish.localdomai
+n\cake\console\config\database.php' for inclusion (include_path='.;C:\xampp\php\
+PEAR') in C:\xampp\htdocs\vacationfish.localdomain\cake\libs\model\connection_ma
+nager.php on line 23
+
+Call Stack:
+    0.0021     544032   1. {main}() C:\xampp\htdocs\vacationfish.localdomain\cak
+e\console\cake.php:0
+    0.0022     544816   2. ShellDispatcher->ShellDispatcher() C:\xampp\htdocs\va
+cationfish.localdomain\cake\console\cake.php:665
+    0.0418    2772440   3. ShellDispatcher->dispatch() C:\xampp\htdocs\vacationf
+ish.localdomain\cake\console\cake.php:139
+    0.2643    5414552   4. ModelTask->execute() C:\xampp\htdocs\vacationfish.loc
+aldomain\cake\console\cake.php:361
+    0.2643    5414680   5. App->import() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\console\libs\tasks\model.php:77
+    0.2644    5415360   6. App->__find() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\configure.php:962
+    0.2653    5416744   7. App->__load() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\configure.php:1026
+    0.3139    6271112   8. require('C:\xampp\htdocs\vacationfish.localdomain\cak
+e\libs\model\model.php') C:\xampp\htdocs\vacationfish.localdomain\cake\libs\conf
+igure.php:1067
+    0.3483    6969200   9. App->import() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\model\model.php:28
+    0.3484    6970016  10. App->__find() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\configure.php:962
+    0.3488    6970536  11. App->__load() C:\xampp\htdocs\vacationfish.localdomai
+n\cake\libs\configure.php:1026
+    0.3679    7042864  12. require('C:\xampp\htdocs\vacationfish.localdomain\cak
+e\libs\model\connection_manager.php') C:\xampp\htdocs\vacationfish.localdomain\c
+ake\libs\configure.php:1067
+
+
+Fatal error: ConnectionManager::getDataSource - Non-existent data source default
+ in C:\xampp\htdocs\vacationfish.localdomain\cake\libs\model\connection_manager.
+php on line 102
+
+Call Stack:
+    0.0021     544032   1. {main}() C:\xampp\htdocs\vacationfish.localdomain\cak
+e\console\cake.php:0
+    0.0022     544816   2. ShellDispatcher->ShellDispatcher() C:\xampp\htdocs\va
+cationfish.localdomain\cake\console\cake.php:665
+    0.0418    2772440   3. ShellDispatcher->dispatch() C:\xampp\htdocs\vacationf
+ish.localdomain\cake\console\cake.php:139
+    0.2643    5414552   4. ModelTask->execute() C:\xampp\htdocs\vacationfish.loc
+aldomain\cake\console\cake.php:361
+    0.3821    7121480   5. ModelTask->_getModelObject() C:\xampp\htdocs\vacation
+fish.localdomain\cake\console\libs\tasks\model.php:92
+    0.3840    7131152   6. Model->__construct() C:\xampp\htdocs\vacationfish.loc
+aldomain\cake\console\libs\tasks\model.php:134
+    0.3841    7132312   7. Model->setDataSource() C:\xampp\htdocs\vacationfish.l
+ocaldomain\cake\libs\model\model.php:469
+    0.3841    7132312   8. ConnectionManager->getDataSource() C:\xampp\htdocs\va
+cationfish.localdomain\cake\libs\model\model.php:2852
+    0.4139    7533296   9. trigger_error() C:\xampp\htdocs\vacationfish.localdom
+ain\cake\libs\model\connection_manager.php:102
+
+
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake\console
+# cd ../
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake
+# cd ../
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain
+# cd ../
+
+user@TEN C:\xampp\htdocs
+# cd fishbake.localdomain
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain
+# cd cake
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake
+# cd console
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake\console
+# cake bake project /app
+
+♀
+Welcome to CakePHP v1.3.14 Console
+---------------------------------------------------------------
+App : console
+Path: C:\xampp\htdocs\fishbake.localdomain\cake\console
+---------------------------------------------------------------
+Bake Project
+Skel Directory: C:\xampp\htdocs\fishbake.localdomain\cake\console\templates\skel
+
+Will be copied to: \\app
+---------------------------------------------------------------
+Look okay? (y/n/q)
+[y] > y
+Do you want verbose output? (y/n)
+[n] > y
+
+Warning: mkdir(): Invalid argument in C:\xampp\htdocs\fishbake.localdomain\cake\
+libs\folder.php on line 498
+
+Call Stack:
+    0.0021     544008   1. {main}() C:\xampp\htdocs\fishbake.localdomain\cake\co
+nsole\cake.php:0
+    0.0022     544792   2. ShellDispatcher->ShellDispatcher() C:\xampp\htdocs\fi
+shbake.localdomain\cake\console\cake.php:665
+    0.0425    2771896   3. ShellDispatcher->dispatch() C:\xampp\htdocs\fishbake.
+localdomain\cake\console\cake.php:139
+    0.2626    5413360   4. ProjectTask->execute() C:\xampp\htdocs\fishbake.local
+domain\cake\console\cake.php:361
+    0.2628    5413472   5. ProjectTask->bake() C:\xampp\htdocs\fishbake.localdom
+ain\cake\console\libs\tasks\project.php:79
+   26.7650    6133976   6. Folder->copy() C:\xampp\htdocs\fishbake.localdomain\c
+ake\console\libs\tasks\project.php:161
+   26.7651    6134432   7. Folder->create() C:\xampp\htdocs\fishbake.localdomain
+\cake\libs\folder.php:634
+   26.7652    6134528   8. mkdir() C:\xampp\htdocs\fishbake.localdomain\cake\lib
+s\folder.php:498
+
+ 'app' could not be created properly
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake\console
+# cake --version
+
+♀
+Welcome to CakePHP v1.3.14 Console
+---------------------------------------------------------------
+Current Paths:
+ -app: console
+ -working: C:\xampp\htdocs\fishbake.localdomain\cake\console
+ -root: C:\xampp\htdocs\fishbake.localdomain\cake
+ -core: C:\xampp\htdocs\fishbake.localdomain
+
+Changing Paths:
+your working path should be the same as your application path
+to change your path use the '-app' param.
+Example: -app relative/path/to/myapp or -app /absolute/path/to/myapp
+
+Available Shells:
+ acl [CORE]                              i18n [CORE]
+
+ api [CORE]                              schema [CORE]
+
+ bake [CORE]                             testsuite [CORE]
+
+ console [CORE]
+
+To run a command, type 'cake shell_name [args]'
+To get help on a specific command, type 'cake shell_name help'
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake\console
+# cd api
+The system cannot find the path specified.
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake\console
+# cd ../
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake
+# cd ../
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain
+# cd cake2.2.2
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2
+# cd Cake
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\Cake
+# dir/w
+ Volume in drive C has no label.
+ Volume Serial Number is E4CB-7CD7
+
+ Directory of C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\Cake
+
+[.]             [..]            basics.php      bootstrap.php   [Cache]
+[Config]        [Configure]     [Console]       [Controller]    [Core]
+[Error]         [Event]         [I18n]          LICENSE.txt     [Log]
+[Model]         [Network]       [Routing]       [Test]          [TestSuite]
+[Utility]       VERSION.txt     [View]
+               4 File(s)         27,104 bytes
+              19 Dir(s)  253,202,591,744 bytes free
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\Cake
+# cd Console
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\Cake\Console
+# cake bake help
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : Console
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\Cake\Console\
+---------------------------------------------------------------
+Interactive Bake Shell
+---------------------------------------------------------------
+[D]atabase Configuration
+[M]odel
+[V]iew
+[C]ontroller
+[P]roject
+[F]ixture
+[T]est case
+[Q]uit
+What would you like to Bake? (D/M/V/C/P/F/T/Q)
+>

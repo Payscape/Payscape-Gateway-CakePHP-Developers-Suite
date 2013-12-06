@@ -1,0 +1,58 @@
+	// update save search elements
+	var searchcity = $("#SearchCity").val();
+	var searchstate = $("#SearchState").val();
+	var searchstateabr = $("#SearchStateAbbr").val();
+	var searchcountry = $("#SearchCountry").val();
+	var searchcountryabr = $("#SearchCountryAbbr").val();
+
+	var startdate = $("#SearchStartDate").val();
+	var enddate = $("#SearchEndDate").val();
+	var sleepingcapacity = $("#SearchSleepingCapacity").val();
+	var searchrateby = $("#SearchRateBy").val();
+	WORKING ELEMENTS
+	
+		
+	var startdate = $("#SearchStartDate").val();
+	var enddate = $("#SearchEndDate").val();
+	var sleepingcapacity = $("#SearchSleepingCapacity").val();
+	var searchrateby = $("#SearchRateBy").val();
+	
+	var dailyratemin = $("#SearchDailyRateMin").val();
+	var dailyratemax = $("#SearchDailyRateMax").val();
+	
+	var bedmi = $("#SearchBedroomsMin").val();
+	var bedma = $("#SearchBedroomsMax").val();
+	
+	
+	
+	// we can get these from the JSON form fields
+	var bedmin = $("#BedMin").val();
+	var bedmax = $("#BedMax").val();
+	var bathmin = $("#BathMin").val();
+	var bathmax = $("#BathMax").val();
+	var sqftmin = $("#SqFtMin").val();
+	var sqftmax = $("#SqFtMax").val();
+
+	var dailyratemin = $("#SearchDailyRateMin").val();
+	var dailyratemax = $("#SearchDailyRateMax").val();
+	var amenities = $("#AmenityCheck").val();
+	
+	
+	$("#startdate1").val(startdate1);
+	$("#enddate1").val(enddate1);
+	
+	$("#sleepingcapacity1").val(sleepingcapacity1);
+	$("#dailyrate.min1").append(dailyratemin);
+	$("#dailyrate.max1").append(dailyratemax);
+	
+	$("#bedroomsmin1").val(bedmin);
+	$("#bedroomsmax1").val(bedmax);
+	$("#bathroomsmin1").val(bathmin);
+	$("#bathroomsmax1").val(bathmax);
+	$("#squarefootagemin1").val(sqftmin);
+	$("#squarefootagemax1").val(sqftmax);
+	$("#dailyratemin1").val(dailyrtmin);
+	$("#dailyratemax1").val(dailyrtmax);
+	$("#amenities1").val(return_data.form.amenities);
+
+	//$("#destination1").val("#geocomplete");

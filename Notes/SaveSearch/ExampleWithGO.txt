@@ -1,0 +1,30 @@
+a:6:{s:17:
+"sleeping_capacity";s:1:"2";s:8:
+"bedrooms";a:2:{s:3:"min";s:1:"1";s:3:
+"max";s:2:"10";}s:14:
+"square_footage";a:2:{s:3:"min";s:3:"500";s:3:"max";s:5:"12000";}s:9:
+"bathrooms";a:2:{s:3:"min";s:1:"1";s:3:"max";s:2:"10";}s:10:
+"daily_rate";a:2:{s:3:"min";s:1:"0";s:3:"max";s:4:"2000";}s:9:
+"amenities";a:1:{i:0;s:2:"24";}}
+
+
+a:6:{s:17:
+"sleeping_capacity";s:1:"2";s:8:
+"bedrooms";a:2:{s:3:"min";s:1:"1";s:3:"max";s:2:"10";}s:14:
+"square_footage";a:2:{s:3:"min";s:3:"500";s:3:"max";s:5:"12000";}s:9:
+"bathrooms";a:2:{s:3:"min";s:1:"1";s:3:"max";s:2:"10";}s:10:
+"daily_rate";a:2:{s:3:"min";s:1:"0";s:3:"max";s:4:"2000";}s:9:
+"amenities";a:1:{i:0;s:2:"24";}}
+
+
+desination is not being saved. 
+
+we need to add
+
+city
+state_abbr
+country_abbr
+destination
+
+go is going to have to be put into its own field
+

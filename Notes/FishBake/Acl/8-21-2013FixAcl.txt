@@ -1,0 +1,300 @@
+Created Aco node: controllers/Amenitytypes/ac
+Created Aco node: controllers/Amenitytypes/admin_index
+Created Aco node: controllers/Amenitytypes/admin_view
+Created Aco node: controllers/Amenitytypes/admin_add
+Created Aco node: controllers/Amenitytypes/admin_edit
+Created Aco node: controllers/Amenitytypes/admin_delete
+Created Aco node: controllers/Amenitytypes/admin_filter_select
+Created Aco node: controllers/Amenitytypes/beforeFacebookSave
+Created Aco node: controllers/Amenitytypes/afterFacebookLogin
+Created Aco node: controllers/Amenitytypes/do_log
+Created Aco node: controllers/Faqcategories/index
+Created Aco node: controllers/Faqcategories/ac
+Created Aco node: controllers/Faqcategories/admin_index
+Created Aco node: controllers/Faqcategories/admin_view
+Created Aco node: controllers/Faqcategories/admin_add
+Created Aco node: controllers/Faqcategories/admin_edit
+Created Aco node: controllers/Faqcategories/admin_delete
+Created Aco node: controllers/Faqcategories/admin_filter_select
+Created Aco node: controllers/Faqcategories/beforeFacebookSave
+Created Aco node: controllers/Faqcategories/afterFacebookLogin
+Created Aco node: controllers/Faqcategories/do_log
+Created Aco node: controllers/Homepageimages/index
+Created Aco node: controllers/Homepageimages/ac
+Created Aco node: controllers/Homepageimages/admin_index
+Created Aco node: controllers/Homepageimages/admin_view
+Created Aco node: controllers/Homepageimages/admin_add
+Created Aco node: controllers/Homepageimages/admin_edit
+Created Aco node: controllers/Homepageimages/admin_delete
+Created Aco node: controllers/Homepageimages/admin_filter_select
+Created Aco node: controllers/Homepageimages/beforeFacebookSave
+Created Aco node: controllers/Homepageimages/afterFacebookLogin
+Created Aco node: controllers/Homepageimages/do_log
+Created Aco node: controllers/Howitworksitems/index
+Created Aco node: controllers/Howitworksitems/ac
+Created Aco node: controllers/Howitworksitems/admin_index
+Created Aco node: controllers/Howitworksitems/admin_view
+Created Aco node: controllers/Howitworksitems/admin_add
+Created Aco node: controllers/Howitworksitems/admin_edit
+Created Aco node: controllers/Howitworksitems/admin_delete
+Created Aco node: controllers/Howitworksitems/admin_filter_select
+Created Aco node: controllers/Howitworksitems/beforeFacebookSave
+Created Aco node: controllers/Howitworksitems/afterFacebookLogin
+Created Aco node: controllers/Howitworksitems/do_log
+Created Aco node: controllers/Localattractions/index
+Created Aco node: controllers/Localattractions/ac
+Created Aco node: controllers/Localattractions/admin_index
+Created Aco node: controllers/Localattractions/admin_view
+Created Aco node: controllers/Localattractions/admin_add
+Created Aco node: controllers/Localattractions/admin_edit
+Created Aco node: controllers/Localattractions/admin_delete
+Created Aco node: controllers/Localattractions/admin_filter_select
+Created Aco node: controllers/Localattractions/beforeFacebookSave
+Created Aco node: controllers/Localattractions/afterFacebookLogin
+Created Aco node: controllers/Localattractions/do_log
+Created Aco node: controllers/Newsstories/index
+Created Aco node: controllers/Newsstories/view
+Created Aco node: controllers/Newsstories/ac
+Created Aco node: controllers/Newsstories/admin_index
+Created Aco node: controllers/Newsstories/admin_view
+Created Aco node: controllers/Newsstories/admin_add
+Created Aco node: controllers/Newsstories/admin_edit
+Created Aco node: controllers/Newsstories/admin_delete
+Created Aco node: controllers/Newsstories/admin_filter_select
+Created Aco node: controllers/Newsstories/beforeFacebookSave
+Created Aco node: controllers/Newsstories/afterFacebookLogin
+Created Aco node: controllers/Newsstories/do_log
+Created Aco node: controllers/Pagegroups/index
+Created Aco node: controllers/Pagegroups/ac
+Created Aco node: controllers/Pagegroups/admin_index
+Created Aco node: controllers/Pagegroups/admin_view
+Created Aco node: controllers/Pagegroups/admin_add
+Created Aco node: controllers/Pagegroups/admin_edit
+Created Aco node: controllers/Pagegroups/admin_delete
+Created Aco node: controllers/Pagegroups/admin_filter_select
+Created Aco node: controllers/Pagegroups/beforeFacebookSave
+Created Aco node: controllers/Pagegroups/afterFacebookLogin
+Created Aco node: controllers/Pagegroups/do_log
+Created Aco node: controllers/Paymentmethods/index
+Created Aco node: controllers/Paymentmethods/ac
+Created Aco node: controllers/Paymentmethods/admin_index
+Created Aco node: controllers/Paymentmethods/admin_view
+Created Aco node: controllers/Paymentmethods/admin_add
+Created Aco node: controllers/Paymentmethods/admin_edit
+Created Aco node: controllers/Paymentmethods/admin_delete
+Created Aco node: controllers/Paymentmethods/admin_filter_select
+Created Aco node: controllers/Paymentmethods/beforeFacebookSave
+Created Aco node: controllers/Paymentmethods/afterFacebookLogin
+Created Aco node: controllers/Paymentmethods/do_log
+Created Aco node: controllers/Propertytypes/index
+Created Aco node: controllers/Propertytypes/ac
+Created Aco node: controllers/Propertytypes/admin_index
+Created Aco node: controllers/Propertytypes/admin_view
+Created Aco node: controllers/Propertytypes/admin_add
+Created Aco node: controllers/Propertytypes/admin_edit
+Created Aco node: controllers/Propertytypes/admin_delete
+Created Aco node: controllers/Propertytypes/admin_filter_select
+Created Aco node: controllers/Propertytypes/beforeFacebookSave
+Created Aco node: controllers/Propertytypes/afterFacebookLogin
+Created Aco node: controllers/Propertytypes/do_log
+Created Aco node: controllers/Ratingtypes/index
+Created Aco node: controllers/Ratingtypes/ac
+Created Aco node: controllers/Ratingtypes/admin_index
+Created Aco node: controllers/Ratingtypes/admin_view
+Created Aco node: controllers/Ratingtypes/admin_add
+Created Aco node: controllers/Ratingtypes/admin_edit
+Created Aco node: controllers/Ratingtypes/admin_delete
+Created Aco node: controllers/Ratingtypes/admin_filter_select
+Created Aco node: controllers/Ratingtypes/beforeFacebookSave
+Created Aco node: controllers/Ratingtypes/afterFacebookLogin
+Created Aco node: controllers/Ratingtypes/do_log
+Created Aco node: controllers/Wishlistitems/index
+Created Aco node: controllers/Wishlistitems/view
+Created Aco node: controllers/Wishlistitems/add_wishlist
+Created Aco node: controllers/Wishlistitems/add
+Created Aco node: controllers/Wishlistitems/edit
+Created Aco node: controllers/Wishlistitems/delete
+Created Aco node: controllers/Wishlistitems/ac
+Created Aco node: controllers/Wishlistitems/admin_index
+Created Aco node: controllers/Wishlistitems/admin_view
+Created Aco node: controllers/Wishlistitems/admin_add
+Created Aco node: controllers/Wishlistitems/admin_edit
+Created Aco node: controllers/Wishlistitems/admin_delete
+Created Aco node: controllers/Wishlistitems/admin_filter_select
+Created Aco node: controllers/Wishlistitems/beforeFacebookSave
+Created Aco node: controllers/Wishlistitems/afterFacebookLogin
+Created Aco node: controllers/Wishlistitems/do_log
+Aco Update Complete
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake acl view Howitworks
+
+
+The view command will return the ARO or ACO tree.
+The optional node parameter allows you to return
+only a portion of the requested tree.
+
+Usage:
+cake acl view [-h] [-v] [-q] <aro|aco> [<node>]
+
+Options:
+
+--help, -h     Display this help.
+--verbose, -v  Enable verbose output.
+--quiet, -q    Enable quiet output.
+
+Arguments:
+
+type  Type of node to create. (choices: aro|aco)
+node  The optional node to view the subtree of.
+      (optional)
+
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake acl delete Howitworks
+
+
+Delete an ACL node.
+
+Usage:
+cake acl delete [-h] [-v] [-q] <aro|aco> <node>
+
+Options:
+
+--help, -h     Display this help.
+--verbose, -v  Enable verbose output.
+--quiet, -q    Enable quiet output.
+
+Arguments:
+
+type  Type of node to create. (choices: aro|aco)
+node  The node identifier to delete.
+
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake acl delete -v aco Howitworks
+
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : Console
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Co
+nsole\
+---------------------------------------------------------------
+--------------------------------------------------
+Error: Your current Cake configuration is set to an ACL implementation other tha
+n DB.
+Please change your core config to reflect your decision to use DbAcl before atte
+mpting to use this script
+--------------------------------------------------
+Current ACL Classname: %s
+--------------------------------------------------
+
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app"
+ acl_extras aco_sync
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Aco Update Complete
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app"
+ acl grant Group.2 controllers/HomePageImages/index
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Permission granted.
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app"
+ acl grant Group.3 controllers/HomePageImages/index
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Permission granted.
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app"
+ acl grant Group.2 controllers/HowItWorks/index
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Warning Error: DbAcl::allow() - Invalid node in [C:\xampp-vfish-git\xampp\htdocs
+\fishbake.localdomain\cake2.2.2\lib\Cake\Model\Permission.php, line 176]
+
+2013-08-21 23:48:51 Warning: DbAcl::allow() - Invalid node in [C:\xampp-vfish-gi
+t\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Model\Permission.php, lin
+e 176]
+Permission was not granted.
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# aarf
+'aarf' is not recognized as an internal or external command,
+operable program or batch file.
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app"
+ acl grant Group.2 controllers/HowItWorksItems/index
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Permission granted.
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app"
+ acl grant Group.3 controllers/HowItWorksItems/index
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Permission granted.
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+#

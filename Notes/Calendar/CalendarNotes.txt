@@ -1,0 +1,31 @@
+
+1 the calculate function is goofing up when we are 
+trying to set availability for a property. 
+
+see the jQueryDev section in VFishDev for info on 
+how to pass the property_id to the jQuery script 
+in calendar_hover.js
+
+2 we need to click start date, end date and have it 
+send a jQuery post to the db to complete a reservation 
+start_date, end_date. 
+
+we need some kind of button to trigger this, we don't want
+to be creating reservations just on "clickorino". 
+
+3 the calculate costs function on the user side appears 
+to be doing its job. 
+
+
+4 we need to isoloate the pricing functions so that 
+user clicks on tabs. the pricing form errors out 
+if we do not 
+4.1 create base price
+4.2 create high season price
+4.3 we want ways to create other high season prices. (dates)
+4.4 shouldn't we be able to create as many of these as we want?
+4.5 to do so, we want a table that has only about 4 or 5 fields 
+in it, all of them numbers/dates. 
+
+see book tennis to get ideas. 
+

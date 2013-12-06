@@ -1,0 +1,8 @@
+Buggy Wuggies
+we still have some relative URLs that need to be straightened out. 
+
+for example on 
+http://sophia22.net/vacationfish/public_html/pages/how_it_works/getting_started_host
+
+
+http://sophia22.net/img/uploads/GettingStartedHost_MultipleProperties.png

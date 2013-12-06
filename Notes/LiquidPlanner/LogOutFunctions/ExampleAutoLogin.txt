@@ -1,0 +1,33 @@
+public function login( ) {
+    if ($this->Auth->user('id')) {
+        $this->redirect(array('action' => 'dashboard'));
+    }
+
+    if ($this->request->is('post')) {
+        if($this->request->data['User']['auto_login']):
+            $this->AutoLogin->write($this->request->data['User']['email'],
+            $this->request->data['User']['password']);
+            endif;
+        if ($this->Auth->login( )) {
+            //$this->redirect(array('controller' => 'users', 'action' => 'edit'));
+            return $this->redirect($this->Auth->redirect( ));
+        }
+        else 
+        {
+            $this->Session->setFlash(__('Username and Password is incorrect'), 'default', array( ), 'auth');
+        }
+    }
+
+    else {
+        if($this->AutoLogin->read()):
+            $AllData = $this->AutoLogin->read();
+            $AllData['username'] = 'email';
+            $AllData['password'] = 'password';
+            $check = $this->User->find('first', array('username' => 'email', 'password' => 'password'));
+            if($check):
+                $this->Auth->user($check);
+                $this->Auth->redirect();
+            endif;
+            $this->redirect(array('action' => 'login'));
+        endif;
+    }

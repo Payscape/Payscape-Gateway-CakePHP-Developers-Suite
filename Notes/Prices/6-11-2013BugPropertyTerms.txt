@@ -1,0 +1,162 @@
+
+OK, this should do it: 
+
+"first Monday of December 2010"
+
+"first Sunday of $year $month"
+
+stringtotime('first sunday of the month', $now); is wreaking havoc on our Calendar. 
+
+it returns a negative integer that blows the calendar. 
+
+	'first sunday' produces this
+1371340800
+which is at least a valid strtotime, but not the correct one. 
+
+so let's do this:
+
+	$month = date('m');
+	$year = date('Y');
+	
+	now we can do 'first sunday of' . $year . '/' . $month
+
+When saving the Basic Pricing form, we have an error on TriuBenDev.
+
+the Controller, Model and View files appear to be identical to 
+vfish22.localdomain, and we do not have that error on localhost. 
+
+WFT?
+
+
+it looks like TriuBenDev $prices has not content. 
+
+
+
+on TriuBenDev, the value we get for $midpoint is this
+
+/home2/triubend/public_html/dev/vfish/app/View/Properties/create_calendar.ctp (line 22)
+array(
+	(int) 0 => array(
+		(int) -86400 => null,
+		(int) 0 => null
+	)
+)
+
+on vfish22.localdomain, it is this:
+
+maybe we need a default value for our price, holiday, weekend 
+and pricing etc.?
+
+
+
+here is another where no pricing has been entered:
+
+
+
+\app\View\Properties\create_calendar.ctp (line 20)
+
+
+
+array(
+	(int) 1369440000 => '0.00',
+	(int) 1369526400 => '0.00',
+	(int) 1369612800 => '0.00',
+	(int) 1369699200 => '0.00',
+	(int) 1369785600 => '0.00',
+	(int) 1369872000 => '0.00',
+	(int) 1369958400 => '0.00',
+	(int) 1370044800 => '0.00',
+	(int) 1370131200 => '0.00',
+	(int) 1370217600 => '0.00',
+	(int) 1370304000 => '0.00',
+	(int) 1370390400 => '0.00',
+	(int) 1370476800 => '0.00',
+	(int) 1370563200 => '0.00',
+	(int) 1370649600 => '0.00',
+	(int) 1370736000 => '0.00',
+	(int) 1370822400 => '0.00',
+	(int) 1370908800 => '0.00',
+	(int) 1370995200 => '0.00',
+	(int) 1371081600 => '0.00',
+	(int) 1371168000 => '0.00',
+	(int) 1371254400 => '0.00',
+	(int) 1371340800 => '0.00',
+	(int) 1371427200 => '0.00',
+	(int) 1371513600 => '0.00',
+	(int) 1371600000 => '0.00',
+	(int) 1371686400 => '0.00',
+	(int) 1371772800 => '0.00',
+	(int) 1371859200 => '0.00',
+	(int) 1371945600 => '0.00',
+	(int) 1372032000 => '0.00',
+	(int) 1372118400 => '0.00',
+	(int) 1372204800 => '0.00',
+	(int) 1372291200 => '0.00',
+	(int) 1372377600 => '0.00',
+	(int) 1372464000 => '0.00',
+	(int) 1372550400 => '0.00',
+	(int) 1372636800 => '0.00',
+	(int) 1372723200 => '0.00',
+	(int) 1372809600 => '0.00',
+	(int) 1372896000 => '0.00',
+	(int) 1372982400 => '0.00',
+	(int) 1373068800 => '0.00'
+)
+
+
+
+
+\app\View\Properties\create_calendar.ctp (line 22)
+
+array(
+	(int) 0 => array(
+		(int) 1369440000 => null,
+		(int) 1369526400 => null,
+		(int) 1369612800 => null,
+		(int) 1369699200 => null,
+		(int) 1369785600 => null,
+		(int) 1369872000 => null,
+		(int) 1369958400 => null,
+		(int) 1370044800 => null,
+		(int) 1370131200 => null,
+		(int) 1370217600 => null,
+		(int) 1370304000 => null,
+		(int) 1370390400 => null,
+		(int) 1370476800 => null,
+		(int) 1370563200 => null,
+		(int) 1370649600 => null
+	),
+	(int) 1 => array(
+		(int) 1370736000 => null,
+		(int) 1370822400 => null,
+		(int) 1370908800 => null,
+		(int) 1370995200 => null,
+		(int) 1371081600 => null,
+		(int) 1371168000 => null,
+		(int) 1371254400 => null,
+		(int) 1371340800 => null,
+		(int) 1371427200 => null,
+		(int) 1371513600 => null,
+		(int) 1371600000 => null,
+		(int) 1371686400 => null,
+		(int) 1371772800 => null,
+		(int) 1371859200 => null,
+		(int) 1371945600 => null
+	),
+	(int) 2 => array(
+		(int) 1372032000 => null,
+		(int) 1372118400 => null,
+		(int) 1372204800 => null,
+		(int) 1372291200 => null,
+		(int) 1372377600 => null,
+		(int) 1372464000 => null,
+		(int) 1372550400 => null,
+		(int) 1372636800 => null,
+		(int) 1372723200 => null,
+		(int) 1372809600 => null,
+		(int) 1372896000 => null,
+		(int) 1372982400 => null,
+		(int) 1373068800 => null
+	)
+)
+

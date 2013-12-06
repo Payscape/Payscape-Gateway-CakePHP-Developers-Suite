@@ -1,0 +1,46 @@
+Complete the manual save search first so that we have 
+the correct criteria going into our serialize field.
+
+then once that has been completed, we can use 
+this little trick to pass the criteria to the pop up 
+window through a simple link. 
+
+a form might be better though. 
+
+
+$params = array(
+	'
+
+$this->Html->link(‘My Link’, array_merge($this->params['named'], array(‘controller’ => ‘controller’, ‘action’ => ‘index’)));
+
+
+$parameters = array(
+['controller'] =>’controller_name’,
+['action'] =>’action_name’,
+‘key1′=>v1,
+‘key2′=>v2,
+
+);
+
+
+	$("#start_date1").val(return_data.form.start_date);
+	$("#end_date1").val(return_data.form.end_date);
+	$("#sleeping_capacity1").val(return_data.form.sleeping_capacity);
+	$("#rate_by1").val(return_data.form.rate_by);
+	$("#bedrooms_min1").val(return_data.form.bedrooms.min);
+	$("#bedrooms_max1").val(return_data.form.bedrooms.max);
+	$("#bathrooms_min1").val(return_data.form.bathrooms.min);
+	$("#bathrooms_max1").val(return_data.form.bathrooms.max);
+	$("#square_footage_min1").val(return_data.form.square_footage.min);
+	$("#square_footage_max1").val(return_data.form.square_footage.max);
+	$("#daily_rate_min1").val(return_data.form.daily_rate.min);
+	$("#daily_rate_max1").val(return_data.form.daily_rate.max);
+	$("#amenities1").val(return_data.form.amenities);
+
+	
+	=======================
+	
+	use a form to open thick box
+	
+	<input type="text" id="merk" size=10 style="font-weight: bold; background-color:#D5DF23;">
+<img onclick="tb_show('title','searcher.php?merk='+document.getElementById('merk').value+'&TB_iframe=true&height=520&width=800',false)" style="cursor:pointer;" src="zoek1.jpg" width="110" alt="Zoek" onMouseOver="this.src='zoek2.jpg'" onMouseOut="this.src='zoek1.jpg'">

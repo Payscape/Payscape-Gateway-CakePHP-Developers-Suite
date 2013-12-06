@@ -1,0 +1,234 @@
+Search "reservations" (11 hits in 3 files)
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\PropertiesController.php (7 hits)
+	Line 593: 				$reservations = $this->Property->get_daily_status($id, $start_date, $end_date);
+	Line 595: 				$this->set(compact('start_date', 'end_date', 'prices', 'reservations'));
+	Line 729: 		$this->set('reservations', $this->Property->get_daily_status($id, $start_date, $end_date));
+	Line 1084: 			// grab the reservations for this property for this month
+	Line 1085: 			$reservations = $this->Property->Reservation->find('all', array(
+	Line 1098: 		$this->set('reservations', $reservations);
+	Line 1098: 		$this->set('reservations', $reservations);
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\ReservationsController.php (2 hits)
+	Line 10: class ReservationsController extends AppController {
+	Line 12: 	var $name = 'Reservations';
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\SearchesController.php (2 hits)
+	Line 506: 						'table' => 'reservations',
+	Line 527: 						'table' => 'reservations',
+Search "reservation" (62 hits in 4 files)
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\ContactController.php (2 hits)
+	Line 48: 			'reservation' => 'I have a question about a reservation',
+	Line 48: 			'reservation' => 'I have a question about a reservation',
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\PropertiesController.php (24 hits)
+	Line 592: 				// grab the reservation statuses for the display
+	Line 593: 				$reservations = $this->Property->get_daily_status($id, $start_date, $end_date);
+	Line 595: 				$this->set(compact('start_date', 'end_date', 'prices', 'reservations'));
+	Line 729: 		$this->set('reservations', $this->Property->get_daily_status($id, $start_date, $end_date));
+	Line 750: 	* Contact Me, Book It, Reservation froms are submitting here and sending to email to property host...
+	Line 816: 	* Email Host, Reservation froms are submitting here and sending to email to property host...
+	Line 823: 		if( isset($this->request->data['Reservation']['form_type']) && $this->request->data['Reservation']['form_type'] == 'Reservation' ) {
+	Line 823: 		if( isset($this->request->data['Reservation']['form_type']) && $this->request->data['Reservation']['form_type'] == 'Reservation' ) {
+	Line 823: 		if( isset($this->request->data['Reservation']['form_type']) && $this->request->data['Reservation']['form_type'] == 'Reservation' ) {
+	Line 824: 			$form_data = $this->request->data['Reservation'];
+	Line 903: 		$avail = $this->Property->Reservation->find('all', array(
+	Line 905: 				'Reservation.property_id' => (int) $prop_id,
+	Line 907: 					'Reservation.start_date BETWEEN ? AND ?' => array($year.'-01-01', $year.'-12-31'),
+	Line 908: 					'Reservation.end_date BETWEEN ? AND ?' => array($year.'-01-01', $year.'-12-31'),
+	Line 912: 				'Reservation.start_date' => 'asc',
+	Line 1084: 			// grab the reservations for this property for this month
+	Line 1085: 			$reservations = $this->Property->Reservation->find('all', array(
+	Line 1085: 			$reservations = $this->Property->Reservation->find('all', array(
+	Line 1087: 					'Reservation.property_id' => $prop_id,
+	Line 1089: 						'Reservation.start_date BETWEEN ? AND ?' => array($start, $end),
+	Line 1090: 						'Reservation.end_date BETWEEN ? AND ?' => array($start, $end),
+	Line 1094: 					'Reservation.start_date' => 'asc',
+	Line 1098: 		$this->set('reservations', $reservations);
+	Line 1098: 		$this->set('reservations', $reservations);
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\ReservationsController.php (30 hits)
+	Line 4:  * Reservation Results Handling Controller
+	Line 6:  * Controller used by Reservation Results etc.
+	Line 10: class ReservationsController extends AppController {
+	Line 12: 	var $name = 'Reservations';
+	Line 14: 	* function for adding Reservation
+	Line 18: 			if ($this->Reservation->Property->is_accessible($this->request->data['Reservation']['property_id'], $this->user['User']['id'])) {
+	Line 18: 			if ($this->Reservation->Property->is_accessible($this->request->data['Reservation']['property_id'], $this->user['User']['id'])) {
+	Line 21: 				if ($this->Reservation->save($this->request->data)) {
+	Line 22: 					$this->Session->setFlash('Reservation added', 'default', 's');
+	Line 35: 			if ( ! empty($this->request->data['Reservation']['here'])) {
+	Line 36: 				$this->redirect('/'.$this->request->data['Reservation']['here']);
+	Line 39: 			$this->redirect(array('controller' => 'properties', 'action' => 'availability', $this->request->data['Reservation']['property_id']));
+	Line 45: 	* function for editing the reservation
+	Line 52: 			// make sure we can access this reservation
+	Line 55: 				$data['property_id'] = $res['Reservation']['property_id'];
+	Line 57: 				if ($this->Reservation->save(array('Reservation' => $data))) {
+	Line 57: 				if ($this->Reservation->save(array('Reservation' => $data))) {
+	Line 58: 					$this->Session->setFlash('Reservation updated', 'default', 's');
+	Line 73: 	* function for deleting Reservation
+	Line 77: 			// make sure we can access this reservation
+	Line 78: 			if ($this->_confirm_accessibility($this->request->data['Reservation']['id'])) {
+	Line 79: 				if ($this->Reservation->delete($this->request->data['Reservation']['id'])) {
+	Line 79: 				if ($this->Reservation->delete($this->request->data['Reservation']['id'])) {
+	Line 80: 					$this->Session->setFlash('Reservation canceled', 'default', 's');
+	Line 83: 					$this->Session->setFlash('Could not delete reservation', 'default', 'f');
+	Line 87: 			$this->redirect('/'.$this->request->data['Reservation']['here']);
+	Line 109: 		if ('There is an' === substr($this->Reservation->validationErrors['start_date'][0], 0, 11)) {
+	Line 110: 			$this->Session->setFlash($this->Reservation->validationErrors['start_date'][0], 'default', 'f');
+	Line 120: 		if ( ! ($res = $this->Reservation->is_accessible($res_id, $this->user['User']['id']))) {
+	Line 121: 			$this->Session->setFlash(__('Invalid Reservation', true), 'default', 'f');
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\SearchesController.php (6 hits)
+	Line 506: 						'table' => 'reservations',
+	Line 507: 						'alias' => 'Reservation',
+	Line 510: 							'Reservation.property_id = Property.id',
+	Line 512: 								'Reservation.start_date BETWEEN ? AND ?' => array(date('Y-m-d', $start_date), date('Y-m-d', $end_date)),
+	Line 513: 								'Reservation.end_date BETWEEN ? AND ?' => array(date('Y-m-d', $start_date), date('Y-m-d', $end_date)),
+	Line 527: 						'table' => 'reservations',
+Search "reservation" (139 hits in 12 files)
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Elements\calendar.ctp (23 hits)
+	Line 10: 		'reserved' => [array] the reservation array in the following format (optional, defaults to empty array)
+	Line 11: 			$reserved[$yr][$mo][$dy] = array('Reservation' => array( ... ));
+	Line 14: 		'reserved' => [array] the reservation array in the following format (optional, defaults to empty array)
+	Line 15: 			$reserved[$unix_date] = [id of reservation] OR 'past';
+	Line 70: 						// a reservation that comes into this month started here or is passing through
+	Line 71: 						// but if there is no reservation, just skip it
+	Line 73: 						if ( ! empty($reservations[$first_date - DAY])) {
+	Line 81: 							$prev_res = $reservations[$first_date - DAY];
+	Line 90: 								'res_'.$reservations[$first_date - DAY],
+	Line 117: 								if ( ! empty($reservations[$unix])) {
+	Line 119: 									$classes[] = 'res_'.$reservations[$unix];
+	Line 122: 									if ($reservations[$unix] !== $prev_res) {
+	Line 132: 									$prev_res = $reservations[$unix];
+	Line 176: 								if ( ! empty($res['Reservation'])) {
+	Line 177: 									$res = $res['Reservation'];
+	Line 186: 							elseif ( ! empty($reservations[$unix])) {
+	Line 188: 								$classes[] = 'res_'.$reservations[$unix];
+	Line 191: 								if ($reservations[$unix] !== $prev_res) {
+	Line 201: 								$prev_res = $reservations[$unix];
+	Line 250: 								if ( ! empty($reservations[$unix])) {
+	Line 252: 									$classes[] = 'res_'.$reservations[$unix];
+	Line 255: 									if ($reservations[$unix] !== $prev_res) {
+	Line 265: 									$prev_res = $reservations[$unix];
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Emails\html\property_contact.ctp (1 hit)
+	Line 3: <p>Below the Customer Reservation details.</p>
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Pages\create_basic_moreinfo.ctp (1 hit)
+	Line 21: <p>A great place to start is to look at what other property owners in your area are offering. See something you have that they don’t? Make a point of mentioning it in your listing. Think like an entrepreneur! If you see a need or something lacking with all the other properties in your area, think about offering it to your guest. It’s little things like these that can add up to consistent reservations and repeat business from travelers that had a great experience with you.</p>
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Properties\admin_view.ctp (21 hits)
+	Line 221: 	<h3><?php echo __('Related Reservations'); ?></h3>
+	Line 223: <?php if ( ! empty($property['Reservation'])) { ?>
+	Line 234: 	<?php foreach ($property['Reservation'] as $reservation) { ?>
+	Line 234: 	<?php foreach ($property['Reservation'] as $reservation) { ?>
+	Line 236: 			<td><?php echo $reservation['id']; ?></td>
+	Line 237: 			<td><?php echo $reservation['name']; ?></td>
+	Line 238: 			<td><?php echo $reservation['email']; ?></td>
+	Line 239: 			<td><?php echo $reservation['start_date']; ?></td>
+	Line 240: 			<td><?php echo $reservation['end_date']; ?></td>
+	Line 242: 				<?php echo $this->Html->link(__('View'), array('controller' => 'reservations', 'action' => 'view', $reservation['id'])); ?>
+	Line 242: 				<?php echo $this->Html->link(__('View'), array('controller' => 'reservations', 'action' => 'view', $reservation['id'])); ?>
+	Line 243: 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'reservations', 'action' => 'edit', $reservation['id'])); ?>
+	Line 243: 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'reservations', 'action' => 'edit', $reservation['id'])); ?>
+	Line 244: 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'reservations', 'action' => 'delete', $reservation['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['id'])); ?>
+	Line 244: 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'reservations', 'action' => 'delete', $reservation['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['id'])); ?>
+	Line 244: 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'reservations', 'action' => 'delete', $reservation['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['id'])); ?>
+	Line 244: 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'reservations', 'action' => 'delete', $reservation['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['id'])); ?>
+	Line 254: 			<li><?php echo $this->Html->link(__('List Reservation'), array('controller' => 'reservations', 'action' => 'index')); ?> </li>
+	Line 254: 			<li><?php echo $this->Html->link(__('List Reservation'), array('controller' => 'reservations', 'action' => 'index')); ?> </li>
+	Line 255: 			<li><?php echo $this->Html->link(__('New Reservation'), array('controller' => 'reservations', 'action' => 'add')); ?> </li>
+	Line 255: 			<li><?php echo $this->Html->link(__('New Reservation'), array('controller' => 'reservations', 'action' => 'add')); ?> </li>
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Properties\availability.ctp (12 hits)
+	Line 7: 	<div class="span5 margin-left">Click a date to reserve or remove a reservation</div>
+	Line 15: 				<h2>Reservation</h2>
+	Line 19: 					<?php echo $this->Form->create('Reservation', array('url' => array('controller' => 'reservations', 'action' => 'add'), 'class' => 'modal_form')); ?>
+	Line 19: 					<?php echo $this->Form->create('Reservation', array('url' => array('controller' => 'reservations', 'action' => 'add'), 'class' => 'modal_form')); ?>
+	Line 42: 		<?php foreach ($avail as $res) { $res = $res['Reservation']; ?>
+	Line 47: 				<h2>Reservation</h2>
+	Line 55: 							<?php echo $this->Form->create('DeleteReservation'.$res['id'], array('url' => array('controller' => 'reservations', 'action' => 'delete'), 'class' => 'modal_form')); ?>
+	Line 55: 							<?php echo $this->Form->create('DeleteReservation'.$res['id'], array('url' => array('controller' => 'reservations', 'action' => 'delete'), 'class' => 'modal_form')); ?>
+	Line 58: 								<?php echo $this->Form->submit('Delete This Reservation', array('name' => 'delete', 'class' => 'btn btn-danger res_delete', 'id' => 'res_'.$res['id'])); ?>
+	Line 64: 						<?php echo $this->Form->create('EditReservation'.$res['id'], array('url' => array('controller' => 'reservations', 'action' => 'edit'), 'class' => 'modal_form')); ?>
+	Line 64: 						<?php echo $this->Form->create('EditReservation'.$res['id'], array('url' => array('controller' => 'reservations', 'action' => 'edit'), 'class' => 'modal_form')); ?>
+	Line 91: 			$reserved = clean_reservations($avail);
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Properties\calendar.ctp (2 hits)
+	Line 3: 	echo $this->element('calendar', array('mo' => $month, 'yr' => $year, 'reserved' => clean_reservations($reservations), 'small' => (bool) $small));
+	Line 3: 	echo $this->element('calendar', array('mo' => $month, 'yr' => $year, 'reserved' => clean_reservations($reservations), 'small' => (bool) $small));
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Properties\create_basic.ctp (2 hits)
+	Line 360: 							<?php echo __('The above address and the below map is only released to guests with confirmed reservations.'); ?>
+	Line 387: 					<br><p><?php echo __('This information will only be revealed to guests who have a confirmed reservation with you.'); ?></p><br><br>
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Properties\create_calendar.ctp (14 hits)
+	Line 13: 			<p>The calendar is designed to be an easy way to keep track of when your property is vacant and vacation ready, versus when it is booked, occupied, or otherwise unavailable. Reservations or dates you’ve chosen as unavailable show as blocks that “bleed” from one day to the next. This makes it easier for you to visualize how a reservation affects both the “check in” and “check out” days. At the bottom of each calendar day, you’ll see that day’s rate.</p>
+	Line 13: 			<p>The calendar is designed to be an easy way to keep track of when your property is vacant and vacation ready, versus when it is booked, occupied, or otherwise unavailable. Reservations or dates you’ve chosen as unavailable show as blocks that “bleed” from one day to the next. This makes it easier for you to visualize how a reservation affects both the “check in” and “check out” days. At the bottom of each calendar day, you’ll see that day’s rate.</p>
+	Line 88: 						if ( ! empty($reservations[$day])) {
+	Line 90: 							$classes[] = 'res_'.$reservations[$day];
+	Line 93: 							if ($reservations[$day] !== $prev_res) {
+	Line 103: 							$prev_res = $reservations[$day];
+	Line 118:                                                         <span title="Cancel Reservation" class="remove_res ui-icon ui-icon-circle-close"></span>
+	Line 141: 					<h3>Make Reservation</h3>
+	Line 143: 				<?php echo $this->Form->create('Reservation', array('url' => array('controller' => 'reservations',  'action' => 'add'))); ?>
+	Line 143: 				<?php echo $this->Form->create('Reservation', array('url' => array('controller' => 'reservations',  'action' => 'add'))); ?>
+	Line 175: 					<h3>Cancel Reservation</h3>
+	Line 177: 				<?php echo $this->Form->create('Reservation', array('url' => array('controller' => 'reservations',  'action' => 'delete'))); ?>
+	Line 177: 				<?php echo $this->Form->create('Reservation', array('url' => array('controller' => 'reservations',  'action' => 'delete'))); ?>
+	Line 183:                                                     Are you sure you want to cancel this reservation?
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Properties\view.ctp (1 hit)
+	Line 239: 								echo '<li>'.$this->element('calendar', array('mo' => $mo, 'yr' => $yr, 'reserved' => $reservations, 'small' => false, 'last' => (23 <= $i), 'links' => false, 'js' => true)).'</li>';
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Reservations\admin_edit.ctp (7 hits)
+	Line 2: <div class="reservations form">
+	Line 3: 	<?php echo $this->Form->create('Reservation', array('action' => $this->action)); ?>
+	Line 5: 			<legend><?php echo __(Inflector::humanize(substr($this->action, 6)).' Reservation'); ?></legend>
+	Line 25: 		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Reservation.id')), null, __('Are you sure you want to delete Reservation #%s?', $this->Form->value('Reservation.id'))); ?></li>
+	Line 25: 		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Reservation.id')), null, __('Are you sure you want to delete Reservation #%s?', $this->Form->value('Reservation.id'))); ?></li>
+	Line 25: 		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Reservation.id')), null, __('Are you sure you want to delete Reservation #%s?', $this->Form->value('Reservation.id'))); ?></li>
+	Line 27: 		<li><?php echo $this->Html->link(__('List Reservations'), array('action' => 'index')); ?></li>
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Reservations\admin_index.ctp (28 hits)
+	Line 2: <div class="reservations index">
+	Line 3: 	<h2><?php echo __('Reservations'); ?></h2>
+	Line 19: 	<?php foreach ($reservations as $reservation) { ?>
+	Line 19: 	<?php foreach ($reservations as $reservation) { ?>
+	Line 21: 			<td><?php echo h($reservation['Reservation']['id']); ?>&nbsp;</td>
+	Line 21: 			<td><?php echo h($reservation['Reservation']['id']); ?>&nbsp;</td>
+	Line 22: 			<td><?php echo $this->Html->link($reservation['Property']['title'], array('controller' => 'properties', 'action' => 'view', $reservation['Property']['id'])); ?>&nbsp;</td>
+	Line 22: 			<td><?php echo $this->Html->link($reservation['Property']['title'], array('controller' => 'properties', 'action' => 'view', $reservation['Property']['id'])); ?>&nbsp;</td>
+	Line 23: 			<td><?php echo h($reservation['Reservation']['name']); ?>&nbsp;</td>
+	Line 23: 			<td><?php echo h($reservation['Reservation']['name']); ?>&nbsp;</td>
+	Line 24: 			<td><?php echo h($reservation['Reservation']['email']); ?>&nbsp;</td>
+	Line 24: 			<td><?php echo h($reservation['Reservation']['email']); ?>&nbsp;</td>
+	Line 25: 			<td><?php echo ucfirst(Set::enum((int) $reservation['Reservation']['unavailable'])); ?>&nbsp;</td>
+	Line 25: 			<td><?php echo ucfirst(Set::enum((int) $reservation['Reservation']['unavailable'])); ?>&nbsp;</td>
+	Line 26: 			<td><?php echo h($reservation['Reservation']['start_date']); ?>&nbsp;</td>
+	Line 26: 			<td><?php echo h($reservation['Reservation']['start_date']); ?>&nbsp;</td>
+	Line 27: 			<td><?php echo h($reservation['Reservation']['end_date']); ?>&nbsp;</td>
+	Line 27: 			<td><?php echo h($reservation['Reservation']['end_date']); ?>&nbsp;</td>
+	Line 29: 				<?php echo $this->Html->link(__('View'), array('action' => 'view', $reservation['Reservation']['id'])); ?>
+	Line 29: 				<?php echo $this->Html->link(__('View'), array('action' => 'view', $reservation['Reservation']['id'])); ?>
+	Line 30: 				<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $reservation['Reservation']['id'])); ?>
+	Line 30: 				<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $reservation['Reservation']['id'])); ?>
+	Line 31: 				<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?>
+	Line 31: 				<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?>
+	Line 31: 				<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?>
+	Line 31: 				<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?>
+	Line 31: 				<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?>
+	Line 43: 		<li><?php echo $this->Html->link(__('New Reservation'), array('action' => 'add')); ?></li>
+  C:\TriuNaturals\VacationFishProject\VacationFish\View\Reservations\admin_view.ctp (27 hits)
+	Line 2: <div class="reservations view">
+	Line 4: 	<h2><?php echo __('Reservation'); ?></h2>
+	Line 8: 		<dd><?php echo h($reservation['Reservation']['id']); ?>&nbsp;</dd>
+	Line 8: 		<dd><?php echo h($reservation['Reservation']['id']); ?>&nbsp;</dd>
+	Line 11: 		<dd><?php echo $this->Html->link($reservation['Property']['title'], array('controller' => 'properties', 'action' => 'view', $reservation['Property']['id'])); ?>&nbsp;</dd>
+	Line 11: 		<dd><?php echo $this->Html->link($reservation['Property']['title'], array('controller' => 'properties', 'action' => 'view', $reservation['Property']['id'])); ?>&nbsp;</dd>
+	Line 14: 		<dd><?php echo h($reservation['Reservation']['name']); ?>&nbsp;</dd>
+	Line 14: 		<dd><?php echo h($reservation['Reservation']['name']); ?>&nbsp;</dd>
+	Line 17: 		<dd><?php echo h($reservation['Reservation']['email']); ?>&nbsp;</dd>
+	Line 17: 		<dd><?php echo h($reservation['Reservation']['email']); ?>&nbsp;</dd>
+	Line 20: 		<dd><?php echo ucfirst(Set::enum((int) $reservation['Reservation']['unavailable'])); ?>&nbsp;</dd>
+	Line 20: 		<dd><?php echo ucfirst(Set::enum((int) $reservation['Reservation']['unavailable'])); ?>&nbsp;</dd>
+	Line 23: 		<dd><?php echo h($reservation['Reservation']['start_date']); ?>&nbsp;</dd>
+	Line 23: 		<dd><?php echo h($reservation['Reservation']['start_date']); ?>&nbsp;</dd>
+	Line 26: 		<dd><?php echo h($reservation['Reservation']['end_date']); ?>&nbsp;</dd>
+	Line 26: 		<dd><?php echo h($reservation['Reservation']['end_date']); ?>&nbsp;</dd>
+	Line 33: 		<li><?php echo $this->Html->link(__('Edit Reservation'), array('action' => 'edit', $reservation['Reservation']['id'])); ?> </li>
+	Line 33: 		<li><?php echo $this->Html->link(__('Edit Reservation'), array('action' => 'edit', $reservation['Reservation']['id'])); ?> </li>
+	Line 33: 		<li><?php echo $this->Html->link(__('Edit Reservation'), array('action' => 'edit', $reservation['Reservation']['id'])); ?> </li>
+	Line 34: 		<li><?php echo $this->Form->postLink(__('Delete Reservation'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?> </li>
+	Line 34: 		<li><?php echo $this->Form->postLink(__('Delete Reservation'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?> </li>
+	Line 34: 		<li><?php echo $this->Form->postLink(__('Delete Reservation'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?> </li>
+	Line 34: 		<li><?php echo $this->Form->postLink(__('Delete Reservation'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?> </li>
+	Line 34: 		<li><?php echo $this->Form->postLink(__('Delete Reservation'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?> </li>
+	Line 34: 		<li><?php echo $this->Form->postLink(__('Delete Reservation'), array('action' => 'delete', $reservation['Reservation']['id']), null, __('Are you sure you want to delete Reservation #%s?', $reservation['Reservation']['id'])); ?> </li>
+	Line 35: 		<li><?php echo $this->Html->link(__('List Reservations'), array('action' => 'index')); ?> </li>
+	Line 36: 		<li><?php echo $this->Html->link(__('New Reservation'), array('action' => 'add')); ?> </li>

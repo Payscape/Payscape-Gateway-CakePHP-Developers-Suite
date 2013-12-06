@@ -1,0 +1,58 @@
+
+we never did get the DateTime thing to work. 
+
+instead we used this
+
+1 Convert the selected start date to YYYY-MM-DD format
+//MM-DD-YYYY
+//02-10-2013
+$reservation_start_date = date('Y-m-d', strtotime(str_replace('-', '/', $reservation_start_date)));
+		
+2 Get current date in YYYY-MM-DD format
+	$now = date('Y-m-d');
+	
+3 strtotime these guys
+			$dt_now = strtotime($now);
+			$dt_start_date = strtotime($reservation_start_date);
+4 now we can compare:
+
+			if($dt_now > $dt_start_date){
+				$flash_message = "Selected Reseravtion Date is in the Past, no action taken.";
+				$this->Session->setFlash($flash_message, 'default', 'f');
+					
+			$this->redirect(array('controller' => 'properties', 'action' => 'availability', $this->request->data['Reservation']['property_id'], $res_year));
+								
+			} 							
+
+// $now = new DateTime();
+$dtA = new DateTime('05/14/2010 3:00PM');
+$dtB = new DateTime('05/14/2010 4:00PM');
+
+if ( $dtA > $dtB ) {
+  echo 'dtA > dtB';
+}
+else {
+  echo 'dtA <= dtB';
+}
+
+	this did not work, could be it requires a later version of PHP
+	
+	here is the output for getdate()
+	
+	$now = getdate();
+	
+	debug($now);
+	
+	array(
+	'seconds' => (int) 50,
+	'minutes' => (int) 59,
+	'hours' => (int) 13,
+	'mday' => (int) 19,
+	'wday' => (int) 3,
+	'mon' => (int) 6,
+	'year' => (int) 2013,
+	'yday' => (int) 169,
+	'weekday' => 'Wednesday',
+	'month' => 'June',
+	(int) 0 => (int) 1371671990
+)

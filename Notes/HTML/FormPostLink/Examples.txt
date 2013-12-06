@@ -1,0 +1,47 @@
+cakePHP formHelper postLink image
+<?php echo $this->Form->postLink(
+    'Delete',
+    array('action' => 'delete', $country['Country']['id']),
+    array('confirm' => __('Are you sure you want to delete ').$country['Country']['name'].'?')
+)?>
+       
+echo $this->Html->link(
+    $this->Html->image('your_image_here.jpg', array(
+        'alt' => 'Alternative Text for your image',
+        'title' => 'Optional tooltip text for your image'
+    ),
+    array(
+        'controller' => 'YourController',
+        'action' => 'someAction'
+    ),
+    array(
+        'escape' => false // Add this to avoid Cake from printing the img HTML code instead of the actual image
+    )
+);
+       
+echo $this->Form->postLink(
+  $this->Html->image('icn_trash.png', array('alt' => __('Effacer'))), //le image
+  array('action' => 'delete', $artist['Artist']['id']), //le url
+  array('escape' => false), //le escape
+  __('Êtes-vous sûr de vouloir effacer artiste #%s?', $artist['Artist']['id']) //le confirm
+); //le voila
+       
+echo $this->Form->postLink(
+    $this->Html->image('delete.png',
+       array("alt" => __('Delete'), "title" => __('Delete'))),
+    array('action' => 'delete', $items['Item']['id']),
+    array('escape' => false, 'confirm' => __('Are you sure?'))
+);
+       
+if ($this->Session->read('Auth.User.id')) {
+ 
+        $this->User->id = $this->Session->read('Auth.User.id');
+        $this->User->updateAll(
+                            array('User.image' => "''"),
+                            array('User.id' => $this->User->id)
+                            );
+ 
+        $this->Session->setFlash('The image has been deleted.');
+        $this->redirect(array('action' => 'profile'));      
+        }
+}

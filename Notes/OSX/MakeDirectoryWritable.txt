@@ -1,0 +1,73 @@
+Last login: Mon Dec  2 09:31:49 on console
+
+# go directly to the Applications folder
+Zorro:~ newuser$  cd /Applications/
+
+# directory listing 
+Zorro:Applications newuser$ ls
+App Store.app
+...
+# list all files, long format, human readable
+
+Zorro:Applications newuser$ ls -alh
+total 56
+drwxrwxr-x+ 59 root        admin   2.0K Dec  2 09:53 .
+drwxr-xr-x  36 root        wheel   1.3K Nov 28 12:02 ..
+-rw-rw-r--   1 root        admin    24K Dec  2 09:53 .DS_Store
+-rw-r--r--   1 root        wheel     0B Jun 20  2012 .localized
+drwxr-xr-x+  3 root        wheel   102B Nov  7 03:26 App Store.app
+drwxr-xr-x   3 root        wheel   102B Nov  7 03:26 Automator.app
+drwxrwxr-x   9 root        admin   306B Nov 16  2012 Belkin
+drwxr-xr-x   3 tenstephen  admin   102B Oct 22  2008 BitTorrent.app
+drwxr-xr-x   3 root        wheel   102B Nov  7 03:26 Calculator.app
+drwxr-xr-x+  3 root        wheel   102B Nov  7 03:26 Calendar.app
+
+Zorro:Applications newuser$ cd XAMPP/
+Zorro:XAMPP newuser$ LS
+XAMPP Control.app	etc			logs
+cgi-bin			htdocs			xamppfiles
+Zorro:XAMPP newuser$ cd htdocs
+Zorro:htdocs newuser$ ls
+favicon.ico		sport.localdomain	xampp
+index.php		sporty.localdomain
+payscape.localdomain	webalizer
+Zorro:htdocs newuser$ ls -alh
+total 72
+drwxrwxrwx@ 10 root     admin    340B Dec  2 11:17 .
+drwxr-xr-x@ 22 root     admin    748B Aug  2  2009 ..
+drwxr-xr-x   6 newuser  admin    204B Nov 25 05:48 .metadata
+-rw-r--r--@  1 root     admin     30K Aug  2  2009 favicon.ico
+-rw-r--r--@  1 root     admin    257B Aug  2  2009 index.php
+drwxr-xr-x   8 newuser  admin    272B Dec  2 11:22 payscape.localdomain
+drwxr-xr-x   4 newuser  admin    136B Nov 25 05:46 sport.localdomain
+drwxr-xr-x   6 newuser  admin    204B Nov 25 06:09 sporty.localdomain
+drwxr-xr-x@  2 root     admin     68B Aug  2  2009 webalizer
+drwxr-xr-x@ 60 nobody   nobody   2.0K Aug  2  2009 xampp
+Zorro:htdocs newuser$ chmod 777 payscape.localdomain/
+Zorro:htdocs newuser$ ls
+favicon.ico		sport.localdomain	xampp
+index.php		sporty.localdomain
+payscape.localdomain	webalizer
+Zorro:htdocs newuser$ ls -alh
+total 72
+drwxrwxrwx@ 10 root     admin    340B Dec  2 11:17 .
+drwxr-xr-x@ 22 root     admin    748B Aug  2  2009 ..
+drwxr-xr-x   6 newuser  admin    204B Nov 25 05:48 .metadata
+-rw-r--r--@  1 root     admin     30K Aug  2  2009 favicon.ico
+-rw-r--r--@  1 root     admin    257B Aug  2  2009 index.php
+drwxrwxrwx   8 newuser  admin    272B Dec  2 11:22 payscape.localdomain
+drwxr-xr-x   4 newuser  admin    136B Nov 25 05:46 sport.localdomain
+drwxr-xr-x   6 newuser  admin    204B Nov 25 06:09 sporty.localdomain
+drwxr-xr-x@  2 root     admin     68B Aug  2  2009 webalizer
+drwxr-xr-x@ 60 nobody   nobody   2.0K Aug  2  2009 xampp
+Zorro:htdocs newuser$ cd payscape.localdomain/
+Zorro:payscape.localdomain newuser$ ls
+app		cake2.4.3	public_html
+Zorro:payscape.localdomain newuser$ cd app/
+Zorro:app newuser$ cd tmp/
+Zorro:tmp newuser$ chmod -R 777 cache/
+Zorro:tmp newuser$ cd ..
+Zorro:app newuser$ chmod -R 777 tmp/
+chmod: Unable to change file mode on tmp//cache/persistent/myapp_cake_core_cake_dev_en-us: Operation not permitted
+chmod: Unable to change file mode on tmp//cache/persistent/myapp_cake_core_file_map: Operation not permitted
+Zorro:app newuser$ 

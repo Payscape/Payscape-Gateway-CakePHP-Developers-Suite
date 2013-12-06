@@ -1,0 +1,32 @@
+88 - FSH Pricing and Terms: Alternate Nightly Pricing
+
+We need to update Alternate Nightly Pricing 
+section to include weekly and monthly pricing 
+in addition to the fields that we already have. 
+
+I've included examples below of flipkey's design. 
+I really like how they display their information.   
+
+The design should contain the following: 
+
+Check in, 
+Check out, 
+Minimum Night Stay, 
+Price Per Night, 
+Weekend Per Night, 
+Weekly Price, 
+Monthly Price
+
+Did not see the Check in / Check out in our 
+great new design.
+
+Would it be appropriate to place Check in / Check out 
+with Basic pricing? These would most likely 
+not be changing with our different rate schemes. 
+
+We have built a complete module for Alternate Minimum Night Stay 
+so that users may elect to create Alternate Minimum Night Stays 
+weather they have created Alternate Pricing or not. 
+
+Other than that, this looks very straightforward. 
+

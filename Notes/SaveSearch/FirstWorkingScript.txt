@@ -1,0 +1,7 @@
+
+
+	//$('#Blueberry').empty().append(return_data.form.sleeping_capacity);	<-- this works!
+	$('#Blueberry').empty().append(return_data.form);	
+
+	
+	return_data.form.sleeping_capacity works!

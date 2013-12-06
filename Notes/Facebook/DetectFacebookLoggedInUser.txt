@@ -1,0 +1,29 @@
+Stack Overflow
+----------------
+
+ public function beforeFilter() {
+28 
+29         try {
+30             $user = $this->Auth->user();
+31             $fb_user = $this->Connect->user();
+32         } catch (FacebookApiException $e) {
+33         } 
+34         Configure::write('VertWeb.show_tabs', true);
+35         if ($fb_user = $this->Connect->user()) {
+36             if (!$this->Auth->loggedIn()) {
+37                 if (!isset($fb_user['error_code'])) {
+38                     $this->loadModel('User');
+39                     $this->User->recursive = -1;
+40                     if (($user = $this->User->findByFacebookId($fb_user['id'])) ||
+41                         ($user = $this->User->findByEmail($fb_user['email'])) ) {
+42                         
+43                         $this->Auth->login($user);
+44                         $this->Session->write('Auth.FacebookUser', $fb_user);
+45                         $this->Session->write('Auth.User', $user['User']);
+46                         $this->Session->write('Auth.FacebookUserPicture', FB::api('/me?fields=picture'));
+
+I had this issue to, I fix it puting this lines in Initialize (and remove startup method)
+
+if (!$this->noAuth && !empty($this->uid)) {
+     $this->__syncFacebookUser();
+}

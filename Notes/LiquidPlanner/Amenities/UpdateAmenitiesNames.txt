@@ -1,0 +1,56 @@
+Remove Beach Front
+
+DELETE FROM `amenities_properties` 
+WHERE amenity_id = 5
+
+
+On LIVE the index for amenity_id was goofed up, 
+it referenced both property_id and amenity_id 
+so that searching for a count of properties with 
+amenity_id = does not work. 
+
+ALTER TABLE `vacahcom_Vacationfish`.`amenities_properties` 
+DROP INDEX `amenity_id`, 
+ADD INDEX `amenity_id` 
+(`amenity_id`)COMMENT '';
+
+SELECT COUNT(id) AS zebra 
+FROM ameneties_properties 
+WHERE amenity_id = 5
+
+
+UPDATED AMENITIES
+
+CREATE TABLE IF NOT EXISTS `amenities` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `amenity_type_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL,
+  `main` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'show as a check box option?',
+  PRIMARY KEY (`id`),
+  KEY `main` (`main`,`amenity_type_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+
+--
+-- Dumping data for table `amenities`
+--
+
+INSERT INTO `amenities` (`id`, `amenity_type_id`, `user_id`, `name`, `main`) VALUES
+(1, 2, 0, 'Outdoor BBQ', 1),
+(2, 3, 0, 'Snowmobiles', 0),
+(3, 5, 0, 'Telephone', 1),
+(4, 1, 0, 'Satellite TV', 1),
+(8, 1, 0, 'Internet Access', 1),
+(16, 1, 0, 'Television', 1),
+(17, 1, 0, 'Cable TV', 1),
+(18, 1, 0, 'Wireless Internet', 1),
+(19, 0, 0, 'Air Conditioning', 1),
+(20, 0, 0, 'Central Heating', 1),
+(21, 0, 0, 'Outdoor Pool', 1),
+(22, 0, 0, 'Exercise Room', 1),
+(23, 0, 0, 'Hot Tub/Jacuzzi', 1),
+(24, 0, 0, 'Gas Fireplace', 1),
+(25, 0, 0, 'Washing Machine', 1),
+(26, 0, 0, 'Clothes Dryer', 1);
+

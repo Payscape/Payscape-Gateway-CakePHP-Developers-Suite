@@ -1,0 +1,92 @@
+
+uploader is the queue
+
+hide the submit button until a certain number of files 
+have been added. 
+
+uploader.bind('UploadProgress', function() {
+   if(uploader.total.uploaded == uploader.files.length) {
+      $('#submit').css({'display':'block'});
+   }
+});
+
+if we have a ready function, 
+$('#submit-files-queue').css({'display':'none'});
+
+uploader.bind('UploadProgress', function() {
+   if(uploader.total.uploaded == uploader.files.length) {
+      $('#submit-files-queue').css({'display':'block'});
+   }
+});
+
+// we need to check file size as each of them are placed in the queue. 
+there may already be a function written for this but we don't recall 
+seeing this. 
+
+for now though we may just limit our activity to getting what 
+was requested completed. 
+
+
+
+ //   get the number of files placed in the queue
+    
+    var quesize = uploader.files.length
+    
+// limit MB of combined file sizes
+
+/* Check the queue after files added to see if the total size of all files combined exceeds allowed limit. */
+
+var maxQueueSize = 681574400; // Size in bytes. This is set to 650MB.
+uploader.bind('QueueChanged', function(up) {
+   if(uploader.total.size > maxQueueSize) {
+      alert("Total size of all files exceeds disc capacity! Remove some files!");
+   }
+});    
+
+
+// this is for waiting until the correct number of files have been added, 
+we can use something like this so that the submit button doesn't 
+display until files have been added, plus wait until the submit 
+button has been clicked to process them. In the meantime they will 
+get uploaded to the temp folder. 
+
+? what happens if they place files in the queue and don't complete 
+their action? are those files still placed in the temp folder? 
+
+this may be another reason to process the queue after the first file has 
+been uploaded. 
+
+Also, we should have a list getting printer, perhaps to the right of 
+the queue like we see in the Custom Uploader demo. 
+
+/* Hide the form submit button until all files have been uploaded to the server. */
+uploader.bind('UploadProgress', function() {
+   if(uploader.total.uploaded == uploader.files.length) {
+      $('#submit').css({'display':'block'});
+   }
+});
+
+/* Check to see if the upload queue exceeds disc capacity based on disc type. */
+var maxCDSize = 681574400;
+var maxDVDSize = 5046586572;
+uploader.bind('QueueChanged', function(up) {
+   if(uploader.total.size > maxCDSize && disc == 'CD') {
+      $(".plupload_start").addClass("plupload_disabled");
+      alert("Total size of all files exceeds disc capacity!\nPlease remove some files or change disc type to DVD.");
+   }
+   if(uploader.total.size > maxCDSize && disc == 'DVD') {
+      $(".plupload_start").addClass("plupload_disabled");
+      alert("Total size of all files exceeds disc capacity!\nPlease remove some files.");
+   }
+});
+
+// to remove the first file: 
+
+uploader.removeFile(uploader.files[0]);
+
+// to get the queue size
+    uploader.total.size.
+
+    
+    
+    

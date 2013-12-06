@@ -1,0 +1,12 @@
+We can save our updated db to disk, 
+but looks like it's getting a little large 
+to use phpMyAdmin to restore, so let's use 
+mysql to rebuilt the DBs. 
+
+This did the trick and solved the problem we were 
+having with the Validate Address widget. 
+Apparently something was happening when importing via phpMyAdmin, 
+using the command line is actually much quicker. 
+
+													vacahcom_vfishdev.sql
+mysql -u root -p  vacahcom_vacationfish < ..\pawpaw\vacahcom_vfishdev.sql

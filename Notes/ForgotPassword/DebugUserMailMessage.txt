@@ -1,0 +1,59 @@
+debugging the Forgots controller looks good,
+now to test the mail sending. 
+
+// This looks pretty good.
+// we are getting unique tokens for each password change request
+// 
+
+\app\Controller\ForgotsController.php (line 111)
+
+array(
+	'headers' => 'From: Forgot Password <info@vacationfish.com>
+To: smareches@gmail.com
+X-Mailer: CakePHP Email
+Date: Tue, 07 May 2013 12:10:40 -0600
+Message-ID: <518943a027184032ae994cc30b17c875@localhost:8082>
+Subject: Password Reset Requested
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit',
+	'message' => '
+A password reset was requested for this email address at Vacation Fish.
+
+If you did not initiate this request, please disregard this email.
+No further action is required on your part.
+
+To reset your password please click on the following link:
+http://localhost:8082/vfish22.localdomain/public_html/forgots/change/token:36141221e4e3daadb8fd00429d5fe855
+
+If you cannot click the link, you may need to copy-paste the URL into your browser's address bar.
+
+Please do not reply to this email.
+
+=== #2 ===
+
+\app\Controller\ForgotsController.php (line 111)
+
+array(
+	'headers' => 'From: Forgot Password <info@vacationfish.com>
+To: smareches@gmail.com
+X-Mailer: CakePHP Email
+Date: Tue, 07 May 2013 12:14:25 -0600
+Message-ID: <5189448105344b30924f41160b17c875@localhost:8082>
+Subject: Password Reset Requested
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit',
+	'message' => '
+A password reset was requested for this email address at Vacation Fish.
+
+If you did not initiate this request, please disregard this email.
+No further action is required on your part.
+
+To reset your password please click on the following link:
+http://localhost:8082/vfish22.localdomain/public_html/forgots/change/token:c66d5c79a8d817a3f8b32faefda3975b
+
+If you cannot click the link, you may need to copy-paste the URL into your browser's address bar.
+
+Please do not reply to this email.
+

@@ -1,0 +1,84 @@
+ing key value to serialized array
+in Using jQuery  •   3 years ago    
+I want to post a form and reload the results
+$("#shoppingcart").load("/catalog/shoppingcart.php", $("#"+frmId).serializeArray());
+
+This works fine, but I would like to add a key  and value to the array. How do I do that? 
+ 1 
+Reply 
+ Replies(2) 
+
+jules 
+Re: Adding key value to serialized array
+ 3 years ago 
+Just add the new name+value object to the existing array.
+
+Copy code
+var param = $("#"+frmId).serializeArray();
+param.push({"name":"total","value":300});
+
+$("#shoppingcart").load("/catalog/shoppingcart.php", param);
+
+Kevin B 
+Re: Adding key value to serialized array
+ 3 years ago 
+the data can also be a string, so you can use .serialize() which returns a string instead of an array, then append your keys to the end:
+ 
+$("#shoppingcart").load("/catalog/shoppingcart.php", $("#"+frmId).serialize()+"&key1=value1&key2=value2");
+jwiradin's example would be easier to read/understand later when coming back to modify the code if needed, it is the method i would suggest
+
+
+-- Kevin
+
+------------------------------------------------
+http://www.tentonaxe.com
+
+gfbjohnson 
+Re: Adding key value to serialized array
+ 10 months ago 
+note that if you are using $.ajax({...type:"post"...}), then the variables you append to the url will not be in the form scope but the url scope.
+
+myrentals 
+Re: Adding key value to serialized array
+ 3 months ago 
+I needed to include a dynamic cookie value within the extra key object being added to the serialized array. (using the JQuery Cookie library for easy cookie access and asmx web service too to handle the server side processing)
+
+Expanding on jules answer, this worked for me:
+
+var param = $("#frmId").serializeArray();
+        param.push({'name':'ti','value':($.cookie('TiCookie'))});
+
+        $.ajax({ url: "svcs/someservice.asmx/formId",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ formVars: param }),
+            cache: false,
+            datatype: "json",
+
+
+Works great as part of a separate script file in our vacation site:
+
+- Martin
+
+
+myrentals 
+Re: Adding key value to serialized array
+ 3 months ago 
+I needed to include a dynamic cookie value within the extra key object being added to the serialized array. (using the JQuery Cookie library for easy cookie access and asmx web service too to handle the server side processing)
+
+Expanding on jules answer, this worked for me:
+
+var param = $("#frmId").serializeArray();
+        param.push({'name':'ti','value':($.cookie('TiCookie'))});
+
+        $.ajax({ url: "svcs/someservice.asmx/formId",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ formVars: param }),
+            cache: false,
+            datatype: "json",
+
+
+Works great as part of a separate script file in our vacation site:
+
+- Martin

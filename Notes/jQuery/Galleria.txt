@@ -1,0 +1,46 @@
+    /*
+    Galleria complete and working
+    */        
+            <?php $this->Html->script(array('galleria-1.2.8.js', 'jquery.jcarousel.min.js'), array('inline' => false)); ?>
+
+        
+            <div class="padder product-photos relative">
+            
+                 <div id="vFishPhotosGallery">
+                 this is vFishPhotosGallery
+                
+                 <?php
+                 if ( ! empty($property['PropertyImage'][0]['image'])) {
+                    foreach( $property['PropertyImage'] as $image ) {
+            
+                        $main_image = Router::url('/', true) .'img/files/'. $image['property_id'] . '/images/' . my_ife( $image['image'], 'manage_missing.png' );
+                        if ( ! empty($image['name'])) {
+                            echo $this->Html->link(  $this->Html->image( 'files/'. $image['property_id'] . '/images/' . my_ife( $image['image'], 'manage_missing.png'), array('data-title' => $property['Property']['title'], 'data-description' => $image['name'], 'alt' => '')), $main_image, array('escape' => false) );
+                 
+                        }
+                        else {
+                                
+   echo $this->Html->link( $this->Html->image( 'files/'. $image['property_id'] . '/images/' . my_ife( $image['image'], 'manage_missing.png'), array('alt' => 'Vacation Fish premium listing')), $main_image, array('escape' => false) );
+                                    }
+                                }
+                            } // ! empty
+                            else {
+        echo $this->Html->image('main_missing.png');
+                            }
+                 
+                 ?>
+                 </div>
+                 <?php echo $this->Html->scriptblock(' var property_id = '.$property['Property']['id'].'; ', array('inline' => false)); ?>
+                 <?php echo $this->Html->scriptblock(' var img_path = "/vacationfish.localdomain/public_html/";')?>
+            
+<?php
+echo $this->Html->ScriptBlock('
+    var img_path = "'.$this->webroot.'";
+    var add_to_wishlist_url = "'.Router::url( array('controller' => 'wishlists', 'action' => 'add_to_wish') ).'"
+');
+    echo $this->Html->script( array('calendar_hover.js', 'property-landing.js') );
+
+?>          
+                 <?php //$this->Html->script(array('property-landing.js'),  array('inline' => false))?>
+
+            </div>

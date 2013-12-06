@@ -1,0 +1,55 @@
+	<?php echo $this->Html->image('home-map.png', array('id' => 'usa-map', 'alt' => 'USA Map', 'usemap' => '#map_usa')); ?>
+	<map name="map_usa">
+		<?php $url = array('controller' => 'searches', 'action' => 'state'); ?>
+		<area alt="Alabama" title="Alabama" href="<?php echo $this->Html->url(am($url, 'al')); ?>" coords="441,221,469,217,478,256,480,269,442,273,441,221" shape="poly" />
+		<area alt="Alaska" title="Alaska" href="<?php echo $this->Html->url(am($url, 'ak')); ?>" coords="129,281,171,286,211,352,242,369,244,377,242,385,100,421,26,421,1,394,100,302,129,281" shape="poly" />
+		<area alt="Arizona" title="Arizona" href="<?php echo $this->Html->url(am($url, 'az')); ?>" coords="158,180,211,188,201,265,179,265,141,237,149,217,149,193,155,193,158,180" shape="poly" />
+		<area alt="Arkansas" title="Arkansas" href="<?php echo $this->Html->url(am($url, 'ar')); ?>" coords="370,203,416,203,416,208,421,208,408,250,375,250,375,242,370,242,370,203" shape="poly" />
+		<area alt="California" title="California" href="<?php echo $this->Html->url(am($url, 'ca')); ?>" coords="69,88,111,101,101,139,149,216,141,237,111,235,80,199,62,131,62,109,69,88" shape="poly" />
+		<area alt="Colorado" title="Colorado" href="<?php echo $this->Html->url(am($url, 'co')); ?>" coords="218,134,290,140,287,195,211,189,218,134" shape="poly" />
+		<area alt="Conneticut" title="Conneticut" href="<?php echo $this->Html->url(am($url, 'ct')); ?>" coords="578,98,595,94,595,103,620,110,638,110,638,121,620,121,588,107,578,110,578,98" shape="poly" />
+		<area alt="DC" title="DC" href="<?php echo $this->Html->url(am($url, 'dc')); ?>" coords="585,144,638,144,638,154,620,154,585,144" shape="poly" />
+		<area alt="Delaware" title="Delaware" href="<?php echo $this->Html->url(am($url, 'de')); ?>" coords="562,137,562,133,564,133,564,137,573,151,620,154,638,154,638,166,620,166,564,151,562,137" shape="poly" />
+		<area alt="Florida" title="Florida" href="<?php echo $this->Html->url(am($url, 'fl')); ?>" coords="455,276,550,276,550,341,455,341,455,276" shape="poly" />
+		<area alt="Georgia" title="Georgia" href="<?php echo $this->Html->url(am($url, 'ga')); ?>" coords="469,217,493,217,521,243,521,269,481,269,481,251,469,217" shape="poly" />
+		<area alt="Hawaii" title="Hawaii" href="<?php echo $this->Html->url(am($url, 'hi')); ?>" coords="17,217,62,224,88,262,76,270,5,224,17,217" shape="poly" />
+		<area alt="Idaho" title="Idaho" href="<?php echo $this->Html->url(am($url, 'id')); ?>" coords="160,12,168,15,166,27,179,49,179,62,186,80,205,80,199,117,141,106,152,53,160,12" shape="poly" />
+		<area alt="Illinois" title="Illinois" href="<?php echo $this->Html->url(am($url, 'il')); ?>" coords="408,119,425,118,432,117,433,121,436,126,437,134,438,151,439,157,438,168,440,166,438,170,436,174,435,184,432,186,432,189,427,188,424,191,422,184,420,181,415,178,413,176,414,167,412,166,408,165,408,162,400,154,400,148,404,139,402,134,409,131,411,124,409,121,408,119" shape="poly" />
+		<area alt="Indiana" title="Indiana" href="<?php echo $this->Html->url(am($url, 'in')); ?>" coords="438,128,443,128,445,125,455,124,463,123,466,138,468,162,466,164,463,164,462,165,462,168,459,170,457,174,454,172,451,176,448,176,447,178,443,177,438,178,438,174,442,166,441,163,440,160,442,156,440,147,439,136,438,128" shape="poly" />
+		<area alt="Iowa" title="Iowa" href="<?php echo $this->Html->url(am($url, 'ia')); ?>" coords="346,106,399,106,402,118,408,118,412,126,402,134,399,147,354,147,346,118,346,106" shape="poly" />
+		<area alt="Kansas" title="Kansas" href="<?php echo $this->Html->url(am($url, 'ks')); ?>" coords="290,155,358,155,366,196,287,196,290,155" shape="poly" />
+		<area alt="Kentucky" title="Kentucky" href="<?php echo $this->Html->url(am($url, 'ky')); ?>" coords="428,198,427,190,429,190,433,191,434,187,437,185,437,182,439,180,445,179,447,180,449,178,453,179,454,175,457,176,459,176,461,172,462,168,465,166,469,164,470,160,474,160,476,162,481,164,487,164,489,162,493,165,493,169,495,172,500,177,495,182,493,185,484,191,484,191,473,192,462,193,453,194,438,195,436,197,433,198,428,198" shape="poly" />
+		<area alt="Louisiana" title="Louisiana" href="<?php echo $this->Html->url(am($url, 'la')); ?>" coords="376,252,408,252,408,265,404,277,426,277,426,301,384,301,384,277,376,266,376,252" shape="poly" />
+		<area alt="Maine" title="Maine" href="<?php echo $this->Html->url(am($url, 'me')); ?>" coords="599,15,608,15,626,44,608,62,599,77,590,49,599,15" shape="poly" />
+		<area alt="Maryland" title="Maryland" href="<?php echo $this->Html->url(am($url, 'md')); ?>" coords="525,141,559,133,566,149,620,132,638,130,638,143,620,143,572,158,555,170,552,158,552,149,538,141,525,149,525,141" shape="poly" />
+		<area alt="Massachusetts" title="Massachusetts" href="<?php echo $this->Html->url(am($url, 'ma')); ?>" coords="577,87,600,80,638,89,638,99,600,99,597,94,577,99,577,87" shape="poly" />
+		<area alt="Michigan" title="Michigan" href="<?php echo $this->Html->url(am($url, 'mi')); ?>" coords="405,63,427,47,478,63,487,102,487,109,478,121,447,125,438,79,432,79,427,69,405,63" shape="poly" />
+		<area alt="Minnesota" title="Minnesota" href="<?php echo $this->Html->url(am($url, 'mn')); ?>" coords="340,32,358,32,358,26,362,26,362,35,381,35,398,42,411,42,387,61,387,71,382,76,382,89,398,106,347,106,347,80,347,71,340,32" shape="poly" />
+		<area alt="Mississippi" title="Mississippi" href="<?php echo $this->Html->url(am($url, 'ms')); ?>" coords="417,222,439,222,439,284,429,284,429,277,412,277,412,233,417,222" shape="poly" />
+		<area alt="Missouri" title="Missouri" href="<?php echo $this->Html->url(am($url, 'mo')); ?>" coords="354,147,399,147,408,168,414,168,412,177,427,192,421,208,414,208,416,203,370,203,366,168,354,147" shape="poly" />
+		<area alt="Montana" title="Montana" href="<?php echo $this->Html->url(am($url, 'mt')); ?>" coords="171,15,277,30,273,84,205,77,205,80,186,80,179,62,179,42,166,27,171,15" shape="poly" />
+		<area alt="Nebraska" title="Nebraska" href="<?php echo $this->Html->url(am($url, 'ne')); ?>" coords="271,111,346,119,358,155,290,155,290,140,271,140,271,111" shape="poly" />
+		<area alt="Nevada" title="Nevada" href="<?php echo $this->Html->url(am($url, 'nv')); ?>" coords="111,101,171,112,155,193,149,193,149,205,100,139,111,101" shape="poly" />
+		<area alt="New Hampshire" title="New Hampshire" href="<?php echo $this->Html->url(am($url, 'nh')); ?>" coords="580,30,585,30,585,40,589,49,600,77,585,86,585,54,579,40,572,40,580,30" shape="poly" />
+		<area alt="New Jersey" title="New Jersey" href="<?php echo $this->Html->url(am($url, 'nj')); ?>" coords="567,110,578,113,578,117,620,121,638,121,638,132,620,132,574,142,565,136,570,126,565,121,567,110" shape="poly" />
+		<area alt="New Mexico" title="New Mexico" href="<?php echo $this->Html->url(am($url, 'nm')); ?>" coords="211,189,276,195,271,263,211,263,211,266,202,266,211,189" shape="poly" />
+		<area alt="New York" title="New York" href="<?php echo $this->Html->url(am($url, 'ny')); ?>" coords="568,58,576,85,576,112,568,112,559,103,515,112,515,108,519,94,543,76,554,62,568,58" shape="poly" />
+		<area alt="North Carolina" title="North Carolina" href="<?php echo $this->Html->url(am($url, 'nc')); ?>" coords="509,190,528,187,540,184,552,182,560,180,569,179,574,189,569,202,549,219,		536,210,523,211,520,208,502,208,495,213,483,214,487,207,496,203,500,199,506,197,508,193,509,190" shape="poly" />
+		<area alt="North Dakota" title="North Dakota" href="<?php echo $this->Html->url(am($url, 'nd')); ?>" coords="276,30,339,32,346,73,276,73,276,30" shape="poly" />
+		<area alt="Ohio" title="Ohio" href="<?php echo $this->Html->url(am($url, 'oh')); ?>" coords="466,124,473,123,479,121,483,125,491,124,496,123,500,118,506,114,507,123,508,131,508,137,508,144,505,149,502,149,500,152,499,156,497,156,496,162,494,164,490,160,486,162,481,162,477,161,474,158,469,158,468,145,467,133,466,124" shape="poly" />
+		<area alt="Oklahoma" title="Oklahoma" href="<?php echo $this->Html->url(am($url, 'ok')); ?>" coords="276,196,366,196,370,242,308,230,308,203,276,203,276,196" shape="poly" />
+		<area alt="Oregon" title="Oregon" href="<?php echo $this->Html->url(am($url, 'or')); ?>" coords="88,34,97,45,152,53,141,107,69,88,88,34" shape="poly" />
+		<area alt="Pennslyvania" title="Penslyvania" href="<?php echo $this->Html->url(am($url, 'pa')); ?>" coords="515,109,515,112,559,103,565,109,567,112,565,114,565,120,571,126,565,135,515,144,508,114,515,109" shape="poly" />
+		<area alt="Rhode Island" title="Rhode Island" href="<?php echo $this->Html->url(am($url, 'ri')); ?>" coords="595,94,602,98,620,100,638,100,638,110,620,110,595,103,595,94" shape="poly" />
+		<area alt="South Carolina" title="South Carolina" href="<?php echo $this->Html->url(am($url, 'sc')); ?>" coords="496,215,505,210,519,209,522,212,534,210,547,220,542,232,526,250,501,221,496,215" shape="poly" />
+		<area alt="South Dakota" title="South Dakota" href="<?php echo $this->Html->url(am($url, 'sd')); ?>" coords="276,73,346,73,346,119,271,111,276,73" shape="poly" />
+		<area alt="Tennessee" title="Tennessee" href="<?php echo $this->Html->url(am($url, 'tn')); ?>" coords="423,200,438,199,438,197,452,196,467,194,483,192,490,190,506,189,505,193,501,195,499,197,499,199,492,202,489,205,485,206,483,210,481,210,480,214,467,215,455,217,440,218,417,220,417,216,421,210,422,205,423,200" shape="poly" />
+		<area alt="Texas" title="Texas" href="<?php echo $this->Html->url(am($url, 'tx')); ?>" coords="276,203,308,203,308,230,370,242,375,242,375,266,381,276,381,296,339,350,316,340,268,305,231,263,271,263,276,203" shape="poly" />
+		<area alt="Utah" title="Utah" href="<?php echo $this->Html->url(am($url, 'ut')); ?>" coords="171,112,199,117,199,131,218,134,211,188,158,180,171,112" shape="poly" />
+		<area alt="Vermont" title="Vermont" href="<?php echo $this->Html->url(am($url, 'vt')); ?>" coords="556,40,569,40,585,54,585,86,577,86,569,59,556,54,556,40" shape="poly" />
+		<area alt="Virginia" title="Virginia" href="<?php echo $this->Html->url(am($url, 'va')); ?>" coords="498,192,496,183,502,178,507,181,521,175,521,169,525,160,530,160,530,154,536,149,536,147,541,147,550,149,550,154,550,160,560,160,568,178,498,192" shape="poly" />
+		<area alt="Washington" title="Washington" href="<?php echo $this->Html->url(am($url, 'wa')); ?>" coords="89,1,108,1,158,13,151,53,97,45,89,34" shape="poly" />
+		<area alt="West Virginia" title="West Virginia" href="<?php echo $this->Html->url(am($url, 'wv')); ?>" coords="510,138,512,144,523,143,523,150,531,143,534,143,538,140,542,144,541,145,536,144,534,148,529,153,527,158,524,157,520,167,519,173,514,175,509,177,506,178,502,176,494,169,495,166,497,163,499,157,501,158,503,151,508,147,510,143,510,138" shape="poly" />
+		<area alt="Wisconsin" title="Wisconsin" href="<?php echo $this->Html->url(am($url, 'wi')); ?>" coords="387,62,393,62,398,58,397,63,403,62,406,65,412,67,416,68,423,69,425,71,428,72,428,76,434,84,433,115,406,116,403,115,401,114,400,109,398,100,394,96,391,94,388,91,382,88,383,78,381,75,386,71,387,62" shape="poly" />
+		<area alt="Wyoming" title="Wyoming" href="<?php echo $this->Html->url(am($url, 'wy')); ?>" coords="205,75,273,83,270,139,199,129,205,75" shape="poly" />
+	</map>

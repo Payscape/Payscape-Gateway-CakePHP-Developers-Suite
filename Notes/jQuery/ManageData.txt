@@ -1,0 +1,19 @@
+
+Ajax Delete with jQuery
+
+http://www.jamesfairhurst.co.uk/posts/view/ajax_delete_with_cakephp_and_jquery
+
+jQuery Quick Save
+http://marcgrabanski.com/articles/cakephp-ajax-quick-save-jquery
+
+CakePHP edit in place
+http://marcgrabanski.com/articles/cakephp-ajax-quick-save-jquery
+
+CakePHP jQuery Ajax helper
+
+http://blog.loadsys.com/2009/05/01/cakephp-jquery-ajax-helper-easy-scriptaculous-replacement/
+
+Text field populating with click function
+
+
+http://stackoverflow.com/questions/2032609/jquery-text-field-populating-from-database-on-clicking-select-option

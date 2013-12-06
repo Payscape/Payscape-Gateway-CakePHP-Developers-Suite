@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+
+	<script type="text/javascript">
+//<![CDATA[
+var ROOT_URL = "/vacationfish.localdomain/public_html/";
+//]]>
+</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>UserImages</title>
+
+	
+	
+	<link href="/vacationfish.localdomain/public_html/favicon.ico" type="image/x-icon" rel="icon" /><link href="/vacationfish.localdomain/public_html/favicon.ico" type="image/x-icon" rel="shortcut icon" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/redmond/jquery-ui-1.8.18.custom.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/common.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/main.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/style.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/flash-message.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/thickbox.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/jquery.alerts.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/custom.css" />	<!-- *** Load IE fixes *** -->
+	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/ie8.css" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/ie7.css" /><![endif]-->
+	
+	
+	<!--[if IE]>
+	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>	<![endif]-->
+		
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/jquery/jquery-1.8.3.js"></script><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/bootstrap.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/global.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/jquery.alerts.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/thickbox.js"></script>	<!--[if IE]>
+		<![endif]-->
+	
+	<!-- *** Initialize JS *** -->
+	<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/initialize.js"></script><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/properties/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/properties/bootstrap-responsive.min.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/properties/bootstrap-image-gallery.min.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/properties/style.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/blueextras/jquery.fileupload-ui.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/blueextras/bootstrap-image-gallery.min.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/properties/galleria.classic.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/properties/galleria.css" /><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/vendor/jquery.ui.widget.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/javascript-templates/tmpl.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/load-image/load-image.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/canvas-to-blob/canvas-to-blob.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/bootstrap-gallery/bootstrap-image-gallery.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/jquery.iframe-transport.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/jquery.fileupload.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/jquery.fileupload-fp.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/jquery.fileupload-ui.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/properties/cors/jquery.xdr-transport.js"></script><script type="text/javascript">
+//<![CDATA[
+var site_url = "/vacationfish.localdomain/public_html/userimages/add/174";
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+var counters = 2;
+//]]>
+</script><style type="text/css">
+	.cake-sql-log TH{width:16%;}
+	.cake-sql-log TD{vertical-align:top; border:solid #efefef 1px;}	
+</style>
+</head>
+<body id="bodyarea">
+
+	<section id="wrapper">
+		<div class="image-slider-home">
+			<div id="mapSpacer" style="display:none;width:100%;height:425px;"></div>
+		</div>
+		<header id="header" class="layout-width">
+			<div class="logo">
+				<a href="/vacationfish.localdomain/public_html/"><img src="/vacationfish.localdomain/public_html/img/logo.png" alt="VacationFish" /></a>
+			</div>
+			<div class="header-nav">
+				<div class="prime-links">
+				<a href="/vacationfish.localdomain/public_html/logout">Logout</a>				</div>
+
+				<nav class="nav">
+					<ul>
+
+											<li><a href="javascript:void(0);" class="parent">Hi Stephen!</a>							<div id="dd-panel" class="dropdown">
+								<span class="arr">&nbsp;</span>
+								<ul>
+									<li><a href="/vacationfish.localdomain/public_html/dashboard">Dashboard</a></li>
+									<li><a href="/vacationfish.localdomain/public_html/mylistings">My Listings</a></li>
+									<li><a href="/vacationfish.localdomain/public_html/wishlists">My Wish List</a></li>
+									<li><a href="/vacationfish.localdomain/public_html/saved-searches">Saved Searches</a></li>
+								</ul>
+							</div>
+						</li>
+					
+						<li><a href="/vacationfish.localdomain/public_html/pages/how_it_works/getting_started_host">How It Works</a></li>
+																		<li><a href="/vacationfish.localdomain/public_html/search?reset=1">Find Rentals</a></li>
+						<li>
+						<a href="/vacationfish.localdomain/public_html/properties/create/basic">List Rentals</a>						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+	
+		<div id="innerpage-wrapper">
+			<div class="flash-msg-cnt">
+											</div>
+
+		
+			<section class="dashboard-cnt">
+								<div class="db-nav">
+										<ul>
+						<li >
+							<a href="/vacationfish.localdomain/public_html/dashboard">Dashboard</a>						</li>
+
+						<li >
+							<a href="/vacationfish.localdomain/public_html/mylistings">My Listings</a>						</li>
+
+						<li >
+							<a href="/vacationfish.localdomain/public_html/my-wishlist" controller="wishlists" action="view">My Wish List</a>						</li>
+
+						<li >
+							<a href="/vacationfish.localdomain/public_html/saved-searches">Saved Searches</a>						</li>
+					</ul>
+				</div>
+				
+				
+<div class="main-cnt">
+	<div class="db-sidebar">
+		<div class="profile-cnt">
+			<img src="/vacationfish.localdomain/public_html/img/users/174/images/14620130822115714.jpg" width="209" height="209" alt="" />			<div class="info">
+				<h2>Stephen Mareches</h2>
+				<a href="/vacationfish.localdomain/public_html/dashboard/edit"><strong>Edit Profile</strong></a>
+				<br><a href="/vacationfish.localdomain/public_html/userimages/add"><strong>Edit Profile Images</strong></a>
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="db-content">
+	
+
+<script>
+	var uid = 174;
+</script>
+
+
+	
+	<!--[if gte IE 8]>
+		<![endif]-->
+	
+	<noscript><link rel="stylesheet" href="css/properties/jquery.fileupload-ui-noscript.css"></noscript>	
+
+
+
+
+<div class="myphoto-cnt">
+
+
+
+	<div class="myphoto-content">
+		<div class="inner-tab-cnt" id="ddpagetabs">
+		
+			<a href="/vacationfish.localdomain/public_html/userimages/add/174" class="current">Upload</a>
+			<a href="/vacationfish.localdomain/public_html/userimages/edit/174" class="current">
+				
+			
+				<span class="counter" id="image_count_edit"></span>
+		
+		
+				Edit			</a>
+	
+
+		</div>
+		<div class="inner-tab-data">
+		
+		<div class="clear"></div>
+		<div id="sc1" class="tab-content">
+		<!-- bof: sc1 -->
+               
+ <div class="padder"> 
+<div class="row"> 
+    <div class="container">
+<!-- bof: new form -->
+<form action="/vacationfish.localdomain/public_html/Userimages/upload/174/type:file/id:fileupload" id="UserImageAddForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>  <div class="row fileupload-buttonbar">
+  
+                  <div style="font-weight:bold; padding:4px; margin-left:20px; width:600px; height:45px; line-height:45px; color:#cccccc; border:solid #cccccc 1px;">
+                  	<span style="margin-left:20px;"> Upload photos</span>
+                   <div style="float:right;" class="btn btn-danger fileinput-button-two">
+                       
+                        <span>BROWSE</span>
+                        <input type="file" name="files[]" multiple>
+                    </div>
+ 
+                    <a href="/vacationfish.localdomain/public_html/Userimages/edit/174" class="complete" id="next">Edit Images</a>         
+                    
+                    <!-- 
+                    </button>
+                      <button type="button" class="button.btn btn-danger delete">
+                        <i class="icon-trash icon-white"></i>
+                        <span>Delete</span>
+                    </button>
+                     -->
+                    <!-- input type="checkbox" class="toggle" -->
+                </div>
+                <div class="span5">
+
+                    <div class="progress progress-success progress-striped active fade">
+                        <div class="bar" style="width:0%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fileupload-loading"></div>
+            <br>
+      
+    <div class="upload_container"> 
+    <div class="upload_drop_text">Or drag and drop files here</div>
+        
+            <table class="table table-striped" style="border:solid #00ff00 1px;"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery">
+            <!--  tr><td>image</td><td>name<td>size</td><td>activity</td><td>start</td><td>cancel</td></tr -->
+
+            
+            </tbody></table>
+            <div class="clearfix;"></div>
+    </div>
+ </div><!-- container -->
+    <div id="modal-gallery" class="modal modal-gallery hide fade" data-filter=":odd">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3 class="modal-title"></h3>
+        </div>
+        <div class="modal-body"><div class="modal-image"></div></div>
+        <div class="modal-footer">
+            <a class="btn modal-download" target="_blank">
+                <i class="icon-download"></i>
+                <span>Download</span>
+            </a>
+            <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
+                <i class="icon-play icon-white"></i>
+                <span>Slideshow</span>
+            </a>
+            <a class="btn btn-info modal-prev">
+                <i class="icon-arrow-left icon-white"></i>
+                <span>Previous</span>
+            </a>
+            <a class="btn btn-primary modal-next">
+                <span>Next</span>
+                <i class="icon-arrow-right icon-white"></i>
+            </a>
+        </div>
+    </div>
+    
+<!--  eof: new form elements -->                    
+            
+
+                    <input type="hidden" name="data[User][id]" value="174" id="UserId"/><br />
+
+
+                    <div class="seperator"></div>
+
+                    </form>                   
+                    <!-- bof: -->
+<!-- modal-gallery is the modal dialog used for the image gallery -->
+                
+                     
+<div id="modal-gallery" class="modal modal-gallery hide fade" data-filter=":odd" tabindex="-1">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body"><div class="modal-image"></div></div>
+    <div class="modal-footer">
+        <a class="btn modal-download" target="_blank">
+            <i class="icon-download"></i>
+            <span>Download</span>
+        </a>
+        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
+            <i class="icon-play icon-white"></i>
+            <span>Slideshow</span>
+        </a>
+        <a class="btn btn-info modal-prev">
+            <i class="icon-arrow-left icon-white"></i>
+            <span>Previous</span>
+        </a>
+        <a class="btn btn-primary modal-next">
+            <span>Next</span>
+            <i class="icon-arrow-right icon-white"></i>
+        </a>
+    </div>
+</div>
+
+             
+
+</div><!-- row -->
+<!-- The template to display files available for upload -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td class="preview"><span class="fade"></span></td>
+        <td class="name"><span>{%=file.name%}</span></td>
+        <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+        {% if (file.error) { %}
+            <td class="error" colspan="2"><span class="label label-important">Error</span> {%=file.error%}</td>
+        {% } else if (o.files.valid && !i) { %}
+            <td class="size">
+                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar" style="width:0%;"></div></div>
+            </td>
+            <td>{% if (!o.options.autoUpload) { %}
+                <button class="btn btn-primary start">
+                    <i class="icon-upload icon-white"></i>
+                    <span>Start</span>
+                </button>
+            {% } %}</td>
+        {% } else { %}
+            <td colspan="2"></td>
+        {% } %}
+        <td>{% if (!i) { %}
+            <button class="btn btn-warning cancel">
+                <i class="icon-ban-circle icon-white"></i>
+                <span>Cancel</span>
+            </button>
+        {% } %}</td>
+    </tr>
+{% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        {% if (file.error) { %}
+            <td></td>
+            <td class="name"><span>{%=file.name%}</span></td>
+            <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+            <td class="error" colspan="2"><span class="label label-important">Error</span> {%=file.error%}</td>
+        {% } else { %}
+            <td class="preview">{% if (file.thumbnail_url) { %}
+                <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
+            {% } %}</td>
+            <td class="name">
+                <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+            </td>
+            <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+            <td colspan="2"></td>
+        {% } %}
+
+        <td>
+            <button class="btn btn-danger delete" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}"{% if (file.delete_with_credentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                <i class="icon-trash icon-white"></i>
+                <span>Delete</span>
+            </button>
+            <input type="checkbox" name="delete" value="1" class="toggle">
+        </td>
+
+    </tr>
+{% } %}
+</script>
+                    
+                    
+                    <!-- eof: custom -->
+
+                </div> <!-- padder -->
+<!-- eof: sc1 -->
+
+                <script>
+                /*
+                 * jQuery File Upload Plugin JS Example 7.1.1
+                 * https://github.com/blueimp/jQuery-File-Upload
+                 *
+                 * Copyright 2010, Sebastian Tschan
+                 * https://blueimp.net
+                 *
+                 * Licensed under the MIT license:
+                 * http://www.opensource.org/licenses/MIT
+                 */
+
+                /*jslint nomen: true, unparam: true, regexp: true */
+                /*global $, window, document */
+                
+   $( document ).ready(function() {
+
+	 
+
+	   $('#next').hide();
+
+                $(function () {
+                    'use strict';
+
+                    // Initialize the jQuery File Upload widget:
+                    $('#fileupload').fileupload({
+                        // Uncomment the following to send cross-domain cookies:
+                        //xhrFields: {withCredentials: true},
+                    	// url: 'server/php/'
+                    //	url: 'properties/upload'
+                    	autoUpload: true
+                    });
+
+                    // Enable iframe cross-domain access via redirect option:
+                    $('#fileupload').fileupload(
+                        'option',
+                        'redirect',
+                        window.location.href.replace(
+                            /\/[^\/]*$/,
+                            '/cors/result.html?%s'
+                        )
+                    );
+
+                    if (window.location.hostname === 'blueimp.github.com' ||
+                            window.location.hostname === 'blueimp.github.io') {
+                        // Demo settings:
+                        $('#fileupload').fileupload('option', {
+                            url : site_url,
+                            maxFileSize: 5000000,
+                            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                            process: [
+                                {
+                                    action: 'load',
+                                    fileTypes: /^image\/(gif|jpeg|png)$/,
+                                    maxFileSize: 20000000 // 20MB
+                                },
+                                {
+                                    action: 'resize',
+                                    maxWidth: 209,
+                                    maxHeight: 209
+                                },
+                                {
+                                    action: 'save'
+                                }
+                            ]
+                        });
+                        // Upload server status check for browsers with CORS support:
+                        if ($.support.cors) {
+                            $.ajax({
+                                url: '//jquery-file-upload.appspot.com/',
+                                type: 'HEAD'
+                            }).fail(function () {
+                                $('<span class="alert alert-error"/>')
+                                    .text('Upload server currently unavailable - ' +
+                                            new Date())
+                                    .appendTo('#fileupload');
+                            });
+                        }
+                    } else {
+                        // Load existing files:
+                        $('#fileupload').addClass('fileupload-processing');
+                        $.ajax({
+                            // Uncomment the following to send cross-domain cookies:
+                            //xhrFields: {withCredentials: true},
+//                            url: $('#fileupload').fileupload('option', 'url'),
+                        	url: site_url,
+                            dataType: 'json',
+                            context: $('#fileupload')[0]
+                        }).always(function (result) {
+                            $(this).removeClass('fileupload-processing');
+                        }).done(function (result) {
+                            $(this).fileupload('option', 'done')
+                                .call(this, null, {result: result});
+                        });
+                    }
+
+
+                    $('#fileupload').fileupload().bind('fileuploadstop', function () {
+                        $('#next').show();
+                        $('.count').hide();
+				//		var destination = ROOT_URL + 'userimages/edit/'+174;
+				//		window.location.replace(destination);
+              
+                           
+                           $.post(ROOT_URL + "userimages/count", 
+                        		   { User_id: pid }, 
+                        		   
+                        	function (response) {
+                      			   	   	
+                                $("#image_count_edit").html(response);
+                                $("#image_count_view").html(response);
+                                $("#image_count_delete").html(response);
+                                $(".counter").fadeOut('slow');
+                                $(".newcounter").fadeIn('slow');
+                            });
+                           
+                        });     
+
+                });
+                    
+           //     console.log( "ready!" );
+           //     console.log( "User id is " + 174);
+   });             
+                
+                </script>			
+			</div><!-- sc1 -->
+<div class="clear"></div>
+					
+		</div>
+	</div>
+</div>
+<script>
+$(function() {
+	
+		var uid = 174;
+		$.post(ROOT_URL + "userimages/count",
+		{ user_id: uid },
+
+		function (respond) {
+		$("#image_count_edit").html(respond);
+		
+});
+
+		return false;
+});
+</script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/tabs.js"></script><script type="text/javascript">
+//<![CDATA[
+do_onload_new("ddpagetabs","sc1","0");
+//]]>
+</script>		
+
+	</div>
+</div>
+
+			</section>
+					</div>
+
+
+		<footer id="footer" class="layout-width">
+			<div class="footer-menu">
+				<div class="nav-block">
+					<h4>Vacation Ready</h4>
+					<ul>
+											<li><a href="/vacationfish.localdomain/public_html/dashboard">My Account</a></li>
+											<li><a href="/vacationfish.localdomain/public_html/pages/how_it_works/getting_started_host">How it Works</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/pages/why_host/list_property">Why Host</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/pages/safety/safety_guest">Safety</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/pages/safety/features">Vacation Features</a></li>
+					</ul>
+				</div>
+				<div class="nav-block">
+					<h4>Legal Stuff</h4>
+					<ul>
+						<li><a href="/vacationfish.localdomain/public_html/pages/terms_policies/policies">Policies</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/pages/terms_policies/terms">Terms</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/pages/terms_policies/guidelines">Guidelines</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/pages/terms_policies/privacy">Privacy</a></li>
+					</ul>
+				</div>
+				<div class="nav-block">
+					<h4>Company</h4>
+					<ul>
+						<li><a href="/vacationfish.localdomain/public_html/pages/about/about">About</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/pages/about/press">Press</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/pages/about/feedback">Contact</a></li>
+						<li><a href="/vacationfish.localdomain/public_html/faqs">FAQ</a></li>
+						<!--<li></li>-->
+					</ul>
+				</div>
+				<div class="nav-block">
+					<!--<h4>Friends</h4>
+						<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li>
+																		</li>
+					</ul>-->
+				</div>
+			</div>
+		</footer>
+	</section>
+
+<table class="cake-sql-log" id="cakeSqlLog_13772063335216803dc967f7_08652350" summary="Cake SQL Log" cellspacing="0"><caption>(default) 8 queries took 795 ms</caption>	<thead>
+		<tr><th>Nr</th><th>Query</th><th>Error</th><th>Affected</th><th>Num. rows</th><th>Took (ms)</th></tr>
+	</thead>
+	<tbody>
+	<tr><td>1</td><td>SELECT `User`.`id`, `User`.`group_id`, `User`.`first_name`, `User`.`last_name`, `User`.`password`, `User`.`ident`, `User`.`token`, `User`.`activation_token`, `User`.`email`, `User`.`company_name`, `User`.`phone`, `User`.`contact_name`, `User`.`contact_email`, `User`.`contact_primary_phone`, `User`.`contact_secondary_phone`, `User`.`is_allowed_alert`, `User`.`facebook_id`, `User`.`fb_username`, `User`.`fb_url`, `User`.`fb_birthday`, `User`.`fb_hometown`, `User`.`fb_bio`, `User`.`fb_gender`, `User`.`fb_location`, `User`.`fb_timezone`, `User`.`fb_image`, `User`.`created`, `User`.`modified`, `User`.`active`, `User`.`holidays`, `User`.`images_updated`, (CONCAT(`User`.`first_name`, &quot; &quot;, `User`.`last_name`)) AS  `User__full_name`, (CONCAT(`User`.`first_name`, &quot; &quot;, `User`.`last_name`, &quot; &lt;&quot;, `User`.`email`, &quot;&gt;&quot;)) AS  `User__display`, `Group`.`id`, `Group`.`name` FROM `vacahcom_vacationfish`.`users` AS `User` LEFT JOIN `vacahcom_vacationfish`.`groups` AS `Group` ON (`User`.`group_id` = `Group`.`id`)  WHERE `User`.`id` = 174    LIMIT 1</td><td></td><td style = "text-align: right">1</td><td style = "text-align: right">1</td><td style = "text-align: right">1</td></tr>
+<tr><td>2</td><td>SELECT `Setting`.`id`, `Setting`.`name`, `Setting`.`value`, `Setting`.`type`, `Setting`.`default`, `Setting`.`modified` FROM `vacahcom_vacationfish`.`settings` AS `Setting`   WHERE 1 = 1</td><td></td><td style = "text-align: right">4</td><td style = "text-align: right">4</td><td style = "text-align: right">0</td></tr>
+<tr><td>3</td><td>SELECT `Aro`.`id`, `Aro`.`parent_id`, `Aro`.`model`, `Aro`.`foreign_key`, `Aro`.`alias` FROM `vacahcom_vacationfish`.`aros` AS `Aro` LEFT JOIN `vacahcom_vacationfish`.`aros` AS `Aro0` ON (`Aro`.`lft` &lt;= `Aro0`.`lft` AND `Aro`.`rght` &gt;= `Aro0`.`rght`)  WHERE `Aro0`.`model` = &#039;Group&#039; AND `Aro0`.`foreign_key` = 2   ORDER BY `Aro`.`lft` DESC</td><td></td><td style = "text-align: right">1</td><td style = "text-align: right">1</td><td style = "text-align: right">1</td></tr>
+<tr><td>4</td><td>SELECT `Aco`.`id`, `Aco`.`parent_id`, `Aco`.`model`, `Aco`.`foreign_key`, `Aco`.`alias` FROM `vacahcom_vacationfish`.`acos` AS `Aco` LEFT JOIN `vacahcom_vacationfish`.`acos` AS `Aco0` ON (`Aco0`.`alias` = &#039;controllers&#039;) LEFT JOIN `vacahcom_vacationfish`.`acos` AS `Aco1` ON (`Aco1`.`lft` &gt; `Aco0`.`lft` AND `Aco1`.`rght` &lt; `Aco0`.`rght` AND `Aco1`.`alias` = &#039;UserImages&#039; AND `Aco0`.`id` = `Aco1`.`parent_id`) LEFT JOIN `vacahcom_vacationfish`.`acos` AS `Aco2` ON (`Aco2`.`lft` &gt; `Aco1`.`lft` AND `Aco2`.`rght` &lt; `Aco1`.`rght` AND `Aco2`.`alias` = &#039;add&#039; AND `Aco1`.`id` = `Aco2`.`parent_id`)  WHERE ((`Aco`.`lft` &lt;= `Aco0`.`lft` AND `Aco`.`rght` &gt;= `Aco0`.`rght`) OR (`Aco`.`lft` &lt;= `Aco2`.`lft` AND `Aco`.`rght` &gt;= `Aco2`.`rght`))   ORDER BY `Aco`.`lft` DESC</td><td></td><td style = "text-align: right">3</td><td style = "text-align: right">3</td><td style = "text-align: right">791</td></tr>
+<tr><td>5</td><td>SELECT `Permission`.`id`, `Permission`.`aro_id`, `Permission`.`aco_id`, `Permission`.`_create`, `Permission`.`_read`, `Permission`.`_update`, `Permission`.`_delete`, `Aro`.`id`, `Aro`.`parent_id`, `Aro`.`model`, `Aro`.`foreign_key`, `Aro`.`alias`, `Aro`.`lft`, `Aro`.`rght`, `Aco`.`id`, `Aco`.`parent_id`, `Aco`.`model`, `Aco`.`foreign_key`, `Aco`.`alias`, `Aco`.`lft`, `Aco`.`rght` FROM `vacahcom_vacationfish`.`aros_acos` AS `Permission` LEFT JOIN `vacahcom_vacationfish`.`aros` AS `Aro` ON (`Permission`.`aro_id` = `Aro`.`id`) LEFT JOIN `vacahcom_vacationfish`.`acos` AS `Aco` ON (`Permission`.`aco_id` = `Aco`.`id`)  WHERE `Permission`.`aro_id` = 2 AND `Permission`.`aco_id` IN (587, 586, 1)   ORDER BY `Aco`.`lft` desc</td><td></td><td style = "text-align: right">1</td><td style = "text-align: right">1</td><td style = "text-align: right">1</td></tr>
+<tr><td>6</td><td>SELECT id, user_id, image, name, sort FROM user_images WHERE user_id = 174</td><td></td><td style = "text-align: right">1</td><td style = "text-align: right">1</td><td style = "text-align: right">1</td></tr>
+<tr><td>7</td><td>SELECT `User`.`id`, `User`.`group_id`, `User`.`first_name`, 
+`User`.`last_name`, `User`.`password`, `User`.`ident`, `User`.`token`, 
+`User`.`activation_token`, `User`.`email`, `User`.`company_name`, 
+`User`.`phone`, `User`.`contact_name`, `User`.`contact_email`, 
+`User`.`contact_primary_phone`, `User`.`contact_secondary_phone`, 
+`User`.`is_allowed_alert`, `User`.`facebook_id`, `User`.`fb_username`, 
+`User`.`fb_url`, `User`.`fb_birthday`, `User`.`fb_hometown`, 
+`User`.`fb_bio`, `User`.`fb_gender`, `User`.`fb_location`, 
+`User`.`fb_timezone`, `User`.`fb_image`, `User`.`created`, 
+`User`.`modified`, `User`.`active`, `User`.`images_updated` FROM users 
+ AS `User` WHERE User.id = 174</td><td></td><td style = "text-align: right">1</td><td style = "text-align: right">1</td><td style = "text-align: right">0</td></tr>
+<tr><td>8</td><td>SELECT `Seo`.`id`, `Seo`.`name`, `Seo`.`url`, `Seo`.`title`, `Seo`.`keywords`, `Seo`.`description`, `Seo`.`modified` FROM `vacahcom_vacationfish`.`seos` AS `Seo`   WHERE `Seo`.`url` = &#039;/user_images/add&#039;    LIMIT 1</td><td></td><td style = "text-align: right">0</td><td style = "text-align: right">0</td><td style = "text-align: right">0</td></tr>
+	</tbody></table>
+	
+
+	<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/9259.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37874005-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+ 
+</body>
+<script type="text/javascript">
+//<![CDATA[
+
+$(".nav a.parent").click(function() {
+	$(".nav .dropdown").slideToggle("fast", function() { });
+});
+
+//]]>
+</script><div id="fb-root"></div><script src="//connect.facebook.net/en_US/all.js"></script><script type="text/javascript">
+//<![CDATA[
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '495155817204813', // App ID
+			channelURL : '../../Vendor/channel.php', // Channel File
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			oauth      : true, // enable OAuth 2.0
+			xfbml      : true  // parse XFBML
+		});
+
+		FB.Event.subscribe('auth.login',function(){window.location.reload()});
+
+		// Checks whether the user is logged in
+		FB.getLoginStatus(function(response) {
+			if (response.authResponse) {
+				// logged in and connected user, someone you know
+				// alert('You are connected');
+			} else {
+				// no user session available, someone you dont know
+				// alert('You are disconnected');
+			}
+		});
+
+		FB.Event.subscribe('auth.authResponseChange', function(response) {
+			if (response.authResponse) {
+				// the user has just logged in
+				// alert('You just logged in facebook from somewhere');
+			} else {
+				// the user has just logged out
+				// alert('You just logged out from faceboook');
+			}
+		});
+
+		// Other javascript code goes here!
+
+	};
+
+	// Customized FB Connect button according to UI - Added by Vinod Patidar | 10 Sept 2012
+	function fb_login(){
+		FB.login(function(response) {
+			if (response.authResponse) {
+			console.log('Welcome!  Fetching your information.... ');
+			console.log(response); // dump complete info
+			access_token = response.authResponse.accessToken; //get access token
+			user_id = response.authResponse.userID; //get FB UID
+
+			FB.api('/me', function(response) {
+				user_email = response.email; //get user email
+			  // you can store this data into your database
+			});
+
+			} else {
+			//user hit cancel button
+			console.log('User cancelled login or did not fully authorize.');
+
+			}
+		}, {
+			scope: 'email,user_about_me,user_birthday,user_location,user_photos,publish_stream'
+		});
+	}
+
+	// Customized FB Connect button and saving property relevant information as temporarily...
+	function fb_property_login() {
+		if ( ! $('#PropertyCreateSpaceForm').validate( ).form( )) {
+			return false;
+		}
+
+		$('#PropertyConnectWithFb').val('1');
+
+		var data = $('#PropertyCreateSpaceForm').serialize();
+		var post_url = '/vacationfish.localdomain/public_html/create-space';
+		$.post(post_url, data);
+
+		FB.login(function(response) {
+			if (response.authResponse) {
+			console.log('Welcome!  Fetching your information.... ');
+			console.log(response); // dump complete info
+			access_token = response.authResponse.accessToken; //get access token
+			user_id = response.authResponse.userID; //get FB UID
+
+			FB.api('/me', function(response) {
+				user_email = response.email; //get user email
+			  // you can store this data into your database
+			});
+
+			} else {
+			//user hit cancel button
+			console.log('User cancelled login or did not fully authorize.');
+
+			}
+		}, {
+			scope: 'email,user_about_me,user_birthday,user_location,user_photos,publish_stream'
+		});
+
+	}
+	// logs the user in the application and facebook
+	function login(redirection){
+		FB.login(function (response) {
+			if(response.authResponse) {
+				// user is logged in
+				console.log('Welcome!');
+				console.log(response);
+				if(redirection != null && redirection != ''){
+					top.location.href = redirection;
+				}
+			} else {
+				// user could not log in
+				console.log('User cancelled login or did not fully authorize.');
+			}
+		}, {scope: 'email'});
+	}
+
+	// logs the user out of the application and facebook
+	function logout(redirection){
+		FB.logout(function(response) {
+			// user is logged out
+			// redirection if any
+			if(redirection != null && redirection != ''){
+				top.location.href = redirection;
+			}
+		});
+	}
+
+	// Load the SDK Asynchronously
+	(function() {
+	var e = document.createElement('script'); e.async = true;
+	e.src = document.location.protocol
+	+ '//connect.facebook.net/en_US/all.js';
+	document.getElementById('fb-root').appendChild(e);
+	}());
+//]]>
+</script>
+
+
+
+</html>

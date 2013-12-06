@@ -1,0 +1,104 @@
+we did not have the same file structure as we did in xampp/ original fishbake.localdomain
+
+lets try once more. 
+
+
+
+Microsoft Windows XP [Version 5.1.2600]
+(C) Copyright 1985-2001 Microsoft Corp.
+
+C:\Documents and Settings\user>cd c:\
+
+C:\>cd xampp-vfish-git\xampp\htdocs\fishbake.localdomain
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain>dir\w
+ Volume in drive C has no label.
+ Volume Serial Number is E4CB-7CD7
+
+ Directory of C:\
+
+File Not Found
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain>dir/w
+ Volume in drive C has no label.
+ Volume Serial Number is E4CB-7CD7
+
+ Directory of C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain
+
+[.]           [..]          .buildpath    .project      [.settings]
+[app]         [cake2.2.2]   [logs]        [Notes]       [public_html]
+               2 File(s)            994 bytes
+               8 Dir(s)  231,192,641,536 bytes free
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain>cd cake2.2.2
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2>cd Cake\Console
+The system cannot find the path specified.
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2>cake -app ../ bak
+e model PropertyImages
+'cake' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2>cd lib
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib>cd Cake
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake>cd Conso
+le
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console>
+cake -app ../app bake model PropertyImages
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Co
+nsole\..\app\
+---------------------------------------------------------------
+Warning Error: include_once(C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain
+\cake2.2.2\lib\Cake\Console\..\app\Config\database.php): failed to open stream:
+No such file or directory in [C:\xampp-vfish-git\xampp\htdocs\fishbake.localdoma
+in\cake2.2.2\lib\Cake\Model\ConnectionManager.php, line 68]
+
+Warning Error: include_once(): Failed opening 'C:\xampp-vfish-git\xampp\htdocs\f
+ishbake.localdomain\cake2.2.2\lib\Cake\Console\..\app\Config\database.php' for i
+nclusion (include_path='.;C:\php5\pear') in [C:\xampp-vfish-git\xampp\htdocs\fis
+hbake.localdomain\cake2.2.2\lib\Cake\Model\ConnectionManager.php, line 68]
+
+Error: The datasource configuration "default" was not found in database.php
+#0 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Model
+\ConnectionManager.php(94): ConnectionManager::_getConnectionObject('default')
+#1 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Conso
+le\Command\Task\ModelTask.php(908): ConnectionManager::getDataSource('default')
+#2 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Conso
+le\Command\Task\ModelTask.php(845): ModelTask->getAllTables('default')
+#3 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Conso
+le\Command\Task\ModelTask.php(104): ModelTask->listAll('default')
+#4 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Conso
+le\Shell.php(390): ModelTask->execute()
+#5 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Conso
+le\Shell.php(387): Shell->runCommand('execute', Array)
+#6 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Conso
+le\ShellDispatcher.php(201): Shell->runCommand('model', Array)
+#7 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Conso
+le\ShellDispatcher.php(69): ShellDispatcher->dispatch()
+#8 C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Conso
+le\cake.php(43): ShellDispatcher::run(Array)
+#9 {main}
+
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console>
+cake bake model PropertyImages -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.lo
+caldomain\app"
+
+
+Parse error: syntax error, unexpected T_FUNCTION in C:\xampp-vfish-git\xampp\htd
+ocs\fishbake.localdomain\app\Plugin\DebugKit\Controller\Component\ToolbarCompone
+nt.php on line 174
+
+
+C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console>
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\app" bake

@@ -1,0 +1,143 @@
+http://papermashup.com/jquery-ajax-delete/
+demo
+http://papermashup.com/demos/jquery-delete/
+
+PART ONE - This images widget that hold will the pix. 
+
+-----------
+VIEW
+-------------
+
+here is our clever little one click delete. 
+we can use this on an entire bank of images. 
+it will take as long to delete pix as it would to 
+click check boxes next to them in a list. 
+
+// we want to use a data string so that we can pass 
+// property id as well as image id.
+
+/js/properties/deleter.js
+
+$(document).ready(function() {
+$('#load').hide();
+});
+
+$(function() {
+$(".delete").click(function() {
+$('#load').fadeIn();
+var commentContainer = $(this).parent();
+var id = $(this).attr("id");
+var string = 'id='+ id ;
+	
+$.ajax({
+   type: "POST",
+   url: "delete.php",
+   data: string,
+   cache: false,
+   success: function(){
+	commentContainer.slideUp('slow', function() {$(this).remove();});
+	$('#load').fadeOut();
+  }
+   
+ });
+
+return false;
+	});
+});
+
+this is the HTML for the div that holds the images 
+so that as they are deleted, they disappear. 
+this eliminates the whole rigamarole of having to 
+parse an ajax call coming back, send out another post, 
+and so on. instead, we just make the div holding the image
+disappear. if the page is refreshed, the list of images 
+will repopulate, without those that have been deleted. 
+
+=== HTML ============
+
+<div id="inner_wrap"> <h3>Delete Comments</h3>
+<div id="load" align="center"><img src="images/loading.gif" width="28" height="28" align="absmiddle"/> Loading...</div>
+click the x to delete a comment<br/>
+<br/>
+<div class="box"><img src="images/avatar.png" width="75" height="75" border="0" class="avatar"/>
+<div class="text"><span>Ashley Ford</span><br/>
+This is my first comment here! wow i love it here
+<div class="date">17th July 2009</div>
+</div>
+<a href="#" id="1" class="delete">x</a>
+<div class="clear"></div>
+</div>
+<div class="box"><img src="images/avatar.png" width="75" height="75" border="0" class="avatar"/>
+<div class="text"><span>Ashley Ford</span><br/>
+You can subscribe to my RSS feed to get my latest blog posts delivered right to your favourite feed reader right <a href="http://feeds2.feedburner.com/AshleyFord-Papermashupcom" target="_blank">here</a>
+<div class="date">16th July 2009</div>
+</div>
+<a href="#" id="2" class="delete">x</a>
+<div class="clear"></div>
+</div>
+<div class="box"><img src="images/avatar.png" width="75" height="75" border="0" class="avatar"/>
+<div class="text"><span>Ashley Ford</span><br/>
+The weather outside is really bad!
+<div class="date">15th July 2009</div>
+</div>
+<a href="#" id="3" class="delete">x</a>
+<div class="clear"></div>
+</div>
+</div>
+
+===============
+we won't be using the following, but it goes with 
+the script below for the controller
+===============
+
+$('#delete').click(function (){
+[...]
+
+var itemId=$('#itemId').val(); //comes from hidden input
+var imgName = $('#imgName').val(); //comes from hidden input
+
+$.ajax({
+  type: 'POST',
+  url:'http://localhost/html/Project/v5/CakeStrap/items/deletePhotoFile/',
+  data:{"itemId":itemId, imgName: imgName},
+  success: function(data){
+    alert(data); //alerts some HTML... seems to be delete_photo_file.ctp content
+  }
+});
+
+});
+-------------
+CONTROLLER
+-------------
+App::uses('File', 'Utility');
+class ItemsController extends AppController{
+
+
+In your ItemsController, make sure you actually 
+load the File utility class, by adding:
+
+App::uses('File', 'Utility');
+Just below the opening <?php tag before your class definition. 
+In your action you can just use $this->request->data to get the data keys. 
+Also, return the action of the delete() function, 
+so you can trigger your AJAX success/error call accordingly.
+
+public function deletePhotoFile() {
+    $imgName = $this->request->data['imgName'];
+    $itemId = $this->request->data['itemId'];
+    /**
+     * Where is the $dir below actually set? 
+     Make sure to pass it properly!
+     * Furthermore, it's always cleaner to use DS constant
+     * (short for DIRECTORY_SEPARATOR), so the code will work on any OS
+     */
+    $file = new File($dir . DS . $itemId . DS . $imgName);
+    return $file->delete();
+} 
+
+
+data:{"itemId":itemId, "imgName": imgName},
+As otherwise, you just call the imgName JS var twice.
+
+
+ WWW_ROOT. $dir = WWW_ROOT.'files' . DS . 'Item' . DS . $itemId . DS . $photoName; – Bagata Feb 26 at 2:02

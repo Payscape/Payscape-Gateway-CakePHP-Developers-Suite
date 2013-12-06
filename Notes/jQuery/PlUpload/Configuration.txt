@@ -1,0 +1,19 @@
+
+IT looks like the module is configured in 
+create_two.js
+propertyimages.js
+
+Thanks to Komodo Edit we did a search and it appears those are the two 
+files that have the limitations for the number of files. 
+
+Next up: we want a button to search for images to upload, 
+then a button to Send the images so that the user 
+may initialize what the want to upload rather than having 
+the thing start firing as soon as images are placed in the upload queue. 
+
+This should work like a mini FTP engine that is easy to use. 
+
+
+
+
+

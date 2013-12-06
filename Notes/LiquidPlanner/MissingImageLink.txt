@@ -1,0 +1,8 @@
+
+
+http://vacationfish.com/img/main_missing.png
+
+this displays properly on the propertyimages/view page.
+looks better than a text note. 
+
+ 

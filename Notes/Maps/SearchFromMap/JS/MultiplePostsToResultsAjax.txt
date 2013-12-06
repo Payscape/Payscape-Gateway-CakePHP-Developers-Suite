@@ -1,0 +1,15 @@
+
+data[Search][sm_map_ne_la...	33.837679222187866
+data[Search][sm_map_ne_ln...	-84.25458505892334
+data[Search][sm_map_sw_la...	33.82284908462996
+data[Search][sm_map_sw_ln...	-84.27355364107666
+
+data[Search][sm_map_ne_la...	33.837679222187866
+data[Search][sm_map_ne_ln...	-84.25458505892334
+data[Search][sm_map_sw_la...	33.82284908462996
+data[Search][sm_map_sw_ln...	-84.27355364107666
+
+data[Search][sm_map_ne_la...	33.837679222187866
+data[Search][sm_map_ne_ln...	-84.25458505892334
+data[Search][sm_map_sw_la...	33.82284908462996
+data[Search][sm_map_sw_ln...	-84.27355364107666

@@ -1,0 +1,51 @@
+ajax_results
+	we do not pass a destination to this query, instead we pass 
+	our lat lng coordinates, and our criteria. 
+	use the apps we just completed so that we can pass this stuff in a 
+	single post, 
+	and then build the method on the controller so that he sends back 
+	the data in jkHXC (or whatever that variable is called). 
+	
+	this isn't rocket science, well actually it is. 
+	
+	
+
+Currently our Searches Controller is trying to 
+use the bounds of the map to perform searches. 
+
+Instead, we need to 
+1 retrieve the center of the map long / lat
+2 if(redo search has been clicked)
+
+	send the longitude and latitude to Searches / results
+	get the ids for the properties that match those long / lat first, 
+	
+	then add this to the regular query 
+	
+	if($longitute && $latitude){ // this is a map search 
+	
+		$conditions .= "AND id IN($long_lat_ids);
+		
+		'id IN' => $long_lat_ids,
+		
+		
+		$this->Word->find('all', array(
+    'conditions' => array(
+    'Property.id' => $long_lat_ids,
+    )
+));
+		
+		
+we actually may want to simply build a new search function 
+just like we did for save_search and use it instead. 
+trying to pile all of this into Searches / results 
+hold on: we do need to use this method because we aren't
+no, not so. We can JSON back from any controller or method, 
+so let's explore creating our own ajax_get_results 
+and use it for our map queries. 
+
+where is the JSON being created for Searches / results?
+we can use that for the patterns we want to be returning. 
+
+		
+	

@@ -1,0 +1,5 @@
+
+	$base = $this->webroot;
+		produces vfish22.localdomain/public_html//properties/view/906
+		
+	$base_url = $this->base;	

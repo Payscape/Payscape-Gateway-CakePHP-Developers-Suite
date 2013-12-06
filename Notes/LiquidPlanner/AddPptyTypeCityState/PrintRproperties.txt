@@ -1,0 +1,123 @@
+Array
+(
+    [Property] => Array
+        (
+            [id] => 32134
+            [user_id] => 505
+            [property_type_id] => 10
+            [title] => Bungalow in Frazier Woods
+            [address] => 1647 Frazier Road
+            [address2] => 
+            [unit] => 
+            [country_id] => 0
+            [city] => Decatur
+            [state_id] => 12
+            [zip] => 30033
+            [directions] => 
+            [house_rules] => No running around outside and yelling. 
+            [manual] => 
+            [daily_rate] => 154.00
+            [weekly_rate] => 
+            [monthly_rate] => 
+            [weekend_rate] => 168.00
+            [deposit] => 36.00
+            [square_footage] => 2600
+            [bathrooms] => 1.0
+            [bedrooms] => 2
+            [sleeping_capacity] => 2
+            [pets_allowed] => 
+            [smoking_allowed] => 
+            [wheelchair_accessible] => 
+            [credit_accepted] => 
+            [description] => This is the description for Bungalow in Frazier Woods. Here is some more description to get to our 15 word quota.
+            [relation] => 
+            [latitude] => 33.8299440
+            [longitude] => -84.2654440
+            [area_latitude] => 33.8329710
+            [area_longitude] => 33.8329710
+            [area_radius] => 500
+            [contact_name] => 
+            [contact_email] => smareches@gmail.com
+            [contact_primary_phone] => 
+            [contact_secondary_phone] => 
+            [cleaning_fee] => 1800.00
+            [created] => 2013-08-20 12:02:11
+            [modified] => 2013-09-17 22:49:28
+            [published] => 1
+            [views] => 0
+            [toc] => 1
+            [toc_date] => 
+            [geoname_id] => 
+            [admin_code_id] => 
+            [distance] => 4.20056631842283
+        )
+
+    [AdminCode] => Array
+        (
+            [id] => 
+            [code] => 
+            [name] => 
+            [nameAscii] => 
+            [geoname_id] => 
+        )
+
+    [User] => Array
+        (
+            [id] => 505
+            [group_id] => 2
+            [first_name] => Stephen
+            [last_name] => Mareches
+            [password] => 084c7d9c6fe4d6fef6cbef3fd11f3b053370007d
+            [ident] => 
+            [token] => 
+            [activation_token] => 484b1da67d68bc0d34b3e00aecb06bdafdae8299
+            [email] => smareches@gmail.com
+            [company_name] => 
+            [phone] => 
+            [contact_name] => Stephen
+            [contact_email] => smareches@gmail.com
+            [contact_primary_phone] => 
+            [contact_secondary_phone] => 
+            [is_allowed_alert] => 
+            [facebook_id] => 
+            [fb_username] => 
+            [fb_url] => 
+            [fb_birthday] => 
+            [fb_hometown] => 
+            [fb_bio] => 
+            [fb_gender] => 
+            [fb_location] => 
+            [fb_timezone] => 
+            [fb_image] => 
+            [created] => 2013-08-20 11:59:02
+            [modified] => 2013-08-20 11:59:02
+            [active] => 1
+            [full_name] => Stephen Mareches
+            [display] => Stephen Mareches 
+        )
+
+    [PropertyType] => Array
+        (
+            [id] => 10
+            [name] => Bungalow
+            [sort] => 60
+        )
+
+    [Discount] => Array
+        (
+        )
+
+    [PropertyImage] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 223413
+                    [property_id] => 32134
+                    [image] => 808101538.jpg
+                    [name] => main image boy is here. . 
+                    [sort] => 3
+                )
+
+        )
+
+)

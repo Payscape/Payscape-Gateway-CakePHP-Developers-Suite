@@ -1,0 +1,28 @@
+
+we need to inspect property-header, details and thumb classes
+something is screwing this div up, could be a float right
+there was a lot of wierdness going on yesterday trying to get 
+things straightened out. 
+this is most likely a CSS issue
+		
+		localhost borked
+		
+<div class="property-header">
+		<div class="thumb">
+		<a href="/vacationfish.localdomain/public_html/properties/view/906"><img src="/vacationfish.localdomain/public_html/img/files/906/images/164475871.jpg" width="114" height="74" alt="" /></a>	</div>
+		<div class="details">
+		<h1><a href="/vacationfish.localdomain/public_html/properties/view/906">Big Dog Show</a></h1>
+		<h2>1647 Frazier Road, Decatur</h2>
+		</div>
+</div>
+
+	sophia22 displaying properly
+	
+<div class="property-header">
+		<div class="thumb">
+		<a href="/vacationfish/public_html/properties/view/886"><img src="/vacationfish/public_html/img/files/886/images/2533248458.jpg" width="114" height="74" alt="" /></a>	</div>
+		<div class="details">
+		<h1><a href="/vacationfish/public_html/properties/view/886">Test Cabin Listing in the Woods</a></h1>
+		<h2>1647 Frazier Road, Decatur</h2>
+		</div>
+</div>	

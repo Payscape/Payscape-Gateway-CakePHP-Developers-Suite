@@ -1,0 +1,72 @@
+
+	tables
+	
+[transactions]			Sales / Authorization / Credit
+	
+	id
+	*Required
+	type						sale / auth / credit
+	key_id						Security Key id from Merchand Control Panel
+	hash						ND5 variabvle Hash
+	time						UTC timestamp in YYYYMMDDHHMMSS format
+	ccnumber					16 charecters
+	ccexp						4 charecters
+		checkname				The customers ACH account
+		checkaba				The customer's bank routing number.
+		chackaccount			The customer's bank account number.
+		account_holder_type		business / personal
+		account_type			checking / savings
+	amount
+	
+	*Recommended
+	cvv							card security code
+	payment **					credit card / check
+	ipaddress
+	
+	firstname
+	lastname
+	company
+	address1
+	address2				optional
+	city 
+	state
+	zip
+	country
+	phone
+	fax
+	email
+	
+	
+	[producrts]
+	
+	for now we do not need this table,
+	
+	[customers]
+	
+	The customer's bank account number.	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	customers
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	products

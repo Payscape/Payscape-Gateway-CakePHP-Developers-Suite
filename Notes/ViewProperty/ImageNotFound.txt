@@ -1,0 +1,94 @@
+
+Let's see if we can hardcode the images into the view.
+
+http://localhost:8080/vacationfish.localdomain/public_html/searches/results/path:PropertyImage%2F6370%2Fimage.43620130412093214.jpg/thumb:PropertyImage%2F6370%2Fthumb_image.43620130412093214.jpg/manage:PropertyImage%2F6370%2Fmanage_image.43620130412093214.jpg/list:PropertyImage%2F6370%2Flist_image.43620130412093214.jpg/map:PropertyImage%2F6370%2Fmap_image.43620130412093214.jpg/grid:PropertyImage%2F6370%2Fgrid_image.43620130412093214.jpg/main:PropertyImage%2F6370%2Fmain_image.43620130412093214.jpg
+
+we are still getting some JavaSCript crap in here 
+change the class of the image. 
+
+http://localhost:8080/vacationfish.localdomain/public_html/searches/results/path:PropertyImage%2F6370%2Fimage.43620130412093214.jpg/thumb:PropertyImage%2F6370%2Fthumb_image.43620130412093214.jpg/manage:PropertyImage%2F6370%2Fmanage_image.43620130412093214.jpg/list:PropertyImage%2F6370%2Flist_image.43620130412093214.jpg/map:PropertyImage%2F6370%2Fmap_image.43620130412093214.jpg/grid:PropertyImage%2F6370%2Fgrid_image.43620130412093214.jpg/main:PropertyImage%2F6370%2Fmain_image.43620130412093214.jpg
+
+so search Controller is building this for the image information:
+
+"./files/859/images/
+Array
+(
+    [path] => PropertyImage/6370/image.43620130412093214.jpg
+    [thumb] => PropertyImage/6370/thumb_image.43620130412093214.jpg
+    [manage] => PropertyImage/6370/manage_image.43620130412093214.jpg
+    [list] => PropertyImage/6370/list_image.43620130412093214.jpg
+    [map] => PropertyImage/6370/map_image.43620130412093214.jpg
+    [grid] => PropertyImage/6370/grid_image.43620130412093214.jpg
+    [main] => PropertyImage/6370/main_image.43620130412093214.jpg
+)
+"
+            
+Vanderbilt Avenue 602
+
+6 bed/5 bath that sleeps 16, 3 master bedrooms with private baths, 1 master bedroom...
+
+     Add to wishlist
+$357
+Per night
+"./files/858/images/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Image not found: /vacationfish.localdomain/public_html/properties/view/
+
+path:PropertyImage/6371/image.43720130412093214.jpg
+/thumb:PropertyImage/6371/thumb_image.43720130412093214.jpg/
+manage:PropertyImage/6371/manage_image.43720130412093214.jpg/
+list:PropertyImage%2F6371%2Flist_image.43720130412093214.jpg/
+map:PropertyImage%2F6371%2Fmap_image.43720130412093214.jpg/
+grid:PropertyImage%2F6371%2Fgrid_image.43720130412093214.jpg/
+main:PropertyImage%2F6371%2Fmain_image.43720130412093214.jpg
+
+on search/results
+
+http://localhost:8080/vacationfish.localdomain/public_html/searches/results/
+path:PropertyImage%2F6370%2Fimage.43620130412093214.jpg/
+thumb:PropertyImage%2F6370%2Fthumb_image.43620130412093214.jpg/
+manage:PropertyImage%2F6370%2Fmanage_image.43620130412093214.jpg/
+list:PropertyImage%2F6370%2Flist_image.43620130412093214.jpg/
+map:PropertyImage%2F6370%2Fmap_image.43620130412093214.jpg/
+grid:PropertyImage%2F6370%2Fgrid_image.43620130412093214.jpg/
+main:PropertyImage%2F6370%2Fmain_image.43620130412093214.jpg
+
+these urls are screwed. 
+we have to rewrite them to the property_id and the images folder. 
+we do have the correct images being selected. 
+
+this script is being produced by galleria.js
+
+now to see what is producing the URL. 
+
+
+

@@ -1,0 +1,40 @@
+Data:
+
+\app\Controller\SearchesController.php (line 253)
+
+array(
+	'bedrooms' => array(
+		'min' => '1',
+		'max' => '2'
+	),
+	'bathrooms' => array(
+		'min' => '1',
+		'max' => '2'
+	),
+	'square_footage' => array(
+		'min' => '500',
+		'max' => '2300'
+	),
+	'daily_rate' => array(
+		'min' => '0',
+		'max' => '290'
+	),
+	'amenities' => '19,17',
+	'sleeping_capacity' => '2'
+)
+
+
+Go:
+\app\Controller\SearchesController.php (line 255)
+
+array(
+	'destination' => 'Salt Lake City, UT, USA',
+	'city' => 'Salt Lake City',
+	'state' => 'Utah',
+	'state_abbr' => 'UT',
+	'country' => 'United States',
+	'country_abbr' => 'US',
+	'latitude' => '40.7607793',
+	'longitude' => '-111.89104739999999'
+)
+

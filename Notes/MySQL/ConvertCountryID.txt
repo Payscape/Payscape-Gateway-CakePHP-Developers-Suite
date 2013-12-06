@@ -1,0 +1,54 @@
+
+1. alter country_id to char(3)
+2. Select DISTINCT(country_id) FROM properties
+3. now run something like this :
+
+update properties set country_id="US" 
+WHERE country_id LIKE '1'
+
+On Dev 
+1
+0
+NULL
+
+SELECT * FROM countries WHERE 
+name LIKE '%Lucia%'
+
+LC
+
+SELECT * FROM countries WHERE 
+name LIKE '%France%'
+
+FR
+
+
+
+Select DISTINCT(country_id) FROM properties
+
+SELECT * FROM `properties`
+where country_id LIKE '%1%'
+1
+
+
+NULL
+SELECT * FROM `properties`
+where country_id is null
+
+these guys are all incomplete records, 
+geoname_id IS NULL
+Not much we can do with these, they're never 
+going to come up in the results. 
+
+
+Luana
+Costa Rica
+
+
+SELECT * FROM `properties`
+where country_id LIKE '%8%'
+9
+8
+MX
+7
+11
+AI

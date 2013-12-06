@@ -1,0 +1,52 @@
+<!-- bof: beds, baths, square feet -->
+<div class="search-category">
+					<div class="category-inputs">
+						<div class="row">
+							<?php echo $this->Form->input('Search.bedrooms.min', array('type' => 'hidden')); ?>
+							<?php echo $this->Form->input('Search.bedrooms.max', array('type' => 'hidden')); ?>
+							<label class="block-label">Bedrooms</label>
+							<div id="bedrooms">
+								<div id="BedMin" class="min"></div><div id="BedMax" class="max"></div>
+							</div>
+							<div id="slider-range-Bed"></div>
+						</div>
+						<div class="row">
+							<?php echo $this->Form->input('Search.bathrooms.min', array('type' => 'hidden')); ?>
+							<?php echo $this->Form->input('Search.bathrooms.max', array('type' => 'hidden')); ?>
+							<label class="block-label">Bathrooms</label>
+							<div id="bathrooms">
+								<div id="BathMin" class="min"></div><div id="BathMax" class="max"></div>
+							</div>
+							<div id="slider-range-Bath"></div>
+						</div>
+						<div class="row">
+							<?php echo $this->Form->input('Search.square_footage.min', array('type' => 'hidden')); ?>
+							<?php echo $this->Form->input('Search.square_footage.max', array('type' => 'hidden')); ?>
+							<label class="block-label">Square Feet</label>
+							<div id="square_footage">
+								<div id="SqFtMin" class="min"></div><div id="SqFtMax" class="max"></div>
+							</div>
+							<div id="slider-range-SqFt"></div>
+						</div>
+					</div>
+				</div>
+				
+<!-- bof: price -->
+
+				<div class="s-title">
+					<span class="right"></span>
+					<h3>Price</h3>
+				</div>
+				
+				<div class="search-category">
+					<div class="category-inputs">
+						<div class="row">
+							<?php echo $this->Form->input('Search.daily_rate.min', array('type' => 'hidden')); ?>
+							<?php echo $this->Form->input('Search.daily_rate.max', array('type' => 'hidden')); ?>
+							<span id="rate_daily">
+								<div id="dailyRateMin" class="min"></div><div id="dailyRateMax" class="max"></div>
+							</span>
+							<div id="slider-range-price"></div>
+						</div>
+					</div>
+				</div>								

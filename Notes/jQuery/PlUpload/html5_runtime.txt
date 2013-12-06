@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+ 
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="Multiple file upload utility using Flash, Silverlight, Google Gears, HTML5 or BrowserPlus!"/>
+    <meta name="keywords" content="upload,multiple,file upload,upload files,file management,google gears,silverlight,flash,html5,browserplus" />
+    <meta name="author" content="Moxiecode Systems AB" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" title="Plupload News RSS" href="http://www.plupload.com/forum_news_rss.php" />
+    <title>Plupload - A tool for uploading files using Flash, Silverlight, Google Gears, HTML5 or Browserplus</title>
+<script type="text/javascript" src="js/syntax/shCore.js"></script>
+<script type="text/javascript" src="js/syntax/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/syntax/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="css/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="css/shThemeDefault.css"/>
+            <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+            google.load("jquery", "1.4");
+        </script>
+    </head>
+<body id="top">
+ 
+<div id="header">
+    <div class="center_wrapper">
+        <div id="navigation">
+            <div id="navigation_content">
+                <div class="left">
+                    <ul>
+                        <li><a href="/index.php">About</a></li>
+                        <li><a href="/documentation.php">Documentation</a></li>
+                        <li class="current_page"><a href="/example_queuewidget.php">Examples</a></li>
+                        <li><a href="/punbb">Forum</a></li>
+                        <li><a href="/license.php">License</a></li>
+                    </ul>
+                    <div class="clearer">&nbsp;</div>
+                </div>
+ 
+                <div class="right"><a href="/download.php" id="download_button" title="Download Plupload"></a></div>
+                <div class="clearer">&nbsp;</div>
+            </div>
+        </div>
+ 
+    </div>
+</div>
+ 
+<div id="splash">
+    <div class="center_wrapper">
+        <div id="logo"><a href="/index.php"></a></div>
+        <div class="left" id="splash_text">
+            <h1>Plupload <small>v1.5.6</small></h1>
+            <p>Allows you to upload files using HTML5, Gears, Silverlight, Flash, BrowserPlus or normal forms, providing some unique features such as upload progress, image resizing and chunked uploads.</p>
+        </div>
+        <div class="right" id="splash_features"></div>
+        <div class="clearer">&nbsp;</div>
+    </div>
+</div>
+ 
+<!-- Load the queue CSS -->
+<style type="text/css">@import url(/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css);</style>
+ 
+<!-- Third party script for BrowserPlus runtime (Google Gears included in Gears runtime now) -->
+<script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+ 
+<!-- Load plupload and all it's runtimes and finally the jQuery queue widget -->
+<script type="text/javascript" src="/plupload/js/plupload.full.js"></script>
+<script type="text/javascript" src="/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+ 
+<script type="text/javascript"> 
+// Convert divs to queue widgets when the DOM is ready
+$(function() {
+    // Setup flash version
+    $("#flash_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'flash',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ],
+ 
+        // Flash settings
+        flash_swf_url : '/plupload/js/plupload.flash.swf'
+    });
+ 
+    // Setup gears version
+    $("#gears_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'gears',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ]
+    });
+ 
+    // Setup silverlight version
+    $("#silverlight_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'silverlight',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ],
+ 
+        // Silverlight settings
+        silverlight_xap_url : '/plupload/js/plupload.silverlight.xap'
+    });
+ 
+    // Setup browserplus version
+    $("#browserplus_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'browserplus',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+        dragdrop : false, // Disabled since BrowserPlus is to buggy
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ]
+    });
+ 
+    // Setup html5 version
+    $("#html5_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'html5',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+        dragdrop : true,
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ]
+    });
+ 
+    // Setup html4 version
+    $("#html4_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'html4',
+        url : 'upload.php'
+    });
+});
+</script>
+ 
+<div id="overview" class="examples">
+    <div class="center_wrapper">
+        <div id="overview_content">
+ 
+            <h1 class="page-title">Plupload Examples</h1>
+ 
+            <ul class="tab-list">
+                <li class="tab"><a href="example_queuewidget.php" class="tab-link">jQuery queue widget</a></li>
+                <li class="tab"><a href="example_jquery_ui.php" class="tab-link">jQuery UI widget</a></li>
+                <li class="tab selected-tab"><a href="example_all_runtimes.php" class="tab-link">All runtimes</a></li>
+                <li class="tab"><a href="example_custom.php" class="tab-link">Custom upload</a></li>
+                <li class="tab"><a href="example_events.php" class="tab-link">Events</a></li>
+            </ul>
+ 
+            <div class="clearer">&nbsp;</div>
+ 
+        </div>
+    </div>
+</div>
+ 
+<div id="main">
+    <div class="center_wrapper">
+        <div id="main_content">
+ 
+            <h1>All runtimes example</h1>
+ 
+            <form method="post" action="examples_dump.php">
+                <p>Shows the jQuery Plupload Queue widget where each runtime is initialized separately so that you can see what your browser currently supports.</p>
+ 
+                <h4>Flash runtime</h4>
+                <div id="flash_uploader" style="height: 330px;">You browser doesn't have Adobe Flash installed.</div>
+ 
+                <h4>Gears runtime</h4>
+                <div id="gears_uploader" style="height: 330px;">You browser doesn't have Google Gears plugin installed.</div>
+ 
+                <h4>Silverlight runtime</h4>
+                <div id="silverlight_uploader" style="height: 330px;">You browser doesn't have Microsoft Silverlight plugin installed.</div>
+ 
+                <h4>BrowserPlus runtime</h4>
+                <div id="browserplus_uploader" style="height: 330px;">You don't have the Yahoo BrowserPlus plugin installed.</div>
+ 
+                <h4>HTML 5 runtime</h4>
+                <div id="html5_uploader" style="height: 330px;">You browser doesn't support native upload. Try Firefox 3 or Safari 4.</div>
+ 
+                <h4>HTML 4 runtime</h4>
+                <div id="html4_uploader" style="height: 330px;">You browser doesn't support simple upload forms. Are you using Lynx?</div>
+ 
+                <br style="clear: both" />
+ 
+                <input type="submit" value="Send" />
+            </form>
+ 
+            <h2>Source</h2>
+            <div>Here are the essentials parts needed to convert a element into an upload queue widget.</div>
+            <pre class="brush: xml">
+&lt;!-- Load Queue widget CSS and jQuery --&gt;
+&lt;style type="text/css"&gt;@import url(/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css);&lt;/style&gt;
+&lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"&gt;&lt;/script&gt;
+ 
+&lt;!-- Third party script for BrowserPlus runtime (Google Gears included in Gears runtime now) --&gt;
+&lt;script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"&gt;&lt;/script&gt;
+ 
+&lt;!-- Load plupload and all it's runtimes and finally the jQuery queue widget --&gt;
+&lt;script type="text/javascript" src="/plupload/js/plupload.full.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"&gt;&lt;/script&gt;
+ 
+&lt;script type="text/javascript"&gt;
+// Convert divs to queue widgets when the DOM is ready
+$(function() {
+    // Setup flash version
+    $("#flash_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'flash',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ],
+ 
+        // Flash settings
+        flash_swf_url : '/plupload/js/plupload.flash.swf'
+    });
+ 
+    // Setup gears version
+    $("#gears_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'gears',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ]
+    });
+ 
+    // Setup silverlight version
+    $("#silverlight_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'silverlight',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ],
+ 
+        // Silverlight settings
+        silverlight_xap_url : '/plupload/js/plupload.silverlight.xap'
+    });
+ 
+    // Setup browserplus version
+    $("#browserplus_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'browserplus',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+        dragdrop : false, // Disabled since BrowserPlus is to buggy
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ]
+    });
+ 
+    // Setup html5 version
+    $("#html5_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'html5',
+        url : 'upload.php',
+        max_file_size : '10mb',
+        chunk_size : '1mb',
+        unique_names : true,
+ 
+        // Resize images on clientside if we can
+        resize : {width : 320, height : 240, quality : 90},
+ 
+        // Specify what files to browse for
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"}
+        ]
+    });
+ 
+    // Setup html4 version
+    $("#html4_uploader").pluploadQueue({
+        // General settings
+        runtimes : 'html4',
+        url : 'upload.php'
+    });
+});
+&lt;/script&gt;
+ 
+...
+ 
+&lt;h4&gt;Flash runtime&lt;/h4&gt;
+&lt;div id="flash_uploader"&gt;You browser doesn't have Adobe Flash installed.&lt;/div&gt;
+ 
+&lt;h4&gt;Gears runtime&lt;/h4&gt;
+&lt;div id="gears_uploader"&gt;You browser doesn't have Google Gears plugin installed.&lt;/div&gt;
+ 
+&lt;h4&gt;Silverlight runtime&lt;/h4&gt;
+&lt;div id="silverlight_uploader"&gt;You browser doesn't have Microsoft Silverlight plugin installed.&lt;/div&gt;
+ 
+&lt;h4&gt;BrowserPlus runtime&lt;/h4&gt;
+&lt;div id="browserplus_uploader"&gt;You don't have the Yahoo BrowserPlus plugin installed.&lt;/div&gt;
+ 
+&lt;h4&gt;HTML 5 runtime&lt;/h4&gt;
+&lt;div id="html5_uploader"&gt;You browser doesn't support native upload. Try Firefox 3 or Safari 4.&lt;/div&gt;
+ 
+&lt;h4&gt;HTML 4 runtime&lt;/h4&gt;
+&lt;div id="html4_uploader"&gt;You browser doesn't support simple upload forms. Are you using Lynx?&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+ 
+<script type="text/javascript"> 
+    SyntaxHighlighter.config.clipboardSwf = 'js/syntax/clipboard.swf';
+    SyntaxHighlighter.all();
+</script>
+<div id="bottom">
+    <div class="center_wrapper">
+        <div><a id="toplink" href="#top" title="Go to top"></a></div>
+        <div id="bottom_content">
+ 
+            <div class="left"><a href="/index.php">Plupload</a> - Making multiple uploading easier than ever.</div>
+            <div class="right"><a href="/index.php">About</a> | <a href="/documentation.php">Documentation</a> | <a href="/example_queuewidget.php">Examples</a> | <a href="/punbb">Forum</a> | <a href="/license.php">License</a></div>
+ 
+            <div class="clearer">&nbsp;</div>
+ 
+        </div>
+    </div>
+</div>
+ 
+<div id="footer">
+    <div class="center_wrapper">
+        <div id="footer_content">
+            &copy; 2004-2013 <a href="http://www.moxiecode.com/">Moxiecode Systems AB</a>. All rights reserved. By viewing this website, you allow cookies to be used.<br/>
+            Provided for developers anywhere, everywhere, anytime and with any content, happy uploading.
+        </div>
+    </div>
+</div>
+ 
+<a href="http://github.com/moxiecode/plupload" class="forkme"><span>Fork me at GitHub</span></a>
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-692197-2']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script>
+ 
+</body>
+</html>

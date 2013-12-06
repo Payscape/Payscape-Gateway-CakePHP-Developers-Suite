@@ -1,0 +1,25 @@
+
+1 When the use has hit the Searches / results page, 
+check to see if she is logged in. If not, after 10 seconds 
+present an Ajax log in form. 
+
+Hide the accordion for the sign up form. 
+Use a button to open the sign up form
+
+
+Use ifAjax to detect that the user is coming from our Ajax popup 
+
+the login form hits Users / login
+the sign up form hits Users / signup
+each will redirect to the Searches / results page
+
+this will give us a Log In, Sign Up form all in one. 
+
+This should then fulfill our requirement for 
+
+auto log in: 
+
+take the user's User.id, encrypt that and store in a cookie. 
+what is the persistance method that cake uses?
+
+check in FireFox. 

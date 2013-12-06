@@ -1,0 +1,39 @@
+
+this page loads these
+<?php echo $this->Html->script('https://maps.googleapis.com/maps/api/js?key=AIzaSyDLnnQUaavOoVb6xTlQhDEswKay4RwqyKM&sensor=false&libraries=places,geometry', array('inline' => false)); ?>
+<?php echo $this->Html->script(array('map.js', 'search_map.js', 'jquery.geocomplete.min.js', 'city.js'), array('inline' => false)); ?>
+
+are these possibly reloaded elsewhere?
+
+this is also the page that creates the JSON from the 
+results returned by Searches / results controller
+
+	echo $this->element('property_create_json', array('properties' => $properties));
+
+	
+	this is for the tabbed Map
+	
+			echo $this->Html->scriptblock('
+							// initialize our map as soon as possible
+							var mapOptions = {
+								mapTypeId: google.maps.MapTypeId.ROADMAP // HYBRID for satellite map
+							};
+							map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+							bounds = new google.maps.LatLngBounds( );
+
+							google.maps.event.addListener(map, "zoom_changed", function( ) {
+								if (redo_search) {
+									map_update(map.getBounds( ));
+								}
+							});
+							google.maps.event.addListener(map, "dragend", function( ) {
+								
+								
+								if (redo_search) {
+									map_update(map.getBounds( ));
+									
+									
+								}
+							});
+						');
+					?>

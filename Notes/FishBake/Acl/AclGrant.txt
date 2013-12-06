@@ -1,0 +1,616 @@
+SELECT * FROM `aros_acos`
+where aro_id = 794
+
+calculate_cost
+
+
+Setting environment for using XAMPP for Windows.
+
+user@TEN C:\xampp-vfish-git\xampp
+# cd fishbake.localdomain
+The system cannot find the path specified.
+
+user@TEN C:\xampp-vfish-git\xampp
+# cd htdocs
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs
+# cd fishbake.localdomain
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain
+# cd cake2.2.2
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2
+# cd lib
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib
+# cd Cake
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+
+# cd Console
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Created Aco node: controllers/Properties/tonight_cost
+Created Aco node: controllers/Properties/book_now
+Created Aco node: controllers/Properties/payment_process
+Created Aco node: controllers/Properties/check_guest_count
+Created Aco node: controllers/Properties/removePropertyAssets
+Created Aco node: controllers/Properties/getGeo
+Aco Update Complete
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+#
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Properties/calculate_cost
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.3 controllers/Properties/calculate_cost
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Properties/tonight_cost
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.3 controllers/Properties/tonight_cost
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Properties/getgeo
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.3 controllers/Properties/getgeo
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.3 controllers/Properties/getgeo
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Homepageimages/index
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.1 controllers/Homepageimages/index
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.3 controllers/Homepageimages/index
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Homepageimages/index
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.3 controllers/Homepageimages/index
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/HowItWorksItems/index
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.3 controllers/HowItWorksItems/index
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Properties/validate_address
+
+
+Wishlists
+index, create_new_wishlist, view, add, edit delete, settings
+	
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/index
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists/index
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/create_new_wishlist
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists/create_new_wishlist
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/view
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists/view
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/add
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists/add
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/edit
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists/edit
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/delete
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists/delete
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/settings
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists/settings
+
+
+
+
+
+
+Wishlistitems
+index, view, add_wishlist, add, edit, delete
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlistitems/index
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlistitems/index
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlistitems/view
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlistitems/view
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlistitems/add_wishlist
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlistitems/add_wishlist
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlistitems/add
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlistitems/add
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlistitems/edit
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlistitems/edit
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlistitems/delete
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlistitems/delete
+
+
+
+UserImages
+	add, delete, edit, count, remove, remove_image, saveImage, sort, upload
+
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/add
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/add
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/delete
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/delete
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/edit
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/edit
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/count
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/count
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/remove
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/remove
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/remove_image
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/remove_image
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/saveImage
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/saveImage
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/sort
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/sort
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/upload
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/upload
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/view
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/view
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Userimages/index
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Userimages/index
+
+
+
+
+
+Created Aco node: controllers/Userimages/add
+Created Aco node: controllers/Userimages/delete
+Created Aco node: controllers/Userimages/edit
+Created Aco node: controllers/Userimages/count
+Created Aco node: controllers/Userimages/remove
+Created Aco node: controllers/Userimages/remove_image
+Created Aco node: controllers/Userimages/saveImage
+Created Aco node: controllers/Userimages/sort
+Created Aco node: controllers/Userimages/upload
+Created Aco node: controllers/Userimages/view
+Created Aco node: controllers/Userimages/index
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+copy controllers to C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app
+
+go to
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+
+run 
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_update
+
+run grants
+
+run checks
+
+save fishbake acl tables
+drop vacationfish acl tables
+import fishback acl tables to vacationfish
+
+
+
+
+
+
+NOTE:
+for CRUD operations, leave a space after the Controller node, 
+e.g. controller add, controller update, controller delete, controller update
+otherwise use controller/action
+
+
+
+
+Setting environment for using XAMPP for Windows.
+
+user@TEN C:\xampp
+# cd /xampp/htdocs/fishbake.localdomain
+The system cannot find the path specified.
+
+user@TEN C:\xampp
+# cd htdocs
+
+user@TEN C:\xampp\htdocs
+# cd fishbake.localdomain
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain
+# cd cake2.2.2
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2
+# cd lib
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib
+# cd Cake
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+# cd Console
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake acl --help
+
+
+Notice: Undefined index: Error in C:\xampp\htdocs\fishbake.localdomain\cake2.2.2
+\lib\Cake\Core\Configure.php on line 98
+
+Call Stack:
+    0.0192     332112   1. {main}() C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\Console\cake.php:0
+    0.0829     449032   2. ShellDispatcher::run() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\Console\cake.php:43
+    0.0829     449280   3. ShellDispatcher->__construct() C:\xampp\htdocs\fishba
+ke.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:68
+    0.1065     450592   4. ShellDispatcher->_initEnvironment() C:\xampp\htdocs\f
+ishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:57
+    0.1065     450592   5. ShellDispatcher->_bootstrap() C:\xampp\htdocs\fishbak
+e.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:101
+    0.1403     495960   6. require('C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\bootstrap.php') C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\C
+ake\Console\ShellDispatcher.php:131
+    0.2610    1214976   7. Configure::bootstrap() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\bootstrap.php:146
+
+
+Notice: Undefined index: Exception in C:\xampp\htdocs\fishbake.localdomain\cake2
+.2.2\lib\Cake\Core\Configure.php on line 99
+
+Call Stack:
+    0.0192     332112   1. {main}() C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\Console\cake.php:0
+    0.0829     449032   2. ShellDispatcher::run() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\Console\cake.php:43
+    0.0829     449280   3. ShellDispatcher->__construct() C:\xampp\htdocs\fishba
+ke.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:68
+    0.1065     450592   4. ShellDispatcher->_initEnvironment() C:\xampp\htdocs\f
+ishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:57
+    0.1065     450592   5. ShellDispatcher->_bootstrap() C:\xampp\htdocs\fishbak
+e.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:101
+    0.1403     495960   6. require('C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\bootstrap.php') C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\C
+ake\Console\ShellDispatcher.php:131
+    0.2610    1214976   7. Configure::bootstrap() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\bootstrap.php:146
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : Console
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\
+---------------------------------------------------------------
+A console tool for managing the DbAcl
+
+Usage:
+cake acl [subcommand] [-h] [-v] [-q]
+
+Subcommands:
+
+create     Create a new ACL node
+delete     Deletes the ACL object with the given <node> reference
+setparent  Moves the ACL node under a new parent.
+getpath    Print out the path to an ACL node.
+check      Check the permissions between an ACO and ARO.
+grant      Grant an ARO permissions to an ACO.
+deny       Deny an ARO permissions to an ACO.
+inherit    Inherit an ARO's parent permissions.
+view       View a tree or a single node's subtree.
+initdb     Initialize the DbAcl tables. Uses this command : cake schema
+           create DbAcl
+
+To see help on a subcommand use `cake acl [subcommand] --help`
+
+Options:
+
+--help, -h     Display this help.
+--verbose, -v  Enable verbose output.
+--quiet, -q    Enable quiet output.
+
+Node and parent arguments can be in one of the following formats:
+
+ - <model>.<id> - The node will be bound to a specific record of the
+given model.
+
+ - <alias> - The node will be given a string alias (or path, in the
+case of <parent>)
+   i.e. 'John'.  When used with <parent>, this takes the form of an
+alias path,
+   i.e. <group>/<subgroup>/<parent>.
+
+To add a node at the root level, enter 'root' or '/' as the <parent>
+parameter.
+
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake acl grant User WishlistItems/add
+
+
+Notice: Undefined index: Error in C:\xampp\htdocs\fishbake.localdomain\cake2.2.2
+\lib\Cake\Core\Configure.php on line 98
+
+Call Stack:
+    0.0004     332320   1. {main}() C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\Console\cake.php:0
+    0.0024     449240   2. ShellDispatcher::run() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\Console\cake.php:43
+    0.0024     449488   3. ShellDispatcher->__construct() C:\xampp\htdocs\fishba
+ke.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:68
+    0.0029     450896   4. ShellDispatcher->_initEnvironment() C:\xampp\htdocs\f
+ishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:57
+    0.0029     450896   5. ShellDispatcher->_bootstrap() C:\xampp\htdocs\fishbak
+e.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:101
+    0.0063     496264   6. require('C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\bootstrap.php') C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\C
+ake\Console\ShellDispatcher.php:131
+    0.0159    1215304   7. Configure::bootstrap() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\bootstrap.php:146
+
+
+Notice: Undefined index: Exception in C:\xampp\htdocs\fishbake.localdomain\cake2
+.2.2\lib\Cake\Core\Configure.php on line 99
+
+Call Stack:
+    0.0004     332320   1. {main}() C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\Console\cake.php:0
+    0.0024     449240   2. ShellDispatcher::run() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\Console\cake.php:43
+    0.0024     449488   3. ShellDispatcher->__construct() C:\xampp\htdocs\fishba
+ke.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:68
+    0.0029     450896   4. ShellDispatcher->_initEnvironment() C:\xampp\htdocs\f
+ishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:57
+    0.0029     450896   5. ShellDispatcher->_bootstrap() C:\xampp\htdocs\fishbak
+e.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:101
+    0.0063     496264   6. require('C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\bootstrap.php') C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\C
+ake\Console\ShellDispatcher.php:131
+    0.0159    1215304   7. Configure::bootstrap() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\bootstrap.php:146
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : Console
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\
+---------------------------------------------------------------
+--------------------------------------------------
+Error: Your current Cake configuration is set to an ACL implementation other tha
+n DB.
+Please change your core config to reflect your decision to use DbAcl before atte
+mpting to use this script
+--------------------------------------------------
+Current ACL Classname: %s
+--------------------------------------------------
+
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" 
+acl grant User WishlistItems/add
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Warning Error: DbAcl::allow() - Invalid node in [C:\xampp\htdocs\fishbake.locald
+omain\cake2.2.2\lib\Cake\Model\Permission.php, line 176]
+
+Permission was not granted.
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\fishbake.localdomain\cake2.2.2\app" acl grant User Wishlis
+tItems
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Your database configuration was not found. Take a moment to create one.
+---------------------------------------------------------------
+Database Configuration:
+---------------------------------------------------------------
+Name:
+[default] >
+
+OK, THIS finally is how we do this. 
+We can CHECK, GRANT AND DENY users by their index (id) FROM a GROUP in this manner. 
+Of course, no one could just write this out simply so that hours of frustration were necessary. 
+We could most likely use the same tools in the console to create new "nodes" i.e. controllers. 
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/WishlistItems index
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/WishlistItems add
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/WishlistItems view
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/WishlistItems edit
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/WishlistItems delete
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists index
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists add
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists view
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists edit
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists delete
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists create_new_wishlist
+
+
+// completed 4-04-2013 2:46 PM
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/WishlistItems/index
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/WishlistItems/add
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/WishlistItems/view
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/WishlistItems/edit
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/WishlistItems/delete
+
+
+// admin only needs to view wishlists index, so do not grant.
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists index
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/add
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/view
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/edit
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/delete
+
+Cake did not like this action: revert to "add" rather than "create_new_wishlist"
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists create_new_wishlist
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aro
+
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl -help
+
+11:17 AM 4/18/2013
+we need to grant permissions for 
+
+controllers/Wishlist settings
+controllers/Properties upload
+controllers/Properties imagesdelete
+controllers/Properties getfullurl
+
+
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists settings
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Properties upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Properties imagesdelete
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists settings
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Properties upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Properties imagesdelete
+
+getfullurl is a protected function that is used by a component, so we do not need permissions. 
+
+
+OK,  we did not do our grants correctly they should be in the form 
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Wishlists/settings
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Properties/upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Properties/imagesdelete
+
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Wishlists/settings
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Properties/upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Properties/imagesdelete
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/PropertyImages/upload
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/PropertyImages/upload
+
+
+
+we changed case for some of our controllers, CamelCase was not working 
+on sophia22.net
+
+Created Aco node: controllers/Propertydocuments
+Created Aco node: controllers/Propertydocuments/upload
+Created Aco node: controllers/Propertydocuments/saveDocument
+Created Aco node: controllers/Propertydocuments/remove
+Created Aco node: controllers/Propertyimages
+Created Aco node: controllers/Propertyimages/saveImage
+Created Aco node: controllers/Propertyimages/remove
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertydocuments/upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertydocuments/remove
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertydocuments/saveDocument
+
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/remove
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/saveImage
+
+
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertydocuments/upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertydocuments/remove
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertydocuments/saveDocument
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/remove
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/saveImage
+
+
+/* these don't work and have been replaced.*/
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertydocuments delete
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages delete
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertydocuments delete
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages delete
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertydocuments/remove_document
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertydocuments/remove_document
+
+
+    parent_id 516 Propertydocuments
+    
+
+upload
+saveDocument
+remove
+delete => remove_document   
+    
+    parent_id 520 Propertyimages
+    
+saveImage
+remove   
+sort
+upload
+delete    
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/saveImages
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/saveImages
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/upload
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/upload
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/delete
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/delete
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/sort
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/sort
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/remove_image
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/remove_image
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/add
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/add
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/view
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/view
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/edit
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/edit
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.2 controllers/Propertyimages/delete
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/delete
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/add
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/edit
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/view
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Propertyimages/delete
+
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl -help
+
+
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.2 controllers/Searches/results
+
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group.3 controllers/Searches/ajax_results
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group.3 controllers/Searches/ajax_results

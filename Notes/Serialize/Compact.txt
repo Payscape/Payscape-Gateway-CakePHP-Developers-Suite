@@ -1,0 +1,33 @@
+According to the CakePHP API:
+
+    Parameters:
+
+    mixed $one required
+
+    A string or an array of data.
+
+    mixed $two optional NULL
+
+    Value in case $one is a string (which then works as the key). Unused if $one is an associative array, otherwise serves as the values to $one's keys.
+
+The compact function returns an associative array, built by taking the names specified in the input array, using them as keys, and taking the values of the variables referenced by those names and making those the values. For example:
+
+$fred = 'Fred Flinstone';
+$barney = 'Barney Rubble';
+$names = compact('fred', 'barney');
+
+// $names == array('fred' => 'Fred Flinstone', 'barney' => 'Barney Rubble')
+
+So when you use compact in conjunction with set, you're using the single parameter form of the set function, by passing it an associative array of key-value pairs.
+
+If you just have one variable you want to set on the view, and you want to use the single parameter form, you must invoke set in the same way:
+
+$variable_to_pass = 'Fred';
+$this->set(compact('variable_to_pass'));
+
+Otherwise, the two parameter form of set can be used:
+
+$variable_to_pass = 'Fred';
+$this->set('variable_to_pass', $variable_to_pass);
+
+Both achieve the same thing.

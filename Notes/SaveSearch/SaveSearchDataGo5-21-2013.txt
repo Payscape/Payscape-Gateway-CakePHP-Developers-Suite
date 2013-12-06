@@ -1,0 +1,63 @@
+5/21/2013 Search/results save search
+
+a:8:{
+s:11:"destination";s:23:"Salt Lake City, UT, USA";
+s:4:"city";s:14:"Salt Lake City";
+s:5:"state";
+s:4:"Utah";
+s:10:"state_abbr";s:2:"UT";
+s:7:"country";s:13:"United States";
+s:12:"country_abbr";s:2:"US";
+s:8:"latitude";s:10:"40.7607793";
+s:9:"longitude";s:19:"-111.89104739999999";
+}
+
+
+a:6:{
+s:8:"bedrooms";a:2:{
+s:3:"min";s:1:"1";s:3:"max";s:1:"2";
+}
+s:9:"bathrooms";a:2:{
+s:3:"min";s:1:"1";
+s:3:"max";s:1:"2";
+}
+
+s:14:"square_footage";a:2:{
+s:3:"min";s:3:"500";
+s:3:"max";s:4:"4000";
+}
+s:10:"daily_rate";a:2:{
+s:3:"min";s:3:"100";
+s:3:"max";s:3:"300";
+}
+s:9:"amenities";s:5:"19,17";	<== amenities is not an array!!
+s:17:"sleeping_capacity";s:1:"2";
+}
+
+Create Saved Search / save search
+
+a:5:{s:17:"sleeping_capacity";s:1:"2";
+s:8:"bedrooms";a:2:{
+s:3:"min";s:1:"1";
+s:3:"max";s:2:"10";}
+s:14:"square_footage";a:2:{
+s:3:"min";s:3:"500";s:3:"max";s:5:"12000";}
+s:9:"bathrooms";a:2:{
+s:3:"min";s:1:"1";s:3:"max";s:2:"10";}
+s:9:"amenities";a:2:{ <== here amenities IS an array!!
+i:0;s:2:"19";
+i:1;s:2:"17";
+}
+
+
+a:8:{
+s:11:"destination";s:23:"Salt Lake City, UT, USA";
+s:4:"city";s:14:"Salt Lake City";
+s:5:"state";s:4:"Utah";
+s:10:"state_abbr";s:2:"UT";
+s:7:"country";s:13:"United States";
+s:12:"country_abbr";s:2:"US";
+s:8:"latitude";s:10:"40.7607793";
+s:9:"longitude";s:19:"-111.89104739999999";
+}
+}

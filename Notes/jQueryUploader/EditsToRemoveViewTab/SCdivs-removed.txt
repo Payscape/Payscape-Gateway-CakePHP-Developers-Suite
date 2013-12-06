@@ -1,0 +1,69 @@
+
+we do not need to be loading this on all of our pages, 
+we now have a View and Element for eacy. 
+
+this is why the pages are loading slowly!
+remove the SC divs we do not need from each of our pages. 
+
+
+		
+		<div id="sc1" class="tab-content">
+		<?php //echo $this->element('upload_lsiting_photos');?>
+			
+			</div><!-- sc1 -->
+<div class="clear"></div>
+			<div id="sc2" class="tab-content span9">
+			
+				<?php //echo $this->element('edit_listing_photos'); ?>
+			</div>
+<div class="clear"></div>			
+			<div id="sc3" class="tab-content">
+				<?php echo $this->element('view_listing_photos'); ?>
+			
+				
+			</div><!-- sc3 -->
+<div class="clear"></div>			
+			<div id="sc4" class="tab-content">
+		<?php //echo $this->element('delete_listing_photos');?>
+			
+			</div><!-- sc4 -->
+			
+			
+			
+we also do not need this at the bottom
+of the page to choose our SC divs. 
+
+/*
+if ('tab2' == $active_tab) {
+	echo $this->Html->scriptblock('do_onload_new("ddpagetabs","sc2","1");');
+}
+else {
+	echo $this->Html->scriptblock('do_onload_new("ddpagetabs","sc1","0");');
+}
+*/
+if ( $active_tab == 4 ) {
+	echo $this->Html->scriptblock('do_onload_new("ddpagetabs","sc4","3");');
+}
+
+if ($active_tab == 3 ){
+	echo $this->Html->scriptblock('do_onload_new("ddpagetabs","sc3","2");');
+}
+
+if ( $active_tab == 2 ) {
+	echo $this->Html->scriptblock('do_onload_new("ddpagetabs","sc2","1");');
+}
+if ( $active_tab == 1){
+	echo $this->Html->scriptblock('do_onload_new("ddpagetabs","sc1","0");');
+}
+?>
+
+
+
+				
+			<div id="sc4" class="tab-content">
+			here is where our element lives. 
+		<?php //echo $this->element('delete_listing_photos');?>
+			
+			</div>
+			
+			<!-- sc4 -->

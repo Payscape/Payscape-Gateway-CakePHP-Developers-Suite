@@ -1,0 +1,138 @@
+for 8082
+
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+
+
+for 8080
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_update
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras verify
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras verify -v aco
+    verify -v   <aro | aco>
+
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras recover
+
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Created Aco node: controllers/Properties/imagesdelete
+Created Aco node: controllers/Properties/upload
+Created Aco node: controllers/Wishlists/settings
+Aco Update Complete
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#
+
+4-24-2013
+
+
+Setting environment for using XAMPP for Windows.
+
+user@TEN C:\xampp
+# cd htdocs/fishbake.localdomain/libs/Cake/Console
+The system cannot find the path specified.
+
+user@TEN C:\xampp
+# cd htdocs/fishbake.localdomain
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain
+# cd cake2.2.2/libs/
+The system cannot find the path specified.
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain
+# cd cake2.2.2/lib
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib
+# cd Cake/Console
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_
+
+
+Better manage, and easily synchronize you application's ACO tree
+
+Usage:
+cake acl_extras [subcommand] [-h] [-v] [-q]
+
+Subcommands:
+
+aco_update  Add new ACOs for new controllers and actions. Does not
+            remove nodes from the ACO table.
+aco_sync    Perform a full sync on the ACO table.Will create new ACOs or
+            missing controllers and actions.Will also remove orphaned entries th
+at
+            no longer have a matching controller/action
+verify      Verify the tree structure of either your Aco or Aro Trees
+recover     Recover a corrupted Tree
+
+To see help on a subcommand use `cake acl_extras [subcommand] --help`
+
+Options:
+
+--help, -h     Display this help.
+--verbose, -v  Enable verbose output.
+--quiet, -q    Enable quiet output.
+
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# synccake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras
+aco_update
+'synccake' is not recognized as an internal or external command,
+operable program or batch file.
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_
+update
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Created Aco node: controllers/Propertydocuments/delete
+Created Aco node: controllers/Propertydocuments/index
+Created Aco node: controllers/Propertydocuments/ac
+Created Aco node: controllers/Propertydocuments/admin_index
+Created Aco node: controllers/Propertydocuments/admin_view
+Created Aco node: controllers/Propertydocuments/admin_add
+Created Aco node: controllers/Propertydocuments/admin_edit
+Created Aco node: controllers/Propertydocuments/admin_delete
+Created Aco node: controllers/Propertydocuments/admin_filter_select
+Created Aco node: controllers/Propertydocuments/beforeFacebookSave
+Created Aco node: controllers/Propertydocuments/afterFacebookLogin
+Created Aco node: controllers/Propertydocuments/do_log
+Created Aco node: controllers/Propertydocuments/delete
+
+Created Aco node: controllers/Propertyimages/sort
+Created Aco node: controllers/Propertyimages/upload
+Created Aco node: controllers/Propertyimages/delete
+
+Created Aco node: controllers/Propertyimages/index
+Created Aco node: controllers/Propertyimages/ac
+Created Aco node: controllers/Propertyimages/admin_index
+Created Aco node: controllers/Propertyimages/admin_view
+Created Aco node: controllers/Propertyimages/admin_add
+Created Aco node: controllers/Propertyimages/admin_edit
+Created Aco node: controllers/Propertyimages/admin_delete
+Created Aco node: controllers/Propertyimages/admin_filter_select
+Created Aco node: controllers/Propertyimages/beforeFacebookSave
+Created Aco node: controllers/Propertyimages/afterFacebookLogin
+Created Aco node: controllers/Propertyimages/do_log
+Aco Update Complete
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#

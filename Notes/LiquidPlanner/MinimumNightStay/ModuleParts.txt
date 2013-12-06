@@ -1,0 +1,33 @@
+Model
+	Night
+Controller
+	NightsController
+	add, edit, remove_minimum_night
+	
+	PropertiesController / view
+		$minimum_nights = Night->findAllById($property_id);
+	PropertiesController / calculate_minimum_nights
+		/* if the start date / end date fall with minimum night
+		 * ranges, validate that the minimum number of nights has been met. 
+		 * this has to fire a tool tip if minimum has not been met. 
+		*/
+		
+	
+View /
+1 Input widget on create terms
+2 Display widget on Properties / View details / calendar
+
+3 Validation on Properties / View details /calendar
+
+
+Acl Extras 
+
+	Minimumnights/add
+	Minimumnights/edit
+	Minimumnights/remove_minimum_night
+	
+	 
+								
+								
+								
+								

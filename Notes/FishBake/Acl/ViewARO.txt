@@ -1,0 +1,312 @@
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aro
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aco
+
+
+
+---------------------------------------------------------------
+Aco Update Complete
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#  cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Grou
+p.2 controllers/WishlistItems add
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Notice Error: ACO permissions key add does not exist in DbAcl::check() in [C:\xa
+mpp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Model\Permission.php, line 10
+3]
+
+Group.2 is not allowed.
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant Group
+.2 controllers/WishlistItems add
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Permission granted.
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group
+.2 controllers/WishlistItems add
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Notice Error: ACO permissions key add does not exist in DbAcl::check() in [C:\xa
+mpp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Model\Permission.php, line 10
+3]
+
+Group.2 is not allowed.
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check Group
+.2 controllers/WishlistItems add
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Notice Error: ACO permissions key add does not exist in DbAcl::check() in [C:\xa
+mpp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Model\Permission.php, line 10
+3]
+
+Group.2 is not allowed.
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake acl view aro
+
+
+Notice: Undefined index: Error in C:\xampp\htdocs\fishbake.localdomain\cake2.2.2
+\lib\Cake\Core\Configure.php on line 98
+
+Call Stack:
+    0.0004     332208   1. {main}() C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\Console\cake.php:0
+    0.0025     449128   2. ShellDispatcher::run() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\Console\cake.php:43
+    0.0025     449376   3. ShellDispatcher->__construct() C:\xampp\htdocs\fishba
+ke.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:68
+    0.0031     450736   4. ShellDispatcher->_initEnvironment() C:\xampp\htdocs\f
+ishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:57
+    0.0031     450736   5. ShellDispatcher->_bootstrap() C:\xampp\htdocs\fishbak
+e.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:101
+    0.0067     496104   6. require('C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\bootstrap.php') C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\C
+ake\Console\ShellDispatcher.php:131
+    0.0162    1215136   7. Configure::bootstrap() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\bootstrap.php:146
+
+
+Notice: Undefined index: Exception in C:\xampp\htdocs\fishbake.localdomain\cake2
+.2.2\lib\Cake\Core\Configure.php on line 99
+
+Call Stack:
+    0.0004     332208   1. {main}() C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\Console\cake.php:0
+    0.0025     449128   2. ShellDispatcher::run() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\Console\cake.php:43
+    0.0025     449376   3. ShellDispatcher->__construct() C:\xampp\htdocs\fishba
+ke.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:68
+    0.0031     450736   4. ShellDispatcher->_initEnvironment() C:\xampp\htdocs\f
+ishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:57
+    0.0031     450736   5. ShellDispatcher->_bootstrap() C:\xampp\htdocs\fishbak
+e.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php:101
+    0.0067     496104   6. require('C:\xampp\htdocs\fishbake.localdomain\cake2.2
+.2\lib\Cake\bootstrap.php') C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\C
+ake\Console\ShellDispatcher.php:131
+    0.0162    1215136   7. Configure::bootstrap() C:\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\bootstrap.php:146
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : Console
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\
+---------------------------------------------------------------
+--------------------------------------------------
+Error: Your current Cake configuration is set to an ACL implementation other tha
+n DB.
+Please change your core config to reflect your decision to use DbAcl before atte
+mpting to use this script
+--------------------------------------------------
+Current ACL Classname: %s
+--------------------------------------------------
+
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aro
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Aro tree:
+---------------------------------------------------------------
+  [1] Group.1
+    [5] User.1
+    [6] User.2
+    [7] User.3
+    [10] User.6
+    [12] User.8
+    [4] User.1
+    [27] User.23
+    [16] User.12
+    [108] User.104
+  [2] Group.2
+    [9] User.5
+    [11] User.7
+    [15] User.11
+    [17] User.13
+    [18] User.14
+    [20] User.16
+    [21] User.17
+    [22] User.18
+    [23] User.19
+    [31] User.27
+    [34] User.30
+    [35] User.31
+    [36] User.32
+    [38] User.34
+    [39] User.35
+    [40] User.36
+    [41] User.37
+    [44] User.40
+    [45] User.41
+    [46] User.42
+    [48] User.44
+    [49] User.45
+    [50] User.46
+    [51] User.47
+    [52] User.48
+    [53] User.49
+    [54] User.50
+    [55] User.51
+    [56] User.52
+    [57] User.53
+    [58] User.54
+    [59] User.55
+    [60] User.56
+    [61] User.57
+    [62] User.58
+    [63] User.59
+    [64] User.60
+    [65] User.61
+    [66] User.62
+    [67] User.63
+    [68] User.64
+    [69] User.65
+    [70] User.66
+    [71] User.67
+    [74] User.70
+    [75] User.71
+    [76] User.72
+    [77] User.73
+    [78] User.74
+    [79] User.75
+    [80] User.76
+    [81] User.77
+    [82] User.78
+    [83] User.79
+    [84] User.80
+    [85] User.81
+    [86] User.82
+    [87] User.83
+    [88] User.84
+    [91] User.87
+    [92] User.88
+    [97] User.93
+    [98] User.94
+    [99] User.95
+    [100] User.96
+    [101] User.97
+    [103] User.99
+    [104] User.100
+    [105] User.101
+    [106] User.102
+    [107] User.103
+    [109] User.105
+    [110] User.106
+    [111] User.107
+    [112] User.108
+    [113] User.109
+    [114] User.110
+    [115] User.111
+    [116] User.112
+    [117] User.113
+    [118] User.114
+    [119] User.115
+    [120] User.116
+    [121] User.117
+    [122] User.118
+    [123] User.119
+    [124] User.120
+    [125] User.121
+    [126] User.122
+    [127] User.123
+    [128] User.124
+    [129] User.125
+    [130] User.126
+    [131] User.127
+    [132] User.128
+    [133] User.129
+    [134] User.130
+    [135] User.131
+    [136] User.132
+    [137] User.133
+    [138] User.134
+    [139] User.135
+    [140] User.136
+    [141] User.137
+    [142] User.138
+    [143] User.139
+    [144] User.140
+    [145] User.141
+    [146] User.142
+    [147] User.143
+    [148] User.144
+    [149] User.145
+    [150] User.146
+    [151] User.147
+    [152] User.148
+    [153] User.149
+    [154] User.150
+    [155] User.151
+    [156] User.152
+    [157] User.153
+    [158] User.154
+    [159] User.155
+    [160] User.156
+    [161] User.157
+    [162] User.158
+    [163] User.159
+    [164] User.160
+    [165] User.161
+    [166] User.162
+    [167] User.163
+    [168] User.164
+    [169] User.165
+    [170] User.166
+    [171] User.167
+    [172] User.168
+    [173] User.169
+    [174] User.170
+    [175] User.171
+    [176] User.172
+    [177] User.173
+    [178] User.174
+    [179] User.175
+  [3] Group.3
+---------------------------------------------------------------
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#
+
+# cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view acos
+
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras check --help
+cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl --help
+
+

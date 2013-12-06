@@ -1,0 +1,22 @@
+	<?php
+
+	   echo $this->Html->scriptblock("
+		$(window).load(function() {
+			$('.listing_visibility').iphoneStyle({
+				onChange: function(elem, value) {
+					var property_id = $(elem).attr('rel');
+	   				var accept = $('.accept').val(); 
+					if( value.toString() == 'true') var visibility_status = '1';
+					else var visibility_status = '0';
+
+					$( '#listing_msg_'+ property_id ).html('<img src=\'".Router::url('/')."img/loading.gif\' />&nbsp;Please wait...');
+										$( '#listing_msg_'+ property_id ).load('".Router::url(array('controller' => 'properties', 'action' => 'update_visibility'))."/'+ property_id + '/'+ visibility_status + '/' + accept, function() {
+												if( value.toString() == 'true') $( '#listing_msg_'+ property_id ).html('Your listing is visible');
+												else $( '#listing_msg_'+ property_id ).html('Your listing isn\'t visible yet.');
+										});
+								}
+			});
+		});
+		");
+		
+	?>

@@ -1,0 +1,27 @@
+<script>
+<?php for($i=1; $i<=$picture_counter; $i++){ ?>
+	$('a.pic<?php echo $i; ?>').click (
+		    function() {
+		        $('.anythingSlider').anythingSlider(<?php echo $i; ?>);
+		    }
+		);
+<?php } ?>
+
+
+</script>
+
+<script>
+navigationFormatter: function(index, panel){
+	return "Panel #" + index; // This would have each tab with the text 'Panel #X' where X = index
+}.
+		
+<?php for($i=1; $i<=$picture_counter; $i++){ ?>
+	$('a.pic<?php echo $i; ?>').click (
+		    function() {
+		        $('#slider').anythingSlider(<?php echo $i; ?>);
+		    }
+		);
+<?php } ?>
+
+
+</script>

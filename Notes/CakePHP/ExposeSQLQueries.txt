@@ -1,0 +1,33 @@
+"I need to log every SQL command executed by models."
+
+extend whatever datasource you're using and override 
+the _execute method to log and pass back to the parent. 
+
+For example, let's assume you're currently using dbo_mysql. 
+That means your db config is something like this: 
+
+class DATABASE_CONFIG { 
+
+        var $default = array( 
+                'driver' => 'mysql', 
+                // ... 
+        ) 
+} 
+
+so change 'driver' to 'mysql_with_log', 
+and create the file app/model/datasources/dbo/mysql_with_log.php : 
+
+
+	<?php 
+
+require (LIBS . 'model' . DS . 'datasources' . DS . 'dbo' . DS . 
+'dbo_mysql.php'); 
+
+class DboMysqlWithLog extends DboMysql { 
+  function _execute($sql) { 
+    $this->log($sql); 
+    return parent::_execute($sql); 
+  } 
+} 
+
+?>

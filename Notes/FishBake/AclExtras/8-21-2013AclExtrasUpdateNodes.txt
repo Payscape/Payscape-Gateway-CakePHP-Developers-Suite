@@ -1,0 +1,112 @@
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# 
+
+cake -app "C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Created Aco node: controllers/Amenitytypes
+Created Aco node: controllers/Faqcategories
+Created Aco node: controllers/Homepageimages
+Created Aco node: controllers/Howitworksitems
+Created Aco node: controllers/Localattractions
+Created Aco node: controllers/Newsstories
+Created Aco node: controllers/Pagegroups
+Created Aco node: controllers/Paymentmethods
+
+
+Created Aco node: controllers/Amenitytypes
+Created Aco node: controllers/Faqcategories
+Created Aco node: controllers/Homepageimages
+Created Aco node: controllers/Howitworksitems
+Created Aco node: controllers/Localattractions
+Created Aco node: controllers/Newsstories
+Created Aco node: controllers/Pagegroups
+Created Aco node: controllers/Paymentmethods
+
+Created Aco node: controllers/Propertytypes
+Created Aco node: controllers/Ratingtypes
+
+
+
+Created Aco node: controllers/Userimages
+Created Aco node: controllers/Userimages/add
+Created Aco node: controllers/Userimages/delete
+Created Aco node: controllers/Userimages/edit
+Created Aco node: controllers/Userimages/count
+Created Aco node: controllers/Userimages/remove
+Created Aco node: controllers/Userimages/remove_image
+Created Aco node: controllers/Userimages/saveImage
+Created Aco node: controllers/Userimages/sort
+Created Aco node: controllers/Userimages/upload
+Created Aco node: controllers/Userimages/view
+Created Aco node: controllers/Userimages/index
+Created Aco node: controllers/Userimages/ac
+Created Aco node: controllers/Userimages/admin_index
+Created Aco node: controllers/Userimages/admin_view
+Created Aco node: controllers/Userimages/admin_add
+Created Aco node: controllers/Userimages/admin_edit
+Created Aco node: controllers/Userimages/admin_delete
+Created Aco node: controllers/Userimages/admin_filter_select
+Created Aco node: controllers/Userimages/beforeFacebookSave
+Created Aco node: controllers/Userimages/afterFacebookLogin
+Created Aco node: controllers/Userimages/do_log
+Created Aco node: controllers/Wishlistitems
+Deleted controllers/AmenityTypes and all children
+Deleted controllers/FaqCategories and all children
+Deleted controllers/HomePageImages and all children
+Deleted controllers/HowItWorksItems and all children
+Deleted controllers/LocalAttractions and all children
+Deleted controllers/NewsStories and all children
+Deleted controllers/PageGroups and all children
+Deleted controllers/PaymentMethods and all children
+Deleted controllers/PropertyTypes and all children
+Deleted controllers/RatingTypes and all children
+Deleted controllers/WishlistItems and all children
+Deleted controllers/PropertyimagesController8-12-2013 and all children
+Deleted controllers/SearchesController8-04-2013 and all children
+Created Aco node: controllers/FileUpload
+Created Aco node: controllers/FileUpload/FileUpload
+Created Aco node: controllers/FileUpload/FileUpload/index
+Created Aco node: controllers/FileUpload/FileUpload/ac
+Created Aco node: controllers/FileUpload/FileUpload/admin_index
+Created Aco node: controllers/FileUpload/FileUpload/admin_view
+Created Aco node: controllers/FileUpload/FileUpload/admin_add
+Created Aco node: controllers/FileUpload/FileUpload/admin_edit
+Created Aco node: controllers/FileUpload/FileUpload/admin_delete
+Created Aco node: controllers/FileUpload/FileUpload/admin_filter_select
+Created Aco node: controllers/FileUpload/FileUpload/beforeFacebookSave
+Created Aco node: controllers/FileUpload/FileUpload/afterFacebookLogin
+Created Aco node: controllers/FileUpload/FileUpload/do_log
+Created Aco node: controllers/FileUpload/Handler
+Created Aco node: controllers/FileUpload/Handler/index
+Created Aco node: controllers/FileUpload/Handler/ac
+Created Aco node: controllers/FileUpload/Handler/admin_index
+Created Aco node: controllers/FileUpload/Handler/admin_view
+Created Aco node: controllers/FileUpload/Handler/admin_add
+Created Aco node: controllers/FileUpload/Handler/admin_edit
+Created Aco node: controllers/FileUpload/Handler/admin_delete
+Created Aco node: controllers/FileUpload/Handler/admin_filter_select
+Created Aco node: controllers/FileUpload/Handler/beforeFacebookSave
+Created Aco node: controllers/FileUpload/Handler/afterFacebookLogin
+Created Aco node: controllers/FileUpload/Handler/do_log
+Created Aco node: controllers/FileUpload/ImageUpload
+Created Aco node: controllers/FileUpload/ImageUpload/index
+Created Aco node: controllers/FileUpload/ImageUpload/ac
+Created Aco node: controllers/FileUpload/ImageUpload/admin_index
+Created Aco node: controllers/FileUpload/ImageUpload/admin_view
+Created Aco node: controllers/FileUpload/ImageUpload/admin_add
+Created Aco node: controllers/FileUpload/ImageUpload/admin_edit
+Created Aco node: controllers/FileUpload/ImageUpload/admin_delete
+Created Aco node: controllers/FileUpload/ImageUpload/admin_filter_select
+Created Aco node: controllers/FileUpload/ImageUpload/beforeFacebookSave
+Created Aco node: controllers/FileUpload/ImageUpload/afterFacebookLogin
+Created Aco node: controllers/FileUpload/ImageUpload/do_log
+Aco Update Complete
+

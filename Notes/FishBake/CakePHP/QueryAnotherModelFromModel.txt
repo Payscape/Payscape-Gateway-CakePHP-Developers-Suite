@@ -1,0 +1,42 @@
+http://stackoverflow.com/questions/7204591/cakephp-calling-other-model-functions
+
+How can i call, from a Model, a function present in another model? I would like not to repeat code.
+
+
+	We can use Model relation to call the function in another model. Eg.
+
+	$this->Model->ModelOne->find();
+	$this->Model->ModelOne->customFunc();
+	If there is no relation in the models, The we can use
+
+	$this->loadModel('ModelName');
+	To use in the model. In this case you can use
+
+	$this->ModelName->function();
+	directly as you've loaded that model.
+
+	Not sure using 'loadModel' is correct as of Cake 1.3, per The loadModel function comes handy when you need to use a model 		which is not the controller's default model or its associated model.. To load a Model from a Model use ClassRegistry::init – Aaron 
+
+You should try to have relationships between your models. There are many types of relationships which you can read here...
+
+If you have above said associations, you can access your associated models using:
+
+$this->Model->OtherModel->function();
+If your models are not related in any way, you should use:
+
+ClassRegistry::init('OtherModel')->function();
+You can check out my question on this where I obtained great answers
+
+if there's a (direct or indirect) relationship between the model, you can call the function: $this->Model1->Model2->...->Modeln->function();
+
+use bindModel
+
+
+	no, you should use ClassRegistry like so:
+	    //MessagesController - in my send() method...
+
+	$this->set('content', ClassRegistry::init('Content')->find('first', array(
+        	'conditions' => array('Content.id' => 3)
+	  )));
+
+NOTE:this is from my controller but I am pretty sure it works in model too.

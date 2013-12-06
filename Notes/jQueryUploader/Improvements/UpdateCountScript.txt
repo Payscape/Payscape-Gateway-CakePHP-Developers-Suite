@@ -1,0 +1,33 @@
+add.ctp
+
+<script>
+$(function() {
+
+		var pid = <?php echo $id; ?>;
+		$.post(ROOT_URL + "propertyimages/count",
+		{ property_id: pid },
+
+		function (respond) {
+		$("#image_count_edit").html(respond);
+		$("#image_count_view").html(respond);
+		$("#image_count_delete").html(respond);
+
+});
+
+		return false;
+});
+</script>
+
+
+main.js
+
+
+       $.post(ROOT_URL + "propertyimages/count", 
+    		   { property_id: pid }, 
+    		   
+    	function (response) {
+
+            $("#image_count_edit").html(response);
+            $("#image_count_view").html(response);
+            $("#image_count_delete").html(response);
+        }); 

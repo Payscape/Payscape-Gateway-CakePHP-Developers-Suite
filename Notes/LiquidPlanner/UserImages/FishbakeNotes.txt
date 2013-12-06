@@ -1,0 +1,13 @@
+
+This is the URL to the Properties module
+http://localhost:8092/vacationfish.localdomain/public_html/webroot/fishbake/properties/index
+
+now we will build out our Users module
+
+first use the gii tool. 
+
+two models, 
+Users, UserImages
+
+created models, views, controllers. 
+

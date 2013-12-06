@@ -1,0 +1,28 @@
+
+
+facebook photo 
+infopop@facebook.com
+PopEye2013
+
+https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/1117943_100005907672897_813038132_n.jpg
+
+https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/275465_100005907672897_1647850724_n.jpg
+
+vfish
+http://www.vacationfish.com/img/no_user.jpg
+
+	if the user has used Facebook signup, and they have not added their 
+	a VFish image, use their Facebook picture. 
+
+	if((isset(User.facebook_id) && (User.facebook_image==""){
+		<img src="<?php echo $this->facebook['picture'] ?>">	
+	}
+
+
+
+<img src="<?php echo $this->facebook['picture'] ?>">
+
+	so we should be able to pull the facebook image from 
+	
+	$fb_picture = $this->facebook['picture'];
+	echo $fb_picture;

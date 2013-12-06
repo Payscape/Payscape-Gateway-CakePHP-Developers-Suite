@@ -1,0 +1,17 @@
+
+
+
+
+            <div class="fileupload-loading"></div>
+            <br>
+      
+    <div class="upload_container"> 
+    <div class="upload_drop_text">Drag and drop files here</div>
+        
+            <table class="table table-striped" style="border:solid #00ff00 1px;"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery">
+            <!--  tr><td>image</td><td>name<td>size</td><td>activity</td><td>start</td><td>cancel</td></tr -->
+
+            
+            </tbody></table>
+    </div>
+    </div>

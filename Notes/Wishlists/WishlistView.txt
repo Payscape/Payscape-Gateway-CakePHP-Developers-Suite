@@ -1,0 +1,438 @@
+PIDS:
+
+Array
+(
+    [0] => Array
+        (
+            [WishlistItem] => Array
+                (
+                    [property_id] => 859
+                )
+
+        )
+
+)
+
+    $pid[0]['WishlistItem']['property_id']
+
+
+$WISH_LISTS items
+
+    this is our array
+    
+        $wish_lists['Wishlist']
+        $wish_lists['User']
+        $wish_lists['WishlistItem']
+
+Array
+(
+    [0] => Array
+        (
+            [Wishlist] => Array
+                (
+                    [id] => 48
+                    [user_id] => 174
+                    [name] => My Wishlist
+                    [is_custom_list] => 
+                    [created] => 2013-04-05 08:07:53
+                    [modified] => 2013-04-05 08:07:53
+                )
+
+            [User] => Array
+                (
+                    [id] => 174
+                    [group_id] => 2
+                    [first_name] => Stephen
+                    [last_name] => Mareches
+                    [password] => 084c7d9c6fe4d6fef6cbef3fd11f3b053370007d
+                    [ident] => 
+                    [token] => 
+                    [activation_token] => ef64aa06ef728180f4a5244c3288380061687fdd
+                    [email] => smareches@gmail.com
+                    [company_name] => 
+                    [phone] => 
+                    [contact_name] => Stephen
+                    [contact_email] => smareches@gmail.com
+                    [contact_primary_phone] => (770) 845-7335
+                    [contact_secondary_phone] => 
+                    [is_allowed_alert] => 
+                    [facebook_id] => 
+                    [fb_username] => 
+                    [fb_url] => 
+                    [fb_birthday] => 
+                    [fb_hometown] => 
+                    [fb_bio] => 
+                    [fb_gender] => 
+                    [fb_location] => 
+                    [fb_timezone] => 
+                    [fb_image] => Array
+                        (
+                            [path] => User/174/fb_image.jpg
+                            [profile] => User/174/profile_fb_image.jpg
+                            [property] => User/174/property_fb_image.jpg
+                            [comment] => User/174/comment_fb_image.jpg
+                        )
+
+                    [created] => 2013-03-22 06:08:18
+                    [modified] => 2013-03-22 09:43:13
+                    [active] => 1
+                    [full_name] => Stephen Mareches
+                    [display] => Stephen Mareches 
+                )
+
+            [WishlistItem] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 3
+                            [wishlist_id] => 48
+                            [property_id] => 859
+                        )
+
+                )
+
+        )
+
+)
+
+
+
+PROPERTIES:
+
+    $properties[0]['Property']['title']
+    $properties[0]['Property']['address']
+    $properties[0]['Property']['city']
+    $properties[0]['PropertyImage'][0]['image']
+    
+    /* in the view */
+    
+    foreach($properties[0]['Property'] as $property){
+        $property['title']
+        $property['address']
+        $property['city']
+        $property['PropertyImage'][0]['image']
+    }
+
+PROPERTIES:
+
+Array
+(
+    [0] => Array
+        (
+            [Property] => Array
+                (
+                    [title] => Vanderbilt Avenue 602
+                    [address] => 210 40th St.
+                    [city] => Virginia Beach
+                    [id] => 859
+                )
+
+            [PropertyImage] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 6370
+                            [property_id] => 859
+                            [image] => 43620130412093214.jpg
+                            [name] => 
+                            [sort] => 9999
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 6371
+                            [property_id] => 859
+                            [image] => 43720130412093214.jpg
+                            [name] => 
+                            [sort] => 9999
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 6372
+                            [property_id] => 859
+                            [image] => 43820130412093214.jpg
+                            [name] => 
+                            [sort] => 9999
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 6373
+                            [property_id] => 859
+                            [image] => 43920130412093214.jpg
+                            [name] => 
+                            [sort] => 9999
+                        )
+
+                    [4] => Array
+                        (
+                            [id] => 6374
+                            [property_id] => 859
+                            [image] => 44020130412093214.jpg
+                            [name] => 
+                            [sort] => 9999
+                        )
+
+                    [5] => Array
+                        (
+                            [id] => 6375
+                            [property_id] => 859
+                            [image] => 44120130412093214.jpg
+                            [name] => 
+                            [sort] => 9999
+                        )
+
+                    [6] => Array
+                        (
+                            [id] => 6376
+                            [property_id] => 859
+                            [image] => 44220130412093214.jpg
+                            [name] => 
+                            [sort] => 9999
+                        )
+
+                    [7] => Array
+                        (
+                            [id] => 6377
+                            [property_id] => 859
+                            [image] => 44320130412093214.jpg
+                            [name] => 
+                            [sort] => 9999
+                        )
+
+                )
+
+            [WishlistItem] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 3
+                            [wishlist_id] => 48
+                            [property_id] => 859
+                        )
+
+                )
+
+        )
+
+)
+
+
+    FOREACH $PROPERTIES AS $PROPERTY {
+    
+    
+        foreach ($properties as $property){
+
+                            echo "<pre>";
+Array
+(
+    [Property] => Array
+        (
+            [title] => Vanderbilt Avenue 602
+            [address] => 210 40th St.
+            [city] => Virginia Beach
+            [id] => 859
+        )
+
+    [PropertyImage] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 6370
+                    [property_id] => 859
+                    [image] => 43620130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [1] => Array
+                (
+                    [id] => 6371
+                    [property_id] => 859
+                    [image] => 43720130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [2] => Array
+                (
+                    [id] => 6372
+                    [property_id] => 859
+                    [image] => 43820130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [3] => Array
+                (
+                    [id] => 6373
+                    [property_id] => 859
+                    [image] => 43920130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [4] => Array
+                (
+                    [id] => 6374
+                    [property_id] => 859
+                    [image] => 44020130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [5] => Array
+                (
+                    [id] => 6375
+                    [property_id] => 859
+                    [image] => 44120130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [6] => Array
+                (
+                    [id] => 6376
+                    [property_id] => 859
+                    [image] => 44220130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [7] => Array
+                (
+                    [id] => 6377
+                    [property_id] => 859
+                    [image] => 44320130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+        )
+
+)
+                            echo "</pre>";
+    
+    }
+
+
+foreach $properties as $property:
+
+Array
+(
+    [Property] => Array
+        (
+            [title] => Vanderbilt Avenue 602
+            [address] => 210 40th St.
+            [city] => Virginia Beach
+            [id] => 859
+        )
+
+    [PropertyImage] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 6370
+                    [property_id] => 859
+                    [image] => 43620130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [1] => Array
+                (
+                    [id] => 6371
+                    [property_id] => 859
+                    [image] => 43720130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [2] => Array
+                (
+                    [id] => 6372
+                    [property_id] => 859
+                    [image] => 43820130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [3] => Array
+                (
+                    [id] => 6373
+                    [property_id] => 859
+                    [image] => 43920130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [4] => Array
+                (
+                    [id] => 6374
+                    [property_id] => 859
+                    [image] => 44020130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [5] => Array
+                (
+                    [id] => 6375
+                    [property_id] => 859
+                    [image] => 44120130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [6] => Array
+                (
+                    [id] => 6376
+                    [property_id] => 859
+                    [image] => 44220130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+            [7] => Array
+                (
+                    [id] => 6377
+                    [property_id] => 859
+                    [image] => 44320130412093214.jpg
+                    [name] => 
+                    [sort] => 9999
+                )
+
+        )
+
+    [WishlistItem] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 3
+                    [wishlist_id] => 48
+                    [property_id] => 859
+                )
+
+        )
+
+)
+
+
+print_r($property['WishlistItem'];
+    Array
+    (
+        [0] => Array
+            (
+                [id] => 3
+                [wishlist_id] => 48
+                [property_id] => 859
+            )
+
+    )
+
+
+
+$wishListItemID = $property['WishListItem'][0]['id'];
+$propertyID = $property['WishListItem'][0]['id'];
+$wishListID = ['WishListItem'][0]['wishlist_id'];

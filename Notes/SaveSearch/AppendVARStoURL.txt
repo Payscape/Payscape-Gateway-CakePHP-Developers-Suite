@@ -1,0 +1,48 @@
+$('<a href="'+desiredLink+'">'+desiredText+'</a>').appendTo($('body'));
+
+$('body').append($('<a href="'+desiredLink+'">'+desiredText+'</a>'));
+
+var a = $('<a />');
+a.attr('href',desiredLink);
+a.text(desiredText);
+$('body').append(a);
+In all the above examples you can append the anchor to any element, not just to the 'body', and desiredLink is a variable that holds the address that your anchor element points to, and desiredText is a variable that holds the text that will be displayed in the anchor element
+
+
+function fileDialogStart() 
+{
+    var newURLString = window.location.href + "?folder=" + $('#ams3Folder').val();
+
+    window.location.href = newURLString;    // The page will redirect instantly after this
+                                            // assignment
+                                            
+                                            
+   in our case we want 
+   
+   	var newURLStr = '<a class="popup" href="searches/save_search/"';
+   	then we can append our parameters to it.
+   	
+   	
+   	to pass variables in CakePHP we do this: 
+   	
+   	 CakePHP $html->link Variables
+
+You can send additional variables to the next page with additional keys in the array like this:
+
+
+echo $html->link(__('text to link',true),array('controller'=>'dest_controller','action'=>'dest_action','additional_variable'=>'variable_data'));
+
+
+And the data can be accessed in the controller with the $this->params['named'] variable.
+
+so build one of these, then copy the HTML to use it as a model for 
+what we will build in jQuery. 
+
+Then in searches/popup we can retrieve those variables like this:
+
+	$this->params['named']['additional_variable']
+would return
+variable_data
+   
+   	$variable_data = $this->params['named']['additional_variable'];
+   

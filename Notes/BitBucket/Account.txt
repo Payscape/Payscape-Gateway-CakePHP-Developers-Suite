@@ -1,0 +1,8 @@
+username payscapedev
+password ValPara2013
+
+
+first do Fetch to see if anything is new, 
+then do a Pull to update local repo. 
+
+

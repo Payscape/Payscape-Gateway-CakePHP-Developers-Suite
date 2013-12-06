@@ -1,0 +1,26 @@
+A console tool for managing the DbAcl
+
+Usage:
+cake acl [subcommand] [-h] [-v] [-q]
+
+Subcommands:
+
+create     Create a new ACL node
+delete     Deletes the ACL object with the given <node> reference
+setparent  Moves the ACL node under a new parent.
+getpath    Print out the path to an ACL node.
+check      Check the permissions between an ACO and ARO.
+grant      Grant an ARO permissions to an ACO.
+deny       Deny an ARO permissions to an ACO.
+inherit    Inherit an ARO's parent permissions.
+view       View a tree or a single node's subtree.
+initdb     Initialize the DbAcl tables. 
+			Uses this command : cake schema create DbAcl
+           
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl view aco controllers/search
+we can use the subcommands, but it appears to be quicker to use acl_extras. 
+less prone to errors and looks like it takes less time because all of the 
+necessary operations are run concurrently. 
+
+
+           

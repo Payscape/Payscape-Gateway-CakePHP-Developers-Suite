@@ -1,0 +1,68 @@
+	$count = count($this->request->data['Discount']);
+	
+	  C:\xampp\htdocs\vacationfish.localdomain\app\View\Elements\add_attraction.ctp (4 hits)
+	Line 17: 	<?php if (isset($this->request->data[$model]) && count($this->request->data[$model])) { ?>
+	Line 19: 		<?php $this->Html->scriptblock('counters["loc_attr"] = '.(count($this->request->data[$model]) + 1).';', array('inline' => false)); ?>
+	Line 19: 		<?php $this->Html->scriptblock('counters["loc_attr"] = '.(count($this->request->data[$model]) + 1).';', array('inline' => false)); ?>
+	Line 45: 		<?php $this->Html->scriptblock('counters["loc_attr"] = 1;', array('inline' => false)); ?>
+  C
+  
+  =======================
+  this is the Ajax that is being posted when the sliders are moved
+  
+  _method=POST
+  &data%5BSearch%5D%5Bdestination%5D=
+  &data%5BSearch%5D%5Bcity%5D=&data%5BSearch%5D%5Bstate%5D=
+  &data%5BSearch%5D%5Bstate_abbr%5D=
+  &data%5BSearch%5D%5Bcountry%5D=
+  &data%5BSearch%5D%5Bcountry_abbr%5D=
+  &data%5BSearch%5D%5Blatitude%5D=
+  &data%5BSearch%5D%5Blongitude%5D=
+  &data%5BSearch%5D%5Bstart_date%5D=
+  &data%5BSearch%5D%5Bend_date%5D=
+  &data%5BSearch%5D%5Bsleeping_capacity%5D=1
+  &data%5BSearch%5D%5Brate_by%5D=
+  &data%5BSearch%5D%5Bredo_search_map%5D=0
+  &data%5BSearch%5D%5Bredo_search_map%5D=1
+  &data%5BSearch%5D%5Bsaved_search_id%5D=
+  &data%5BSearch%5D%5Bbedrooms%5D%5Bmin%5D=1
+  &data%5BSearch%5D%5Bbedrooms%5D%5Bmax%5D=7
+  &data%5BSearch%5D%5Bbathrooms%5D%5Bmin%5D=1
+  &data%5BSearch%5D%5Bbathrooms%5D%5Bmax%5D=2
+  &data%5BSearch%5D%5Bsquare_footage%5D%5Bmin%5D=4000
+  &data%5BSearch%5D%5Bsquare_footage%5D%5Bmax%5D=6200
+  &data%5BSearch%5D%5Bdaily_rate%5D%5Bmin%5D=0
+  &data%5BSearch%5D%5Bdaily_rate%5D%5Bmax%5D=260
+  &data%5BSearch%5D%5Bamenities%5D=&data%5BSearch%5D%5Bsort%5D=
+  &data%5BSearch%5D%5Bmap_ne%5D=&data%5BSearch%5D%5Bmap_sw%5D=
+  &data%5BSearch%5D%5Bmap_zoom%5D=
+  
+  _method	POST
+data[Search][amenities]	
+data[Search][bathrooms][m...	2
+data[Search][bathrooms][m...	1
+data[Search][bedrooms][ma...	7
+data[Search][bedrooms][mi...	1
+data[Search][city]	
+data[Search][country]	
+data[Search][country_abbr...	
+data[Search][daily_rate][...	260
+data[Search][daily_rate][...	0
+data[Search][destination]	
+data[Search][end_date]	
+data[Search][latitude]	
+data[Search][longitude]	
+data[Search][map_ne]	
+data[Search][map_sw]	
+data[Search][map_zoom]	
+data[Search][rate_by]	
+data[Search][redo_search_...	0
+data[Search][redo_search_...	1
+data[Search][saved_search...	
+data[Search][sleeping_cap...	1
+data[Search][sort]	
+data[Search][square_foota...	6200
+data[Search][square_foota...	4000
+data[Search][start_date]	
+data[Search][state]	
+data[Search][state_abbr]	

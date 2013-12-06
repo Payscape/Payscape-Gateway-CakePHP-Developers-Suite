@@ -1,0 +1,13 @@
+<div class="padder product-photos relative">
+<img src="/vacationfish.localdomain/public_html/img/vacationfish-tag.png" style="position:absolute; top:46px; right: 25px; z-index:1000;" alt="" />                        
+
+	<div id="vFishPhotosGallery">
+   	<a href="http://localhost:8090/vacationfish.localdomain/public_html/img/files/8133/images/247220130722002314.jpg">
+   		<img src="/vacationfish.localdomain/public_html/img/files/8133/images/247220130722002314.jpg" data-title="Le Neptune" data-description="Vacation Fish premium" alt="Le Neptune" />
+   	</a>
+   
+   	<a href="http://localhost:8090/vacationfish.localdomain/public_html/img/files/8133/images/247320130722002314.jpg">
+   		<img src="/vacationfish.localdomain/public_html/img/files/8133/images/247320130722002314.jpg" data-title="Le Neptune" data-description="Vacation Fish premium" alt="Le Neptune" />
+   	</a>                        
+   </div>    
+</div>

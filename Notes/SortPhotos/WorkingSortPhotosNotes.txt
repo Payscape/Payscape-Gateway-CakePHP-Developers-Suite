@@ -1,0 +1,142 @@
+
+CSS
+<link href="/vacationfish.localdomain/public_html/favicon.ico" type="image/x-icon" rel="icon" /><link href="/vacationfish.localdomain/public_html/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/redmond/jquery-ui-1.8.18.custom.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/main.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/flash-message.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/thickbox.css" />
+<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/jquery.alerts.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/custom.css" />	
+
+<!-- *** Load IE fixes *** -->
+	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/ie8.css" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/ie7.css" /><![endif]-->
+
+
+	<!--[if IE]>
+	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>	
+	<![endif]-->
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js">
+	</script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/global.js"></script>
+	<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/jquery.alerts.js"></script>
+	<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/thickbox.js"></script>
+	<!-- *** Initialize JS *** -->
+	<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/initialize.js"></script>
+	<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/plupload.css" />
+	<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/plupload_queue.css" />
+	<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/anythingslider.css" />
+
+	<script type="text/javascript">
+//<![CDATA[
+var counters = {"sort" : 0};
+//]]>
+</script>
+
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/jquery.plupload.queue.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/plupload.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/plupload.html5.js"></script>
+
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/propertyimages.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/outerHTML-2.1.0-min.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/create_two.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/jquery.anythingslider.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+counters["prop_image"] = 3;
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+var site_url = "/vacationfish.localdomain/public_html/properties/create/photos/907?file=1";
+//]]>
+</script>
+
+HTML
+
+
+			<div id="sc2" class="tab-content">
+				
+<div class="padder20">
+
+
+	<div class="edit-box relative">
+
+		<ul id ="slider">
+
+		
+			<li data-id="<?= $val['id'] ?>">
+				<img src="/vacationfish.localdomain/public_html/img/PropertyImage/6597/main_image.jpg" title="#htmlcaption_1" width="641" height="428" alt="" />
+				<div style="background:none;" class="caption-bottom">
+					<input name="data[Description]" class="txt_field" placeholder="Describe this photo here" type="text" id="Description"/>					<div class="saved" style="display:none;">Saved</div>
+				</div>
+			</li>
+		
+			<li data-id="<?= $val['id'] ?>">
+				<img src="/vacationfish.localdomain/public_html/img/PropertyImage/6596/main_image.jpg" title="#htmlcaption_2" width="641" height="428" alt="" />
+				<div style="background:none;" class="caption-bottom">
+					<input name="data[Description]" class="txt_field" placeholder="Describe this photo here" type="text" id="Description"/>					<div class="saved" style="display:none;">Saved</div>
+				</div>
+			</li>
+		
+		</ul>
+
+	</div>
+
+	<div class="photo-edit-tab">
+		<img src="/vacationfish.localdomain/public_html/img/edit-divider-up.png" alt="" />		<span class="right">
+
+			<a href="/vacationfish.localdomain/public_html/properties/delete_photo" class="grey-btn" id="deleteImg">Delete</a>			<span id="prev"></span>
+			<span id="next"></span>
+
+		</span>
+		<img src="/vacationfish.localdomain/public_html/img/edit-divider-down.png" alt="" />	</div>
+
+
+		<div class="photo-gallery">
+				<div class="photo-flag">Main img</div>
+		<ul class="sortable">
+
+									
+			<li id="6597" class="relative"><img src="/vacationfish.localdomain/public_html/img/PropertyImage/6597/thumb_image.jpg" alt="" /></li>
+
+																
+			<li id="6596"><img src="/vacationfish.localdomain/public_html/img/PropertyImage/6596/thumb_image.jpg" alt="" /></li>
+
+											</ul>
+	</div>
+
+	</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+	var aslider = null;
+	var img_id = "";
+	var photo_desc_url = "\/vacationfish.localdomain\/public_html\/properties\/add_photo_description";
+	$(document).ready( function( ) {
+		$("#slider").anythingSlider({
+			buildNavigation : false,
+			appendForwardTo : $("#next"),
+			appendBackTo    : $("#prev"),
+			buildStartStop  : false
+		});
+		aslider = $("#slider").data("AnythingSlider");
+	});
+
+//]]>
+</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/tabs.js"></script><script type="text/javascript">
+//<![CDATA[
+do_onload_new("ddpagetabs","sc1","0");
+//]]>
+</script>
+			</section>
+					</div>
+
+

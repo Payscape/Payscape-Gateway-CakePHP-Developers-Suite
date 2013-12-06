@@ -1,0 +1,3 @@
+-bash: ./cake: Permission denied
+Zorro:Console newuser$ chmod 755 cake
+Zorro:Console newuser$ 

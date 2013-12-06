@@ -1,0 +1,51 @@
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake acl -help
+
+
+A console tool for managing the DbAcl
+
+Usage:
+cake acl [subcommand] [-h] [-v] [-q]
+
+Subcommands:
+
+create     Create a new ACL node
+delete     Deletes the ACL object with the given <node> reference
+setparent  Moves the ACL node under a new parent.
+getpath    Print out the path to an ACL node.
+check      Check the permissions between an ACO and ARO.
+grant      Grant an ARO permissions to an ACO.
+deny       Deny an ARO permissions to an ACO.
+inherit    Inherit an ARO's parent permissions.
+view       View a tree or a single node's subtree.
+initdb     Initialize the DbAcl tables. Uses this command : cake schema
+           create DbAcl
+
+To see help on a subcommand use `cake acl [subcommand] --help`
+
+Options:
+
+--help, -h     Display this help.
+--verbose, -v  Enable verbose output.
+--quiet, -q    Enable quiet output.
+
+Node and parent arguments can be in one of the following formats:
+
+ - <model>.<id> - The node will be bound to a specific record of the
+given model.
+
+ - <alias> - The node will be given a string alias (or path, in the
+case of <parent>)
+   i.e. 'John'.  When used with <parent>, this takes the form of an
+alias path,
+   i.e. <group>/<subgroup>/<parent>.
+
+To add a node at the root level, enter 'root' or '/' as the <parent>
+parameter.
+
+
+
+#

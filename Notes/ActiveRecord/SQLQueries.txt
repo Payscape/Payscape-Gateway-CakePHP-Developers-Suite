@@ -1,0 +1,8 @@
+
+running SQL queries. 
+
+$results = Properties::model()->query("select booger from properties
+where tuna = 544);
+
+$this->Picture->query("SELECT * FROM pictures LIMIT 2;");
+$results = $this->Property->query("SELECT COUNT(id) as count from fishies;");

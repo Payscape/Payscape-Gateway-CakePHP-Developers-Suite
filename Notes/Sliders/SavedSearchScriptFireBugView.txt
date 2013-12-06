@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<script type="text/javascript">
+//<![CDATA[
+var ROOT_URL = "/vacationfish.localdomain/public_html/";
+//]]>
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <title>Searches</title>
+<link href="/vacationfish.localdomain/public_html/favicon.ico" type="image/x-icon" rel="icon" /><link href="/vacationfish.localdomain/public_html/favicon.ico" type="image/x-icon" rel="shortcut icon" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/redmond/jquery-ui-1.8.18.custom.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/common.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/main.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/style.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/flash-message.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/thickbox.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/jquery.alerts.css" /><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/custom.css" /> <!-- *** Load IE fixes *** -->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/ie8.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/ie7.css" /><![endif]-->
+<!--[if IE]>
+<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/bootstrap.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/global.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/jquery.alerts.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/thickbox.js"></script>
+<!-- *** Initialize JS *** -->
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/initialize.js"></script><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLnnQUaavOoVb6xTlQhDEswKay4RwqyKM&sensor=false&libraries=places,geometry"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/jquery.geocomplete.min.js"></script><script type="text/javascript" src="/vacationfish.localdomain/public_html/js/city.js"></script><script type="text/javascript">
+//<![CDATA[
+var cities_url = "/vacationfish.localdomain/public_html/cities/autocomplete";
+var current_url = "/saved-searches";
+//]]>
+</script>
+</head>
+<body id="bodyarea">
+<section id="wrapper">
+<div class="image-slider-home">
+<div id="mapSpacer" style="display:none;width:100%;height:425px;"></div>
+</div>
+<header id="header" class="layout-width">
+<div class="logo">
+<a href="/vacationfish.localdomain/public_html/"><img src="/vacationfish.localdomain/public_html/img/logo.png" alt="VacationFish" /></a>
+</div>
+<div class="header-nav">
+<div class="prime-links">
+<a href="/vacationfish.localdomain/public_html/logout">Logout</a> </div>
+<nav class="nav">
+<ul>
+<li><a href="javascript:void(0);" class="parent">Hi Stephen!</a> <div id="dd-panel" class="dropdown">
+<span class="arr">&nbsp;</span>
+<ul>
+<li><a href="/vacationfish.localdomain/public_html/dashboard">Dashboard</a></li>
+<li><a href="/vacationfish.localdomain/public_html/mylistings">My Listings</a></li>
+<li><a href="/vacationfish.localdomain/public_html/my-wishlist">My Wish List</a></li>
+<li><a href="/vacationfish.localdomain/public_html/saved-searches">Saved Searches</a></li>
+</ul>
+</div>
+</li>
+<li><a href="/vacationfish.localdomain/public_html/pages/how_it_works/getting_started_host">How It Works</a></li>
+<li><a href="/vacationfish.localdomain/public_html/search?reset=1">Find Rentals</a></li>
+<li>
+<a href="/vacationfish.localdomain/public_html/properties/create/basic">List Rentals</a> </li>
+</ul>
+</nav>
+</div>
+</header>
+<div id="innerpage-wrapper">
+<div class="flash-msg-cnt">
+</div>
+<section class="dashboard-cnt">
+<div class="db-nav">
+<ul>
+<li >
+<a href="/vacationfish.localdomain/public_html/dashboard">Dashboard</a> </li>
+<li >
+<a href="/vacationfish.localdomain/public_html/mylistings">My Listings</a> </li>
+<li >
+<a href="/vacationfish.localdomain/public_html/my-wishlist" controller="wishlists" action="index">My Wish List</a> </li>
+<li class="active">
+<a href="/vacationfish.localdomain/public_html/saved-searches">Saved Searches</a><span class="arr"></span> </li>
+</ul>
+</div>
+<div class="main-cnt">
+<div class="db-sidebar">
+<div class="profile-cnt">
+<img src="/vacationfish.localdomain/public_html/img/User/174/profile_fb_image.jpg" width="209" height="209" alt="" /> <div class="info">
+<h2>Stephen Mareches</h2>
+<a href="/vacationfish.localdomain/public_html/dashboard/edit"><strong>Edit Profile</strong></a>
+</div>
+</div>
+</div>
+<div class="db-content">
+<span class="right"><a href="/vacationfish.localdomain/public_html/saved-searches/new" class="white-btn">Create New Search</a> </span>
+<h2 class="indent">Stephen's Saved Searches <span class="counter">7</span></h2>
+<div class="clear">&nbsp;</div>
+<div class="saved-search-cnt">
+<div class="white-box">
+<form action="/vacationfish.localdomain/public_html/saved-searches" class="SaveSearch" id="Search0SaveSearchForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div> <input type="hidden" name="data[Search][id]" value="28" id="SearchId"/>
+<div class="search-title">
+<span class="left">
+<div class="input text required"><input name="data[Search][name]" value="Test Saved Search" class="search validate[required]" data-prompt-position="topLeft:-180" placeholder="Enter title for saved search" type="text" id="SearchName"/></div> </span>
+<span class="right actions-link"></span>
+<div class="seperator"></div>
+</div>
+<div class="search-form">
+<div class="row">
+<label class="left-label">Guests</label>
+<div class="value">
+<div class="input select"><select name="data[Search][data][sleeping_capacity]" style="width:80px:" id="SearchDataSleepingCapacity">
+<option value="1">1 Guest</option>
+<option value="2" selected="selected">2 Guests</option>
+<option value="3">3 Guests</option>
+<option value="4">4 Guests</option>
+<option value="5">5 Guests</option>
+<option value="6">6 Guests</option>
+<option value="7">7 Guests</option>
+<option value="8">8 Guests</option>
+<option value="9">9 Guests</option>
+<option value="10">10 Guests</option>
+<option value="11">11 Guests</option>
+<option value="12">12 Guests</option>
+<option value="13">13 Guests</option>
+<option value="14">14 Guests</option>
+<option value="15">15 Guests</option>
+<option value="16">16 Guests</option>
+<option value="17">17 Guests</option>
+<option value="18">18+ Guests</option>
+</select></div> </div>
+</div>
+<div class="seperator"></div>
+THESE ARE THE SLIDERS FOR SAVED SEARCHES
+<div class="ss-slider-cnt">
+<div class="equal-col left">
+<div class="row">
+<label class="left-label">Bedrooms</label>
+<input type="hidden" name="data[Search][data][bedrooms][min]" value="1" class="min_form" id="SearchDataBedroomsMin"/> <input type="hidden" name="data[Search][data][bedrooms][max]" value="10" class="max_form" id="SearchDataBedroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<!-- this is what causes our undefined HTML DIV element errors -->
+<div class="slider-range-Bed slip"></div>
+</div>
+<div class="row">
+<label class="left-label">Square Feet</label>
+<input type="hidden" name="data[Search][data][square_footage][min]" value="500" class="min_form" id="SearchDataSquareFootageMin"/> <input type="hidden" name="data[Search][data][square_footage][max]" value="12000" class="max_form" id="SearchDataSquareFootageMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-SqFt slip"></div>
+</div>
+</div>
+<div class="equal-col right">
+<div class="row">
+<label class="left-label">Bathrooms</label>
+<input type="hidden" name="data[Search][data][bathrooms][min]" value="1" class="min_form" id="SearchDataBathroomsMin"/> <input type="hidden" name="data[Search][data][bathrooms][max]" value="10" class="max_form" id="SearchDataBathroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-Bath slip"></div>
+</div>
+<div class="row">
+<label class="left-label">Price</label>
+<input type="hidden" name="data[Search][data][daily_rate][min]" value="0" class="min_form" id="SearchDataDailyRateMin"/> <input type="hidden" name="data[Search][data][daily_rate][max]" value="2000" class="max_form" id="SearchDataDailyRateMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-price slip"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready( function( ) {
+$("#Search0SaveSearchForm .slider-range-Bed").slider("values", [1, 10]);
+$("#Search0SaveSearchForm .slider-range-SqFt").slider("values", [500, 12000]);
+$("#Search0SaveSearchForm .slider-range-Bath").slider("values", [1, 10]);
+$("#Search0SaveSearchForm .slider-range-price").slider("values", [0, 2000]);
+update_slider_text( );
+});
+//]]>
+</script>
+<div class="seperator"></div>
+<div class="row">
+<label class="block-label">Amenities</label>
+<div class="checkbox-list"><input type="hidden" name="data[Search][data][amenities]" value="" id="SearchDataAmenities"/>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="19" id="SearchDataAmenities19" /><label for="SearchDataAmenities19" class="selected">Air Conditioning</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="17" id="SearchDataAmenities17" /><label for="SearchDataAmenities17">Cable TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="4" id="SearchDataAmenities4" /><label for="SearchDataAmenities4">Cable/Satelite TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="26" id="SearchDataAmenities26" /><label for="SearchDataAmenities26">Dryer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="24" id="SearchDataAmenities24" /><label for="SearchDataAmenities24">Fireplace</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="22" id="SearchDataAmenities22" /><label for="SearchDataAmenities22">Gym</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="20" id="SearchDataAmenities20" /><label for="SearchDataAmenities20">Heating</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="23" id="SearchDataAmenities23" /><label for="SearchDataAmenities23">Hot Tub</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="8" id="SearchDataAmenities8" /><label for="SearchDataAmenities8">Internet</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="1" id="SearchDataAmenities1" /><label for="SearchDataAmenities1">Outdoor BBQ</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="21" id="SearchDataAmenities21" /><label for="SearchDataAmenities21">Pool</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="3" id="SearchDataAmenities3" /><label for="SearchDataAmenities3">Telephone</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="16" id="SearchDataAmenities16" /><label for="SearchDataAmenities16">TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="25" id="SearchDataAmenities25" /><label for="SearchDataAmenities25">Washer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="18" id="SearchDataAmenities18" /><label for="SearchDataAmenities18">Wireless Internet</label></div>
+</div>
+</div>
+<div class="seperator"></div>
+<div class="row">
+<input class="pink-btn" value="Save Search" type="submit"/>
+<a href="/vacationfish.localdomain/public_html/saved-searches" class="white-btn">Cancel</a>
+<a href="/vacationfish.localdomain/public_html/searches/delete_saved_search/28" class="redtext" onclick="return confirm(&#039;Are you sure, You want to delete ?&#039;);">Delete Search</a> </div>
+</div>
+<div class="row">
+<div class="search-cnt" style="position:relative;top:-5px;">
+<input name="data[Search][go][destination]" class="s-input" placeholder="Search for a place to stay." autocomplete="off" data-geocomplete="true" type="text" id="SearchGoDestination"/><input type="hidden" name="data[Search][go][city]" data-geo="locality" id="SearchGoCity"/><input type="hidden" name="data[Search][go][state]" data-geo="administrative_area_level_1" id="SearchGoState"/><input type="hidden" name="data[Search][go][state_abbr]" data-geo="administrative_area_level_1_short" id="SearchGoStateAbbr"/><input type="hidden" name="data[Search][go][country]" data-geo="country" id="SearchGoCountry"/><input type="hidden" name="data[Search][go][country_abbr]" data-geo="country_short" id="SearchGoCountryAbbr"/><input type="hidden" name="data[Search][go][latitude]" data-geo="lat" id="SearchGoLatitude"/><input type="hidden" name="data[Search][go][longitude]" data-geo="lng" id="SearchGoLongitude"/><input type="image" src="/vacationfish.localdomain/public_html/img/search-icon.png" class="search-btn"/>
+</div>
+</div>
+</form>
+</div>
+<div class="white-box">
+<form action="/vacationfish.localdomain/public_html/saved-searches" class="SaveSearch" id="Search1SaveSearchForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div> <input type="hidden" name="data[Search][id]" value="29" id="SearchId"/>
+<div class="search-title">
+<span class="left">
+<div class="input text required"><input name="data[Search][name]" value="CableGymBBQ" class="search validate[required]" data-prompt-position="topLeft:-180" placeholder="Enter title for saved search" type="text" id="SearchName"/></div> </span>
+<span class="right actions-link"></span>
+<div class="seperator"></div>
+</div>
+<div class="search-form">
+<div class="row">
+<label class="left-label">Guests</label>
+<div class="value">
+<div class="input select"><select name="data[Search][data][sleeping_capacity]" style="width:80px:" id="SearchDataSleepingCapacity">
+<option value="1">1 Guest</option>
+<option value="2" selected="selected">2 Guests</option>
+<option value="3">3 Guests</option>
+<option value="4">4 Guests</option>
+<option value="5">5 Guests</option>
+<option value="6">6 Guests</option>
+<option value="7">7 Guests</option>
+<option value="8">8 Guests</option>
+<option value="9">9 Guests</option>
+<option value="10">10 Guests</option>
+<option value="11">11 Guests</option>
+<option value="12">12 Guests</option>
+<option value="13">13 Guests</option>
+<option value="14">14 Guests</option>
+<option value="15">15 Guests</option>
+<option value="16">16 Guests</option>
+<option value="17">17 Guests</option>
+<option value="18">18+ Guests</option>
+</select></div> </div>
+</div>
+<div class="seperator"></div>
+THESE ARE THE SLIDERS FOR SAVED SEARCHES
+<div class="ss-slider-cnt">
+<div class="equal-col left">
+<div class="row">
+<label class="left-label">Bedrooms</label>
+<input type="hidden" name="data[Search][data][bedrooms][min]" value="1" class="min_form" id="SearchDataBedroomsMin"/> <input type="hidden" name="data[Search][data][bedrooms][max]" value="10" class="max_form" id="SearchDataBedroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<!-- this is what causes our undefined HTML DIV element errors -->
+<!-- div class="slider-range-Bed slip"></div -->
+</div>
+<div class="row">
+<label class="left-label">Square Feet</label>
+<input type="hidden" name="data[Search][data][square_footage][min]" value="500" class="min_form" id="SearchDataSquareFootageMin"/> <input type="hidden" name="data[Search][data][square_footage][max]" value="12000" class="max_form" id="SearchDataSquareFootageMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-SqFt slip"></div>
+</div>
+</div>
+<div class="equal-col right">
+<div class="row">
+<label class="left-label">Bathrooms</label>
+<input type="hidden" name="data[Search][data][bathrooms][min]" value="1" class="min_form" id="SearchDataBathroomsMin"/> <input type="hidden" name="data[Search][data][bathrooms][max]" value="10" class="max_form" id="SearchDataBathroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-Bath slip"></div>
+</div>
+<div class="row">
+<label class="left-label">Price</label>
+<input type="hidden" name="data[Search][data][daily_rate][min]" value="0" class="min_form" id="SearchDataDailyRateMin"/> <input type="hidden" name="data[Search][data][daily_rate][max]" value="2000" class="max_form" id="SearchDataDailyRateMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-price slip"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready( function( ) {
+$("#Search1SaveSearchForm .slider-range-Bed").slider("values", [1, 10]);
+$("#Search1SaveSearchForm .slider-range-SqFt").slider("values", [500, 12000]);
+$("#Search1SaveSearchForm .slider-range-Bath").slider("values", [1, 10]);
+$("#Search1SaveSearchForm .slider-range-price").slider("values", [0, 2000]);
+update_slider_text( );
+});
+//]]>
+</script>
+<div class="seperator"></div>
+<div class="row">
+<label class="block-label">Amenities</label>
+<div class="checkbox-list"><input type="hidden" name="data[Search][data][amenities]" value="" id="SearchDataAmenities"/>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="19" id="SearchDataAmenities19" /><label for="SearchDataAmenities19">Air Conditioning</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="17" id="SearchDataAmenities17" /><label for="SearchDataAmenities17" class="selected">Cable TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="4" id="SearchDataAmenities4" /><label for="SearchDataAmenities4">Cable/Satelite TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="26" id="SearchDataAmenities26" /><label for="SearchDataAmenities26">Dryer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="24" id="SearchDataAmenities24" /><label for="SearchDataAmenities24">Fireplace</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="22" id="SearchDataAmenities22" /><label for="SearchDataAmenities22" class="selected">Gym</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="20" id="SearchDataAmenities20" /><label for="SearchDataAmenities20">Heating</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="23" id="SearchDataAmenities23" /><label for="SearchDataAmenities23">Hot Tub</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="8" id="SearchDataAmenities8" /><label for="SearchDataAmenities8">Internet</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="1" id="SearchDataAmenities1" /><label for="SearchDataAmenities1" class="selected">Outdoor BBQ</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="21" id="SearchDataAmenities21" /><label for="SearchDataAmenities21">Pool</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="3" id="SearchDataAmenities3" /><label for="SearchDataAmenities3">Telephone</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="16" id="SearchDataAmenities16" /><label for="SearchDataAmenities16">TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="25" id="SearchDataAmenities25" /><label for="SearchDataAmenities25">Washer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="18" id="SearchDataAmenities18" /><label for="SearchDataAmenities18">Wireless Internet</label></div>
+</div>
+</div>
+<div class="seperator"></div>
+<div class="row">
+<input class="pink-btn" value="Save Search" type="submit"/>
+<a href="/vacationfish.localdomain/public_html/saved-searches" class="white-btn">Cancel</a>
+<a href="/vacationfish.localdomain/public_html/searches/delete_saved_search/29" class="redtext" onclick="return confirm(&#039;Are you sure, You want to delete ?&#039;);">Delete Search</a> </div>
+</div>
+<div class="row">
+<div class="search-cnt" style="position:relative;top:-5px;">
+<input name="data[Search][go][destination]" class="s-input" placeholder="Search for a place to stay." autocomplete="off" data-geocomplete="true" type="text" id="SearchGoDestination"/><input type="hidden" name="data[Search][go][city]" data-geo="locality" id="SearchGoCity"/><input type="hidden" name="data[Search][go][state]" data-geo="administrative_area_level_1" id="SearchGoState"/><input type="hidden" name="data[Search][go][state_abbr]" data-geo="administrative_area_level_1_short" id="SearchGoStateAbbr"/><input type="hidden" name="data[Search][go][country]" data-geo="country" id="SearchGoCountry"/><input type="hidden" name="data[Search][go][country_abbr]" data-geo="country_short" id="SearchGoCountryAbbr"/><input type="hidden" name="data[Search][go][latitude]" data-geo="lat" id="SearchGoLatitude"/><input type="hidden" name="data[Search][go][longitude]" data-geo="lng" id="SearchGoLongitude"/><input type="image" src="/vacationfish.localdomain/public_html/img/search-icon.png" class="search-btn"/>
+</div>
+</div>
+</form>
+</div>
+<div class="white-box">
+<form action="/vacationfish.localdomain/public_html/saved-searches" class="SaveSearch" id="Search2SaveSearchForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div> <input type="hidden" name="data[Search][id]" value="30" id="SearchId"/>
+<div class="search-title">
+<span class="left">
+<div class="input text required"><input name="data[Search][name]" value="DryerHotTubTele4Guests" class="search validate[required]" data-prompt-position="topLeft:-180" placeholder="Enter title for saved search" type="text" id="SearchName"/></div> </span>
+<span class="right actions-link"></span>
+<div class="seperator"></div>
+</div>
+<div class="search-form">
+<div class="row">
+<label class="left-label">Guests</label>
+<div class="value">
+<div class="input select"><select name="data[Search][data][sleeping_capacity]" style="width:80px:" id="SearchDataSleepingCapacity">
+<option value="1">1 Guest</option>
+<option value="2">2 Guests</option>
+<option value="3">3 Guests</option>
+<option value="4" selected="selected">4 Guests</option>
+<option value="5">5 Guests</option>
+<option value="6">6 Guests</option>
+<option value="7">7 Guests</option>
+<option value="8">8 Guests</option>
+<option value="9">9 Guests</option>
+<option value="10">10 Guests</option>
+<option value="11">11 Guests</option>
+<option value="12">12 Guests</option>
+<option value="13">13 Guests</option>
+<option value="14">14 Guests</option>
+<option value="15">15 Guests</option>
+<option value="16">16 Guests</option>
+<option value="17">17 Guests</option>
+<option value="18">18+ Guests</option>
+</select></div> </div>
+</div>
+<div class="seperator"></div>
+THESE ARE THE SLIDERS FOR SAVED SEARCHES
+<div class="ss-slider-cnt">
+<div class="equal-col left">
+<div class="row">
+<label class="left-label">Bedrooms</label>
+<input type="hidden" name="data[Search][data][bedrooms][min]" value="1" class="min_form" id="SearchDataBedroomsMin"/> <input type="hidden" name="data[Search][data][bedrooms][max]" value="10" class="max_form" id="SearchDataBedroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<!-- this is what causes our undefined HTML DIV element errors -->
+<!-- div class="slider-range-Bed slip"></div -->
+</div>
+<div class="row">
+<label class="left-label">Square Feet</label>
+<input type="hidden" name="data[Search][data][square_footage][min]" value="500" class="min_form" id="SearchDataSquareFootageMin"/> <input type="hidden" name="data[Search][data][square_footage][max]" value="12000" class="max_form" id="SearchDataSquareFootageMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-SqFt slip"></div>
+</div>
+</div>
+<div class="equal-col right">
+<div class="row">
+<label class="left-label">Bathrooms</label>
+<input type="hidden" name="data[Search][data][bathrooms][min]" value="1" class="min_form" id="SearchDataBathroomsMin"/> <input type="hidden" name="data[Search][data][bathrooms][max]" value="10" class="max_form" id="SearchDataBathroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-Bath slip"></div>
+</div>
+<div class="row">
+<label class="left-label">Price</label>
+<input type="hidden" name="data[Search][data][daily_rate][min]" value="0" class="min_form" id="SearchDataDailyRateMin"/> <input type="hidden" name="data[Search][data][daily_rate][max]" value="2000" class="max_form" id="SearchDataDailyRateMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-price slip"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready( function( ) {
+$("#Search2SaveSearchForm .slider-range-Bed").slider("values", [1, 10]);
+$("#Search2SaveSearchForm .slider-range-SqFt").slider("values", [500, 12000]);
+$("#Search2SaveSearchForm .slider-range-Bath").slider("values", [1, 10]);
+$("#Search2SaveSearchForm .slider-range-price").slider("values", [0, 2000]);
+update_slider_text( );
+});
+//]]>
+</script>
+<div class="seperator"></div>
+<div class="row">
+<label class="block-label">Amenities</label>
+<div class="checkbox-list"><input type="hidden" name="data[Search][data][amenities]" value="" id="SearchDataAmenities"/>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="19" id="SearchDataAmenities19" /><label for="SearchDataAmenities19">Air Conditioning</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="17" id="SearchDataAmenities17" /><label for="SearchDataAmenities17">Cable TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="4" id="SearchDataAmenities4" /><label for="SearchDataAmenities4">Cable/Satelite TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="26" id="SearchDataAmenities26" /><label for="SearchDataAmenities26" class="selected">Dryer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="24" id="SearchDataAmenities24" /><label for="SearchDataAmenities24">Fireplace</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="22" id="SearchDataAmenities22" /><label for="SearchDataAmenities22">Gym</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="20" id="SearchDataAmenities20" /><label for="SearchDataAmenities20">Heating</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="23" id="SearchDataAmenities23" /><label for="SearchDataAmenities23" class="selected">Hot Tub</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="8" id="SearchDataAmenities8" /><label for="SearchDataAmenities8">Internet</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="1" id="SearchDataAmenities1" /><label for="SearchDataAmenities1">Outdoor BBQ</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="21" id="SearchDataAmenities21" /><label for="SearchDataAmenities21">Pool</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="3" id="SearchDataAmenities3" /><label for="SearchDataAmenities3" class="selected">Telephone</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="16" id="SearchDataAmenities16" /><label for="SearchDataAmenities16">TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="25" id="SearchDataAmenities25" /><label for="SearchDataAmenities25">Washer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="18" id="SearchDataAmenities18" /><label for="SearchDataAmenities18">Wireless Internet</label></div>
+</div>
+</div>
+<div class="seperator"></div>
+<div class="row">
+<input class="pink-btn" value="Save Search" type="submit"/>
+<a href="/vacationfish.localdomain/public_html/saved-searches" class="white-btn">Cancel</a>
+<a href="/vacationfish.localdomain/public_html/searches/delete_saved_search/30" class="redtext" onclick="return confirm(&#039;Are you sure, You want to delete ?&#039;);">Delete Search</a> </div>
+</div>
+<div class="row">
+<div class="search-cnt" style="position:relative;top:-5px;">
+<input name="data[Search][go][destination]" class="s-input" placeholder="Search for a place to stay." autocomplete="off" data-geocomplete="true" type="text" id="SearchGoDestination"/><input type="hidden" name="data[Search][go][city]" data-geo="locality" id="SearchGoCity"/><input type="hidden" name="data[Search][go][state]" data-geo="administrative_area_level_1" id="SearchGoState"/><input type="hidden" name="data[Search][go][state_abbr]" data-geo="administrative_area_level_1_short" id="SearchGoStateAbbr"/><input type="hidden" name="data[Search][go][country]" data-geo="country" id="SearchGoCountry"/><input type="hidden" name="data[Search][go][country_abbr]" data-geo="country_short" id="SearchGoCountryAbbr"/><input type="hidden" name="data[Search][go][latitude]" data-geo="lat" id="SearchGoLatitude"/><input type="hidden" name="data[Search][go][longitude]" data-geo="lng" id="SearchGoLongitude"/><input type="image" src="/vacationfish.localdomain/public_html/img/search-icon.png" class="search-btn"/>
+</div>
+</div>
+</form>
+</div>
+<div class="white-box">
+<form action="/vacationfish.localdomain/public_html/saved-searches" class="SaveSearch" id="Search3SaveSearchForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div> <input type="hidden" name="data[Search][id]" value="31" id="SearchId"/>
+<div class="search-title">
+<span class="left">
+<div class="input text required"><input name="data[Search][name]" value="5GuestsPool" class="search validate[required]" data-prompt-position="topLeft:-180" placeholder="Enter title for saved search" type="text" id="SearchName"/></div> </span>
+<span class="right actions-link"></span>
+<div class="seperator"></div>
+</div>
+<div class="search-form">
+<div class="row">
+<label class="left-label">Guests</label>
+<div class="value">
+<div class="input select"><select name="data[Search][data][sleeping_capacity]" style="width:80px:" id="SearchDataSleepingCapacity">
+<option value="1">1 Guest</option>
+<option value="2">2 Guests</option>
+<option value="3">3 Guests</option>
+<option value="4">4 Guests</option>
+<option value="5" selected="selected">5 Guests</option>
+<option value="6">6 Guests</option>
+<option value="7">7 Guests</option>
+<option value="8">8 Guests</option>
+<option value="9">9 Guests</option>
+<option value="10">10 Guests</option>
+<option value="11">11 Guests</option>
+<option value="12">12 Guests</option>
+<option value="13">13 Guests</option>
+<option value="14">14 Guests</option>
+<option value="15">15 Guests</option>
+<option value="16">16 Guests</option>
+<option value="17">17 Guests</option>
+<option value="18">18+ Guests</option>
+</select></div> </div>
+</div>
+<div class="seperator"></div>
+THESE ARE THE SLIDERS FOR SAVED SEARCHES
+<div class="ss-slider-cnt">
+<div class="equal-col left">
+<div class="row">
+<label class="left-label">Bedrooms</label>
+<input type="hidden" name="data[Search][data][bedrooms][min]" value="1" class="min_form" id="SearchDataBedroomsMin"/> <input type="hidden" name="data[Search][data][bedrooms][max]" value="10" class="max_form" id="SearchDataBedroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<!-- this is what causes our undefined HTML DIV element errors -->
+<!-- div class="slider-range-Bed slip"></div -->
+</div>
+<div class="row">
+<label class="left-label">Square Feet</label>
+<input type="hidden" name="data[Search][data][square_footage][min]" value="500" class="min_form" id="SearchDataSquareFootageMin"/> <input type="hidden" name="data[Search][data][square_footage][max]" value="12000" class="max_form" id="SearchDataSquareFootageMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-SqFt slip"></div>
+</div>
+</div>
+<div class="equal-col right">
+<div class="row">
+<label class="left-label">Bathrooms</label>
+<input type="hidden" name="data[Search][data][bathrooms][min]" value="1" class="min_form" id="SearchDataBathroomsMin"/> <input type="hidden" name="data[Search][data][bathrooms][max]" value="10" class="max_form" id="SearchDataBathroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-Bath slip"></div>
+</div>
+<div class="row">
+<label class="left-label">Price</label>
+<input type="hidden" name="data[Search][data][daily_rate][min]" value="0" class="min_form" id="SearchDataDailyRateMin"/> <input type="hidden" name="data[Search][data][daily_rate][max]" value="2000" class="max_form" id="SearchDataDailyRateMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-price slip"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready( function( ) {
+$("#Search3SaveSearchForm .slider-range-Bed").slider("values", [1, 10]);
+$("#Search3SaveSearchForm .slider-range-SqFt").slider("values", [500, 12000]);
+$("#Search3SaveSearchForm .slider-range-Bath").slider("values", [1, 10]);
+$("#Search3SaveSearchForm .slider-range-price").slider("values", [0, 2000]);
+update_slider_text( );
+});
+//]]>
+</script>
+<div class="seperator"></div>
+<div class="row">
+<label class="block-label">Amenities</label>
+<div class="checkbox-list"><input type="hidden" name="data[Search][data][amenities]" value="" id="SearchDataAmenities"/>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="19" id="SearchDataAmenities19" /><label for="SearchDataAmenities19">Air Conditioning</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="17" id="SearchDataAmenities17" /><label for="SearchDataAmenities17">Cable TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="4" id="SearchDataAmenities4" /><label for="SearchDataAmenities4">Cable/Satelite TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="26" id="SearchDataAmenities26" /><label for="SearchDataAmenities26">Dryer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="24" id="SearchDataAmenities24" /><label for="SearchDataAmenities24">Fireplace</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="22" id="SearchDataAmenities22" /><label for="SearchDataAmenities22">Gym</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="20" id="SearchDataAmenities20" /><label for="SearchDataAmenities20">Heating</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="23" id="SearchDataAmenities23" /><label for="SearchDataAmenities23">Hot Tub</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="8" id="SearchDataAmenities8" /><label for="SearchDataAmenities8">Internet</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="1" id="SearchDataAmenities1" /><label for="SearchDataAmenities1">Outdoor BBQ</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="21" id="SearchDataAmenities21" /><label for="SearchDataAmenities21" class="selected">Pool</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="3" id="SearchDataAmenities3" /><label for="SearchDataAmenities3">Telephone</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="16" id="SearchDataAmenities16" /><label for="SearchDataAmenities16">TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="25" id="SearchDataAmenities25" /><label for="SearchDataAmenities25">Washer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="18" id="SearchDataAmenities18" /><label for="SearchDataAmenities18">Wireless Internet</label></div>
+</div>
+</div>
+<div class="seperator"></div>
+<div class="row">
+<input class="pink-btn" value="Save Search" type="submit"/>
+<a href="/vacationfish.localdomain/public_html/saved-searches" class="white-btn">Cancel</a>
+<a href="/vacationfish.localdomain/public_html/searches/delete_saved_search/31" class="redtext" onclick="return confirm(&#039;Are you sure, You want to delete ?&#039;);">Delete Search</a> </div>
+</div>
+<div class="row">
+<div class="search-cnt" style="position:relative;top:-5px;">
+<input name="data[Search][go][destination]" class="s-input" placeholder="Search for a place to stay." autocomplete="off" data-geocomplete="true" type="text" id="SearchGoDestination"/><input type="hidden" name="data[Search][go][city]" data-geo="locality" id="SearchGoCity"/><input type="hidden" name="data[Search][go][state]" data-geo="administrative_area_level_1" id="SearchGoState"/><input type="hidden" name="data[Search][go][state_abbr]" data-geo="administrative_area_level_1_short" id="SearchGoStateAbbr"/><input type="hidden" name="data[Search][go][country]" data-geo="country" id="SearchGoCountry"/><input type="hidden" name="data[Search][go][country_abbr]" data-geo="country_short" id="SearchGoCountryAbbr"/><input type="hidden" name="data[Search][go][latitude]" data-geo="lat" id="SearchGoLatitude"/><input type="hidden" name="data[Search][go][longitude]" data-geo="lng" id="SearchGoLongitude"/><input type="image" src="/vacationfish.localdomain/public_html/img/search-icon.png" class="search-btn"/>
+</div>
+</div>
+</form>
+</div>
+<div class="white-box">
+<form action="/vacationfish.localdomain/public_html/saved-searches" class="SaveSearch" id="Search4SaveSearchForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div> <input type="hidden" name="data[Search][id]" value="32" id="SearchId"/>
+<div class="search-title">
+<span class="left">
+<div class="input text required"><input name="data[Search][name]" value="3GuestHeating" class="search validate[required]" data-prompt-position="topLeft:-180" placeholder="Enter title for saved search" type="text" id="SearchName"/></div> </span>
+<span class="right actions-link"></span>
+<div class="seperator"></div>
+</div>
+<div class="search-form">
+<div class="row">
+<label class="left-label">Guests</label>
+<div class="value">
+<div class="input select"><select name="data[Search][data][sleeping_capacity]" style="width:80px:" id="SearchDataSleepingCapacity">
+<option value="1">1 Guest</option>
+<option value="2">2 Guests</option>
+<option value="3" selected="selected">3 Guests</option>
+<option value="4">4 Guests</option>
+<option value="5">5 Guests</option>
+<option value="6">6 Guests</option>
+<option value="7">7 Guests</option>
+<option value="8">8 Guests</option>
+<option value="9">9 Guests</option>
+<option value="10">10 Guests</option>
+<option value="11">11 Guests</option>
+<option value="12">12 Guests</option>
+<option value="13">13 Guests</option>
+<option value="14">14 Guests</option>
+<option value="15">15 Guests</option>
+<option value="16">16 Guests</option>
+<option value="17">17 Guests</option>
+<option value="18">18+ Guests</option>
+</select></div> </div>
+</div>
+<div class="seperator"></div>
+THESE ARE THE SLIDERS FOR SAVED SEARCHES
+<div class="ss-slider-cnt">
+<div class="equal-col left">
+<div class="row">
+<label class="left-label">Bedrooms</label>
+<input type="hidden" name="data[Search][data][bedrooms][min]" value="1" class="min_form" id="SearchDataBedroomsMin"/> <input type="hidden" name="data[Search][data][bedrooms][max]" value="10" class="max_form" id="SearchDataBedroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<!-- this is what causes our undefined HTML DIV element errors -->
+<!-- div class="slider-range-Bed slip"></div -->
+</div>
+<div class="row">
+<label class="left-label">Square Feet</label>
+<input type="hidden" name="data[Search][data][square_footage][min]" value="500" class="min_form" id="SearchDataSquareFootageMin"/> <input type="hidden" name="data[Search][data][square_footage][max]" value="12000" class="max_form" id="SearchDataSquareFootageMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-SqFt slip"></div>
+</div>
+</div>
+<div class="equal-col right">
+<div class="row">
+<label class="left-label">Bathrooms</label>
+<input type="hidden" name="data[Search][data][bathrooms][min]" value="1" class="min_form" id="SearchDataBathroomsMin"/> <input type="hidden" name="data[Search][data][bathrooms][max]" value="10" class="max_form" id="SearchDataBathroomsMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-Bath slip"></div>
+</div>
+<div class="row">
+<label class="left-label">Price</label>
+<input type="hidden" name="data[Search][data][daily_rate][min]" value="0" class="min_form" id="SearchDataDailyRateMin"/> <input type="hidden" name="data[Search][data][daily_rate][max]" value="2000" class="max_form" id="SearchDataDailyRateMax"/>
+<div class="minmax-wrapper"><div class="min"></div><div class="search-dash">-</div><div class="max"></div></div><div class="clear"></div>
+<div class="slider-range-price slip"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready( function( ) {
+$("#Search4SaveSearchForm .slider-range-Bed").slider("values", [1, 10]);
+$("#Search4SaveSearchForm .slider-range-SqFt").slider("values", [500, 12000]);
+$("#Search4SaveSearchForm .slider-range-Bath").slider("values", [1, 10]);
+$("#Search4SaveSearchForm .slider-range-price").slider("values", [0, 2000]);
+update_slider_text( );
+});
+//]]>
+</script>
+<div class="seperator"></div>
+<div class="row">
+<label class="block-label">Amenities</label>
+<div class="checkbox-list"><input type="hidden" name="data[Search][data][amenities]" value="" id="SearchDataAmenities"/>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="19" id="SearchDataAmenities19" /><label for="SearchDataAmenities19">Air Conditioning</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="17" id="SearchDataAmenities17" /><label for="SearchDataAmenities17">Cable TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="4" id="SearchDataAmenities4" /><label for="SearchDataAmenities4">Cable/Satelite TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="26" id="SearchDataAmenities26" /><label for="SearchDataAmenities26">Dryer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="24" id="SearchDataAmenities24" /><label for="SearchDataAmenities24">Fireplace</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="22" id="SearchDataAmenities22" /><label for="SearchDataAmenities22">Gym</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" checked="checked" value="20" id="SearchDataAmenities20" /><label for="SearchDataAmenities20" class="selected">Heating</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="23" id="SearchDataAmenities23" /><label for="SearchDataAmenities23">Hot Tub</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="8" id="SearchDataAmenities8" /><label for="SearchDataAmenities8">Internet</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="1" id="SearchDataAmenities1" /><label for="SearchDataAmenities1">Outdoor BBQ</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="21" id="SearchDataAmenities21" /><label for="SearchDataAmenities21">Pool</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="3" id="SearchDataAmenities3" /><label for="SearchDataAmenities3">Telephone</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="16" id="SearchDataAmenities16" /><label for="SearchDataAmenities16">TV</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="25" id="SearchDataAmenities25" /><label for="SearchDataAmenities25">Washer</label></div>
+<div class="checkbox"><input type="checkbox" name="data[Search][data][amenities][]" value="18" id="SearchDataAmenities18" /><label for="SearchDataAmenities18">Wireless Internet</label></div>
+</div>
+</div>
+<div class="seperator"></div>
+<div class="row">
+<input class="pink-btn" value="Save Search" type="submit"/>
+<a href="/vacationfish.localdomain/public_html/saved-searches" class="white-btn">Cancel</a>

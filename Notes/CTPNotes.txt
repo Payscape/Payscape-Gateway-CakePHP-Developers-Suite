@@ -1,0 +1,8 @@
+
+to load a view without a layout
+
+   public function view(){
+   
+        $this->layout=null;
+   
+   }

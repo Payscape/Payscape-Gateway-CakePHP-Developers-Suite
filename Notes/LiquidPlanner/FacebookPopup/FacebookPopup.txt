@@ -1,0 +1,5 @@
+
+FACEBOOK POPUP - Please left justify the facebook log in button. 
+The "or" and "VacationFish Log In" text should be on the same line 
+(bolded and the same size of text as the "or"). 
+Also please add a one line space after the facebook button.

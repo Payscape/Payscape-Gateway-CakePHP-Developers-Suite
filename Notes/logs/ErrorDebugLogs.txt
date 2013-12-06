@@ -1,0 +1,10 @@
+
+when we see "Undefined variable" in the logs, 
+we need to set the variable in the controller for the 
+view that is reporting the error. 
+
+For example: Undeifned variable base_url
+
+we need: 
+    $base_url = $this->base;
+    $this->set('base_url', $base_url);

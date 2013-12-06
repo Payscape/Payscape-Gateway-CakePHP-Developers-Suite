@@ -1,0 +1,64 @@
+	One other point. 
+	Using "Log in with FAcebook" in takes us to the home page, 
+	we want it to take us to our Profile or Listings page. 
+	
+	
+	
+	
+	Here is how we can display the Facebook pic in the 
+	Edit Profile page. 
+
+	Then we can give the user the option
+
+	"Use my Facebook Picture"
+	
+	in which case we want to 
+	1 remove the image from User['fb_image'] // set this to ""
+	2 delete the image from User. 
+	in this case naming that picture the same for everyone is a good thing. 
+	as subsequent images are uploaded, they will overwrite the previous one, 
+	so that we do not have to delete. 
+	
+	
+	currently this is the entry in users.fb_image that indicates that a  file 
+	has been uploaded for the user's profile pic. 
+	
+	image/jpeg
+	
+	let's try something:
+	
+	http://localhost:8092/vacationfish.localdomain/public_html/
+	
+	http://triubendev.com/dev/vfish3
+	
+	
+	
+	
+		
+	<div class="profile-picture">
+	<?php
+			if ( ! empty($user_info['User']['fb_image'])) {
+						echo $this->Html->image($user_info['User']['fb_image']['profile'], array('width' => 209, 'height' => 209));
+		
+				}
+				elseif ( ! empty($user_info['User']['facebook_id'])) {
+					echo $this->Facebook->picture($user_info['User']['facebook_id'], array('facebook-logo' => 0, 'size' => 'normal'));
+				}
+				else {
+					echo $this->Html->image('no_user.jpg', array('width' => 209, 'height' => 209));
+				}
+?>
+	
+	</div>
+		// here we'll need a function that can use a post link
+		// to update User.fb_picture to ""
+	< link > Use my Facebook Picture < />
+	
+	This can all be accomplished with a button. 
+	
+	function reset_fb_image() {
+	$this->User::model()->query("UPDATE users SET fb_image = '' WHERE id = $user_id");
+		if(file_exists($fb_image_file)){
+				unlink($fb_image_file);
+		}	
+ 	

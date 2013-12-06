@@ -1,0 +1,361 @@
+var_dump($this->params);
+
+PARAMSobject(CakeRequest)#8 (9) {
+  ["params"]=>
+  array(6) {
+    ["plugin"]=>
+    NULL
+    ["controller"]=>
+    string(8) "searches"
+    ["action"]=>
+    string(7) "results"
+    ["named"]=>
+    array(0) {
+    }
+    ["pass"]=>
+    array(0) {
+    }
+    ["isAjax"]=>
+    bool(false)
+  }
+  ["data"]=>
+  array(1) {
+    ["Search"]=>
+    array(0) {
+    }
+  }
+  ["query"]=>
+  array(1) {
+    ["reset"]=>
+    string(1) "1"
+  }
+  ["url"]=>
+  string(6) "search"
+  ["base"]=>
+  string(37) "/vacationfish.localdomain/public_html"
+  ["webroot"]=>
+  string(38) "/vacationfish.localdomain/public_html/"
+  ["here"]=>
+  string(44) "/vacationfish.localdomain/public_html/search"
+  ["_detectors":protected]=>
+  array(11) {
+    ["get"]=>
+    array(2) {
+      ["env"]=>
+      string(14) "REQUEST_METHOD"
+      ["value"]=>
+      string(3) "GET"
+    }
+    ["post"]=>
+    array(2) {
+      ["env"]=>
+      string(14) "REQUEST_METHOD"
+      ["value"]=>
+      string(4) "POST"
+    }
+    ["put"]=>
+    array(2) {
+      ["env"]=>
+      string(14) "REQUEST_METHOD"
+      ["value"]=>
+      string(3) "PUT"
+    }
+    ["delete"]=>
+    array(2) {
+      ["env"]=>
+      string(14) "REQUEST_METHOD"
+      ["value"]=>
+      string(6) "DELETE"
+    }
+    ["head"]=>
+    array(2) {
+      ["env"]=>
+      string(14) "REQUEST_METHOD"
+      ["value"]=>
+      string(4) "HEAD"
+    }
+    ["options"]=>
+    array(2) {
+      ["env"]=>
+      string(14) "REQUEST_METHOD"
+      ["value"]=>
+      string(7) "OPTIONS"
+    }
+    ["ssl"]=>
+    array(2) {
+      ["env"]=>
+      string(5) "HTTPS"
+      ["value"]=>
+      int(1)
+    }
+    ["ajax"]=>
+    array(2) {
+      ["env"]=>
+      string(21) "HTTP_X_REQUESTED_WITH"
+      ["value"]=>
+      string(14) "XMLHttpRequest"
+    }
+    ["flash"]=>
+    array(2) {
+      ["env"]=>
+      string(15) "HTTP_USER_AGENT"
+      ["pattern"]=>
+      string(26) "/^(Shockwave|Adobe) Flash/"
+    }
+    ["mobile"]=>
+    array(2) {
+      ["env"]=>
+      string(15) "HTTP_USER_AGENT"
+      ["options"]=>
+      array(26) {
+        [0]=>
+        string(7) "Android"
+        [1]=>
+        string(7) "AvantGo"
+        [2]=>
+        string(10) "BlackBerry"
+        [3]=>
+        string(6) "DoCoMo"
+        [4]=>
+        string(6) "Fennec"
+        [5]=>
+        string(4) "iPod"
+        [6]=>
+        string(6) "iPhone"
+        [7]=>
+        string(4) "iPad"
+        [8]=>
+        string(4) "J2ME"
+        [9]=>
+        string(4) "MIDP"
+        [10]=>
+        string(8) "NetFront"
+        [11]=>
+        string(5) "Nokia"
+        [12]=>
+        string(10) "Opera Mini"
+        [13]=>
+        string(10) "Opera Mobi"
+        [14]=>
+        string(6) "PalmOS"
+        [15]=>
+        string(10) "PalmSource"
+        [16]=>
+        string(9) "portalmmm"
+        [17]=>
+        string(7) "Plucker"
+        [18]=>
+        string(14) "ReqwirelessWeb"
+        [19]=>
+        string(12) "SonyEricsson"
+        [20]=>
+        string(7) "Symbian"
+        [21]=>
+        string(11) "UP\.Browser"
+        [22]=>
+        string(5) "webOS"
+        [23]=>
+        string(10) "Windows CE"
+        [24]=>
+        string(16) "Windows Phone OS"
+        [25]=>
+        string(5) "Xiino"
+      }
+    }
+    ["requested"]=>
+    array(2) {
+      ["param"]=>
+      string(9) "requested"
+      ["value"]=>
+      int(1)
+    }
+  }
+  ["_input":protected]=>
+  string(0) ""
+}
+
+=== 2 ===
+
+    
+        $properties = $this->paginate('Property');
+        $paramsset = $this->params;
+        
+        $params_paging = $this->params['paging'];
+        
+        $this->set('paramsset', $paramsset);
+        $this->set('paginate_params', $paginate_params);
+        
+        echo "<pre>";
+        //debug($this->request->data);
+        echo "<br>PARAMS!<br>";
+        print_r($paramsset);
+        
+        exit();
+        
+        echo "</pre>";
+
+print_r($paramsset)
+
+CakeRequest Object
+(
+    [params] => Array
+        (
+            [plugin] => 
+            [controller] => searches
+            [action] => results
+            [named] => Array
+                (
+                    [page] => 3
+                )
+
+            [pass] => Array
+                (
+                )
+
+            [isAjax] => 
+            [paging] => Array
+                (
+                    [Property] => Array
+                        (
+                            [page] => 3
+                            [current] => 10
+                            [count] => 50
+                            [prevPage] => 1
+                            [nextPage] => 1
+                            [pageCount] => 5
+                            [order] => Array
+                                (
+                                    [Property.created] => desc
+                                )
+
+                            [limit] => 10
+                            [options] => Array
+                                (
+                                    [page] => 3
+                                )
+
+                            [paramType] => named
+                        )
+
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Search] => Array
+                (
+                )
+
+        )
+
+    [query] => Array
+        (
+            [reset] => 1
+        )
+
+    [url] => searches/results/page:3
+    [base] => /vacationfish.localdomain/public_html
+    [webroot] => /vacationfish.localdomain/public_html/
+    [here] => /vacationfish.localdomain/public_html/searches/results/page:3
+    [_detectors:protected] => Array
+        (
+            [get] => Array
+                (
+                    [env] => REQUEST_METHOD
+                    [value] => GET
+                )
+
+            [post] => Array
+                (
+                    [env] => REQUEST_METHOD
+                    [value] => POST
+                )
+
+            [put] => Array
+                (
+                    [env] => REQUEST_METHOD
+                    [value] => PUT
+                )
+
+            [delete] => Array
+                (
+                    [env] => REQUEST_METHOD
+                    [value] => DELETE
+                )
+
+            [head] => Array
+                (
+                    [env] => REQUEST_METHOD
+                    [value] => HEAD
+                )
+
+            [options] => Array
+                (
+                    [env] => REQUEST_METHOD
+                    [value] => OPTIONS
+                )
+
+            [ssl] => Array
+                (
+                    [env] => HTTPS
+                    [value] => 1
+                )
+
+            [ajax] => Array
+                (
+                    [env] => HTTP_X_REQUESTED_WITH
+                    [value] => XMLHttpRequest
+                )
+
+            [flash] => Array
+                (
+                    [env] => HTTP_USER_AGENT
+                    [pattern] => /^(Shockwave|Adobe) Flash/
+                )
+
+            [mobile] => Array
+                (
+                    [env] => HTTP_USER_AGENT
+                    [options] => Array
+                        (
+                            [0] => Android
+                            [1] => AvantGo
+                            [2] => BlackBerry
+                            [3] => DoCoMo
+                            [4] => Fennec
+                            [5] => iPod
+                            [6] => iPhone
+                            [7] => iPad
+                            [8] => J2ME
+                            [9] => MIDP
+                            [10] => NetFront
+                            [11] => Nokia
+                            [12] => Opera Mini
+                            [13] => Opera Mobi
+                            [14] => PalmOS
+                            [15] => PalmSource
+                            [16] => portalmmm
+                            [17] => Plucker
+                            [18] => ReqwirelessWeb
+                            [19] => SonyEricsson
+                            [20] => Symbian
+                            [21] => UP\.Browser
+                            [22] => webOS
+                            [23] => Windows CE
+                            [24] => Windows Phone OS
+                            [25] => Xiino
+                        )
+
+                )
+
+            [requested] => Array
+                (
+                    [param] => requested
+                    [value] => 1
+                )
+
+        )
+
+    [_input:protected] => 
+)

@@ -1,0 +1,7 @@
+"files":[{
+    "name":"caa1a690c36747157a169a7c5ea71d1f.jpg",
+    "size":174166,
+    "type":"image\/jpeg",
+    "url":"img\/files\/906\/images\/caa1a690c36747157a169a7c5ea71d1f.jpg",
+    "delete_url":"properties\/upload?file=caa1a690c36747157a169a7c5ea71d1f.jpg",
+    "delete_type":"DELETE"}]}

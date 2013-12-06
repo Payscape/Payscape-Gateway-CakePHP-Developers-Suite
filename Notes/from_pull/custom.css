@@ -1,0 +1,323 @@
+/** Custom CSS added by Vinod patidar and Keval Domadia | 07 Sept 2012
+	* Created to over-ride the default designer's CSS settings - if required.
+**/
+:focus{outline:none}
+.up { background:url(../img/white-up-arr.png) no-repeat 90% center #1d87a4 !important; }
+
+.input-cnt input { width: 75px; } #header .logo { padding-bottom: 10px; } .other-inputs input { height: 13px;}
+
+a.wishlist-pre-loader{ background:url(../img/loading.gif) no-repeat 5px center #fff; border:1px solid #b4b1b1; -webkit-border-radius:6px; border-radius:6px; padding:0 5px 0 20px; display:inline-block; line-height:26px; color:#ed2d52;}
+
+.pre-loader {
+	font-size: 30px;
+	left: 240px;
+	margin: 0;
+	padding: 20px 30px;
+	position: absolute;
+	top: 75px;
+	width: auto;
+	z-index: 999999999;
+}
+
+.modalbox {
+	background-clip: padding-box;
+	background-color: rgba(250, 250, 250, 0.9);
+	background-image: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.9) 100%);
+	border: 3px solid rgba(0, 0, 0, 0.5);
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1), 0 0 0 #000000;
+	color: #393C3D;
+	display: none;
+	left: 56%;
+	margin: -250px 0 0 -280px;
+	max-height: 500px;
+	overflow: auto;
+	position: fixed;
+	top: 65%;
+	width: 560px;
+	z-index: 1050;
+}
+.ui-state-default span{
+	background-image: url('../img/collapse-arr.png');
+	width: 20px;
+	height: 20px;
+}
+.ui-state-active span{
+	background-image: url('../img/expand-arr.png');
+	width: 20px;
+	height: 20px;
+}
+
+.checkbox-list .checkbox{ float: left;
+	margin: 0 0.5% 10px;
+	width: 24%;}
+.checkbox-list .checkbox input[type=checkbox]{ background: none repeat scroll 0 0 transparent !important;
+	border: medium none;
+	box-shadow: none;
+	margin: 0 2px 2px;
+	padding: 0;
+	vertical-align: middle;}
+
+.checkbox-list .checkbox label{display:inline!important}
+
+
+/* inner pages CSS*/
+.single-page-cnt{ clear:both; display:block; border:1px solid #ccc; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; padding:20px; overflow:hidden}
+
+
+.actions-link {background:url('../img/collapse-arr.png')  no-repeat 0 0;width:25px;height:25px;cursor:pointer}
+.expand {background:url('../img/expand-arr.png')  no-repeat 0 0;width:25px;height:25px;cursor:pointer}
+
+
+/*
+	css for create_space (creating new listing)
+*/
+.listmyspace-page{clear:both; padding:10px 0 0 0}
+
+.listmyspace-page .sidebar{float:right; width:270px;}
+.listmyspace-page h1{color:#0f819f; margin:0 0 20px}
+.listmyspace-page h3{line-height:22px; font-weight:400;}
+.listmyspace-page .sidebar .side-header{ border:1px solid #b4b1b1; height:47px; line-height:47px; display:block; color:#666666; font-size:17px; font-weight:700; text-align:center;background: #fbfafa;} /* Old browsers */
+.listmyspace-page .sidebar .box-cnt{ background:#fff; border:1px solid #f5f5f5; -webkit-box-shadow:0px 3px 6px #888; box-shadow:0px 3px 6px #888; padding:15px 10px; border-top:none; margin:0 1px; -webkit-border-bottom-left-radius:5px; -webkit-border-bottom-right-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;}
+.db-content .seperator, .seperator-big{background:url("../img/db-divider.png") no-repeat center 10px; height:28px;}
+.listmyspace-page .main-content {font-size: 14px;}
+.form-box{ width:85%; padding:20px 30px; margin:0 auto 15px; display:block; overflow:hidden; border:1px solid #999999; -webkit-border-radius:10px; border-radius:10px; position:relative}
+.form-box .public-tag, .form-box .secure-tag{position:absolute; right:0; top:20px; width:140px; height:167px;}
+.form-box .public-tag{background:url(../img/public-tag.png) no-repeat 0 0}
+.form-box p{margin:0 0 20px; line-height:20px}
+.form-box h3{color:#333; font-weight:700; margin:0 0 25px}
+.form-box form{margin:15px 0 0 30px}
+.form-box .row{margin:0 0 5px}
+/*.form-box label{font-weight:400!important; color:#333!important; width:140px!important}*/
+.form-box input, .form-box select, .form-box textarea{border:1px solid #999; -webkit-border-radius:4px; border-radius:4px}
+.form-box .secure-tag{background:url(../img/secure-tag.png) no-repeat 0 0; top: 385px;}
+.listmyspace-page .sidebar .box-cnt{ background:#fff; border:1px solid #f5f5f5; -webkit-box-shadow:0px 3px 6px #888; box-shadow:0px 3px 6px #888; padding:15px 10px; border-top:none; margin:0 1px; -webkit-border-bottom-left-radius:5px; -webkit-border-bottom-right-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;}
+.faq p{margin:0 0 5px; font-size:14px; line-height:24px}
+.faq a{color:#2ca1d1; font-weight:700}
+.faq a:hover{color:#333}
+.listmyspace-page .main-content{ float:left; width:600px; border:1px solid #cccccc; -webkit-border-radius:4px; border-radius:4px; padding:30px 20px 15px; background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #f5f5f5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f5f5f5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%,#f5f5f5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%,#f5f5f5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%,#f5f5f5 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5',GradientType=0 );-webkit-border-radius:5px; border-radius:5px; /* IE6-9 */ border:1px solid #ccc; overflow:hidden; font-size:14px; margin:0 0 15px}
+
+input[type=checkbox]{ border:none; padding:0; margin:0 2px 2px !important; vertical-align:middle; background:none!important; box-shadow:none; width:auto !important; }
+.search-category div.checkbox{line-height:20px; margin:0 0 5px; color:#666}
+
+.modalpopup-form input[type = text], .modalpopup-form textarea, .modalpopup-form select{ padding:5px; font-size:18px; font-weight:400; width:60%}
+.modalpopup-form textarea, .modalpopup-form select{width:90%}
+.modalpopup-form select{padding:2px; margin:0 0 15px}
+.inactive{ background:#F0F3F4!important; color:#BDBEBE!important; cursor:default!important}
+.modalpopup-form .inline-block{ margin:0 15px 15px 0}
+.modalpopup-form .inline-block input[type=text]{width:210px; height:18px; padding:5px}
+
+
+/* customized jquery ui classes */
+#search-ui .category-inputs{font-size:16px; font-weight:700; color:#666; width: 200px;margin-left: -15px;}
+#search-ui .ui-accordion .ui-accordion-content{margin:0; border:none; background:none; padding:1em 10px;}
+#search-ui div.input.span{display:none}
+#search-ui .ui-accordion .ui-accordion-header{border-radius:0}
+#search-ui .min{float:left; padding:0 0 15px}
+#search-ui .max{float:right; padding:0 0 15px}
+#search-ui .ui-slider-horizontal{height:5px}
+#search-ui .ui-slider{clear:both}
+#search-ui .ui-slider { position: relative; text-align: left; background:url(../img/range-sliderbg.png) repeat-x 0 0; border:none!important; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; clear:both; margin:0 0 10px 10px; width: 175px;
+}
+#search-ui .ui-widget-header { border: none; color: #ffffff; font-weight: bold; background:url(../img/range-sliderbg-on.png) repeat-x 0 0; }
+
+// #search-ui .ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 8px; height: 28px; cursor: default; }
+
+/* this is almost what we want */
+/* #search-ui .ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 8px; margin-left: -4px; background-image: url('../img/jquery.ui-slider/slider8x20.png'); height: 28px; cursor: default; } */
+
+#search-ui .ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 8px; margin-left: -4px; background-image: url('../img/jquery.ui-slider/slider8x28.png'); height: 28px; cursor: default; }
+
+
+#search-ui .ui-slider-horizontal .ui-slider-handle { top: -12px; margin-left: -10px; }
+/* #search-ui .ui-slider-handle { border: 1px solid #999999; background:url(../img/rangebg.png) repeat-x 0 0 #55adc6; font-weight: bold; color: #2e6e9e; -webkit-box-shadow:inset 0px 0px 2px #fff; box-shadow:inset 0px 0px 2px #fff; } */
+
+
+/****** Customized jQuery UI Slider CSS for Saved Searches, Create/Edit Listing pages 17 Oct 2012 **********/
+.ss-slider-ui{width:210px; float:right}
+.ss-slider-ui .category-inputs{font-size:16px; font-weight:700; color:#666}
+.ss-slider-ui .ui-accordion .ui-accordion-content{margin:0; border:none; background:none; padding:1em 10px;}
+.ss-slider-ui div.input.span{display:none}
+.ss-slider-ui .ui-accordion .ui-accordion-header{border-radius:0}
+.ss-slider-ui .min{float:left; padding:0 0 10px 5px}
+.ss-slider-ui .max{float:right; padding:0 5px 10px}
+.ss-slider-ui .ui-slider-horizontal{height:8px}
+.ss-slider-ui .ui-slider{clear:both; width:186px!important}
+.ss-slider-ui .ui-slider { position: relative; text-align: left; background:url(../img/range-sliderbg.png) repeat-x 0 0; border:none!important; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; clear:both; margin:0 0 10px 18px}
+.ss-slider-ui .ui-widget-header { border: none; color: #ffffff; font-weight: bold; background:url(../img/ss-slider-on.png) repeat-x 0 0; }
+.ss-slider-ui .ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 14px; height: 14px; cursor: default; }
+.ss-slider-ui .ui-slider-horizontal .ui-slider-handle { top: -4px; margin-left: -14px; }
+.ss-slider-ui .ui-slider-handle { border: 2px solid #fff; background:url(../img/ss-handle-bg.png) repeat-x 0 0 #55adc6; font-weight: bold; color: #2e6e9e; -webkit-box-shadow:0px 0px 2px #666; box-shadow:0px 0px 2px #666; -webkit-border-radius:10px; border-radius:10px; }
+.saved-search-cnt .search-form form div.left{ margin:0}
+.saved-search-cnt .ss-slider-cnt .row .left-label{padding:0; width:90px}
+
+.desc-form div.left{margin:0}
+.map-box.left{margin:0}
+.checkbox-list.three-cols .checkbox{margin: 0 0 10px 3%;width: 30%;}
+.inquiry_txt{font-weight:700}
+.ui-datepicker-div{width:250px!important}
+.pac-container:after {content: none !important}
+#destination_error_message {
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
+	border-radius: 3px 3px 3px 3px;
+	color: #000000;
+	left: 10px;
+	padding: 5px 8px;
+	position: absolute;
+	top: 50px;
+	width: 376px;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+}
+
+#SearchSleepingCapacity {
+	font-size: 20px;
+	opacity: 10;
+	-webkit-appearance: button;
+	appearance: button;
+	padding: 5px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	width: 194px;
+	color: #999;
+}
+.ssc-results {
+	font-size: 12px!important;
+	opacity: 10!important;
+	margin-left: 5px!important;
+	-webkit-appearance: button!important;
+	appearance: button!important;
+	height: 19px!important;
+	padding: 2px 8px!important;
+	width:85px!important;
+	-webkit-border-radius: 5px!important;
+	-moz-border-radius: 5px!important;
+	border-radius: 5px!important;
+}
+
+/* for our custom paging  */
+
+div.paging-links {
+	margin-top:0px;
+     margin-right:auto;
+     margin-left:auto;
+     margin-bottom:20px;
+	
+	 
+}
+
+div.results-paging a{
+border:solid 1px #9aafe5;
+margin-right:2px;
+display:block;
+float:left;
+padding:3px 4px;
+font-weight:bold;
+}
+
+div.results-paging span.current{
+border:solid 1px #9aafe5;
+margin-right:2px;
+display:block;
+float:left;
+padding:3px 4px;
+background-color:#f7f7f7;
+}
+
+
+div.results-counter{
+	font-weight:bold;
+	float:left;
+	width: 400px;
+
+	
+}
+
+/* Upload Files Suite styles */
+.txter {width:400px; line-height:30px; height:30px; font-size:14px;}
+.buttons-txt {width:40px; height:40px;}
+
+.processor-image {
+	overflow: hidden; 
+	float:left; 
+	visibility: visible; 
+	width: 100px; 
+	height: 100px;
+	margin: 3px;
+	border:solid #cccccc 1px;
+}
+
+.info {display:block;}
+.chacha {display:block;}
+
+input.checker+div {display:none;}
+.input.checker:hover+div {display:block;}
+
+.selections {overflow:hidden;}
+
+.upload_droptext {
+	background: transparent;
+	text-align: center;
+	vertical-align: middle;
+	border: 0;
+	line-height: 165px;
+}
+
+.input {
+/*	border:solid #cccccc 1px;*/
+}
+.input:hover {
+/*    border:solid #0000ff 1px;*/
+}
+
+.input input[type="checkbox"]:hover{
+        border: 1px solid #999;color:#000;
+    }
+    
+    
+.text {border: 1px solid #ffffff;}
+
+.edit-caption { 
+  background: url(/img/photo-text-bg.png); 
+  padding: 10px;
+  width:480px;
+  margin-top: -100px ;
+  position: relative; 
+  z-index: 10; 
+  /*opacity: .8;*/
+  text-align:center;
+  font-size:14px;
+  line-height:22px;
+  color:#666666 
+ }
+ 
+ #deletebutton {margin-top:10px;}
+ #sortbutton {margin-top:10px;}
+ 
+ .sorter-notes{
+    height:50px;
+    width:670px;
+    line-height:50px;
+    font-size:15px; font-weight:bold;
+    padding-right:5px;
+    padding-left:5px;
+    margin-right:auto;
+    mmargin-left:auto;
+
+ 
+    background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#f1f1f1));
+    background:-moz-linear-gradient(top, #fff, #f1f1f1);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#fff, endColorstr=#f1f1f1);
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#fff, endColorstr=#f1f1f1)";   
+
+
+}
+
+/* end of custom.css */    

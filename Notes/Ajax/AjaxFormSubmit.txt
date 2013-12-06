@@ -1,0 +1,59 @@
+AJAX Form Submit with CakePHP 2.x
+By Dev on Sun, 03/24/2013 - 23:26
+
+CakePHP has some great tools for a PHP developer to crank out JavaScript functions using only PHP. The JsHelper supports Prototype/Scriptaculous, Mootools/Mootools-more, and jQuery/jQuery UI. Refer to the CakePHP Book for details on all the functions provided by the JsHelper. In this example we're going to look at a creating a contact form that submits via AJAX, but also works properly for users without JavaScript.
+
+    First, create a contact form in the view
+
+        <?php
+        echo $this->Form->create('Contacts', array('default' => false));
+        // default = false sets the submit button not to submit - so we can use AJAX. Still works for users w/o javascript
+        echo $this->Form->input('Contacts.name');
+        echo $this->Form->input('Contacts.email');
+        echo $this->Form->input('Contacts.message');
+        echo $this->Form->end();
+        ?>
+
+    Write the PHP code using the JsHelper. This snippet can go directly after the form in the view, or at the bottom of the view. Here is basic concept behind the JavaScript function:
+        Get the contact form element by CSS selector
+        Serialize the form
+        Perform AJAX request using the serialized form data
+        Update a specified div with the AJAX response
+
+    The final JavaScript code will look like this:
+
+        <?php
+        // Form ID: #ContactsContactForm
+        // Div to use for AJAX response: #contactStatus
+        $data = $this->Js->get('#ContactsContactForm')->serializeForm(array('isForm' => true, 'inline' => true));
+        $this->Js->get('#ContactsContactForm')->event(
+           'submit',
+           $this->Js->request(
+            array('action' => 'contact', 'controller' => 'contacts'),
+            array(
+                'update' => '#contactStatus',
+                'data' => $data,
+                'async' => true,   
+                'dataExpression'=>true,
+                'method' => 'POST'
+            )
+          )
+        );
+        echo $this->Js->writeBuffer();
+        ?>
+
+    Finally, now that the view is all hooked up, make sure to handle the AJAX request in your controller.
+
+        // In the controller
+        public function contact() {
+          if ($this->request->is('ajax') {
+            // Use data from serialized form
+            // print_r($this->request->data['Contacts']); // name, email, message
+            $this->render('contact-ajax-response', 'ajax'); // Render the contact-ajax-response view in the ajax layout
+          }
+        }
+
+And that's it! In the controller, you can specify different logic 
+whether it is an ajax request, post, or get. 
+Using the example above we can use form data to interact 
+with the server using AJAX and update the user's page.

@@ -1,0 +1,12 @@
+
+	Serialize saves an array as a string into a text (blob) field. 
+	these are useful because we do not have to store those values in rows, columns in tables, 
+	but instead just cram them into a single text field. 
+	
+	$ar1 = array (
+		'pet1' => 'cat',
+		'pet2' => 'dog',
+		'pet3' => 'goldfish',
+	);
+	
+	$ser = serialize($ar1);

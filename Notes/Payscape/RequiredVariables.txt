@@ -1,0 +1,85 @@
+
+tables
+	transactions
+	customers
+	products
+
+
+
+Required Variables for the Direct Post API
+
+	username
+	password
+	type (transaction type)
+	
+	
+	our class needs to provide the required fields for an order once it has been posted. 
+	
+	SALE / AUTHORIZATION / CREDIT
+	
+	*Required
+	username
+	password
+	type			sale, auth, credit
+	redirect
+	ccnumber
+	ccexp
+	checkname
+	chackaba
+	chackaccount
+	account_holder_type
+	account_type
+	amount
+	
+	*Recommended
+	cvv
+	ipaddress
+	
+	firstname
+	lastname
+	company
+	address1
+	city 
+	state
+	zip
+	country
+	phone
+	email
+	
+	
+	CAPTURE
+	time
+	
+	transactionid
+	
+	amount
+	
+	
+	VOID
+	
+	type
+	key_id
+	hash
+	time
+	redicredct
+	transactionid
+	
+	
+	REFUND
+	type
+	key_id
+	hash
+	time
+	redirect
+	transactionid
+	
+	
+	UPDATE
+	
+	type
+	key_iid
+	hash
+	time
+	redirect
+	transactionid
+	

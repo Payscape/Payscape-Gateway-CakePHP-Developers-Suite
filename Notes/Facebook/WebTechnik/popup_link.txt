@@ -1,0 +1,56 @@
+From triubendev.com when facebook tab is not open. 
+
+https://www.facebook.com/login.php?skip_api_login=1&api_key=495155817204813&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fredirect_uri%3Dhttp%253A%252F%252Fstatic.ak.facebook.com%252Fconnect%252Fxd_arbiter.php%253Fversion%253D25%2523cb%253Df3c242f8fc%2526origin%253Dhttp%25253A%25252F%25252Ftriubendev.com%25252Ff390fe1d4%2526domain%253Dtriubendev.com%2526relation%253Dopener%2526frame%253Df23122c70%26display%3Dpopup%26scope%3Demail%252Cuser_about_me%252Cuser_birthday%252Cuser_location%252Cuser_photos%252Cpublish_stream%26response_type%3Dtoken%252Csigned_request%26domain%3Dtriubendev.com%26client_id%3D495155817204813%26ret%3Dlogin%26sdk%3Djoey&cancel_uri=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D25%23cb%3Df3c242f8fc%26origin%3Dhttp%253A%252F%252Ftriubendev.com%252Ff390fe1d4%26domain%3Dtriubendev.com%26relation%3Dopener%26frame%3Df23122c70%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26e2e%3D%257B%257D&display=popup
+
+
+From localhost:8082
+https://www.facebook.com/dialog/oauth?display=popup&domain=localhost&scope=email%2Cuser_about_me%2Cuser_birthday%2Cuser_location%2Cuser_photos%2Cpublish_stream&e2e=%7B%7D&app_id=495155817204813&locale=en_US&sdk=joey&client_id=495155817204813&redirect_uri=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D25%23cb%3Df9e7a1b2fa98%26origin%3Dhttp%253A%252F%252Flocalhost%253A8082%252Ff116f5484ea5772%26domain%3Dlocalhost%26relation%3Dopener%26frame%3Df169fec3431577a&origin=1&response_type=token%2Csigned_request
+
+From triubendev
+
+https://www.facebook.com/login.php?skip_api_login=1&api_key=495155817204813&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fredirect_uri%3Dhttp%253A%252F%252Fstatic.ak.facebook.com%252Fconnect%252Fxd_arbiter.php%253Fversion%253D25%2523cb%253Df2ad8ad6d4%2526origin%253Dhttp%25253A%25252F%25252Ftriubendev.com%25252Ff261ecf55%2526domain%253Dtriubendev.com%2526relation%253Dopener%2526frame%253Df3b48a4c58%26display%3Dpopup%26scope%3Demail%252Cuser_about_me%252Cuser_birthday%252Cuser_location%252Cuser_photos%252Cpublish_stream%26response_type%3Dtoken%252Csigned_request%26domain%3Dtriubendev.com%26client_id%3D495155817204813%26ret%3Dlogin%26sdk%3Djoey&cancel_uri=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D25%23cb%3Df2ad8ad6d4%26origin%3Dhttp%253A%252F%252Ftriubendev.com%252Ff261ecf55%26domain%3Dtriubendev.com%26relation%3Dopener%26frame%3Df3b48a4c58%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26e2e%3D%257B%257D&display=popup
+
+this renders:
+
+https://www.facebook.com/login.php?skip_api_login=1
+&api_key=495155817204813
+&signed_next=1
+&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fredirect_uri%3Dhttp%253A%252F%252Fstatic.ak.facebook.com%252Fconnect%252Fxd_arbiter.php%253Fversion%253D25%2523cb%253Df2ad8ad6d4%2526
+origin%253Dhttp%25253A%25252F%25252Ftriubendev.com%25252Ff261ecf55%2526
+domain%253Dtriubendev.com%2526
+relation%253Dopener%2526frame%253Df3b48a4c58%26display%3Dpopup%26scope%3Demail%252
+Cuser_about_me%252
+Cuser_birthday%252
+Cuser_location%252
+Cuser_photos%252
+Cpublish_stream%26response_type%3D
+token%252C
+signed_request%26domain%3Dtriubendev.com%26
+client_id%3D495155817204813%26
+ret%3Dlogin%26sdk%3Djoey&
+cancel_uri=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D25%23cb%3Df2ad8ad6d4%26
+origin%3Dhttp%253A%252F%252Ftriubendev.com%252Ff261ecf55%26
+domain%3Dtriubendev.com%26relation%3D
+opener%26frame%3Df3b48a4c58%26
+
+error%3Daccess_denied%26
+error_code%3D200%26
+error_description%3D
+Permissions%2B
+error%26
+error_reason%3D
+user_denied%26e2e%3D%257B%257D&display=popup
+
+
+
+
+
+
+
+
+
+https://www.facebook.com/login.php
+?skip_api_login=1
+&api_key=495155817204813
+&signed_next=1
+&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fredirect_uri%3Dhttp%253A%252F%252Fstatic.ak.facebook.com%252Fconnect%252Fxd_arbiter.php%253Fversion%253D25%2523cb%253Df2ad8ad6d4%2526origin%253Dhttp%25253A%25252F%25252Ftriubendev.com%25252Ff261ecf55%2526domain%253Dtriubendev.com%2526relation%253Dopener%2526frame%253Df3b48a4c58%26display%3Dpopup%26scope%3Demail%252Cuser_about_me%252Cuser_birthday%252Cuser_location%252Cuser_photos%252Cpublish_stream%26response_type%3Dtoken%252Csigned_request%26domain%3Dtriubendev.com%26client_id%3D495155817204813%26ret%3Dlogin%26sdk%3Djoey&cancel_uri=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D25%23cb%3Df2ad8ad6d4%26origin%3Dhttp%253A%252F%252Ftriubendev.com%252Ff261ecf55%26domain%3Dtriubendev.com%26relation%3Dopener%26frame%3Df3b48a4c58%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26e2e%3D%257B%257D&display=popup

@@ -1,0 +1,87 @@
+
+webroot/css/style.css
+
+update line 1649
+
+	change float to right, width to 218px;
+	at 220px; FireFox breaks and tosses the sidebar underneath 
+	the Property images on the properties / view page. 
+
+.product-sidebar {
+	float: right;
+	width: 218px;
+	display: inline;
+	margin: 30px 0 0 18px;
+}
+
+	View / Properties / view.ctp
+	View / Common / dashboard.ctp
+		update for new location of profile images
+
+There are two images in use
+
+	profile_fb_image.jpg
+	property_fb_image.jpg
+	used on the properties / view page.
+	there are four images for each user profile image. 
+	
+	comment_fb_image.jpg 68 x 68	appearantly not used. 
+	fb_image.jpg	original size. some of these are coming right out of digital cameras, no resizing has taken place. 
+	profile_fb_image.jpg 209 x 209
+	property_fb_image.jpg	186 x 186
+	
+	FaceBook profile pictures 160 x  160 min, displays at 180 x 180
+	
+	
+	BTW, this page breaks in Firefox, throwing the user's content 
+	in the right hand box below the property information. 
+	
+	thought we had this fixed. 
+	
+	could be the size of the image that is doing this. 
+	
+currently we have "image/jpeg" in the fb_image field if the user 
+has uploaded an image. 
+
+this will become our main image field. 
+the filenames will get stored in user_images
+
+so Fishbake needs to 
+	copy webroot/img/User/$user_id/fb_profile_image.jpg 
+	to webroot/img/users/$user_id/images/$newimagename.jpg
+	
+	we are setting up our paths so that we do not have to later move the 
+	/users folder. instead we will run Fishbake in place on the dev server. 
+	it will also have to be run on VFish after testing. 
+	
+	we will use the UsersController for these functions in Fishbake. 
+	
+	
+NEW IMAGE DISPLAY 
+	do something like this that will embed the image url into 
+	$profile_image
+	
+	to display FB images, we will set fb_image to ""
+	then check to see if FB id exists, if so display the FB image.
+
+	<?php
+					$property_image = 'grid_missing.png';
+					//if (isset($val['PropertyImage'][0]['image']['grid']) && file_exists(IMAGES.$val['PropertyImage'][0]['image']['grid'])) {
+					//if (isset($val['PropertyImage'][0]['image']); // && file_exists(IMAGES.$val['PropertyImage'][0]['image']['grid'])) 
+					if (isset($val['PropertyImage'][0]['image'])){
+						$property_image = '/img/files/' . $property_user_id . '/'  . $val['PropertyImage'][0]['property_id'] . '/images/' . $val['PropertyImage'][0]['image'];
+					}
+
+					echo $this->Html->image($property_image, array(
+						'width' => 210 ,
+						'height' => 158 ,
+						'url' => array(
+							'controller' => 'properties',
+							'action' => 'view',
+							$val['Property']['id'],
+						)
+					));
+				?>
+
+	
+	

@@ -1,0 +1,11 @@
+	/*
+	* nice script to quickly create a control from a checkbox.
+	*/
+
+	if ($('#isAgeSelected').is(':checked')) {
+	    $("#txtAge").show();
+	} else {
+	    $("#txtAge").hide();
+	} 
+	
+	

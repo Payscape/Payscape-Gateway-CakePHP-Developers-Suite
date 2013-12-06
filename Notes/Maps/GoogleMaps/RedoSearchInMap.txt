@@ -1,0 +1,11 @@
+https://www.airbnb.com/search/ajax_get_results?location=salt+lake
+&sw_lat=40.62199160333766
+&sw_lng=-112.01605855811545
+&ne_lat=40.859226117934504
+&ne_lng=-111.70294820655295
+&search_by_map=true
+
+when we click redo_search_in_map, 
+this gets sent to ajax_get_results
+
+

@@ -1,0 +1,13 @@
+https://github.com/posabsolute/jQuery-Validation-Engine
+
+we have this downloaded, demos are on the github, 
+plus we save the author's article in VFishDev/jQuery
+
+for some reason Saved Searches is broken. 
+previously were able to create a new saved search. 
+
+back to popup. 
+
+for one thing, the Save New Search function 
+does not deal with locales?
+

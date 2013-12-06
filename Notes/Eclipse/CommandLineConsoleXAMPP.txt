@@ -1,0 +1,103 @@
+We've not used this, but we have a command line console 
+in Xampp that does the trick. 
+
+Here is a sample session, plus indications of all the 
+stuff is available. To fire this up, open Xampp Control Panel, 
+> Shell
+
+this fires up the command line in Xampp, and we're off and running. 
+
+
+Setting environment for using XAMPP for Windows.
+
+user@TEN C:\xampp
+# cd htdocs
+
+user@TEN C:\xampp\htdocs
+# cd vacationfish.localdomain
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain
+# dir/w
+ Volume in drive C has no label.
+ Volume Serial Number is E4CB-7CD7
+
+ Directory of C:\xampp\htdocs\vacationfish.localdomain
+
+[.]             [..]            .buildpath      .project        [.settings]
+[app]           [cake]          [cakephp-2.2.2] [Notes]         [public_html]
+               2 File(s)            789 bytes
+               8 Dir(s)  258,815,864,832 bytes free
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain
+# cd cake
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake
+# dir/w
+ Volume in drive C has no label.
+ Volume Serial Number is E4CB-7CD7
+
+ Directory of C:\xampp\htdocs\vacationfish.localdomain\cake
+
+[.]              [..]             basics.php       bootstrap.php
+[config]         [console]        dispatcher.php   [libs]
+LICENSE.txt      [tests]          VERSION.txt
+               5 File(s)         48,942 bytes
+               6 Dir(s)  258,815,864,832 bytes free
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake
+# cd console
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake\console
+# dir/w
+ Volume in drive C has no label.
+ Volume Serial Number is E4CB-7CD7
+
+ Directory of C:\xampp\htdocs\vacationfish.localdomain\cake\console
+
+[.]         [..]        cake        cake.bat    cake.php    error.php
+[libs]      [templates]
+               4 File(s)         25,653 bytes
+               4 Dir(s)  258,815,864,832 bytes free
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake\console
+# cake
+
+♀
+Welcome to CakePHP v1.3.14 Console
+---------------------------------------------------------------
+Current Paths:
+ -app: console
+ -working: C:\xampp\htdocs\vacationfish.localdomain\cake\console
+ -root: C:\xampp\htdocs\vacationfish.localdomain\cake
+ -core: C:\xampp\htdocs\vacationfish.localdomain
+
+Changing Paths:
+your working path should be the same as your application path
+to change your path use the '-app' param.
+Example: -app relative/path/to/myapp or -app /absolute/path/to/myapp
+
+Available Shells:
+ acl [CORE]                              i18n [CORE]
+
+ api [CORE]                              schema [CORE]
+
+ bake [CORE]                             testsuite [CORE]
+
+ console [CORE]
+
+To run a command, type 'cake shell_name [args]'
+To get help on a specific command, type 'cake shell_name help'
+
+
+user@TEN C:\xampp\htdocs\vacationfish.localdomain\cake\console
+# cake bake
+
+♀
+Welcome to CakePHP v1.3.14 Console
+---------------------------------------------------------------
+App : console
+Path: C:\xampp\htdocs\vacationfish.localdomain\cake\console
+---------------------------------------------------------------
+What is the full path for this app including the app directory name?
+ Example:C:\xampp\htdocs\vacationfish.localdomain\cake\console\myapp
+[C:\xampp\htdocs\vacationfish.localdomain\cake\console\myapp] >

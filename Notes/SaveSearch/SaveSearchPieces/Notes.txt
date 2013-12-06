@@ -1,0 +1,104 @@
+OK, we can read the sliders, but not 
+the Amenities check boxes
+
+why is this?
+they are getting sent in the same post. 
+
+
+
+
+searches/save_search (
+should have been called saved searches?
+
+this function may actually do both. 
+get the saved searches as well as "save" 
+the saved searches. let's look. 
+
+
+
+OK, look at it this way. 
+Our Create a Saved Search page does in fact save the search. 
+investigate how this page works, 
+and you should have searchpop code that 
+is necessary. 
+
+then :: 
+	use what you find for search pop, 
+	
+	and use the sliders code from search results
+	to put into save search page
+	
+these two things should get this straightened out for you. 
+
+==========================
+we want the entire string of data that is getting 
+sent to ajax_load_search
+
+is there a way to read ajax_load_search?
+
+
+
+replaced save_search.ctp with the previous version, 
+this fixed. now we just need to get the sliders working 
+in the Create a new Search form. 
+
+and get the Searches/popup form working. 
+
+searches/popup - how to get the search data 
+out of searches/results 
+
+this would be the trick. 
+
+ 
+http://localhost:8082/vfish22.localdomain/public_html/search/popup
+
+
+
+
+
+we are seeing a jQuery error re: validationEngine. 
+this could indicate that our problems are in some JS files. 
+
+results.js is loaded, may well be in here. 
+we want to be able to load Searches/popup, 
+and have that form's SaveSearch field populated with the 
+search data so that it can be serialized and saved to the 
+search form. 
+
+results.js are the same on Six and Ten/xampp
+results.js are the same on Ten/xampp and Ten/xampp1.7.2
+
+so our problems are not in here. 
+must be in saved_search.ctp
+
+
+
+
+app-xampp
+----------
+4/01, xampp/.. vacationfish.localdomain
+
+app-xampp1.7.2
+---------------
+5/01, xampp1.7.2 vfish22.localdomain
+
+app-six
+--------
+These files were worked on 3/18 to 3/26
+from Six. 
+
+That version the Create Saved Search page works, 
+all except for the sliders. 
+
+It could be that that sliders code is goofed up on our 
+current version, which is stopping the page from functioning 
+correctly. 
+
+might be easiest to just get back to where we were then, 
+while at the same time saving that latest work into files. 
+(controller. view) these are about the only files involved in 
+this. 
+
+1 compare the two controllers
+2 compare the two views
+

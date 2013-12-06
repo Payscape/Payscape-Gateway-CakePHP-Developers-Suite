@@ -1,0 +1,22 @@
+
+Today we are firing up the Cake Console to see if things
+have gotten better with Bake. 
+
+We will do Model, View and Controller for 
+Wishlist, WishlistItems and Properties.
+
+let's see how this goes, these are the three that are 
+giving us problems, and it could be Bake will solve them. 
+
+First we'll print Bake Help notes. 
+
+turns out the /cake folder has Cake 1.3.4 in there. 
+where did that come from?
+
+Fortunately index.php in the root is configured to use the Cake2.2.2 libs
+
+is the /cake folder even used? 
+we don't think so. 
+
+OK, now to see if we can fire up Console Help first. 
+

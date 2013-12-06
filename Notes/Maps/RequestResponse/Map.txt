@@ -1,0 +1,72 @@
+
+when does the map fire?
+
+if we search for Ontario CA, and there are no results at that destination, 
+the map does not fire. 
+
+what GET request does the map send 
+https://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1shttp%3A%2F%2Fwww.vacationfish.com%2Fsearch&3sAIzaSyDLnnQUaavOoVb6xTlQhDEswKay4RwqyKM&4e1&5e0&6u1&7skmumuq&callback=_xdc_._uylu9v&token=130190
+
+
+in our version on TriuBenDev, we are firing 3 queries,
+the version on VacationFish fires one. 
+
+TriuBenDev version:
+
+[Net]
+GET 3
+https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo?1m6&1m2&1d40.25161645746419&2d-111.95247889443328&2m2&1d42.900873591607265&2d-108.1922429621012&2u8&4sen-US&5e0&6sm%40220000000&7b0&8e0&9b0&callback=_xdc_._vpaqy6&token=110780
+
+https://maps.googleapis.com/maps/gen_204?imp=smimps%3DN6ybA7o3jky,HTJApNDEaHW%26z%3D8&cad=src:apiv3,ts:knq86r
+
+https://maps.googleapis.com/maps/gen_204?ev=api_viewport&cad=mt:m,c:41.584761%2C-110.060983,sp:0.85460x1.21399,src:apiv3,ts:knq8fv
+
+
+AIRBNB
+
+here is the call to get the data for the search results
+
+-------- DATA REQUESTS --------------
+
+ajax_get_results
+https://www.airbnb.com/search/ajax_get_results?location=provo&sw_lat=40.20171292024237&sw_lng=-111.93521179131932&ne_lat=40.6783170339457&ne_lng=-111.30899108819432&search_by_map=true
+
+GET /search/ajax_get_results?location=provo&sw_lat=40.20171292024237&sw_lng=-111.93521179131932&ne_lat=40.6783170339457&ne_lng=-111.30899108819432&search_by_map=true HTTP/1.1
+Host: www.airbnb.com
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:22.0) Gecko/20100101 Firefox/22.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+X-CSRF-Token: tueC4KTKge6xm7FRyMgzHwE_ntvKN7LsD0NT2QRXRnQ
+X-Requested-With: XMLHttpRequest
+Referer: https://www.airbnb.com/s/provo?sw_lat=40.20171292024237&sw_lng=-111.93521179131932&ne_lat=40.6783170339457&ne_lng=-111.30899108819432&search_by_map=true
+Cookie: bev=1364603967_RsSEKUp7vIoUjoSr; AWSELB=2D83D122A44844267CDCEC44B869C009CCC4AECA39A0E4C26F33B53A86D60A155FAA6ED83D8A35EAB031206D6D368EFB19346E14EA0C232B59DF78AA582949C1F272BF7DC08A5DBEC3255E99355EED6A1760A04E; __utma=269109422.899420838.1364604007.1372450518.1372622314.17; __utmz=269109422.1364604007.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmv=269109422.|4=prompt_signup=false=1^6=bev=1364603967_RsSEKUp7vIoUjoSr=1; __ssid=616ea20f-3a5c-4faa-90e1-c02febdbeddf; _csrf_token=tueC4KTKge6xm7FRyMgzHwE_ntvKN7LsD0NT2QRXRnQ; _user_attributes=%7B%22curr%22%3A%22USD%22%2C%22guest_exchange%22%3A1%2C%22ref%22%3A%22100%22%7D; flags=285214720; _airbed_session_id=1453670f863b11d53a78919f161d544c; mdr_browser=desktop; __utmb=269109422.12.8.1372622443025; __utmc=269109422; EPISODES=s=1372622439471&r=https%3A//www.airbnb.com/; mp_871bd83d174bd67e8c8643e833a4514d_mixpanel=%7B%22logged_in%22%3A%20false%2C%22has_dates%22%3A%20false%2C%22is_admin%22%3A%20false%2C%22fb_connected%22%3A%20false%2C%22locale%22%3A%20%22en%22%2C%22canonical_host%22%3A%20%22www.airbnb.com%22%2C%22currency%22%3A%20%22USD%22%2C%22bev%22%3A%20%221364603967_RsSEKUp7vIoUjoSr%22%2C%22is_fresh_session%22%3A%20false%2C%22is_active_host%22%3A%20false%2C%22affiliate%22%3A%20null%2C%22campaign%22%3A%20null%2C%22viewport_width%22%3A%201136%2C%22viewport_height%22%3A%20348%2C%22viewport%22%3A%20%221136%20x%20348%22%2C%22distinct_id%22%3A%20%221364603967_RsSEKUp7vIoUjoSr%22%2C%22%24initial_referrer%22%3A%20%22https%3A%2F%2Fwww.airbnb.com%2Fs%2Fmiami%3Fprice_max%3D220%22%2C%22%24initial_referring_domain%22%3A%20%22www.airbnb.com%22%2C%22shd%22%3A%20true%7D
+Connection: keep-alive
+
+Response: 
+
+
+
+
+
+-------- GOOGLE MAPS ----------------
+https://maps.googleapis.com/maps/api/js/StatsService.RecordStats?1m5&1sut%7Cclient%3Agme-airbnbinc&2sinteraction&6m2&1span&2v1&1m5&1sut%7Cclient%3Agme-airbnbinc%7Cchannel%3Amonorail-prod&2sinteraction&6m2&1span&2v1&callback=_xdc_._4ac6&token=103848
+
+StatsService.RecordStats
+GET /maps/api/js/StatsService.RecordStats?1m5&1sut%7Cclient%3Agme-airbnbinc&2sinteraction&6m2&1span&2v1&1m5&1sut%7Cclient%3Agme-airbnbinc%7Cchannel%3Amonorail-prod&2sinteraction&6m2&1span&2v1&callback=_xdc_._4ac6&token=103848 HTTP/1.1
+Host: maps.googleapis.com
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:22.0) Gecko/20100101 Firefox/22.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: https://www.airbnb.com/s/provo
+Connection: keep-alive
+
+Response:
+_xdc_._4ac6 && _xdc_._4ac6( [0] )
+
+
+
+this is going to a 404 error
+https://www.airbnb.com/locations/api/city_by_point?point[lat]=40.2338438&point[lon]=-111.6585337
+

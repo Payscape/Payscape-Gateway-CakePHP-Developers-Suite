@@ -1,0 +1,40 @@
+
+	* Upload Property Image Suite revisions
+	
+	dependancies:
+	/app/webroot/css/custom.css
+	/app/webroot/js/bootstrap/
+	                 
+    folders:      
+	app/View/Elements                      
+	app/View/PropertyImages                     
+	
+	Edit Images Page
+	---------
+	Remove background color on the text input div
+	Relocate the Save button below the main image
+	
+	Note: relocating the submit button below the thumnails 
+		was not practical. Each image has its own submit button.
+	
+	Move the text input onto the picture
+
+	Display only the "Delete" button on the Sort widget, 
+	and the "Sort" button on the Delete widget. 
+	These widgets were created to keep the Edit interface 
+	as simple as possible. 
+
+	Create CSS gradient for the widget divider. 
+	New layout. 
+	
+	Tooltip Popup for the notes about the Main Image
+		
+	
+	Upload Images page 
+	----------------
+	- This page is laid out so that many images 
+	may be uploaded in a single batch. The Browse 
+	button will always display above the file drop canvas.
+ 
+ 
+ 

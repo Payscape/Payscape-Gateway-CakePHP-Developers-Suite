@@ -1,0 +1,70 @@
+
+
+OK, we think this is the way to go, short and sweet. 
+
+We have our record set $properties.
+
+now if we can get the paging variables out of the Controller to the View, 
+we'll be all set. 
+
+        print_r($this->params['paging']);
+        
+        returns this:
+Array
+(
+    [Property] => Array
+        (
+            [page] => 1
+            [current] => 10
+            [count] => 757
+            [prevPage] => 
+            [nextPage] => 1
+            [pageCount] => 76
+            [order] => Array
+                (
+                    [Property.created] => desc
+                )
+
+            [limit] => 10
+            [options] => Array
+                (
+                )
+
+            [paramType] => named
+        )
+        
+        so we want this: 
+        
+        $paging = $this->params['paging'];
+        
+        $pagingProperty = $paging['Property'];
+        
+        print_r($pagingProperty);
+        
+        This returns: 
+        
+        Array
+(
+    [page] => 1
+    [current] => 10
+    [count] => 757
+    [prevPage] => 
+    [nextPage] => 1
+    [pageCount] => 76
+    [order] => Array
+        (
+            [Property.created] => desc
+        )
+
+    [limit] => 10
+    [options] => Array
+        (
+        )
+
+    [paramType] => named
+    
+        now we can get the values we are looking for: 
+        
+        
+        
+        

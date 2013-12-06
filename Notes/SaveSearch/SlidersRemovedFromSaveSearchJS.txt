@@ -1,0 +1,108 @@
+/* ===== SLIDERS ===== */
+$('.slider-range-Bed').slider({
+	range: true,
+	min: 1,
+	max: 10,
+	step: 1,
+	values: [1, 10],
+	slide: function( event, ui ) {
+		var $parent = $(this).parents('.row');
+
+		$parent.find('input.min_form').val( ui.values[ 0 ] );
+		$parent.find('input.max_form').val( ui.values[ 1 ] );
+
+		$parent.find('.min').text( ui.values[ 0 ] );
+		$parent.find('.max').text( ui.values[ 1 ] );
+
+		if (ui.values[1] == 10) {
+			$parent.find('.max').text( ui.values[ 1 ] + '+' );
+		}
+		else {
+			$parent.find('.max').text( ui.values[ 1 ] );
+		}
+	}
+});
+
+$('.slider-range-SqFt').slider({
+	range: true,
+	min: 500,
+	max: 12000,
+	step: 100,
+	values: [500, 12000],
+	slide: function( event, ui ) {
+		var $parent = $(this).parents('.row');
+
+		$parent.find('input.min_form').val( ui.values[ 0 ] );
+		$parent.find('input.max_form').val( ui.values[ 1 ] );
+
+		$parent.find('.min').text( ui.values[ 0 ] );
+		$parent.find('.max').text( ui.values[ 1 ] );
+
+		if (ui.values[1] == 12000) {
+			$parent.find('.max').text( ui.values[ 1 ] + '+' );
+		}
+		else {
+			$parent.find('.max').text( ui.values[ 1 ] );
+		}
+	}
+});
+
+$('.slider-range-Bath').slider({
+	range: true,
+	min: 1,
+	max: 10,
+	step: 1,
+	values: [1, 10],
+	slide: function( event, ui ) {
+		var $parent = $(this).parents('.row');
+
+		$parent.find('input.min_form').val( ui.values[ 0 ] );
+		$parent.find('input.max_form').val( ui.values[ 1 ] );
+
+		$parent.find('.min').text( ui.values[ 0 ] );
+		$parent.find('.max').text( ui.values[ 1 ] );
+
+		if (ui.values[1] == 10) {
+			$parent.find('.max').text( ui.values[ 1 ] + '+' );
+		}
+		else {
+			$parent.find('.max').text( ui.values[ 1 ] );
+		}
+	}
+});
+
+$('.slider-range-price').slider({
+	range: true,
+	min: 0,
+	max: 2000,
+	step: 10,
+	values: [0, 2000],
+	slide: function( event, ui ) {
+		var $parent = $(this).parents('.row');
+
+		$parent.find('input.min_form').val( ui.values[ 0 ] );
+		$parent.find('input.max_form').val( ui.values[ 1 ] );
+
+		$parent.find('.min').text( ui.values[ 0 ] );
+		$parent.find('.max').text( ui.values[ 1 ] );
+
+		if (ui.values[1] == 2000) {
+			$parent.find('.max').text( ui.values[ 1 ] + '+' );
+		}
+		else {
+			$parent.find('.max').text( ui.values[ 1 ] );
+		}
+	}
+});
+
+function update_slider_text( ) {
+	$('[class~="slip"]').each( function(i, elem) {
+		var $elem = $(elem);
+		$elem.parents('.row')
+			.find('.min').text( $elem.slider('option', 'values')[0] ).end( )
+			.find('.min_form').text( $elem.slider('option', 'values')[0] ).end( )
+			.find('.max').text( $elem.slider('option', 'values')[1] + (($elem.slider('option', 'values')[1] == $elem.slider('option', 'max')) ? '+' : '') ).end( )
+			.find('.max_form').text( $elem.slider('option', 'values')[1] );
+	});
+}
+update_slider_text( );

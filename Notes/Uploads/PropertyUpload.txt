@@ -1,0 +1,162 @@
+//
+	we need to create a new file structure:
+	files/$user_id/$property_id
+	
+	in ImageHandler and DocumentHandler 
+	we have options for upload_dir
+	ImageHandler creates the folder if it does not exist.
+	
+	get the upload_user_id
+	image handler has its own user_id which is the session id.
+		
+	$upload_user_id = $this->Auth->user('id');
+		
+	$upload_dir = "img/files/$property_id/images/";
+        
+
+//
+we are going to relocate all of the property images to a single 
+Property folder, named by property ID. 
+
+the following has been completed in FishBake and is working properly. 
+we successfully moved all of the images to their correct folders. 
+
+
+
+
+We need to get 
+    property_images
+    id = image id
+    property_id
+    
+    for all of our properties. 
+    
+    how are the properties assigned to a user?
+    user_properties
+    
+    1 create an array of all of the property_ids
+    
+    in /files 
+        create the folders for each property_id 
+        create the folder images
+        create the folder documents
+    
+    now get the ids for images for each property
+    
+    $property_images = property_images.id
+    
+    foreach($property_images as $property_image){
+      /*
+      get the image that is in the folder corresponding 
+      to $property_images.id
+      */
+        
+      /*
+      move the file to the folder corresponding
+      to $property_images.property_id
+      */
+        
+        $source_image = 'image.jpeg';
+        $source_image_path = 'PropertyImage' . '/' .  $property_id;
+
+        $destination_image = date(201304110337) . 'jpg';        
+        $destination_image = $random_name;
+        $destination_image_path = 'files' . '/' . $property_id / images
+
+Build this in Yii. 
+We have several little Yii apps floating around. 
+We can quickly build the models to store the data from 
+Vacation Fish, and move the files into their correct directories. 
+Once this has been built we can move everything into 
+different folders so that things do not collide. 
+
+Using a time element to name the files is nice, 
+that way they will be distinct. Something like 
+year month day hour minute second.
+
+next we have to take that name and insert it into 
+property_uploads
+    id = $property_images.id        
+    
+    for results we'll need to update the paths to the new images.
+    
+    $properties = $this->Property->PropertyUpload
+    
+    later 
+    $documents = $this->Property->PropertyDocument
+    
+    we *can* use the table property_images
+    this should make things simpler. 
+    
+    all we have to do is update the image_name
+    with our format. 
+    
+    then we can have our Uploads Component 
+    use two models PropertyImage, PropertyDocument
+    then all that happens is that Searches has to know the 
+    path to the files that it retrieves. 
+    
+    instead of PropertyImage.id, we use 
+    PropertyImage.property_id
+    
+    
+    so to recap:
+    get the array of images from property_images
+    
+    SELECT property_images.id, property_images.property_id
+    
+    use these to create the folders
+    files/$property_id/images
+    files/$property_id/documents
+            
+    move PropertyImage/$property_images.id
+    to files/$property_images.property_id/images
+    
+    update property_images SET 'image' = $new_image 
+    
+    to update the production site, we can use the tools that we build here. 
+    1 put the site on "down for maintenance"
+    2 download the db and ProductImage directory
+    3 import into the db Yii uses
+    4 move the files, update the db
+    5 make a copy of product_images
+    5 drop the existing property_images table
+    6 build the new property_images table from our       
+   
+   
+   this will work in Yii just like renaming and moving from 
+   a temp folder. in this case PropertyImage is the temp folder. 
+   
+   so in our lab in fishbake, 
+   we create the table property_images
+   and the directory PropertyImage
+   and use those 
+   
+   Operation 1
+   create a form that submits to folder_builder.php
+   
+    1 create the folders for the property images
+    files/$property_id
+    files/$property_id/images
+    files/$property_id/documents
+   
+   folder_builder.php
+    function create_folders(){
+        $array_properties = $sql
+    }
+    
+
+    Operation 2 
+    // don't move the files, just copy them
+    // that way if everything screws up we still have copies of the originals.
+    
+     
+    file_copy.php
+        function copy_files(){
+        $array_files = $sql
+        
+        }
+   
+
+    
+   2 

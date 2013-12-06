@@ -1,0 +1,8 @@
+
+
+ALTER TABLE `properties`  
+ADD `cleaning_fee` DECIMAL(10,2) NULL DEFAULT '0.00'
+AFTER `contact_secondary_phone`
+
+update `properties`
+SET cleaning_fee = 0.00

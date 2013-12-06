@@ -1,0 +1,38 @@
+In FireFox Console
+
+properties/calculate_cost
+	HTML tab
+
+{"status":1,"total":"$300.00","nights":3,"discount":"$0.00","sub_total":"$300.00","cost_per_night":"$100
+
+
+we should add that status into the mix as well. 
+
+function calculate_cost($id = null) {
+		// if the user hits this function, then they've gone on to the view page
+		// so remove the dates
+		$this->Session->delete('Dates');
+
+		$this->layout = 'ajax';
+		$return = array('status' => 0);
+
+		if ( ! empty($this->request->data)) {
+			extract($this->request->data);
+
+			$start = preg_replace('%(\d{2})\D*(\d{2})\D*(\d{4})%', '$3/$1/$2', $start);
+			$end = preg_replace('%(\d{2})\D*(\d{2})\D*(\d{4})%', '$3/$1/$2', $end);
+
+	//		$minimum = $this->Property->get_minium_night_stay($id, $start, $end);
+			$price = $this->Property->get_price($id, $start, $end);
+
+			$return['total'] = $price['total_price'];
+			$return['nights'] = $price['days'];
+			$return['discount'] = $price['discounted'];
+			$return['sub_total'] = $price['total_price'] + $price['discounted'];
+			$return['cost_per_night'] = round($price['total_price'] / $return['nights'], 2);
+		//	$retun['minimum_night_stay'] = $minimum['minimum_night_stay'];
+			$return['status'] = 1;
+		}
+
+		$this->set('results', $return);
+	}	

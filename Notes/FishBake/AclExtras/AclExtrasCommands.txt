@@ -1,0 +1,47 @@
+
+
+This one ate all the data, rather than synching it. 
+ cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+ 
+ 
+ That was because we did not have our Controllers in place. 
+ 
+ 
+  cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+  
+  cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_update
+  
+ we now have the updated version of AclExtras in place. 
+ the older version was from 2011. 
+ 
+ 
+   cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_update
+  
+ 
+ Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : Console
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\
+---------------------------------------------------------------
+Better manage, and easily synchronize you application's ACO tree
+
+Usage:
+cake acl_extras [subcommand] [-h] [-v] [-q]
+
+Subcommands:
+
+aco_update  Add new ACOs for new controllers and actions. Does not
+            remove nodes from the ACO table.
+aco_sync    Perform a full sync on the ACO table.Will create new ACOs or
+            missing controllers and actions.Will also remove orphaned entries 
+            that no longer have a matching controller/action
+verify      Verify the tree structure of either your Aco or Aro Trees
+recover     Recover a corrupted Tree
+
+To see help on a subcommand use `cake acl_extras [subcommand] --help`
+
+Options:
+
+--help, -h     Display this help.
+--verbose, -v  Enable verbose output.
+--quiet, -q    Enable quiet output.

@@ -1,0 +1,31 @@
+
+create a folder Updates in TriuNaturals/vacationfish.localdomain
+
+This way you can upload from there quickly and be sure you have all the files 
+you need going to the correct folders in one simple upload when it comes time 
+to update the Production server. 
+
+You could make this set of files available in the 
+vacationfish FTP account as well, 
+then if Jason wishes to do so he'll have everything in 
+one neat package. 
+
+Controller
+    PropertiesController
+
+View
+    Elements
+        result_sidebar.ctp
+    HomePageImages
+        index.ctp
+    Properties
+        view.ctp
+        
+        
+        ALTERED FILES
+-----------------
+    app/View/Elements/result-sidebar.ctp
+    app/View/HOmePageImage/index.ctp
+    app/View/Properties/view.ctp
+    
+    app/Controller/PropertiesController.php - the updates on this controller aren't used. 

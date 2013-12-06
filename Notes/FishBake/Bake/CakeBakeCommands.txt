@@ -1,0 +1,57 @@
+
+# NOTE: We do not run the Cake console from the Windows Command Line, 
+or from the terminal in Eclipse. 
+
+Instead we use the Shell window in Xampp.
+That is one of the reasons we have kept our Xampp installs at 1.7.2.
+
+Setting environment for using XAMPP for Windows.
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+# cake bake -help
+
+
+Notice: Undefined index: Error in C:\xampp-vfish-git\xampp\htdocs\fishbake.local
+domain\cake2.2.2\lib\Cake\Core\Configure.php on line 98
+
+Notice: Undefined index: Exception in C:\xampp-vfish-git\xampp\htdocs\fishbake.l
+ocaldomain\cake2.2.2\lib\Cake\Core\Configure.php on line 99
+The Bake script generates controllers, views and models for your
+application. If run with no command line arguments, Bake guides the user
+through the class creation process. You can customize the generation
+process by telling Bake where different parts of your application are
+using command line arguments.
+
+Usage:
+cake bake [subcommand] [-h] [-v] [-q] [-c default]
+
+Subcommands:
+
+all         Bake a complete MVC. optional <name> of a Model
+project     Bake a new app folder in the path supplied or in current
+            directory if no path is specified
+plugin      Bake a new plugin folder in the path supplied or in current
+            directory if no path is specified.
+db_config   Bake a database.php file in config directory.
+model       Bake a model.
+view        Bake views for controllers.
+controller  Bake a controller.
+fixture     Bake a fixture.
+test        Bake a unit test.
+
+To see help on a subcommand use `cake bake [subcommand] --help`
+
+Options:
+
+--help, -h        Display this help.
+--verbose, -v     Enable verbose output.
+--quiet, -q       Enable quiet output.
+--connection, -c  Database connection to use in conjunction with `bake
+                  all`. (default: default)
+
+
+
+user@TEN C:\xampp-vfish-git\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+\Console
+#

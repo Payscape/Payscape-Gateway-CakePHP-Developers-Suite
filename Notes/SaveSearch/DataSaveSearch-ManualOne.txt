@@ -1,0 +1,38 @@
+array(
+	'Search' => array(
+		'name' => 'testo2',
+		'data' => array(
+			'sleeping_capacity' => '2',
+			'bedrooms' => array(
+				'min' => '1',
+				'max' => '10'
+			),
+			'square_footage' => array(
+				'min' => '500',
+				'max' => '12000'
+			),
+			'bathrooms' => array(
+				'min' => '1',
+				'max' => '10'
+			),
+			'daily_rate' => array(
+				'min' => '0',
+				'max' => '2000'
+			),
+			'amenities' => array(
+				(int) 0 => '19',
+				(int) 1 => '21'
+			)
+		),
+		'go' => array(
+			'destination' => 'Salt Lake City, UT, USA',
+			'city' => 'Salt Lake City',
+			'state' => 'Utah',
+			'state_abbr' => 'UT',
+			'country' => 'United States',
+			'country_abbr' => 'US',
+			'latitude' => '40.7607793',
+			'longitude' => '-111.89104739999999'
+		)
+	)
+)

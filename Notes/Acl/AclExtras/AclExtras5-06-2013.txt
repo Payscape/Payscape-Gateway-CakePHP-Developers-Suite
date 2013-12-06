@@ -1,0 +1,139 @@
+
+Setting environment for using XAMPP for Windows.
+
+user@TEN C:\xampp1.7.2\xampp
+# cd htdocs
+
+user@TEN C:\xampp1.7.2\xampp\htdocs
+# cd fishbake.localdomain
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain
+# dir/w
+ Volume in drive C has no label.
+ Volume Serial Number is E4CB-7CD7
+
+ Directory of C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain
+
+[.]           [..]          .buildpath    .project      [.settings]
+[app]         [cake2.2.2]   [logs]        [Notes]       [public_html]
+[yii]
+               2 File(s)            785 bytes
+               9 Dir(s)  248,625,508,352 bytes free
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain
+# cd cake2.2.2
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2
+# cd lib
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib
+# cd Cake
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+# cd Console
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" aclview aro
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Aro tree:
+---------------------------------------------------------------
+  [1] Group.1
+  [2] Group.2
+  [3] Group.3
+---------------------------------------------------------------
+
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check -v Group.3 forgots/index
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Group.3 is not allowed.
+
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check -v Group.3 forgots/change
+
+cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl check -v Group.3 users/login
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Group.3 is not allowed.
+
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant -v Group.3 forgots/index
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Permission granted.
+
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl grant -v Group.3 forgots/change
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Permission granted.
+
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#     cake -app "C:\xampp1.7.2\xampp\fishbake.localdomain\cake2.2.2\app" acl_ext
+ras aco_sync
+
+Error: Plugin AclExtras could not be found.
+#0 C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Core\App.php(364): CakePlugin::path('AclExtras')
+#1 C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Core\App.php(225): App::pluginPath('AclExtras')
+#2 C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Core\App.php(542): App::path('Lib', 'AclExtras')
+#3 [internal function]: App::load('AclExtras')
+#4 C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\Command\AclExtrasShell.php(48): spl_autoload_call('AclExtras')
+#5 C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php(245): AclExtrasShell->__construct()
+#6 C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php(191): ShellDispatcher->_getShell('acl_extras')
+#7 C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\ShellDispatcher.php(69): ShellDispatcher->dispatch()
+#8 C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console\cake.php(43): ShellDispatcher::run(Array)
+#9 {main}
+
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cd ../
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake
+# cd Console
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+# cake -app "C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Aco Update Complete
+
+
+user@TEN C:\xampp1.7.2\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Cons
+ole
+#

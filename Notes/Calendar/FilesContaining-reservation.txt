@@ -1,0 +1,68 @@
+earch "reservation" (62 hits in 4 files)
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\ContactController.php (2 hits)
+	Line 48: 			'reservation' => 'I have a question about a reservation',
+	Line 48: 			'reservation' => 'I have a question about a reservation',
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\PropertiesController.php (24 hits)
+	Line 592: 				// grab the reservation statuses for the display
+	Line 593: 				$reservations = $this->Property->get_daily_status($id, $start_date, $end_date);
+	Line 595: 				$this->set(compact('start_date', 'end_date', 'prices', 'reservations'));
+	Line 729: 		$this->set('reservations', $this->Property->get_daily_status($id, $start_date, $end_date));
+	Line 750: 	* Contact Me, Book It, Reservation froms are submitting here and sending to email to property host...
+	Line 816: 	* Email Host, Reservation froms are submitting here and sending to email to property host...
+	Line 823: 		if( isset($this->request->data['Reservation']['form_type']) && $this->request->data['Reservation']['form_type'] == 'Reservation' ) {
+	Line 823: 		if( isset($this->request->data['Reservation']['form_type']) && $this->request->data['Reservation']['form_type'] == 'Reservation' ) {
+	Line 823: 		if( isset($this->request->data['Reservation']['form_type']) && $this->request->data['Reservation']['form_type'] == 'Reservation' ) {
+	Line 824: 			$form_data = $this->request->data['Reservation'];
+	Line 903: 		$avail = $this->Property->Reservation->find('all', array(
+	Line 905: 				'Reservation.property_id' => (int) $prop_id,
+	Line 907: 					'Reservation.start_date BETWEEN ? AND ?' => array($year.'-01-01', $year.'-12-31'),
+	Line 908: 					'Reservation.end_date BETWEEN ? AND ?' => array($year.'-01-01', $year.'-12-31'),
+	Line 912: 				'Reservation.start_date' => 'asc',
+	Line 1084: 			// grab the reservations for this property for this month
+	Line 1085: 			$reservations = $this->Property->Reservation->find('all', array(
+	Line 1085: 			$reservations = $this->Property->Reservation->find('all', array(
+	Line 1087: 					'Reservation.property_id' => $prop_id,
+	Line 1089: 						'Reservation.start_date BETWEEN ? AND ?' => array($start, $end),
+	Line 1090: 						'Reservation.end_date BETWEEN ? AND ?' => array($start, $end),
+	Line 1094: 					'Reservation.start_date' => 'asc',
+	Line 1098: 		$this->set('reservations', $reservations);
+	Line 1098: 		$this->set('reservations', $reservations);
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\ReservationsController.php (30 hits)
+	Line 4:  * Reservation Results Handling Controller
+	Line 6:  * Controller used by Reservation Results etc.
+	Line 10: class ReservationsController extends AppController {
+	Line 12: 	var $name = 'Reservations';
+	Line 14: 	* function for adding Reservation
+	Line 18: 			if ($this->Reservation->Property->is_accessible($this->request->data['Reservation']['property_id'], $this->user['User']['id'])) {
+	Line 18: 			if ($this->Reservation->Property->is_accessible($this->request->data['Reservation']['property_id'], $this->user['User']['id'])) {
+	Line 21: 				if ($this->Reservation->save($this->request->data)) {
+	Line 22: 					$this->Session->setFlash('Reservation added', 'default', 's');
+	Line 35: 			if ( ! empty($this->request->data['Reservation']['here'])) {
+	Line 36: 				$this->redirect('/'.$this->request->data['Reservation']['here']);
+	Line 39: 			$this->redirect(array('controller' => 'properties', 'action' => 'availability', $this->request->data['Reservation']['property_id']));
+	Line 45: 	* function for editing the reservation
+	Line 52: 			// make sure we can access this reservation
+	Line 55: 				$data['property_id'] = $res['Reservation']['property_id'];
+	Line 57: 				if ($this->Reservation->save(array('Reservation' => $data))) {
+	Line 57: 				if ($this->Reservation->save(array('Reservation' => $data))) {
+	Line 58: 					$this->Session->setFlash('Reservation updated', 'default', 's');
+	Line 73: 	* function for deleting Reservation
+	Line 77: 			// make sure we can access this reservation
+	Line 78: 			if ($this->_confirm_accessibility($this->request->data['Reservation']['id'])) {
+	Line 79: 				if ($this->Reservation->delete($this->request->data['Reservation']['id'])) {
+	Line 79: 				if ($this->Reservation->delete($this->request->data['Reservation']['id'])) {
+	Line 80: 					$this->Session->setFlash('Reservation canceled', 'default', 's');
+	Line 83: 					$this->Session->setFlash('Could not delete reservation', 'default', 'f');
+	Line 87: 			$this->redirect('/'.$this->request->data['Reservation']['here']);
+	Line 109: 		if ('There is an' === substr($this->Reservation->validationErrors['start_date'][0], 0, 11)) {
+	Line 110: 			$this->Session->setFlash($this->Reservation->validationErrors['start_date'][0], 'default', 'f');
+	Line 120: 		if ( ! ($res = $this->Reservation->is_accessible($res_id, $this->user['User']['id']))) {
+	Line 121: 			$this->Session->setFlash(__('Invalid Reservation', true), 'default', 'f');
+  C:\TriuNaturals\VacationFishProject\VacationFish\Controller\SearchesController.php (6 hits)
+	Line 506: 						'table' => 'reservations',
+	Line 507: 						'alias' => 'Reservation',
+	Line 510: 							'Reservation.property_id = Property.id',
+	Line 512: 								'Reservation.start_date BETWEEN ? AND ?' => array(date('Y-m-d', $start_date), date('Y-m-d', $end_date)),
+	Line 513: 								'Reservation.end_date BETWEEN ? AND ?' => array(date('Y-m-d', $start_date), date('Y-m-d', $end_date)),
+	Line 527: 						'table' => 'reservations',
+Search "reservation" (139 hits in 12 files)

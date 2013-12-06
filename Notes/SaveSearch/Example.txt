@@ -1,0 +1,33 @@
+
+do we know if these saved searches work?
+
+let's find out. 
+
+
+
+
+
+a:6:{
+s:5:"guest";s:1:"0";
+s:8:"bedrooms";
+
+a:2:{
+	s:3:"min";s:1:"1";s:3:"max";s:2:"10";
+	}
+	s:6:"sqfeet";a:2:
+	{
+	s:3:"min";s:3:"500";s:3:"max";s:5:"15000";
+	}
+	s:9:"bathrooms";a:2:
+	{
+	s:3:"min";s:1:"1";s:3:"max";s:2:"10";
+	}
+	s:5:"price";a:2:
+	{
+	s:3:"min";s:2:"50";s:3:"max";s:3:"500";
+	}
+	s:9:"amenities";a:1:
+	{
+	i:0;s:1:"8";
+	}
+	}

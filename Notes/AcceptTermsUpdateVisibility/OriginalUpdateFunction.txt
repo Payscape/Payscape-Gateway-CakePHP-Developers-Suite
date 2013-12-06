@@ -1,0 +1,7 @@
+  		/*
+					$( '#listing_msg_'+ property_id ).html('<img src=\'".Router::url('/')."img/loading.gif\' />&nbsp;Please wait...');
+										$( '#listing_msg_'+ property_id ).load('".Router::url(array('controller' => 'properties', 'action' => 'update_visibility'))."/'+ property_id + '/'+ visibility_status + '/' + accept, function() {
+												if( value.toString() == 'true') $( '#listing_msg_'+ property_id ).html('Your listing is visible');
+												else $( '#listing_msg_'+ property_id ).html('Your listing isn\'t visible yet.');
+										});
+	   		*/

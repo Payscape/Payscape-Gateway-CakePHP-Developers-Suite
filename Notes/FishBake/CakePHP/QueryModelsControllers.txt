@@ -1,0 +1,15 @@
+
+
+if we are querying a Model from within a Controller
+
+    $this->ControllerModel->RelatedModel
+    
+if we are querying a Model from within a Model
+
+    $this->find('first')
+    
+querying a related model from within a model    
+    
+    $this->RelatedModel->find('first')
+    
+    

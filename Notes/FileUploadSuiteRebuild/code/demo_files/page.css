@@ -1,0 +1,309 @@
+BODY {
+	FONT: 12px Georgia, Serif; BACKGROUND: #fff; COLOR: #000
+}
+A {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; TEXT-DECORATION: none
+}
+A IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; TEXT-DECORATION: none
+}
+#page-wrap {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px auto 50px; PADDING-LEFT: 15px; WIDTH: 90%; PADDING-RIGHT: 15px; PADDING-TOP: 0px
+}
+#demo2 {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px auto 50px; PADDING-LEFT: 15px; WIDTH: 90%; PADDING-RIGHT: 15px; PADDING-TOP: 0px
+}
+H1 {
+	TEXT-ALIGN: center; MARGIN: 20px 0px; FONT: bold 60px Helvetica, Sans-Serif; LETTER-SPACING: -2px
+}
+H2 {
+	MARGIN: 0px 0px 10px; FONT: bold 30px Helvetica, Sans-Serif; LETTER-SPACING: -1px; COLOR: #002266
+}
+H2.title {
+	TEXT-ALIGN: center
+}
+H3 {
+	MARGIN: 0px 0px 10px; FONT: bold 20px Georgia, Serif; COLOR: #003388
+}
+H5 {
+	TEXT-ALIGN: center; FONT: bold 15px Georgia, Serif
+}
+.header {
+	TEXT-ALIGN: center; FONT: bold 15px Georgia, Serif
+}
+PRE {
+	PADDING-BOTTOM: 5px; OVERFLOW-X: auto; MARGIN: 0px 0px 15px; PADDING-LEFT: 5px; WIDTH: 100%; PADDING-RIGHT: 5px; FONT: 13px/1.8 Monaco, MonoSpace; BACKGROUND: #f5f5f5; PADDING-TOP: 5px; block: inline
+}
+CODE {
+	PADDING-BOTTOM: 5px; OVERFLOW-X: auto; MARGIN: 0px 0px 15px; PADDING-LEFT: 5px; WIDTH: 100%; PADDING-RIGHT: 5px; FONT: 13px/1.8 Monaco, MonoSpace; BACKGROUND: #f5f5f5; PADDING-TOP: 5px; block: inline
+}
+BLOCKQUOTE {
+	MARGIN-LEFT: 30px
+}
+UL {
+	MARGIN: 0px; PADDING-LEFT: 35px
+}
+UL LI {
+	MARGIN: 0px 0px 8px; FONT: 15px Georgia, Serif
+}
+#nav {
+	TEXT-ALIGN: center; LINE-HEIGHT: 3em; MARGIN: 10px auto; WIDTH: 90%; DISPLAY: block
+}
+#nav A {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; WHITE-SPACE: nowrap; BACKGROUND: black; COLOR: white; PADDING-TOP: 10px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px
+}
+#nav A.git {
+	BACKGROUND: #006
+}
+#nav A.play {
+	BACKGROUND: #060
+}
+#nav A.issue {
+	BACKGROUND: #600
+}
+#nav A:hover {
+	BACKGROUND: #666
+}
+#nav A.current {
+	BACKGROUND: #666
+}
+.themeselector {
+	TEXT-ALIGN: center; MARGIN: 0px auto
+}
+.ani {
+	TEXT-ALIGN: center; MARGIN: 0px auto
+}
+#status {
+	COLOR: #00a; FONT-WEIGHT: bold
+}
+.alert {
+	COLOR: #f00; FONT-WEIGHT: bold
+}
+.alert A {
+	COLOR: #a00
+}
+.attention {
+	COLOR: #a00
+}
+.data {
+	BORDER-BOTTOM: #555 1px solid; BORDER-LEFT: #555 1px solid; WIDTH: 100%; BORDER-COLLAPSE: collapse; BORDER-TOP: #555 1px solid; BORDER-RIGHT: #555 1px solid
+}
+.data TD {
+	BORDER-BOTTOM: #555 1px solid; BORDER-LEFT: #555 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: #555 1px solid; BORDER-RIGHT: #555 1px solid; PADDING-TOP: 0px
+}
+.data TH {
+	BORDER-BOTTOM: #555 1px solid; BORDER-LEFT: #555 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: #555 1px solid; BORDER-RIGHT: #555 1px solid; PADDING-TOP: 0px
+}
+.data TH {
+	BACKGROUND: #eee
+}
+.data .col {
+	WIDTH: 200px
+}
+#main #slider1 {
+	LIST-STYLE-TYPE: none; WIDTH: 800px; HEIGHT: 390px; LIST-STYLE-IMAGE: none
+}
+#main #slider2 {
+	LIST-STYLE-TYPE: none; WIDTH: 800px; HEIGHT: 390px; LIST-STYLE-IMAGE: none
+}
+#main #slider1 .panel5 UL {
+	MARGIN: 0px 5px; WIDTH: 200px
+}
+#slider2 .panel1 {
+	WIDTH: 500px; HEIGHT: 350px
+}
+#slider2 .panel2 {
+	WIDTH: 450px; HEIGHT: 420px
+}
+#slider2 .panel3 {
+	WIDTH: 680px; HEIGHT: 317px
+}
+#slider2 .panel4 {
+	WIDTH: 100%
+}
+#slider2 .panel5 {
+	WIDTH: 680px; HEIGHT: 317px
+}
+#slider2 .panel6 {
+	WIDTH: 450px; HEIGHT: 300px
+}
+.textSlide {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 30px; PADDING-RIGHT: 30px; PADDING-TOP: 10px
+}
+.textSlide H3 {
+	FONT: 20px Georgia, Serif
+}
+.textSlide H4 {
+	TEXT-TRANSFORM: uppercase; MARGIN: 10px 0px; FONT: 15px Georgia, Serif
+}
+.textSlide UL {
+	LIST-STYLE-TYPE: disc; MARGIN: 0px; PADDING-LEFT: 20px
+}
+.textSlide UL LI {
+	DISPLAY: list-item
+}
+.rightside {
+	MARGIN: 0px 0px 2px 10px; FLOAT: right
+}
+.quoteSlide {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 20px
+}
+.quoteSlide BLOCKQUOTE {
+	TEXT-ALIGN: center; MARGIN: 0px 0px 10px; FONT: italic 24px/1.5 Georgia, Serif; COLOR: #444
+}
+.quoteSlide P {
+	TEXT-ALIGN: center
+}
+.accordion {
+	MARGIN: 0px auto; WIDTH: 70%
+}
+.accordion .ui-widget-content A {
+	COLOR: #004499
+}
+#demo2 #slider1 {
+	LIST-STYLE-TYPE: none; WIDTH: 400px; HEIGHT: 300px; LIST-STYLE-IMAGE: none
+}
+.cboxPhoto {
+	MARGIN: 0px; WIDTH: 100%; HEIGHT: 100%
+}
+#cboxTitle {
+	COLOR: #000 !important
+}
+#demo2 DIV.anythingControls {
+	BOTTOM: 25px
+}
+#demo2 DIV.anythingSlider-metallic .thumbNav A {
+	BACKGROUND-IMAGE: none; BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; WIDTH: 30px; HEIGHT: 30px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px
+}
+#demo2 DIV.anythingSlider-metallic .thumbNav A SPAN {
+	VISIBILITY: visible
+}
+#demo2 DIV.anythingSlider-metallic .thumbNav A:hover {
+	BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff
+}
+#demo2 DIV.anythingSlider-metallic .thumbNav A.cur {
+	BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff
+}
+#demo2 DIV.anythingSlider-metallic .start-stop {
+	MARGIN-TOP: 15px
+}
+#demo2 #slider2 {
+	LIST-STYLE-TYPE: none; WIDTH: 600px; HEIGHT: 350px; LIST-STYLE-IMAGE: none
+}
+#demo2 #slider3 {
+	LIST-STYLE-TYPE: none; WIDTH: 500px; HEIGHT: 400px; LIST-STYLE-IMAGE: none
+}
+#slider3 IMG {
+	POSITION: relative; WIDTH: 100%; HEIGHT: 100%
+}
+#slider3 .panel {
+	POSITION: relative
+}
+.caption-top .close {
+	DISPLAY: inline-block; FLOAT: right; FONT-SIZE: 80%; CURSOR: pointer
+}
+.caption-right .close {
+	DISPLAY: inline-block; FLOAT: right; FONT-SIZE: 80%; CURSOR: pointer
+}
+.caption-bottom .close {
+	DISPLAY: inline-block; FLOAT: right; FONT-SIZE: 80%; CURSOR: pointer
+}
+.caption-left .close {
+	DISPLAY: inline-block; FLOAT: right; FONT-SIZE: 80%; CURSOR: pointer
+}
+#slider3 .caption-top {
+	Z-INDEX: 10; POSITION: absolute; FILTER: alpha(opacity=80); PADDING-BOTTOM: 10px; MARGIN: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #000; COLOR: #fff; PADDING-TOP: 10px; opacity: .8
+}
+#slider3 .caption-right {
+	Z-INDEX: 10; POSITION: absolute; FILTER: alpha(opacity=80); PADDING-BOTTOM: 10px; MARGIN: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #000; COLOR: #fff; PADDING-TOP: 10px; opacity: .8
+}
+#slider3 .caption-bottom {
+	Z-INDEX: 10; POSITION: absolute; FILTER: alpha(opacity=80); PADDING-BOTTOM: 10px; MARGIN: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #000; COLOR: #fff; PADDING-TOP: 10px; opacity: .8
+}
+#slider3 .caption-left {
+	Z-INDEX: 10; POSITION: absolute; FILTER: alpha(opacity=80); PADDING-BOTTOM: 10px; MARGIN: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #000; COLOR: #fff; PADDING-TOP: 10px; opacity: .8
+}
+#slider3 .caption-top {
+	WIDTH: 480px; HEIGHT: 30px; TOP: 0px; LEFT: 0px
+}
+#slider3 .caption-right {
+	WIDTH: 130px; BOTTOM: 0px; HEIGHT: 180px; RIGHT: 0px
+}
+#slider3 .caption-bottom {
+	WIDTH: 480px; BOTTOM: 0px; HEIGHT: 30px; LEFT: 0px
+}
+#slider3 .caption-left {
+	WIDTH: 130px; BOTTOM: 0px; HEIGHT: 180px; LEFT: 0px
+}
+#wrapper1 {
+	MARGIN: 0px auto; WIDTH: 100%; HEIGHT: 300px
+}
+#wrapper2 {
+	MARGIN: 0px auto; WIDTH: 50%; HEIGHT: 300px
+}
+#expand #slider1 {
+	LIST-STYLE-TYPE: none; WIDTH: 100%; HEIGHT: 300px; LIST-STYLE-IMAGE: none
+}
+#expand #slider2 {
+	LIST-STYLE-TYPE: none; WIDTH: 100%; HEIGHT: 300px; LIST-STYLE-IMAGE: none
+}
+BODY#expand H2 {
+	TEXT-ALIGN: center
+}
+BODY#expand H3 {
+	TEXT-ALIGN: center
+}
+.video-info {
+	MARGIN: 50px auto 0px; WIDTH: 700px; FONT-SIZE: 18px
+}
+.video-info H2 {
+	TEXT-ALIGN: center
+}
+.video-info UL {
+	MARGIN: 0px
+}
+.video-info LI {
+	MARGIN: 0px
+}
+.video-info SUP {
+	FONT-SIZE: 12px
+}
+.video-info TH.header {
+	WIDTH: 25px
+}
+.good {
+	TEXT-ALIGN: center; COLOR: #ddd
+}
+.bad {
+	TEXT-ALIGN: center; COLOR: #ddd
+}
+.prob {
+	TEXT-ALIGN: center; COLOR: #ddd
+}
+.good {
+	BACKGROUND: #080
+}
+.bad {
+	BACKGROUND: #800
+}
+.prob {
+	BACKGROUND: #880
+}
+.group {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+.animations {
+	MARGIN: 20px 20px 20px 5px
+}
+.ani {
+	MARGIN-TOP: 10px
+}
+.tooltip {
+	CURSOR: pointer
+}
+#tooltip {
+	Z-INDEX: 1000; BORDER-BOTTOM: #777 1px solid; MIN-WIDTH: 100px; TEXT-ALIGN: left; FILTER: alpha(opacity=90); BORDER-LEFT: #777 1px solid; PADDING-BOTTOM: 8px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; DISPLAY: none; BACKGROUND: #444; COLOR: #dddddd; BORDER-TOP: #777 1px solid; BORDER-RIGHT: #777 1px solid; PADDING-TOP: 8px; border-radius: .5em; -moz-border-radius: .5em; -webkit-border-radius: .5em; opacity: 0.9
+}
+#tooltip .body {
+	TEXT-ALIGN: center; DISPLAY: block
+}

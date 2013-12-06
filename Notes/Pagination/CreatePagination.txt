@@ -1,0 +1,144 @@
+
+	In the Controller
+	==================
+	
+		$order = array(
+				'Property.created' => 'asc',
+		);
+		$user_id = $this->Auth->user('id');
+		
+		if (empty($this->request->data)) {
+			$this->request->data = $this->User->find('first', array(
+				'contain' => array(
+					'Property' => array(
+						'PropertyImage' => array(
+							'limit' => 1,
+						),
+					),
+				),
+				'conditions' => array(
+					'User.id' => $this->Auth->user('id'),
+					'User.active' => 1,
+				),
+			));
+			unset($this->request->data['User']['password']);
+		}
+		
+		$user = $this->request->data;
+		$properties = $user['Property'];
+
+		// here we define what we want in our pagination
+		// we do NOT paginatte an object created by find()
+		// instead we use paginate which uses the 
+		// Model's find() function to populate the object.
+		
+		$this->paginate = array(
+			//	'properties' => $properties,
+				'Property' => array(
+						'contain' => array(
+
+								'PropertyImage' => array(
+										'order' => array(
+												'PropertyImage.sort' => 'asc',
+										),
+										'limit' => 1,
+								),
+
+						),
+						'conditions' => array(
+								'Property.user_id' => $user_id,
+						),
+						'order' => $order,
+						//'order' => 'RAND() DESC',
+						'limit' => 2,
+		
+				),
+		);
+		
+		
+				
+	/*	
+echo "<pre>";
+debug($properties);
+//print_r($properties);
+
+
+echo "<hr>";
+echo "<br>We have paginated properties and performed array_shift.<br>";
+debug($properties['PropertyImage']);
+echo "</pre>";
+
+echo $properties['PropertyImage'][0]['image'];
+echo "<br>Title: " .  $properties['title'];
+exit();	
+
+		*/
+	
+	//	$this->paginate($properties);
+		$this->set('properties', $this->paginate());
+
+in the CSS for our Digg style pagination
+------------
+/* for our custom paging  */
+
+div.paging-links {
+	margin-top:0px;
+     margin-right:auto;
+     margin-left:auto;
+     margin-bottom:20px;
+	
+	 
+}
+
+div.results-paging a{
+border:solid 1px #9aafe5;
+margin-right:2px;
+display:block;
+float:left;
+padding:3px 4px;
+font-weight:bold;
+}
+
+div.results-paging span.current{
+border:solid 1px #9aafe5;
+margin-right:2px;
+display:block;
+float:left;
+padding:3px 4px;
+background-color:#f7f7f7;
+}
+
+
+div.results-counter{
+	font-weight:bold;
+	float:left;
+	width: 400px;
+
+	
+}
+		
+		
+In the View
+---------------
+
+				
+	/*	
+echo "<pre>";
+debug($properties);
+//print_r($properties);
+
+
+echo "<hr>";
+echo "<br>We have paginated properties and performed array_shift.<br>";
+debug($properties['PropertyImage']);
+echo "</pre>";
+
+echo $properties['PropertyImage'][0]['image'];
+echo "<br>Title: " .  $properties['title'];
+exit();	
+
+		*/
+	
+	//	$this->paginate($properties);
+		$this->set('properties', $this->paginate());
+	

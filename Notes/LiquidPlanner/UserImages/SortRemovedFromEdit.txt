@@ -1,0 +1,34 @@
+<!-- bof: sort functions  -->
+ <div class="padder20" id="photo-sort">
+	<div class="row">
+	<h4>
+	You may drag an image to the far left under the indicator to make it your new Main Image.
+	</h4>	
+	</div>
+	
+		<div class="photo-gallery">
+				<div class="photo-flag" style="width:100px;">Main img</div>
+		<ul class="sortable">
+
+		<?php foreach ($user_images as $key=>$val) { 
+			
+			?>
+			<?php if (isset($val['user_images']['image'])) { ?>
+				<?php if($key == 0) { ?>
+
+			<li id="<?php echo $val['user_images']['id']?>" class="relative"><?php echo $this->Html->image('/img/users/' .  $user_id . '/images/' . $val['image']);  ?></li>
+
+				<?php } elseif (0 == (($key + 1) % 4)) { ?>
+
+			<li id="<?php echo $val['user_images']['id']?>"><?php echo $this->Html->image('/img/users/' . $user_id . '/images/' . $val['image']);  ?></li>
+
+				<?php } else { ?>
+
+			<li id="<?php echo $val['id']?>"><?php echo $this->Html->image('/img/users/' .  $user_id . '/images/' . $val['image']);  ?></li>
+
+				<?php } ?>
+			<?php } ?>
+		<?php } ?>
+		</ul>
+	</div>
+</div><!-- eof sort functions -->

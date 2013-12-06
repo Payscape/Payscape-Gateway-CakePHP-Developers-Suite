@@ -1,0 +1,86 @@
+Here are the steps for using jQuery Validation Engine
+
+	1st step -include the jQuery main library and the validation engine’s-
+	Note that we include a language file so that our validation will render in English: 
+	
+	<link rel="stylesheet" href="js/validationEngine/validationEngine.jquery.css" type="text/css"/>
+	<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+	<script src="js/validationEngine/languages/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/validationEngine/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
+	2nd step -instantiate the engine-
+	note: the #targeted_form part is the id of the form which contains fields you are willing to validate
+	
+	
+	<script type="text/javascript">
+	$(function() {
+	$("#UserFrm").validationEngine();
+	});
+
+	</script>
+	
+	3rd step -all you need is just adding this property class=”validate[required]” to form fields you need to validate-
+	for example
+	
+	<form method="post" id="UserFrm" action="">
+
+	<p>
+	<label for="name">Name:</label>
+	<input type="text" name="name" class="validate[required]" id="name" />
+	</p>
+
+	<p>
+	<label for="email">Email:</label>
+	<input type="text" name="email" class="validate[required,custom[email]]" id="email" />
+	</p>
+
+	<input type="submit" />
+
+	</form>
+	
+	Some other examples:
+	
+	validate[required,custom[url]] //for url validation
+
+	//confirm password
+	<input value="" class="validate[required]" type="password" name="password" id="password" />
+	<input value="" class="validate[required,equals[password]]" type="password" name="password2" id="password2" />
+
+	//no less that six charachters
+	validate[required,minSize[6]]
+
+	//no more that six charachters
+	validate[required,maxSize[6]]
+	
+	
+	
+	
+
+	in the form
+	
+	<div class="row">
+		<?php echo $this->Form->input('first_name', array('label' => false, 'div' => false, 'class' => 'validate[required]', 'data-prompt-position' => 'topLeft:-180', 'placeholder' => 'First Name')); ?>
+	</div>
+	
+class="validate[required] form-error"
+
+
+<?php echo $this->Html->css('validationEngine', array('inline'=>FALSE)); ?>
+<?php echo $this->Html->script('languages/jquery.validationEngine-en', array('inline'=>FALSE)); ?>
+<?php echo $this->Html->script('jquery.validationEngine', array('inline'=>FALSE)); ?>
+
+From View/Wishlist/add_wishlist
+<?php
+echo $this->Html->scriptblock('
+	jQuery("#WishlistFrm").validationEngine();
+');
+?>
+
+
+From View/User/signup_invitation
+
+<?php echo $this->Html->script('jquery.validate.min.js'); ?>
+<?php echo $this->Html->scriptblock('
+	$("#Invitation").validate( );
+
+'); ?>

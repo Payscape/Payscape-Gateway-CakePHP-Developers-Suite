@@ -1,0 +1,8 @@
+function SuccessHandler1(data) {
+    $('select#Slaveddl').empty();
+    $.each(data, function (i, slaveValue) {
+        $('select#Slaveddl').append(
+    $('<option></option>').val(slaveValue.Value).html(slaveValue.Text)
+    );
+    });
+}

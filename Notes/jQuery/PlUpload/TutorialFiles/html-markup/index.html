@@ -1,0 +1,38 @@
+Step 2 – HTML Markup
+
+Create a <div> with the class “upload-form” and id “uploader”. 
+Then we need to add the heading, the close button, 
+the text paragraph, the select and upload buttons, 
+
+the <div> were we will add the selected files, 
+the progress bar and the close after upload checkbox.
+
+<div class="upload-form" id="uploader">
+ 
+    <!-- Form Heading -->
+    <h1 class="replace-text">Upload Form</h1>
+    <a href="#" class="close" title="Close Window"><img src="img/close-button.png" alt="Close"></a>
+ 
+    <p>Laos, alongside many of its Southeast Asian neighbours, is well known for producing.</p>
+ 
+    <!-- Select & Upload Button -->
+    <div>
+        <a class="button" id="pickfiles" href="#">Select</a>
+        <a class="button" id="uploadfiles" href="#">Upload</a>
+    </div>
+ 
+    <!-- File List -->
+    <div id="filelist" class="cb"></div>
+ 
+    <!-- Progress Bar -->
+    <div id="progressbar"></div>
+ 
+    <!-- Close After Upload -->
+    <div id="closeAfter">
+        <span class="checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label for="checkbox">Close window after upload</label>
+        </span>
+    </div>
+ 
+</div>

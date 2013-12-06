@@ -1,0 +1,72 @@
+
+StackOverflow question
+
+var h = JSON.stringify(map.getCenter(), null, 2);
+   jQuery.cookies.set("YD44635center",h,cookieOptions);
+
+On the decode side using:
+
+    locationVar = jQuery.cookies.get("YD44635center");
+    var temp = "";
+    // for testing:
+    for(var x in locationVar){
+        temp += x + "\n";
+    }
+    alert(temp);
+
+To see what I'm getting, most of the time, is:
+
+   Qa;
+   Pa;
+
+###
+
+	---------------
+	getCenter()
+	---------------
+
+
+here is now we get the lat / lng for the center of the map
+
+GEvent.addListener(map, "moveend", function() {
+
+	var map_center
+
+  var center = map.getCenter();
+});
+
+	--------------
+	getView()
+	--------------
+
+here is how we get lat / lng for the corners of the map
+
+.and for the corners of the map, use map.GetMapView(). 
+
+It returns a VELatLongRectangle object, 
+which has 2 properties: 
+
+	TopLeftLatLong 
+	BottomRightLatLong.
+	
+	
+	----------------------------------	
+	Put the map center into a cookie
+	----------------------------------
+	
+Use API functions and save the required data, not the structure
+
+var c = map.getCenter();
+jQuery.cookies.set("YD44635center", c.lat() + ',' 
+                                  + c.lng() + ',' + map.getZoom(), 
+                                                     cookieOptions);
+
+and read it as
+
+var temp = jQuery.cookies.get("YD44635center").split(',');
+
+Google is changing the names of the internal variables from time to time Error on Latitude and Longitude - Google Maps API JS 3.0
+
+
+http://stackoverflow.com/questions/7273572/error-on-latitude-and-longitude-google-maps-api-js-3-0
+	

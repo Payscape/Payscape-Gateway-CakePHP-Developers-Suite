@@ -1,0 +1,72 @@
+
+	We don't paginate an object created by a find. 
+	instead, Cakephp pagination uses the Model's find() method 
+	to create its own object. 
+	
+	
+here we go
+
+
+\app\View\Properties\listings.ctp (line 16)
+array(
+	(int) 0 => array(
+		'Property' => array(
+			'id' => '21308',
+			'user_id' => '455',
+			'property_type_id' => '10',
+			'title' => 'Bungalow in Frazier Woods',
+			'address' => '1647 Frazier Road',
+			'address2' => '',
+			'unit' => null,
+			'country_id' => '1',
+			'city' => 'Decatur',
+			'state_id' => '1',
+			'zip' => '30033',
+			'directions' => 'Go to google and enter the address, you'll get a great map. ',
+			'house_rules' => 'Don't smoke inside, and try not to leave junk in the driveway. ',
+			'manual' => 'Stove is electric, so if a thunderstorm knocks out the power, you'll want to use the grill outside. ',
+			'daily_rate' => '130.00',
+			'weekly_rate' => null,
+			'monthly_rate' => null,
+			'weekend_rate' => '138.00',
+			'square_footage' => '2800',
+			'bathrooms' => '1',
+			'bedrooms' => '1',
+			'sleeping_capacity' => '2',
+			'pets_allowed' => false,
+			'smoking_allowed' => false,
+			'wheelchair_accessible' => false,
+			'credit_accepted' => false,
+			'description' => 'Bungalow in Frazier Woods. Looks like we need more words here to keep our system happy. 
+We have a prompt below that keeps a word count. Nice. 
+
+',
+			'relation' => null,
+			'latitude' => '34.4964302',
+			'longitude' => '-86.7228306',
+			'area_latitude' => '34.4992372',
+			'area_longitude' => '-86.7252446',
+			'area_radius' => '500',
+			'contact_name' => null,
+			'contact_email' => 'smareches@gmail.com',
+			'contact_primary_phone' => '(678) 389-8837',
+			'contact_secondary_phone' => null,
+			'created' => '2013-07-12 12:13:27',
+			'modified' => '2013-08-01 23:04:39',
+			'published' => true,
+			'views' => '0',
+			'toc' => true,
+			'toc_date' => '2013-07-16 12:36:46',
+			'images_updated' => '1'
+		),
+		'PropertyImage' => array(
+			(int) 0 => array(
+				'id' => '154627',
+				'property_id' => '21308',
+				'image' => '-740902746.jpg',
+				'name' => null,
+				'sort' => '3'
+			)
+		)
+	)
+)	

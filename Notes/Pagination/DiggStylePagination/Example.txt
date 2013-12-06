@@ -1,0 +1,80 @@
+====
+CSS
+====
+
+/* for our custom paging  */
+
+div.paging-links {
+	margin-top:0px;
+     margin-right:auto;
+     margin-left:auto;
+     margin-bottom:20px;
+	
+	 
+}
+
+div.results-paging a{
+border:solid 1px #9aafe5;
+margin-right:2px;
+display:block;
+float:left;
+padding:3px 4px;
+font-weight:bold;
+}
+
+div.results-paging span.current{
+border:solid 1px #9aafe5;
+margin-right:2px;
+display:block;
+float:left;
+padding:3px 4px;
+background-color:#f7f7f7;
+}
+
+
+div.results-counter{
+	font-weight:bold;
+	float:left;
+	width: 400px;
+
+	
+}
+
+
+
+
+====
+HTML
+====
+Give the div that will display our pagination 
+the class results-paging
+
+this is the key to getting our nice CSS to work. 
+
+<div class="row results-paging">
+<?php 
+$propertyCount = $this->Paginator->request->params['paging']['Property']['count'];
+$propertyPageCount = $this->Paginator->request->params['paging']['Property']['pageCount'];
+$page = $this->Paginator->request->params['paging']['Property']['page'];
+
+$page_message = "<br>Page " . $page . " of $propertyPageCount pages";
+$match_search_message = "<br>" . $propertyCount . " listings match your search.";
+
+
+
+echo $this->Paginator->first('First');
+if($this->Paginator->hasPrev()){
+	echo $this->Paginator->prev(__('Previous'), array(), null, array('class' => 'prev disabled'));
+}
+echo $this->Paginator->numbers(array('separator' => '', 'modulus' => 5));
+if($this->Paginator->hasNext()){
+	echo $this->Paginator->next(__('Next'), array(), null, array('class' => 'next disabled'));
+}
+echo $this->Paginator->last('Last');
+?>
+<pre>
+<br><span><?php echo $page_message; ?>
+<?php echo $match_search_message; ?></span>
+</pre>
+
+</div>

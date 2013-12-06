@@ -1,0 +1,53 @@
+We have to set up the Modal in Search Element
+
+
+now to find the correct element for the search results page, 
+then add this to the hyperlinks on the page: 
+
+'class' => 'viewbox', 
+
+
+    View/Elements/search_page_list.ctp
+    here we add the class "viewbox" to the image and main hyperlinks. 
+    
+    View/Searches/results.ctp we add our jquery-colorbox.js script and document ready
+
+
+<!-- bof: modal window for View -->
+<?php $this->Html->script('jquery-colorbox.js', array('inline' => false));?>
+
+<?php $this->Html->scriptblock('
+// for view in colorbox
+$(document).ready(function(){
+           
+            $(".viewbox").colorbox({innerWidth:1000, innerHeight:600, iframe:true});       
+        }); 
+?>
+<!-- eof: modal window for View -->
+
+
+
+<script type="text/javascript">
+        $(document).ready(function(){
+            $(".viewbox").colorbox({innerWidth:1000, innerHeight:480, iframe:true});
+        });
+</script>
+
+
+now that we have jquery-colorbox.js loaded, and this document ready()
+all we need to do is apply the class="viewbox" to any hyperlinks we want to use.
+
+Views/Elements/prop_list_elem.ctp   
+
+* THIS DID NOT WORK AS EXPECTED * 
+We had an earlier version of jquery-colorbox.js
+this loaded the modal window, but we could not control the size 
+of the iframe
+
+then we went to a later version, the iframe loaded above 
+the page calling it, 
+
+ultimately had to give up on this. 
+when the iframe was closed, the Search Results page 
+reverted back to the first page. 
+

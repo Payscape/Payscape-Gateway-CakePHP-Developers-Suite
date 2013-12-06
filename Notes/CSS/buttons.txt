@@ -1,0 +1,9 @@
+
+	class="btn btn-primary" 	// blue
+	class="btn btn-success"		// green
+	class="btn btn-danger"		// red
+	class="btn btn-info"		// aqua
+	class="btn btn-warning"		// orange
+	
+	class="btn"					// default, light gray
+	class="btn btn-inverse"		// dark gray

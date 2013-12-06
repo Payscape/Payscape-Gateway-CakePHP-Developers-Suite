@@ -1,0 +1,29 @@
+SELECT DISTINCT(properties.state_id), states.name FROM 
+properties
+LEFT JOIN states ON (states.id = properties.state_id)
+ORDER BY states.name
+
+
+state_id 	name
+NULL 	NULL
+1 	Alabama
+6 	California
+7 	Colorado
+11 	Florida
+12 	Georgia
+14 	Hawaii
+20 	Kentucky
+25 	Massachusetts
+31 	Nebraska
+32 	Nevada
+34 	New Jersey
+37 	North Carolina
+42 	Oregon
+44 	Pennsylvania
+49 	Tennessee
+50 	Texas
+51 	Utah
+52 	Vermont
+54 	Virginia
+55 	Washington
+59 	Wyoming

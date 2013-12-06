@@ -1,0 +1,65 @@
+This may be the fix for the error we are getting 
+
+in AclExtras/Console/Command, please change startup function to :
+
+public function startup() {
+    parent::startup();
+    $controller = new Controller();
+    $collection = new ComponentCollection();
+    $this->Acl = new AclComponent($collection);
+    $this->Acl->startup($controller);
+    $this->Aco = $this->Acl->Aco;
+}
+
+this is our existing function
+
+    public function startup() {
+        parent::startup();
+        $collection = new ComponentCollection();
+        $this->Acl = new AclComponent($collection);
+        $controller = null;
+        $this->Acl->startup($controller);
+        $this->Aco = $this->Acl->Aco;
+    }
+    
+    AARF!
+
+=============
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+#  cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco
+_sync WishlistController
+
+
+Welcome to CakePHP v2.2.2 Console
+---------------------------------------------------------------
+App : app
+Path: C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app\
+---------------------------------------------------------------
+Warning Error: Argument 1 passed to Component::startup() must be an instance of
+Controller, null given, called in C:\xampp\htdocs\fishbake.localdomain\cake2.2.2
+\lib\Cake\Console\Command\AclExtrasShell.php on line 80 and defined in [C:\xampp
+\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Controller\Component.php, line 1
+19]
+
+Aco Update Complete
+
+
+user@TEN C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\lib\Cake\Console
+
+
+#
+
+
+
+Cake provides perfectly generic, free-form ACL rules. It has built-in
+support for controller or action based ACL via the Auth Component, but
+you don't need to use either.
+
+I have very fine grained ACOs, and use AROs as roles.
+
+When I do an ACL check, I can write something like $this->Acl-
+>check('role1', 'users/address/mailing', 'read') to see if role1 has
+access to other users mailing address information. You don't have to
+limit yourself to controller/action or any of the other methods you'll
+find outlined in the Bakery. You can build your ACO/ARO trees however
+you like and the check function will be able to check against them.

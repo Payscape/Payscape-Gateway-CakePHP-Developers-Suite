@@ -1,0 +1,8 @@
+Advanced model functions
+
+Unless you delve in to the API, there are some very useful model functions at your disposal you might not know exist. I highly recommend reading over the Model Class Reference at least once. Here's a few key functions I wasn't aware of that I found to be very useful:
+
+    generateList() - I use this function primarily to populate select boxes with data from associated tables
+    findBySql() - Sometimes you just need to write your own SQL
+    findCount() - Returns number of rows matching given SQL condition
+    hasAny() - Returns true if a record that meets the given conditions exists. 

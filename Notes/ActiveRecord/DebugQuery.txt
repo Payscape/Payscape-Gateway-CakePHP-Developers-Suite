@@ -1,0 +1,15 @@
+ 
+ here we are querying Property from the PropertyImage controller
+ without the contain, only the property model is returned, 
+ by specifying the contain, all of the images are returned. 
+ 
+    debug($this->PropertyImage->Property->find('all', array(
+            'conditions' => array(
+                    'Property.id' => $id,
+                //  'PropertyImage.property_id'=>$id,
+                    ),
+            'contain' => array('PropertyImage'),
+    )
+    ));
+    
+    exit();

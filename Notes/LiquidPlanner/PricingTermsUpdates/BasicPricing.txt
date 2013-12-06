@@ -1,0 +1,100 @@
+
+88 - FSH Pricing and Terms: Basic Pricing
+
+We need to add the fields Currency, 
+Price per week, and Price per month to our 
+basic pricing section on the dashboard. 
+
+I've added links below of flipkey and AirBnB's design. 
+I really like how descriptive flipkey and the 
+questions they ask, as well as their layout. 
+
+For the currency, the default currency should 
+be at "US Dollar." We want to design functionality 
+for future global currencies, however guests 
+will only be able to choose US Dollars until 
+we launch our payment system. 
+
+Minimum Night stay should be displayed in 
+this section as well.
+
+--------------
+BASIC PRICING
+--------------
+
+Price per Night
+[]
+
+Weekly and Monthly pricing is optional
+The Weekly Pricing applies to reservations for 
+7 nights or longer.
+The Monthly Pricing applies to reservations for 
+30 days or longer. 
+
+Weekly Price weekly_rate
+[] 
+
+Monthly Price monthly_rate
+[] 
+
+Currency country_id, currency 
+<>
+
+Minimum Nights Stay
+<>
+
+-------------------
+Alternative Pricing
+-------------------
+
+Price per Night	Weekend per Night	Weekly Pricing	Monthly Pricing
+[]				[]					[]				[]
+
+
+DBs
+	properties.weekly_rate
+	properties.monthly_rate
+	
+	properties_currencies
+	id
+	property_id int(11)
+	country_id char(2) 	utf8_general_ci 
+	currency
+	
+	
+	countries.currency
+	
+	currencies
+	country_id
+	country_name = countries.name
+	currency = countries.currencyName
+	currency_name = countries.currencyName
+	active
+	
+			
+			
+	properties_currencies 
+		this will hold the country id for the currency, 
+		which can then be pulled out of the coutries table
+	
+	was thinking of using properties.country_id
+	but that is for the property country, 
+	not the currency country.
+	
+	WAS also thinking of using countries table, 
+	but we need to be able to control which 
+	currencies are active.  
+	
+	for our currencies drop down we want a table 
+	currencies:
+	
+	SELECT INTO currencies(country_id, country_name, currency_name) FROM (SELECT countries.country_id, 
+	countries.name, countries.currencyName 
+	FROM countries ORDER BY countries.id)
+	
+	UPDATE currencies SET active = 1
+	WHERE country_id = US
+
+
+
+

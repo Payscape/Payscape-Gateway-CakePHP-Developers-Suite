@@ -1,0 +1,12 @@
+
+So that we don't disrupt opertaions, 
+copy users table to the Fishbake db. 
+but use paths that will place our new images where they belong. 
+
+this way we can play with the Users but not screw up stuff in the main 
+database. 
+
+so change the db connection in Fishbake to use the vacahom_fishbake db
+on dev and production servers, and fishbake here on local developemnt. 
+
+

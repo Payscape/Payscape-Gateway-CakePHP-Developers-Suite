@@ -1,0 +1,33 @@
+
+No UserPropertiesImages function desired. 
+
+	Controller / UserImagesController
+	add
+	count
+	delete	
+	edit
+	remove
+	sort	// limit UserImage uploads to 20 images
+	upload	
+	
+	Model / UserImageModel
+
+	Vendor UserImageHandler
+	
+	View
+	
+	UserImages
+	
+	Elements
+		upload_user_images
+		edit_user_images
+		
+could use a popup from the Edit Profile page
+
+the popup will need to have two tabs
+
+	upload
+	edit
+		on edit 
+		sort	delete
+		

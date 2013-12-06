@@ -1,0 +1,27 @@
+
+
+	'Property.area_latitude BETWEEN ? AND ?' => 
+	array($search['s_latitude'], $search['n_latitude']), // make sure S is before N or mMySQL chokes
+
+this should render 
+	WHERE area_latitude BETWEEN s_latitude AND n_latitude
+	
+
+
+
+// just return these two fields
+$fields = array('uri', 'page_views');
+
+// use this "between" range
+$conditions = array('LogfileRecord.date BETWEEN ? and ?' => array($start_date, $end_date));
+
+// run the "select between" query
+$results = $this->LogfileRecord->find('all', 
+             array('fields'=>$fields, 
+                   'conditions'=>$conditions));
+                   
+
+CakePHP BETWEEN query with a numeric range
+As a final note, here's a short BETWEEN example from the CakePHP Cookbook:
+
+array('Post.id BETWEEN ? AND ?' => array(1,10))	

@@ -1,0 +1,24 @@
+
+GeonamesController
+
+        
+Line 15:         
+	$results = $this->Geoname->find('all', array('conditions'=>array('Geoname.asciiname LIKE'=>$this->request->query['term'].'%'),'limit'=>5, 'order'=>array('Geoname.is_country'=>'DESC', 'Geoname.is_state'=>'DESC','Geoname.property_count'=>'DESC', 'Geoname.population'=>'DESC')));
+  
+
+SearchesController
+
+
+Line 1431:                             
+	$nearest = m('Geoname')->find('first', array('conditions'=>array('Geoname.asciiname LIKE'=>$search['destination'].'%'),'limit'=>1, 'order'=>array('Geoname.is_country'=>'DESC', 'Geoname.is_state'=>'DESC','Geoname.property_count'=>'DESC', 'Geoname.population'=>'DESC')));
+
+Line 1436:
+
+	'OR'=>array("Property.distance <"=>30, 'Property.admin_code_id'=>$state['AdminCode']['id'])      
+
+Line 1440:
+
+	'OR'=>array("Property.distance <"=>30)                                    
+                                 
+                               
+         

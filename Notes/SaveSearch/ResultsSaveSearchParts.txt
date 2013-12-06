@@ -1,0 +1,40 @@
+	<br>start_date
+	<br>start_date
+		<br><input type="text" id="startdate1">
+		<br>end_date
+		<br><input type="text" id="enddate1">
+		<br>sleepingcapacity
+		<br><input type="text" id="sleepingcapacity1">
+		<br>searchrateby
+		<br><input type="text" id="searchrateby1">
+		
+		<br>dailyratemin
+		<br><input type="text" id="dailyratemin1">
+		<br>dailyratemax
+		<br><input type="text" id="dailyratemax1">			
+
+		<br>bedmin
+		<br><input type="text" id="bedmin1">
+		<br>bedmax
+		<br><input type="text" id="bedmax1">
+
+// this is most likely the form we want these little guys. 
+				
+		<br>bedrooms.min
+		<br><input type="text" id="bedroomsmin1">
+		<br>bedrooms.max
+		<br><input type="text" id="bedroomsmax1">
+		<br>bathrooms.min
+		<br><input type="text" id="bathroomsmin1">
+		<br>bathrooms.max
+		<br><input type="text" id="bathroomsmax1">
+		<br>square_footage.min
+		<br><input type="text" id="squarefootagemin1">
+		<br>square_footage.max
+		<br><input type="text" id="squarefootagemax1">
+
+		
+				<br>amenities
+		<br><input type="text" id="amenities1">
+			<br>destination:<br>
+		<br><input type="text" id="destination1">

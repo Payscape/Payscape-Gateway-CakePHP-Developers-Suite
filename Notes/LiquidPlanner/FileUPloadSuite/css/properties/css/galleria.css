@@ -1,0 +1,40 @@
+
+.delete {
+	display:none;
+	
+}
+
+
+.fileinput-button {line-height:29px; font-size:1em;}
+.start {line-height:29px; font-size:1em;}
+.cancel {line-height:29px; font-size:1em;}
+
+.upload_container {
+   padding:4px;
+  //  background: url('../../img/images/transp50.png');
+    border:1px solid #ccc;
+    margin:0 0 0px;
+    /*-moz-border-radius: 5px;*/
+    width:600px;
+    height:158px;
+    overflow:hidden;
+    
+}
+
+.upload_drop_text {
+	
+	background: transparent;
+    text-align: center;
+    vertical-align: middle;
+    border: 0;
+    line-height: 165px;
+    font-size:23px;
+    color:#ccc;
+}
+
+.name {font-size:.7em;}
+
+
+
+
+.

@@ -1,0 +1,22 @@
+this is the token that is currently in the db. 
+after the reset takes place, the token should be destroyed. 
+
+da29d78180ebfcf53f61ee82cb06a5ab
+
+http://triubendev.com/dev/vfish/forgot/change/da29d78180ebfcf53f61ee82cb06a5ab
+
+so the error erupts, and we have not left the page. 
+http://triubendev.com/dev/vfish/forgot/change/da29d78180ebfcf53f61ee82cb06a5ab
+
+we removed the redirect from the controller, but still 
+the page is redirecting. 
+
+da29d78180ebfcf53f61ee82cb06a5ab
+
+now we see invalid token message?
+
+the token is still in the db. 
+
+
+http://triubendev.com/dev/vfish/forgots/change/90e9d1c2de7f8d10b97d60743fc8be6b
+

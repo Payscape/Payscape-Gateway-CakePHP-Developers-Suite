@@ -1,0 +1,21 @@
+
+
+This one ate all the data, rather than synching it. 
+ cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+ 
+ 
+ That was because we did not have our Controllers in place. 
+ 
+ 
+  cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_sync
+  
+  cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_update
+  
+ we now have the updated versoin of AclExtras in place. 
+ the older version was from 2011. 
+ 
+ 
+   cake -app "C:\xampp\htdocs\fishbake.localdomain\cake2.2.2\app" acl_extras aco_update
+  
+ 
+ 

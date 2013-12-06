@@ -1,0 +1,11 @@
+120130412093337.jpg
+
+
+SCRIPT URL properties/upload
+UPLOAD DIR img/files/906/images/
+UPLOAD URL img/files/906/images/ 
+
+what is this?
+
+
+{"files":[{"name":"120130412093337.jpg","size":82356,"url":"img\/files\/906\/images\/120130412093337.jpg","delete_url":"properties\/upload?file=120130412093337.jpg","delete_type":"DELETE"},{"name":"220130412093337.jpg","size":69825,"url":"img\/files\/906\/images\/220130412093337.jpg","delete_url":"properties\/upload?file=220130412093337.jpg","delete_type":"DELETE"},{"name":"Thumbs.db","size":8192,"url":"img\/files\/906\/images\/Thumbs.db","delete_url":"properties\/upload?file=Thumbs.db","delete_type":"DELETE"}]}

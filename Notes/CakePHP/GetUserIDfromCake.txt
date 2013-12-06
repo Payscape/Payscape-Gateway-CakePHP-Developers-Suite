@@ -1,0 +1,2 @@
+		$veebo =	$this->user['User']['id'];
+		$user_id = $this->Auth->user('id');

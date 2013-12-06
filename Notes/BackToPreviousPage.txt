@@ -1,0 +1,20 @@
+you can do
+
+                echo $this->Html->link('go back',"javascript:history.back()");
+
+
+i think its much better to add
+
+        $this->set('referer',$this->referer());
+
+to your beforeRender();
+
+and
+
+$this->Html->link('back',$referer);
+
+to  your view.
+
+one less reliance on js is a win in my book.
+
+http://localhost:8080/vacationfish.localdomain/public_html/searches/results/page:4

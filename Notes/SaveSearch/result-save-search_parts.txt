@@ -1,0 +1,45 @@
+<label>Search Title*</label>
+		<br><span style="font-style:italic">Give your search a name!</span>
+		<input type="text" size="50" name="search_title">
+<?php echo $this->Form->input('name', array('value' => '', 'tabindex' => 2, "placeholder" => "Password", 'class' => 'validate[required]', 'data-prompt-position' => 'topLeft:-180' , "label"=>false));?>
+		
+	<?php //echo $this->Html->link('Save Search', array('controller' => 'searches', 'action' => 'popup'), array('class' => 'thickbox', 'target'=>'_box')); ?>
+		<br>start_date
+		<br><input type="text" id="start_date1">
+		<br>end_date
+		<br><input type="text" id="end_date1">
+		<br>sleeping_capacity
+		<br><input type="text" id="sleeping_capacity1">
+		<br>rate_by.min
+		<br><input type="text" id="rate_by.min1">
+		<br>rate_by.max
+		<br><input type="text" id="rate_by.max1">
+		<br>bedrooms.min
+		<br><input type="text" id="bedrooms.min1">
+		<br>bedrooms.max
+		<br><input type="text" id="bedrooms.max1">
+		<br>bathrooms.min
+		<br><input type="text" id="bathrooms.min1">
+		<br>bathrooms.max
+		<br><input type="text" id="bathrooms.max1">
+		<br>square_footage.min
+		<br><input type="text" id="square_footage.min1">
+		<br>square_footage.max
+		<br><input type="text" id="square_footage.max1">
+		<br>daily_rate.min
+		<br><input type="text" id="daily_rate.min1">
+		<br>daily_rate.max
+		<br><input type="text" id="daily_rate.max1">
+		<br>amenities
+		<br><input type="text" id="amenities1">
+			<br>destination:<br>
+		<br><input type="text" id="destination1">
+		
+		<br><strong>Blueberry1:</strong><br>
+		<div id="Blueberry1"></div>
+	</div>				
+
+	<?php echo $this->Form->end()?>		
+		<div class="row">
+					<?php echo $this->Form->submit('Save Search',array('class' => 'btn-info','id'=>'save_search')); ?>
+		</div>	

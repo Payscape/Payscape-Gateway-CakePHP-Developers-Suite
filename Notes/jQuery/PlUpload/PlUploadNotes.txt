@@ -1,0 +1,57 @@
+For one thing, plupload.js should be loaded before plupload.queue.js
+// from the example page at plupload.com:
+
+original
+    $this->Html->script(array('jquery.plupload.queue', 'plupload', 'plupload.html5', 'propertyimages', 'outerHTML-2.1.0-min', 'create_two'), array('inline' => false));
+revised 4/08/2013
+    $this->Html->script(array('plupload', 'plupload.html5', 'jquery.plupload.queue', 'propertyimages', 'outerHTML-2.1.0-min', 'create_two'), array('inline' => false));
+
+
+<!-- Load plupload and all it's runtimes and finally the jQuery queue widget -->
+<script type="text/javascript" src="/plupload/js/plupload.full.js"></script>
+<script type="text/javascript" src="/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+<!-- we see that they load plupload *before* the pluupload.queue file. -->
+
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/global.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/jquery.alerts.js"></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/thickbox.js"></script>
+<!-- *** Initialize JS *** -->
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/initialize.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/plupload.css" />
+<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/plupload_queue.css" />
+<link rel="stylesheet" type="text/css" href="/vacationfish.localdomain/public_html/css/anythingslider.css" />
+<script type="text/javascript">
+//<![CDATA[
+var counters = {"sort" : 0};
+//]]>
+</script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/
+OK jquery.plupload.queue.js    "></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/
+OK plupload.js     "></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/
+OK plupload.html5.js       "></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/
+OK propertyimages.js       "></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/
+OK  outerHTML-2.1.0-min.js  "></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/
+OK  create_two.js   "></script>
+<script type="text/javascript" src="/vacationfish.localdomain/public_html/js/
+OK  jquery.anythingslider.js    "></script>
+
+<script type="text/javascript">
+//<![CDATA[
+counters["prop_image"] = 1;
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+var site_url = "/vacationfish.localdomain/public_html/properties/create/photos/907?file=1";
+//]]>
+</script>

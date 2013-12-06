@@ -1,0 +1,30 @@
+
+There is a special count parameter for the find method, but that probably won't fit your needs, as you want to show more than just the counted products.
+
+It's best to define COUNT in the fields parameter of the find method. So:
+
+'fields' => array('Model.field1', 'COUNT(Model.field2) AS products_count')
+
+
+		$total_properties = $this->Property->find('count', array(
+				'conditions' => $conditions,
+				'recursive' => 0,
+		));
+
+LOADING MODELS
+
+$this->set('firms',$this->Firm->find('all',array('conditions'=>array('Firm.uThis should be simple to understand. If you are using a controller and you need to load another model, you can call:
+
+$this->loadModel('SomeModel');
+Then you can make calls to the model like you normally would:
+
+$this->SomeModel->read(null, '1');
+
+
+App::uses is for lazy loading of classes. So you can still load a model using uses:
+
+App::uses('MyModel', 'Model');
+But then you will need to call it differently:
+
+$my_model = new MyModel();
+$my_model->read(null, '1');ser_id'=>'5'))));

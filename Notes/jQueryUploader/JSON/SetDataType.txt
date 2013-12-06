@@ -1,0 +1,12 @@
+Your response is valid JSON and so your dataType must be too.
+
+dataType: "json"
+
+
+looks like if we get those urls that are going to "images"
+straightened out, we could use parts of this to delete files
+from a selection of rows with check boxes which would be nice. 
+that way users can do 1, 4 or all images at one time 
+in just a few clickeroos. 
+
+the original code of blueimp is simply getting or displaying all files from the upload folder so the ouput should is if im a user i can only see what files i uploaded and if other users logged in they cannot see it... – Clint Bugs Oct 3 '12 at 6:29the original code of blueimp is simply getting or displaying all files from the upload folder so the ouput should is if im a user i can only see what files i uploaded and if other users logged in they cannot see it... – Clint Bugs Oct 3 '12 at 6:29

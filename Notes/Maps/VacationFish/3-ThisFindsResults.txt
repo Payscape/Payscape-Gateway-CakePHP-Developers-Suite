@@ -1,0 +1,62 @@
+This returns no NULL values. 
+
+SELECT id, ( 3959 * acos( cos( radians(37) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(-122) ) + sin( radians(37) ) * sin( radians( latitude ) ) ) ) 
+AS distance, latitude, longitude  
+FROM properties
+having distance < 150
+
+now for something with our own coordinates:
+-------------------------------------------
+
+SELECT id, ( 3959 * acos( cos( radians(38) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(-120) ) + sin( radians(38) ) * sin( radians( latitude ) ) ) ) 
+AS distance, latitude, longitude  
+FROM properties
+having distance < 150
+
+this gives us records that are as close as 70 miles. 
+
+39.1406555 	-120.1586761
+
+
+SELECT id, ( 3959 * acos( cos( radians( 39.1406555 ) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(-120.1586761) ) + sin( radians(39.1406555) ) * sin( radians( latitude ) ) ) ) 
+AS distance, latitude, longitude  
+FROM properties
+having distance < 100
+
+
+SELECT id, ( 3959 * acos( cos( radians( 39.1406555 ) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(-120.1586761) ) + sin( radians(39.1406555) ) * sin( radians( latitude ) ) ) ) 
+AS distance, latitude, longitude  
+FROM properties
+having distance < 25 ORDER BY distance DESC
+
+SELECT id, ( 3959 * acos( cos( radians( 39.1406555 ) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(-120.1586761) ) + sin( radians(39.1406555) ) * sin( radians( latitude ) ) ) ) 
+AS distance, latitude, longitude, city  
+FROM properties
+having distance < 25 ORDER BY distance DESC
+
+SELECT id, ( 3959 * acos( cos( radians( 39.1406555 ) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(-120.1586761) ) + sin( radians(39.1406555) ) * sin( radians( latitude ) ) ) ) 
+AS distance, latitude, longitude, city, state_id   
+FROM properties
+having distance < 25 ORDER BY distance DESC
+
+OK, now we are getting some good results. 
+but it looks as though the data in our db has a lot of 
+bogus longitude and latitude entries, with goofed up 
+state_ids as well. 
+
+let's try our decatur listings again, this time using our 
+higher precision latitude and longitude coordinates. 
+
+we just want to see our other two properties here. 
+
+latitude 33.8299446 longitude -84.2654419
+
+SELECT id, ( 3959 * acos( cos( radians( 33.8299446 ) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(-84.2654419) ) + sin( radians(33.8299446) ) * sin( radians( latitude ) ) ) ) 
+AS distance, latitude, longitude, city, state_id   
+FROM properties
+having distance < 50 ORDER BY distance DESC
+
+
+
+
+

@@ -1,0 +1,89 @@
+
+
+If we were searching in the Property Model, 
+
+$this->find('all', 
+
+This is in Property Model, searching a related Model
+
+
+        $overall_rating = $this->Review->find('all', array(
+            'fields' => array(
+                'AVG(`Rating`.`rating`) AS `overall`',
+            ),
+            'joins' => array(
+                array(
+                    'table' => 'ratings',
+                    'alias' => 'Rating',
+                    'type' => 'left',
+                    'conditions' => array(
+                        'Rating.review_id = Review.id',
+                    ),
+                ),
+            ),
+            'conditions' => array(
+                'Review.property_id' => $property_id,
+                'Review.verified' => 1,
+            ),
+            'group' => array(
+                'Review.property_id',
+            ),
+        ));
+        
+ Here is a complete find() with the specified "contain" so 
+ that it will return the models we want 'PropertyImage', 'WishlistItem'
+ 
+        $properties = $this->Wishlist->WishlistItem->Property->find('all', array(
+                'fields' => array(
+                        'title',
+                        'address',
+                        'city'
+                ),
+                
+                'conditions' => array(
+                        "Property.id" => array($pids[0]['WishlistItem']['property_id']),
+                ),
+                'contain' => array('PropertyImage', 'WishlistItem'),
+                'recursive' => 1
+                
+
+                ));  
+                
+         $holidays = $this->User->find('all',
+         	array(
+         		'fields' => array(
+         			'holidays',
+         		),
+         		'conditions' => array(
+         			"User.id" => $user_id, 
+         		),
+         	); 
+         	
+         $holidays = unserialize($holidays);	           
+        
+        
+ Here is a working find('count')
+ 
+        $custom_wishlist_count = $this->Property->WishlistItem->Wishlist->find('count', 
+        array('conditions' => array(
+            'user_id' => $this->user['User']['id'], 
+            'is_custom_list' => 1)
+            
+         ));
+         
+         
+   		$saved_search = $this->Search->find('first', array(
+			'conditions' => array(
+				'Search.id' => $search_id,
+			),
+		));      
+         
+         
+         for an unrelated Model, we can do this:
+         $this->loadModel('Amenity');
+         
+         then we can test doing this:
+         
+         	debug($this->Amenity->find('all'));
+         
+        

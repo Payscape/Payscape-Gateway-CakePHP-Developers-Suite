@@ -1,0 +1,15 @@
+Notice (8): Undefined offset: 0 [APP\Controller\PropertyimagesController.php, line 151]
+Code Context
+    );
+        
+     $this->set('Property', $property[0]);
+$property_id = (int) 0
+$id = (int) 0
+$base_url = '/vfish22.localdomain/public_html'
+$property = array()
+PropertyImagesController::delete() - APP\Controller\PropertyimagesController.php, line 151
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 485
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 161
+[main] - ROOT\public_html\webroot\index.php, line 118

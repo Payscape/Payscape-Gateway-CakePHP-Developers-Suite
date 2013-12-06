@@ -1,0 +1,36 @@
+
+
+	we want to redirect the logged in user to their Dashboard. 
+	
+		here is how we can do so:
+		
+		put the following into the UsersController.php
+
+function beforeFilter() {
+    $this->Auth->allow('login', 'logout');
+    $this->Auth->autoRedirect = false;
+    parent::beforeFilter();
+}
+and, add this for the login page:
+
+function login() {
+    if($this->Auth->User()) {
+        $this->redirect(array('action'=>'welcome'), null, true);
+    }
+}
+
+
+Put this code to your controller:
+
+function beforeFilter() {
+    $this->Auth->allow('login', 'logout');
+    $this->Auth->autoRedirect = false;
+    parent::beforeFilter();
+}
+and, add this for the login page:
+
+function login() {
+    if($this->Auth->User()) {
+        $this->redirect(array('action'=>'welcome'), null, true);
+    }
+}

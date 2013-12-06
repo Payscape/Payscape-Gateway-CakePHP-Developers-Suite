@@ -1,0 +1,52 @@
+
+strstr
+	[Alias of strstr]
+	
+	
+Alternative Way:
+To get all the text before the first occurence. 
+
+-----------------------------------------------
+INCLUDING A NEEDLE:
+
+$string1 = "I need cookies & soda.";
+$needle = "cookies";
+
+//find length of the needle
+$needle_len = strlen($needle);
+
+//find postion
+$position_num = strpos($string1,$needle) + $needle_len;
+
+//cut the string
+$result_string = substr("$string1",0,$position_num);
+
+//display it
+echo"$result_string"; // I need cookies
+
+-----------------------------------------------
+SHORTER VERSION:
+
+$result_string = substr("$string1",0,strpos($string1,$needle)+strlen($needle));
+
+echo"$result_string";//I need cookies
+
+-----------------------------------------------
+EXCLUDING THE NEEDLE:
+
+$result_string = substr("$string1",0,strpos($string1,$needle));
+
+echo"$result_string";// I need
+
+-----------------------------------------------
+FREE EMAIL JUNK?
+
+This is probably useful for processing emails.
+For example, someone sends email to your server from Yahoo account.
+Free email always comes with wasted stuff like...
+"Do you Yahoo!? The New Yahoo! Shopping - with improved product search ".
+We can delete the phrase like this:
+
+$needle="Do you Yahoo!?";
+
+$result_string = substr("$emailstring",0,strpos($emailstring, $needle));	

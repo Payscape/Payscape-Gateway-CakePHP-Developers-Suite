@@ -1,0 +1,63 @@
+/* Bathroom */
+if ('undefined' == typeof bath_val) { var bath_val = "1:10"; }
+var minBathValue = 1;
+var maxBathValue = 10;
+$('#slider-range-Bath').slider({
+	range: true,
+	min: minBathValue,
+	max: maxBathValue,
+	step: 1,
+	values: bath_val.split(';'),
+	slide: function( event, ui ) {
+		$( '#SearchBathroomsMin' ).val( ui.values[ 0 ] );
+		$( '#SearchBathroomsMax' ).val( ui.values[ 1 ] );
+		$( '#BathMin' ).text( ui.values[ 0 ] );
+
+		if (ui.values[1] == maxBathValue) {
+			$( '#BathMax' ).text( ui.values[ 1 ] + '+' );
+		}
+		else {
+			$( '#BathMax' ).text( ui.values[ 1 ] );
+		}
+	},
+	change: function ( event, ui ) {
+		refresh_results( );
+	}
+});
+
+$( '#BathMin' ).text( $('#slider-range-Bath').slider('values', 0) );
+$( '#BathMax' ).text( $('#slider-range-Bath').slider('values', 1) + (($('#slider-range-Bath').slider('values', 1) == maxBathValue) ? '+' : '') );
+
+
+
+
+/* Daily Prices */
+if ('undefined' == typeof daily_rate_val) { var daily_rate_val = "0:2000"; }
+var minPriceValue = 0;
+var maxPriceValue = 1000;
+$('#slider-range-price').slider({
+	range: true,
+	min: minPriceValue,
+	max: maxPriceValue,
+	step: 10,
+	values: daily_rate_val.split(';'),
+	slide: function( event, ui ) {
+		$( '#SearchDailyRateMin' ).val( ui.values[ 0 ] );
+		$( '#SearchDailyRateMax' ).val( ui.values[ 1 ] );
+		$( '#dailyRateMin' ).text( '$' + ui.values[ 0 ] );
+
+		if (ui.values[1] == maxPriceValue) {
+			$( '#dailyRateMax' ).text( '$' + ui.values[ 1 ] + '+' );
+		}
+		else {
+			$( '#dailyRateMax' ).text( '$' + ui.values[ 1 ] );
+		}
+	},
+	change: function ( event, ui ) {
+		refresh_results( );
+	}
+});
+
+$( '#dailyRateMin' ).text( '$' + $('#slider-range-price').slider('values', 0) );
+$( '#dailyRateMax' ).text( '$' + $('#slider-range-price').slider('values', 1) + (($('#slider-range-price').slider('values', 1) == maxPriceValue) ? '+' : '') );
+

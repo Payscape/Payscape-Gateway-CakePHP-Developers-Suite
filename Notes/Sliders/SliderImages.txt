@@ -1,0 +1,6 @@
+
+Our new Slider image is great for the Host Property Listing page. 
+On this page we are setting only 1 value, and the round slider behaves nicely. 
+
+For the Range Sliders we may want something more like an arrow or cursor indicator. 
+

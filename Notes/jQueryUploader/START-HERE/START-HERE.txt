@@ -1,0 +1,24 @@
+
+
+    we need to create a new function on PropertiesController
+    
+    this action is only for our jQuery uploaders. 
+    it does not need to have a view, because noone is 
+    going to go look at it, and if they do, 
+    they aren't someone who should be there. 
+    
+    public function upload($property_id){
+    
+    $options = array()
+        // put all of the options for UploadHandler in here. 
+        in upload handler don't specify the options, like 
+        upload dir. 
+        pull the initialize function out of there 
+        and put it here
+        
+        then instantiate the class with 
+        
+        $upload_handler = new UploadHandler
+    
+    
+    }

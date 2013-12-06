@@ -1,0 +1,80 @@
+
+edit_listing_photos.ctp
+
+
+(document).ready(function(){
+
+    var no_of_photos = $("#slider li").size();
+
+
+    var jqXHF = false;
+    $('.txt_field').bind('keyup' , function() {
+        if (jqXHF) {
+            jqXHF.abort( );
+        }
+
+        img_id = aslider.$currentPage.attr("data-id");
+
+        if (no_of_photos == 1) {
+            img_id = $("#slider li").attr('data-id');
+        }
+
+        var img_description = this.value;
+
+        jqXHF = $.ajax({
+            url  : photo_desc_url,
+            type : 'post',
+            data : {'id' : img_id , 'name' : img_description},
+            success : function( ) {
+                $(".saved").show( ).fadeOut(2000);
+            }
+        });
+    });
+
+        $(".sortable").sortable({                  
+        update : function(e, ui){
+           var elements = $(this).children();
+           var size = $(this).children().size();
+           var ids = [];
+           for(i=0;i<size;i++){
+                ids[i] = elements[i].id; 
+           }
+           $.post(ROOT_URL+'PropertyImages/sort', {'ids':ids},
+                 function(data){
+                      //alert('Images Sorted');
+                 }
+            );
+         }
+      });
+      
+    $('#deleteImg').click(function(e) {
+        img_id = aslider.$currentPage.attr("data-id");
+        /*
+         * if only one image is there than no sliding action is appeared
+         * so for getting image_id with no sliding action gives unfavourable results
+         */
+
+        if(no_of_photos == 1) {
+            img_id = $("#slider li").attr('data-id');
+        }
+        e.preventDefault();
+        if(confirm("Are you sure you want to delete this image?") == true) {
+        $('#image_'+img_id).remove();
+        var url = $(this).attr('href') + '/' + property_id +'/' + img_id + '/tab2';
+        window.location = url;
+        }
+    });
+    
+        / this runs all the delete buttons
+    $('div.addable').on('click', '.delete', function( ) {
+    
+        // if we are removing a picture, reshow the add button
+        // but just reshow them all... it's easier
+        $(this).parents('.addable').find('.add').show( )
+            // and remove the item we came here to remove
+            .end( ).end( ).parents('.removable').remove( );
+    
+    }).find('.delete').css('cursor', 'pointer');
+
+    
+});

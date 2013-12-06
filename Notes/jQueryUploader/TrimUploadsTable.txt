@@ -1,0 +1,13 @@
+ td class="preview"
+    make this the width of the thumbnail
+
+td class="size"
+    this can be shortened
+
+This is what is knocking our drag/drop table out of whack. 
+This div sitting in the td cell : 
+    
+<div class="bar" style="width:0%;"></div>
+
+<div class="progress progress-success progress-striped active" aria-valuenow="0" aria-valuemax="100" aria-valuemin="0" role="progressbar">
+<div class="bar" style="width:0%;"></div></div>    

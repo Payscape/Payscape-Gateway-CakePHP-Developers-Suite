@@ -1,0 +1,20 @@
+Collabnet came back online 
+now have GitEye set up, 
+as it turns out is is based on
+an Eclipse platform as a standalone
+Git GUI for PC desktops, and 
+is cross platform in use as well. 
+
+	/chacha.localdomain
+		/chacha
+		{remote repo cloned here}
+		
+
+
+1 Create an Eclipse project
+2 Using GitEye, create a local repo
+in the project
+3 clone the remote repo into the folder 
+created in the project. 
+4 move the files from the local repo 
+into the project. 

@@ -1,0 +1,3 @@
+$data['pussy'] = 'wagon';
+That's all you need to add the key and value to the array.
+

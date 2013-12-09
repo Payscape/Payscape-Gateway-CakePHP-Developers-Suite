@@ -1,3 +1,8 @@
+# location for bake
+navigate to /lib/Cake/Console
+
+
+# path to app
 /Applications/XAMPP/htdocs/payscape.localdomain/app/
 
 ./cake -app /Applications/XAMPP/htdocs/payscape.localdomain/app/ bake model all
@@ -15,7 +20,14 @@ now to create our controllers
 
 
 
+./cake -app /Applications/XAMPP/htdocs/payscape.localdomain/app/ bake controller all
+
+./cake -app /Applications/XAMPP/htdocs/payscape.localdomain/app/ bake model all
+
 ./cake -app /Applications/XAMPP/htdocs/payscape.localdomain/app/ bake view all
+
+./cake -app /Applications/XAMPP/htdocs/payscape.localdomain/app/ bake
+
 
 
 

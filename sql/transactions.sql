@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 09, 2013 at 08:05 PM
+-- Generation Time: Dec 09, 2013 at 08:41 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -39,6 +39,8 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `checkaccount` varchar(60) NOT NULL,
   `account_holder_type` varchar(10) NOT NULL,
   `account_type` varchar(10) NOT NULL,
+  `sec_code` varchar(10) DEFAULT NULL,
+  `processor_id` varchar(10) DEFAULT NULL,
   `amount` decimal(11,2) NOT NULL,
   `cvv` char(4) NOT NULL,
   `payment` varchar(10) NOT NULL,
@@ -52,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `zip` varchar(30) NOT NULL,
   `country` varchar(50) NOT NULL,
   `phone` varchar(50) NOT NULL,
-  `fax` varchar(50) NOT NULL,
+  `fax` varchar(50) DEFAULT NULL,
   `email` varchar(150) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
@@ -61,10 +63,10 @@ CREATE TABLE IF NOT EXISTS `transactions` (
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`id`, `type`, `key_id`, `hash`, `time`, `ccnumber`, `ccexp`, `checkname`, `checkaba`, `checkaccount`, `account_holder_type`, `account_type`, `amount`, `cvv`, `payment`, `ipaddress`, `firstname`, `lastname`, `company`, `address1`, `city`, `state`, `zip`, `country`, `phone`, `fax`, `email`) VALUES
-(1, 'sale', 'Payscape2013', '4a;lkjfd1j;dsmfm;;', '20131205182911', '111111111111111', '123', 'checkname', 'checkaba', 'checkaccount', 'business', 'checking', '1566.70', '444', 'creditcard', '127.0.0.1', 'Bill', 'Beaver', 'Sophia Solutions', '1647 Frazier Road', 'Decatur', 'Georgia', '30033', 'United States', '4048200331', '4048200331', 'stephen@sophiasolutions.net'),
-(2, 'sale', 'Payscape2013', '4a;lkjfd1j;dsmfm;;', '20131205182911', '111111111111111', '123', 'checkname', 'checkaba', 'checkaccount', 'business', 'checking', '766.44', '444', 'creditcard', '127.0.0.1', 'Bill', 'Beaver', 'Sophia Solutions', '1647 Frazier Road', 'Decatur', 'Georgia', '30033', 'United States', '4048200331', '4048200331', 'stephen@sophiasolutions.net'),
-(3, 'aa', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', '1.00', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'info@iprmarketing.com');
+INSERT INTO `transactions` (`id`, `type`, `key_id`, `hash`, `time`, `ccnumber`, `ccexp`, `checkname`, `checkaba`, `checkaccount`, `account_holder_type`, `account_type`, `sec_code`, `processor_id`, `amount`, `cvv`, `payment`, `ipaddress`, `firstname`, `lastname`, `company`, `address1`, `city`, `state`, `zip`, `country`, `phone`, `fax`, `email`) VALUES
+(1, 'sale', 'Payscape2013', '4a;lkjfd1j;dsmfm;;', '20131205182911', '111111111111111', '123', 'checkname', 'checkaba', 'checkaccount', 'business', 'checking', NULL, NULL, '1566.70', '444', 'creditcard', '127.0.0.1', 'Bill', 'Beaver', 'Sophia Solutions', '1647 Frazier Road', 'Decatur', 'Georgia', '30033', 'United States', '4048200331', '4048200331', 'stephen@sophiasolutions.net'),
+(2, 'sale', 'Payscape2013', '4a;lkjfd1j;dsmfm;;', '20131205182911', '111111111111111', '123', 'checkname', 'checkaba', 'checkaccount', 'business', 'checking', NULL, NULL, '766.44', '444', 'creditcard', '127.0.0.1', 'Bill', 'Beaver', 'Sophia Solutions', '1647 Frazier Road', 'Decatur', 'Georgia', '30033', 'United States', '4048200331', '4048200331', 'stephen@sophiasolutions.net'),
+(3, 'aa', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', NULL, NULL, '1.00', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'AA', 'info@iprmarketing.com');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

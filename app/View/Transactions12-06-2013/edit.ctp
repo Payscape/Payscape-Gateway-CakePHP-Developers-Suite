@@ -12,11 +12,9 @@
 		echo $this->Form->input('ccexp');
 		echo $this->Form->input('checkname');
 		echo $this->Form->input('checkaba');
-		echo $this->Form->input('checkaccount');
+		echo $this->Form->input('chackaccount');
 		echo $this->Form->input('account_holder_type');
 		echo $this->Form->input('account_type');
-		echo $this->Form->input('sec_code');
-		echo $this->Form->input('processor_id');
 		echo $this->Form->input('amount');
 		echo $this->Form->input('cvv');
 		echo $this->Form->input('payment');

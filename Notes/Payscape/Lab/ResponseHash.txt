@@ -1,0 +1,20 @@
+
+After an API call has been made, a unique hash will immediately be returned in the response 
+The response hash protects the authenticity of the data returned to the merchant's servers. 
+Performing an additions md5 check on the response hash will ensure that the response is authentic. 
+Secifically, the following fields are protected by the responise hash: 
+
+OrderID
+Amount
+Response
+TransactionID
+AVS_Response
+CVV_Response
+
+
+The response hash is created with 
+
+$orderid|amount|response|transactionid|avsresponse|cvvresponse|customer_vault_id
+
+Customer Vault ID is optionaland only included when a cusomre_vault_id is included in the response.
+

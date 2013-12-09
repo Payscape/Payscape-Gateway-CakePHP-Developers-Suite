@@ -6,10 +6,39 @@ tables
 
 
 
-TRAMSACTOIM TESTING ACCOUNT
+TRANSACTION TESTING ACCOUNT
 
 	key id 449510
 	key \!b2#1wu%4_tUdpAxO|GDWW?20:V.w
+	
+	
+The hash should be the values of the following variables delimited by pipes and *hashed* 
+with an md5 algorithm.	
+
+The Key can be obtained ;under the Security Keys section within the Gateway Options and is associated with the passed key_id.
+
+The customer_vault_id is Optional and only included when a customer_vault_id is included in the request.
+
+	HASH WITH CUSTOMER VAULT ID
+
+	$order_id|$amount|$customer_vault_id|$time|$key
+	
+	HASH WITHOUT CUSTOMER VAULT ID
+	
+	$order_id|$amount|$time|key
+	
+	EXAMPLE
+	
+	<?php
+	
+		$time = date("YmdHis");
+		<input type="text" name="key_id" value="449510">
+		<input type="text" name="hash" value="<?php echo md5("Test1|$1.00|$time|\!b2#1wu%4_tUdpAxO|GDWW?20:V.wz"); ?>">
+	?>
+	
+	
+	// do not use the following URL, it's from the NMI manual, 
+	// instead use the payscape URL
 	
 TRANSACTION POST URL
 	https://secure.nmi.com/api/transact.php
@@ -24,7 +53,7 @@ TEST TRANSACTION INFORMATION
 Visa	4111111111111111 (4 + 15 x 1)
 MasterCard	5431111111111111 (543 + 13 x 1)
 
-Credit Card Expiration		10/10
+Credit Card Expiration		10/10 Format: MMYY
 
 Amount 	> 1.00
 
@@ -45,9 +74,9 @@ Required Variables for the Direct Post API
 
 	username
 	password
-Å	type (transaction type)	sale / auth / creadit
-	key_id	security key id from Merchant Control Panel
-	hash 	MD5 variable hash
+	type 		(transaction type)	sale / auth / creadit
+	key_id		security key id from Merchant Control Panel
+	hash 		MD5 variable hash
 	
 	
 	
@@ -59,9 +88,9 @@ Required Variables for the Direct Post API
 	username
 	password
 	type			sale, auth, credit
-	key_id	security key id from Merchant Control Panel
-	hash 	MD5 variable hash
-	time		UTC timestamp 
+	key_id			security key id from Merchant Control Panel
+	hash 			MD5 variable hash
+	time			UTC timestamp 
 	redirect		the redirect url the user is sent to after submission
 	ccnumber		credit card number	
 	ccexp			credit card expiration e.g. 0711 = 7/2011
@@ -72,7 +101,7 @@ Required Variables for the Direct Post API
 	account_type	customer ACH account entity (checking / savings)
 	sec_code *Optional	creditcard / check 	Set Payment Type to ACH or credit Card
 	processor_id *Optional If using Multiple MIDs, route to this processor
-	amount
+	amount			Total amount to be charged. For validate, the amount must be omitted or set to 0.00.
 	
 	*Recommended
 	cvv				card security code

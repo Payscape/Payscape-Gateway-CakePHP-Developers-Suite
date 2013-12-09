@@ -46,9 +46,9 @@
 			<?php echo h($transaction['Transaction']['checkaba']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Checkaccount'); ?></dt>
+		<dt><?php echo __('Chackaccount'); ?></dt>
 		<dd>
-			<?php echo h($transaction['Transaction']['checkaccount']); ?>
+			<?php echo h($transaction['Transaction']['chackaccount']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Account Holder Type'); ?></dt>
@@ -59,16 +59,6 @@
 		<dt><?php echo __('Account Type'); ?></dt>
 		<dd>
 			<?php echo h($transaction['Transaction']['account_type']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Sec Code'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['sec_code']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Processor Id'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['processor_id']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Amount'); ?></dt>

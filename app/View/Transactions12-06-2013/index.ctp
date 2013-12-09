@@ -1,6 +1,9 @@
 <div class="transactions index">
 	<h2><?php echo __('Transactions'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	
+	<?php if(count($transactions > 0)){?>
+	
+	<table>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('type'); ?></th>
@@ -11,11 +14,9 @@
 			<th><?php echo $this->Paginator->sort('ccexp'); ?></th>
 			<th><?php echo $this->Paginator->sort('checkname'); ?></th>
 			<th><?php echo $this->Paginator->sort('checkaba'); ?></th>
-			<th><?php echo $this->Paginator->sort('checkaccount'); ?></th>
+			<th><?php echo $this->Paginator->sort('chackaccount'); ?></th>
 			<th><?php echo $this->Paginator->sort('account_holder_type'); ?></th>
 			<th><?php echo $this->Paginator->sort('account_type'); ?></th>
-			<th><?php echo $this->Paginator->sort('sec_code'); ?></th>
-			<th><?php echo $this->Paginator->sort('processor_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('amount'); ?></th>
 			<th><?php echo $this->Paginator->sort('cvv'); ?></th>
 			<th><?php echo $this->Paginator->sort('payment'); ?></th>
@@ -44,11 +45,9 @@
 		<td><?php echo h($transaction['Transaction']['ccexp']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['checkname']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['checkaba']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['checkaccount']); ?>&nbsp;</td>
+		<td><?php echo h($transaction['Transaction']['chackaccount']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['account_holder_type']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['account_type']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['sec_code']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['processor_id']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['amount']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['cvv']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['payment']); ?>&nbsp;</td>
@@ -71,6 +70,9 @@
 		</td>
 	</tr>
 <?php endforeach; ?>
+<?php } else { ?>
+	<tr><td colspan="25">No current Transactions to display</td></tr>
+<?php } ?>	
 	</table>
 	<p>
 	<?php

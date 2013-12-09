@@ -10,20 +10,15 @@ to check the status of our remote repo.
 Then we do a Commit...
 Then we do a Push.
 
-It's looking like we can Push directly
-from payscape.localdomain to our 
-remote repo. 
+So far we can use the repo from 
+our local repo within Eclipse. 
 
+we copied the files from the payscape-wrappers local repo
+into payscape.localdomain, added the Cake core files
+and the little site fired up fine, once we have the correct 
+CakePHP libraries installed, and the database set up. 
 
-Window / Open Perspective / Other / Git Repository Exploriing
-
-we can use the Git Repositories view to Push directly to our remote directory. 
-In the Git Repositories view, 
-click on the target repo
-e.g. payscape-wrappers
-Right click 
-Push to Upstream
-Enter the password
-
-Now let's check. 
+To date have not figured out how to use an Eclipse project as a local 
+repository so that work can be concluded in the repo, 
+then pushed to the remote repo. 
 

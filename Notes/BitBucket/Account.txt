@@ -5,4 +5,19 @@ password ValPara2013
 first do Fetch to see if anything is new, 
 then do a Pull to update local repo. 
 
+log in to bitbucket.org, 
+then go to the repo that you want to work with. 
+
+To add to our local Git, 
+REMOTE
+NAME: payscape-wrappers
+LOCATION: https://payscapedev@bitbucket.org/payscapedev/payscape-wrappers.git
+
+[this is copied from the page of the repo branch
+	in this case we are going to clone the payscape-wrappers.git
+]
+
+
+http://localhost:8088/payscape.localdomain/debug_kit/img/cake.icon.png
+
 

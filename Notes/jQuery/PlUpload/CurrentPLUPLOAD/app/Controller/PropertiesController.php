@@ -146,3 +146,6 @@ switch ($step) {
 		}
 
 		break;
+}
+// end of fragment	
+		

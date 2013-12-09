@@ -92,16 +92,16 @@ WHERE
 $sql = "SELECT city, latitude, longitude, title FROM properties
 WHERE
 (latitude >= LEAST(33.8299446, 36.33) AND latitude <= GREATEST(33.8299446, 36.33)) AND
-(longitude >= LEAST(-87.265, -84.2654419) AND longitude <= GREATEST(-87.265, -84.2654419));"
+(longitude >= LEAST(-87.265, -84.2654419) AND longitude <= GREATEST(-87.265, -84.2654419));";
 
 
 $sql = "SELECT city, latitude, longitude, title FROM properties
 WHERE
 (latitude >= LEAST(33.8299446, 36.33) AND latitude <= GREATEST(33.8299446, 36.33)) 
 AND
-(longitude >= LEAST(-84.2654419, -87.265) AND longitude <= GREATEST(-84.2654419, -87.265))
+(longitude >= LEAST(-84.2654419, -87.265) AND longitude <= GREATEST(-84.2654419, -87.265));";
 
-
+$boob = array(
 'fields' => array(
 	'')
 	,
@@ -122,7 +122,8 @@ AND
 		),
  
 	
-),
+);
+
 ?>	
 	
 	

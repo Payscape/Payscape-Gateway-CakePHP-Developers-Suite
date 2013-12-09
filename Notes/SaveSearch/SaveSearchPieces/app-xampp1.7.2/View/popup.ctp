@@ -1,7 +1,8 @@
 <?php echo $this->Html->scriptblock('
 	var addto_wishlist_url = "'.Router::url(array('controller' => 'wishlistitems', 'action' => 'add')).'";
 	var ajax_load_search_url = "'.Router::url(array('controller' => 'searches', 'action' => 'ajax_load_search')).'";
-', array('inline' => false)); ?>
+', array('inline' => false)); 
+?>
 
 
 <h2>Save this search</h2>
@@ -30,5 +31,5 @@
 		jQuery("#SearchData").val(parent.$("#SearchResultsForm").serialize( ));
 	');
 
-	
+?>	
 	<?php echo $this->Html->script('results.js'); ?>

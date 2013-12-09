@@ -21,3 +21,4 @@ class FileUploadController extends FileUploadAppController {
 		echo "property_id: $property_id";
 		exit();
 	}
+}// end

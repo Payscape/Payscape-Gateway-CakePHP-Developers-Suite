@@ -6,11 +6,49 @@ tables
 
 
 
+TRAMSACTOIM TESTING ACCOUNT
+
+	key id 449510
+	key \!b2#1wu%4_tUdpAxO|GDWW?20:V.w
+	
+TRANSACTION POST URL
+	https://secure.nmi.com/api/transact.php
+	
+	The URL is the same for both Live and Test Mode environments
+	
+		
+
+
+TEST TRANSACTION INFORMATION
+
+Visa	4111111111111111 (4 + 15 x 1)
+MasterCard	5431111111111111 (543 + 13 x 1)
+
+Credit Card Expiration		10/10
+
+Amount 	> 1.00
+
+
+TRIGGERING ERROR MESSAGES IN TEST MODE 
+	
+	To cause a declined message, pass an amount lesss than 1.00
+	
+	To trigger a fatal errror message, pass an invaliid card number
+	
+	To simulate an AVS Match, pass 888 in the adress1 field, 77777 for zip
+	
+	To simpulate a CVV Match, pass 999 in the cvv field
+
+
+
 Required Variables for the Direct Post API
 
 	username
 	password
-	type (transaction type)
+Å	type (transaction type)	sale / auth / creadit
+	key_id	security key id from Merchant Control Panel
+	hash 	MD5 variable hash
+	
 	
 	
 	our class needs to provide the required fields for an order once it has been posted. 
@@ -21,18 +59,23 @@ Required Variables for the Direct Post API
 	username
 	password
 	type			sale, auth, credit
-	redirect
-	ccnumber
-	ccexp
-	checkname
-	chackaba
-	chackaccount
-	account_holder_type
-	account_type
+	key_id	security key id from Merchant Control Panel
+	hash 	MD5 variable hash
+	time		UTC timestamp 
+	redirect		the redirect url the user is sent to after submission
+	ccnumber		credit card number	
+	ccexp			credit card expiration e.g. 0711 = 7/2011
+	checkname		name on the customer's Automated Clearing House Accunt
+	chackaba		customers bank routing number
+	checkaccount	customers bank account number
+	account_holder_type	customers type of ACH account (business / personal)
+	account_type	customer ACH account entity (checking / savings)
+	sec_code *Optional	creditcard / check 	Set Payment Type to ACH or credit Card
+	processor_id *Optional If using Multiple MIDs, route to this processor
 	amount
 	
 	*Recommended
-	cvv
+	cvv				card security code
 	ipaddress
 	
 	firstname
@@ -46,6 +89,7 @@ Required Variables for the Direct Post API
 	phone
 	email
 	
+	###
 	
 	CAPTURE
 	time
@@ -54,6 +98,7 @@ Required Variables for the Direct Post API
 	
 	amount
 	
+	###
 	
 	VOID
 	
@@ -64,6 +109,8 @@ Required Variables for the Direct Post API
 	redicredct
 	transactionid
 	
+	###
+	
 	
 	REFUND
 	type
@@ -73,6 +120,7 @@ Required Variables for the Direct Post API
 	redirect
 	transactionid
 	
+	###
 	
 	UPDATE
 	
@@ -83,3 +131,4 @@ Required Variables for the Direct Post API
 	redirect
 	transactionid
 	
+	###

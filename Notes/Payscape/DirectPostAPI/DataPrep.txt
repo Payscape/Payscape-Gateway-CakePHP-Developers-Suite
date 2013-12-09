@@ -1,0 +1,80 @@
+
+	first we have our username and password that will be hard coded into the Wrapper. 
+	next we want to append these to the $data array that we will throw at our Wrapper. 
+	
+	foreach($_REQUEST_FORM as $key => $value){
+	
+		$data = array($key=>$value);
+	
+	}
+	
+	
+	then once we have our $data array built, add the username and password 
+	
+	$data['username'] = $username;
+	$data['password'] = $password;
+	
+	now we are ready to instantiate our class.
+	use the BillingOrchard example as a model for what we need here. 
+	
+	
+	Example: Add Sale
+	
+	Example Add Client:
+```
+$client = array(
+	'ClientLogin' => 'ClientLoginName',
+	'ClientPassword' => 'Password',
+	'Client' => 'Actual Client Name',
+	'Email' => 'full@emailaddress.com'
+);
+$this->BillingOrchard->AddClients($client);
+
+
+
+////////// see data_prep.php for our parts for this. 
+
+
+	$time = gmdate('YmdHis');
+	
+
+
+	$sale = array
+
+  `type` varchar(20) NOT NULL,
+  `key_id` varchar(150) NOT NULL,
+  `hash` varchar(254) NOT NULL,
+  `time` varchar(40) NOT NULL,
+  `ccnumber` varchar(20) NOT NULL,
+  `ccexp` char(4) NOT NULL,
+  `checkname` varchar(254) NOT NULL,
+  `checkaba` varchar(50) NOT NULL,
+  `checkaccount` varchar(60) NOT NULL,
+  `account_holder_type` varchar(10) NOT NULL,
+  `account_type` varchar(10) NOT NULL,
+  `amount` decimal(11,2) NOT NULL,
+  `cvv` char(4) NOT NULL,
+  `payment` varchar(10) NOT NULL,
+  `ipaddress` varchar(25) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `company` varchar(60) NOT NULL,
+  `address1` varchar(60) NOT NULL,
+  `city` varchar(60) NOT NULL,
+  `state` varchar(60) NOT NULL,
+  `zip` varchar(30) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `fax` varchar(50) NOT NULL,
+  `email` varchar(150) NOT NULL,
+
+
+///
+
+echo "<pre>";
+print_r($this->data);
+echo "</pre>";
+
+
+
+

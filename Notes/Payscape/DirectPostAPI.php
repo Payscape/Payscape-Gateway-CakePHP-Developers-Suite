@@ -1,3 +1,5 @@
+<?php 
+
 
 //NMI API
 
@@ -336,3 +338,5 @@ $gw->setOrder("1234","Big Order",1, 2, "PO1234","65.192.14.10");
 
 $r = $gw->doSale("50.00","4111111111111111","1010");
 print $gw->responses['responsetext'];
+
+?>

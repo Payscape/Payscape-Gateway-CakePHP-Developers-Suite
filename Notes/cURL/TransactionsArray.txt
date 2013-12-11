@@ -1,0 +1,27 @@
+
+we want this for a credit card transaction
+
+$transdata = array(
+				'ccnumber' => '4111111111111111',
+				'ccexp' => '1025',
+				'amount' => '2.00',
+				'payment' => 'credit card',
+				'cvv' => '123',
+				'firstname' => 'Stephen',
+				'lastname' => 'Mareches',
+				'company' => 'Sophia Solutions',
+				'address1' => '1647 Frazier Road',
+				'city' => 'Decatur',
+				'state' => 'Georgia',
+				'zip' => '30033',
+				'country' => 'United States',
+				'phone' => '4048200331',
+				'fax' => '',
+				'email' => 'stephen@sophiasolutions.net'
+			);
+			debug($this->Payscape->Sale($transdata));
+			
+			
+for a check transaction we will want to add the 
+bank routing number, and the checking account number, 
+but not both in the same transaction. 			

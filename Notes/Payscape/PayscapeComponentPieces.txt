@@ -1,0 +1,43 @@
+				$data = array();
+				$data['username'] = $incoming;
+				$data['password'] = $password;
+				$data['type'] = 'sale';
+				$data['key'] = $key;    
+				$data['key_id'] = $keyid;
+				$data['account_holder_type'] = $account_holder_type;
+				$data['account_type'] = $account_type;
+				$data['checkname'] = $checkname;
+				$data['hash'] = $hash;
+				$data['time'] = $time;
+				$data['redirect'] = $redirect_url;
+				$data['username'] = $userid;
+				$data['password'] = $password;
+				$data['type'] = $type;
+				$data['hash'] = $hash;
+				$data['time'] = $time;
+				$data['checkaccount'] = $account_ach;
+				$data['checkaba'] = $routing_ach;
+				$data['redirect'] = $redirect_url;
+				
+				/* user supplied required data */
+		/*
+				$data['ccnumber'] = (isset($incoming['ccnumber']) ? $incoming['ccnumber'] : '');
+				$data['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');
+				$data['amount'] = (isset($incoming['amount']) ? $incoming['amount'] : '');
+		*/		
+				/* user supplied optional data */
+		/*		
+				$data['firstname'] = (isset($incoming['firstname']) ? $incoming['ccv'] : '');
+				$data['lastname'] = (isset($incoming['lastname']) ? $incoming['ccv'] : '');
+				$data['company'] = (isset($incoming['company']) ? $incoming['company'] : '');
+				$data['address1'] = (isset($incoming['address1']) ? $incoming['address1'] : '');
+				$data['city'] = (isset($incoming['city']) ? $incoming['city'] : '');
+				$data['state'] = (isset($incoming['state']) ? $incoming['state'] : '');
+				$data['zip'] = (isset($incoming['zip']) ? $incoming['zip'] : '');
+				$data['country'] = (isset($incoming['country']) ? $incoming['country'] : '');
+				$data['phone'] = (isset($incoming['phone']) ? $incoming['phone'] : '');
+				$data['fax'] = (isset($incoming['fax']) ? $incoming['fax'] : '');
+				$data['email'] = (isset($incoming['email']) ? $incoming['email'] : '');	
+				$data['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');
+		*/
+				return $this->send($data);

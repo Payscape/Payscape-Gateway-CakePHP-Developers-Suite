@@ -1,0 +1,5 @@
+
+	running out curl_getinfo() script 
+	
+		debug($ch) produces "resource"
+		debug($output) produces 

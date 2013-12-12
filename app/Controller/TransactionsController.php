@@ -50,27 +50,24 @@ class TransactionsController extends AppController {
 		/* if 'payment' = 'check' */
 		// we want to retrieve these variables and include them in $incoming
 		
-		// account_ach = '123123123'; // Replace with your Bank Account Number (ACH)
-		// routing_ach = '123123123'; // Replace with your Bank Routing Number (ACH)
-		// account_holder_type = 'business'; // Replace with your Payscape Account Holder Type (business / personal)
-		// account_type = 'checking'; // Replace with your bank account type (checking / savings)
-		// checkname = 'Test'; // Replace with the name on your ACH Account
+
 		
 
+		$posturl = 'https://secure.payscapegateway.com/api/transact.php';
+		$order_id = 'Test';		
+		
 		/* test data */
 		
 		$username = 'demo';
 		$password = 'password';
-		$posturl = 'https://secure.payscapegateway.com/api/transact.php';
-		$order_id = 'Test';
+
 		
 		$visa = 4111111111111111;
 		$mastercard = 5431111111111111;
 		$discover = 6011601160116611;
 		$american_express = 341111111111111;
 		$cc_expire = '1025'; // 10/25
-		
-		// $cvv
+		$cvv = 123;
 				
 		/* triggers */
 		
@@ -108,31 +105,28 @@ class TransactionsController extends AppController {
 			
 			
 	/* credit card or check transactions */		
-			$payment_code = $this->request->data['Transaction']['payment'];
+			$payment = $this->request->data['Transaction']['payment'];
 				
-			if($payment_code==0){
-				
-				$payment = 'credit card';
-				$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
-				$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
-				$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
-				
-			} else {
-				$payment = 'check';
+			if($payment=='check'){
+
+				$incoming['payment'] = 'check';
 				$incoming['checkaba'] = $this->request->data['checkaba'];
 				$incoming['checkaccount'] = $this->request->data['checkaccount'];
 				$incoming['account_holder_type'] = $this->request->data['account_holder_type'];
 				$incoming['account_type'] = $this->request->data['account_type'];
+					
+			} else {
+
+				$incoming['payment'] = 'credit card';
+				$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
+				$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
+				$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
 				
 			}
 				
-		$incoming['payment'] = $payment;
-			
-					
 		$incoming['firstname'] = $this->request->data['Transaction']['firstname'];
 		$incoming['lastname'] = $this->request->data['Transaction']['lastname'];
-		$incoming['company'] = $this->request->data['Transaction']['company'];
-		
+		$incoming['company'] = $this->request->data['Transaction']['company'];		
 		$incoming['address1'] = $this->request->data['Transaction']['address1'];
 		$incoming['city'] = $this->request->data['Transaction']['city'];
 		$incoming['state'] = $this->request->data['Transaction']['state'];
@@ -142,10 +136,6 @@ class TransactionsController extends AppController {
 		$incoming['fax'] = $this->request->data['Transaction']['fax'];
 		$incoming['email'] = $this->request->data['Transaction']['email'];
 		
-		
-			
-				
-			
 			$this->Transaction->create();
 			if ($this->Transaction->save($this->request->data)) {
 				$this->Session->setFlash(__('The transaction has been saved.'));

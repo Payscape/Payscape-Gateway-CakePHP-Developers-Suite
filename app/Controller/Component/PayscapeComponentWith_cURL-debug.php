@@ -1,12 +1,6 @@
 <?php 
 class PayscapeComponent extends Component
 {
-	/*
-	 * PayscapeComponent v2.0
-	 * Added Check of Credit Card detection so that 
-	 * only the related values are sent 
-	 * 
-	 * */
 
 	const key 		= '\!b2#1wu%4_tUdpAxO|GDWW?20:V.w';		// Replace with your Payscape Key
 	const keyid 		= '449510';				// Replace with your Payscape Key ID
@@ -50,15 +44,44 @@ class PayscapeComponent extends Component
 		App::uses('HttpSocket', 'Network/Http');
 		$HttpSocket = new HttpSocket();
 		return $HttpSocket->post(self::url,$query);
-		curl_close($ch);
-		
-	/*	
 
+		/*
+		 
+		 debug($query); 
+		 
+		*/
+		
+		// set up curl to point to your requested URL
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, self::url);
+		// tell curl to return the result content instead of outputting it
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		
+		// execute the request
+		$output = curl_exec($ch);
+		
+		if (curl_errno($ch)) {
+			// this would be your first hint that something went wrong
+			die('Couldn\'t send request: ' . curl_error($ch));
+		} else {
+			// check the HTTP status code of the request
+			$resultStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+			if ($resultStatus == 200) {
+				// everything went better than expected
+			} else {
+				// the request did not complete as expected. common errors are 4xx
+				// (not found, bad request, etc.) and 5xx (usually concerning
+				// errors/exceptions in the remote script execution)
+		
+				die('Request failed: HTTP status code: ' . $resultStatus);
+			}
+		}// curl_errno
+		
+		debug($transactiondata);
 		debug($ch);
 		debug($output);
-		debug($query); 
 		exit();
-	*/
+	
 	}// send
 	
 
@@ -68,13 +91,10 @@ class PayscapeComponent extends Component
 		$time = gmdate('YmdHis');
 		$type = 'sale';
 		
-
-		$order_id = (isset($incoming['order_id']) ? $incoming['order_id'] : '');
-		$amount = (isset($incoming['amount']) ? $incoming['amount'] : '');
-		$time = gmdate('YmdHis');
-		
+		$amount = $incoming['amount'];
+		$order_id = 'Test';
 		$hash = md5($order_id|$amount|$time|self::key);
-		$payment = (isset($incoming['payment']) ? $incoming['payment'] : '');
+		$payment = $incoming['payment'];
 
 		
 		// check for required fields
@@ -105,6 +125,7 @@ class PayscapeComponent extends Component
 		$transactiondata['type'] = $type;
 
 		$transactiondata['redirect'] = self::redirect_url;
+		
 
 		if($payment=='check'){
 			$transactiondata['account_holder_type'] = (isset($incoming['account_holder_type']) ? $incoming['account_holder_type'] : '');

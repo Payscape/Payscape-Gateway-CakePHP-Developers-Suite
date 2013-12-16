@@ -10,22 +10,16 @@ class PayscapeComponent extends Component
 
 	const key 		= '\!b2#1wu%4_tUdpAxO|GDWW?20:V.w';		// Replace with your Payscape Key
 	const keyid 		= '449510';				// Replace with your Payscape Key ID
-	
 	const url 		= 'https://secure.payscapegateway.com/api/transact.php';
 	const userid 	= 'demo'; 					//Replace with your UserID from Payscape.com
 	const password	= 'password';				//Replace with your Password from Payscape.com
 	const redirect_url	= 'transactions/complete';	//Replace with the URL of your success page;
 	
-	const account_ach = '123123123'; // Replace with your Bank Account Number (ACH)	
-	const routing_ach = '123123123'; // Replace with your Bank Routing Number (ACH)
-	const account_holder_type = 'business'; // Replace with your Payscape Account Holder Type (business / personal)
-	const account_type = 'checking'; // Replace with your bank account type (checking / savings)
-	const checkname = 'Test'; // Replace with the name on your ACH Account
-	const ipaddress = $_SERVER['SERVER_ADDR'];
+	
 
 	//protected function send($query){
 	public function send($query){
-		
+		$query['ipaddress'] = $_SERVER["REMOTE_ADDR"];
 	/*	
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, self::url);
@@ -71,7 +65,6 @@ class PayscapeComponent extends Component
 
 		$order_id = (isset($incoming['order_id']) ? $incoming['order_id'] : '');
 		$amount = (isset($incoming['amount']) ? $incoming['amount'] : '');
-		$time = gmdate('YmdHis');
 		
 		$hash = md5($order_id|$amount|$time|self::key);
 		$payment = (isset($incoming['payment']) ? $incoming['payment'] : '');
@@ -80,38 +73,38 @@ class PayscapeComponent extends Component
 		// check for required fields
 		
 		if($payment=='check'){
-			$required = array('checkaccount', 'checkaba', 'amount');
+			$required = array('checkname', 'checkaba', 'checkaccount', 'account_holder_type', 'account_type', 'amount');
 		} else {
 			$required = array('ccnumber', 'ccexp', 'amount');
 		}
 
 		
-
+	
 		
 	if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
 	
 		
 		$transactiondata = array();
-		$transactiondata['username'] = self::userid;
-		$transactiondata['password'] = self::password;
 		$transactiondata['type'] = 'sale';
-		$transactiondata['key'] = self::key;
 		$transactiondata['key_id'] = self::keyid;
 		$transactiondata['hash'] = $hash;
 		$transactiondata['time'] = $time;
 		$transactiondata['redirect'] = self::redirect_url;
+		
 		$transactiondata['username'] = self::userid;
 		$transactiondata['password'] = self::password;
-		$transactiondata['type'] = $type;
+		$transactiondata['key'] = self::key;
+
+
 
 		$transactiondata['redirect'] = self::redirect_url;
 
 		if($payment=='check'){
+			$transactiondata['checkname'] = (isset($incoming['checkname']) ? $incoming['checkname'] : '');
+			$transactiondata['checkaba'] = (isset($incoming['checkaba']) ? $incoming['checkaba'] : '');
+			$transactiondata['checkaccount'] = (isset($incoming['checkaccount']) ? $incoming['checkaccount'] : '');				
 			$transactiondata['account_holder_type'] = (isset($incoming['account_holder_type']) ? $incoming['account_holder_type'] : '');
 			$transactiondata['account_type'] = (isset($incoming['account_type']) ? $incoming['account_type'] : '');
-			$transactiondata['checkname'] = (isset($incoming['checkname']) ? $incoming['checkname'] : '');
-			$transactiondata['checkaccount'] = (isset($incoming['account_ach']) ? $incoming['account_ach'] : '');
-			$transactiondata['checkaba'] = (isset($incoming['routing_ach']) ? $incoming['routing_ach'] : '');				
 		} else {
 			$transactiondata['ccnumber'] = (isset($incoming['ccnumber']) ? $incoming['ccnumber'] : '');
 			$transactiondata['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');

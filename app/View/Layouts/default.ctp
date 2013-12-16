@@ -26,7 +26,7 @@ $base_url = $this->base;
     ?>
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/jumbotron-narrow.css" rel="stylesheet">
+       
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -48,12 +48,22 @@ $base_url = $this->base;
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="/">Home</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transactions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                <?php echo $this->Html->link('New Credit Card', array('controller' => 'transactions', 'action' => 'add_credit_card')); ?>
+                </li>
+                <li>
+                <?php echo $this->Html->link('New Check', array('controller' => 'transactions', 'action' => 'add_check')); ?>
+                </li>
           <li>
           	<?php echo $this->Html->link('View Transactions', array('controller' => 'transactions', 'action' => 'index')); ?>
           </li> 
-                    <li>
-          	<?php echo $this->Html->link('New Transaction', array('controller' => 'transactions', 'action' => 'add')); ?>
-          </li>
+		        
+
+              </ul>
+           </li> 
         </ul>
         <h3 class="text-muted">Payscape Lab</h3>
       </div>
@@ -101,9 +111,9 @@ $base_url = $this->base;
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <?php 
-    echo $this->Html->script('bootstrap', array('inline' => false));
+    echo $this->Html->script('bootstrap.min');
     
     ?>
     

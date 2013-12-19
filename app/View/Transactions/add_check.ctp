@@ -17,14 +17,33 @@
 		<legend><?php echo __('New Check Transaction'); ?></legend>
 	<?php
 		echo $this->Form->input('payment', array('value'=>'check', 'type'=>'hidden'));
+		echo $this->Form->input('sec_code', array('value'=>'WEB', 'type'=>'hidden'));
+		
 		?>
 				
+<div class="input select"><label for="TransactionAccountHolderType">Account Holder Type</label>
+	<select name="data[Transaction][account_holder_type]" id="TransactionAccountHolderType">
+		<option value="business" selected="selected">Business</option>
+		<option value="personal">personal</option>
+	</select>
+</div>
 
+<div class="input select"><label for="TransactionAccountType">Account Type</label>
+	<select name="data[Transaction][account_type]" id="TransactionAccountType">
+		<option value="checking" selected="selected">checking</option>
+		<option value="savings">savings</option>
+	</select>
+</div>
 				<?php 	
 			
-	
-		echo $this->Form->input('account_holder_type', array('value'=>$account_holder_type));
-		echo $this->Form->input('account_type', array('value'=>$account_type));
+//	echo $this->Form->input('account_holder_type', array('value'=>$account_holder_type));
+//		echo $this->Form->input('account_holder_type', array('options'=>array('business', 'personal')));
+//		echo $this->Form->input('account_type', array('value'=>$account_type));
+//		echo $this->Form->input('account_type', array('options'=>array('checking', 'savings')));
+		
+?>		
+<?php 		
+		
 		echo $this->Form->input('checkname', array('value'=>$checkname));
 		echo $this->Form->input('checkaccount', array('value'=>$checkaccount));
 		echo $this->Form->input('checkaba', array('value'=>$checkaba));		

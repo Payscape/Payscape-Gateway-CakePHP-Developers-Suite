@@ -11,7 +11,7 @@
 	$order_id = "Test";
 	
 	$ccnumber = 4111111111111111;
-	$cc
+	$ccv = '123';
 	
 ?>
 

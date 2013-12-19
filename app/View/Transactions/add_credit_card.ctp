@@ -11,20 +11,21 @@
 	$order_id = "Test";
 	
 	$ccnumber = 4111111111111111;
-	$cc
+	$cvv = "123";
 	
 ?>
 
 <div class="transactions form">
 <?php echo $this->Form->create('Transaction'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Transaction'); ?></legend>
+		<legend><?php echo __('New Credit Card Transaction'); ?></legend>
 	<?php
 		echo $this->Form->input('type', array('value'=>$type));
-		//echo $this->Form->input('key_id');
+
 		?>
 				
-<div class="input number required"><label for="TransactionKeyID">Key ID</label><input name="data[Transaction][key_id]" step="any" type="text" id="TransactionKeyID" value="<?php echo $hash; ?> required="required"/>
+<div class="input number required"><label for="TransactionKeyID">Key ID</label>
+<input name="data[Transaction][key_id]" step="any" type="text" id="TransactionKeyID" value="<?php echo $key_id; ?>" required="required"/>
 </div>
 				<?php 		
 		echo $this->Form->input('ccnumber', array('value'=>$visa));
@@ -41,9 +42,10 @@
 <div class="input number required"><label for="TransactionAmount">Amount</label><input name="data[Transaction][amount]" step="any" type="text" id="TransactionAmount" required="required" value="2.00" />
 </div>
 		<?php 		
-		echo $this->Form->input('cvv');
-		echo $this->Form->input('payment', array('options'=>array('credit card', 'check')));
-	//	echo $this->Form->input('ipaddress');
+		echo $this->Form->input('cvv', array('value'=>$cvv));
+//		echo $this->Form->input('payment', array('options'=>array('credit card', 'check')));
+		echo $this->Form->input('payment', array('value'=>'credit card'));
+		
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('lastname');
 		echo $this->Form->input('company');

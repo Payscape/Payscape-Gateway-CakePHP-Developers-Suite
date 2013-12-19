@@ -11,8 +11,7 @@ class PayscapeComponent extends Component
 						// to this \!b2#I/wu%)4_tUdpAxO|GDWW?20:V.w
 	const key 		= '\!b2#I/wu%)4_tUdpAxO|GDWW?20:V.w';		// Replace with your Payscape Key
 	const keyid 		= '449510';				// Replace with your Payscape Key ID
-	//const url 		= 'https://secure.payscapegateway.com/api/transact.php';
-	const url			= 'https://secure.networkmerchants.com/api/transact.php';
+	const url 		= 'https://secure.payscapegateway.com/api/transact.php';
 	const userid 	= 'demo'; 					//Replace with your UserID from Payscape.com
 	const password	= 'password';				//Replace with your Password from Payscape.com
 
@@ -39,6 +38,11 @@ class PayscapeComponent extends Component
 		curl_close($ch);
 		debug($ch);
 		return $output;
+		
+		
+		debug($query); 
+		exit();
+		
 	*/
 		
 		/* use the CakePHP HttpSocket to send the request */
@@ -133,6 +137,10 @@ class PayscapeComponent extends Component
 		echo "</pre>";
 		exit();
 		*/
+		
+		debug($transactiondata);
+		exit();
+		
 		return self::send($transactiondata);
 
 

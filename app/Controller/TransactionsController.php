@@ -180,14 +180,11 @@ class TransactionsController extends AppController {
 
 
 public function add_check() {
-
-	/* if 'payment' = 'check' */
-	// we want to retrieve these variables and include them in $incoming
-
-
-
+	
+	
 
 	$posturl = 'https://secure.payscapegateway.com/api/transact.php';
+	
 	$order_id = 'Test';
 
 	/* test data */
@@ -219,14 +216,12 @@ public function add_check() {
 
 
 	if ($this->request->is('post')) {
-			
-
-	
+				
 	/*	 	
 		$data_debug = $this->request->data;
 
 		echo "<pre>";
-		print_r($data_debug);
+		debug($data_debug);
 		echo "</pre>";
 
 		exit();
@@ -237,90 +232,63 @@ public function add_check() {
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
 		$incoming['payment'] = 'check';
 		$incoming['type'] = 'sale';
-		
-					
-	/* credit card or check transactions */
-		$payment = $this->request->data['Transaction']['payment'];
-		
-		
-			if($payment=='check'){
+				
 		$incoming['checkname'] = $this->request->data['Transaction']['checkname'];						
 		$incoming['checkaba'] = $this->request->data['Transaction']['checkaba'];
 		$incoming['checkaccount'] = $this->request->data['Transaction']['checkaccount'];
 		$incoming['account_holder_type'] = $this->request->data['Transaction']['account_holder_type'];
 		$incoming['account_type'] = $this->request->data['Transaction']['account_type'];
+		$incoming['sec_code'] = $this->request->data['Transaction']['sec_code'];
+		
 			
-		} else {
-
-		$incoming['payment'] = 'credit card';
-		$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
-		$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
-		$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
-
-		}
-
 		$incoming['firstname'] = $this->request->data['Transaction']['firstname'];
 		$incoming['lastname'] = $this->request->data['Transaction']['lastname'];
 		$incoming['company'] = $this->request->data['Transaction']['company'];
-				$incoming['address1'] = $this->request->data['Transaction']['address1'];
-				$incoming['city'] = $this->request->data['Transaction']['city'];
-						$incoming['state'] = $this->request->data['Transaction']['state'];
-						$incoming['zip'] = $this->request->data['Transaction']['zip'];
-						$incoming['country'] = $this->request->data['Transaction']['country'];
-						$incoming['phone'] = $this->request->data['Transaction']['phone'];
-						$incoming['fax'] = $this->request->data['Transaction']['fax'];
-						$incoming['email'] = $this->request->data['Transaction']['email'];
+		$incoming['address1'] = $this->request->data['Transaction']['address1'];
+		$incoming['city'] = $this->request->data['Transaction']['city'];
+		$incoming['state'] = $this->request->data['Transaction']['state'];
+		$incoming['zip'] = $this->request->data['Transaction']['zip'];
+		$incoming['country'] = $this->request->data['Transaction']['country'];
+		$incoming['phone'] = $this->request->data['Transaction']['phone'];
+		$incoming['fax'] = $this->request->data['Transaction']['fax'];
+		$incoming['email'] = $this->request->data['Transaction']['email'];
 
 						$this->Transaction->create();
 						if ($this->Transaction->save($this->request->data)) {
 						$this->Session->setFlash(__('The transaction has been saved.'));
 
+	$payscape = array();
+		
+		$payscape = $this->Payscape->Sale($incoming);
+						
+						
 	//debug($incoming);
-		//exit();
-		/*
-		echo "PAYSCAPE: <br>";
+	//	exit();
+		
+		echo "INCOMING: <br>";
 		echo "<pre>";
-		print_r($incoming);
+		debug($incoming);
+		echo "<br>PAYSCAPE:<br>";
+		debug($payscape);
+
 		echo "</pre>";
 
 		exit();
-		*/
+		
 
 
-
-
-		$payscape = $this->Payscape->Sale($incoming);
-
-		/*
-		echo "<br>PAYSCAPE:<br>";
-
-		echo "<pre>";
-		print_r($payscape);
-		echo "<pre>";
-		exit();
-		*/
-
-		debug($payscape);
-		exit();
-
-		$this->Session->setFlash(__($payscape));
+		//$this->Session->setFlash(__($payscape));
 		//		return $this->redirect(array('action' => 'index'));
 
 		} else {
 		$this->Session->setFlash(__('The transaction could not be saved. Please, try again.'));
 		}
-		}// post
+	}// post
 
 }// add_check
 
 
 public function add_credit_card() {
-
-	/* if 'payment' = 'check' */
-	// we want to retrieve these variables and include them in $incoming
-
-
-
 
 	$posturl = 'https://secure.payscapegateway.com/api/transact.php';
 	$order_id = 'Test';
@@ -361,7 +329,8 @@ public function add_credit_card() {
 		$data_debug = $this->request->data;
 
 		echo "<pre>";
-		print_r($data_debug);
+		echo "Debug DATA";
+		debug($data_debug);
 		echo "</pre>";
 
 		exit();
@@ -371,41 +340,28 @@ public function add_credit_card() {
 			
 		$incoming = array();
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
-		
 					
 	/* credit card or check transactions */
 		$payment = $this->request->data['Transaction']['payment'];
 
-			if($payment=='check'){
 
-		$incoming['payment'] = 'check';
-		$incoming['checkname'] = $this->request->data['Transaction']['checkname'];		
-		$incoming['checkaba'] = $this->request->data['Transaction']['checkaba'];	
-		$incoming['checkaccount'] = $this->request->data['Transaction']['checkaccount'];		
-		$incoming['account_holder_type'] = $this->request->data['Transaction']['account_holder_type'];
-		$incoming['account_type'] = $this->request->data['Transaction']['account_type'];
-		
-			
-		} else {
 
 		$incoming['payment'] = 'credit card';
 		$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
 		$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
 		$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
 
-		}
-
 		$incoming['firstname'] = $this->request->data['Transaction']['firstname'];
 		$incoming['lastname'] = $this->request->data['Transaction']['lastname'];
 		$incoming['company'] = $this->request->data['Transaction']['company'];
-				$incoming['address1'] = $this->request->data['Transaction']['address1'];
-				$incoming['city'] = $this->request->data['Transaction']['city'];
-						$incoming['state'] = $this->request->data['Transaction']['state'];
-						$incoming['zip'] = $this->request->data['Transaction']['zip'];
-						$incoming['country'] = $this->request->data['Transaction']['country'];
-						$incoming['phone'] = $this->request->data['Transaction']['phone'];
-						$incoming['fax'] = $this->request->data['Transaction']['fax'];
-						$incoming['email'] = $this->request->data['Transaction']['email'];
+		$incoming['address1'] = $this->request->data['Transaction']['address1'];
+		$incoming['city'] = $this->request->data['Transaction']['city'];
+		$incoming['state'] = $this->request->data['Transaction']['state'];
+		$incoming['zip'] = $this->request->data['Transaction']['zip'];
+		$incoming['country'] = $this->request->data['Transaction']['country'];
+		$incoming['phone'] = $this->request->data['Transaction']['phone'];
+		$incoming['fax'] = $this->request->data['Transaction']['fax'];
+		$incoming['email'] = $this->request->data['Transaction']['email'];
 
 						$this->Transaction->create();
 						if ($this->Transaction->save($this->request->data)) {
@@ -427,16 +383,15 @@ public function add_credit_card() {
 
 		$payscape = $this->Payscape->Sale($incoming);
 
-		/*
-		echo "<br>PAYSCAPE:<br>";
 
 		echo "<pre>";
-		print_r($payscape);
-		echo "<pre>";
-		exit();
-		*/
-
+		echo "PAYSCAPE DEBUG: <br>";
+		
 		debug($payscape);
+		echo "<hr>";
+		echo "INCOMING: <br>";
+		debug($incoming);
+		echo "<pre>";
 		exit();
 
 		$this->Session->setFlash(__($payscape));
@@ -494,4 +449,7 @@ public function add_credit_card() {
 			$this->Session->setFlash(__('The transaction could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+
+
+}// end TransactionsController

@@ -36,3 +36,5 @@ Thumbs.db
 /lib/
 
 /README.md
+/tmp
+/.gitignore

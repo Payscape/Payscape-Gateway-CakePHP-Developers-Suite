@@ -1,0 +1,19 @@
+Windows
+
+Activation of PHP/CURL on windows is starting up notepad (or similar) 
+and removing a semicolon from the following line in php.ini:
+
+;extension=php_curl.dll
+(Mentioned here: php.net/manual/install.windows.extensions.php)
+
+libcurl is statically linked in, but the SSL libraries are not, 
+thus the note to Win32 users on php.net/curl. 
+The two SSL-related DLLs from the OpenSSL project (libeay32.dll and ssleay32.dll) 
+are bundled with the Windows PHP package.
+
+In order to SSL-based protocols (such as HTTPS and FTPS) in your Windows environment, 
+you must copy libeay32.dll and ssleay32.dll from the DLL folder of the 
+PHP/ binary package to the SYSTEM folder of your Windows machine. 
+(Ex: C:\WINNT\SYSTEM32 or C:\WINDOWS\SYSTEM).
+
+(Michael Wallner contributed to this)

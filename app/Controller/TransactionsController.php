@@ -191,7 +191,7 @@ public function add_check() {
 
 	$username = 'demo';
 	$password = 'password';
-
+	$time = gmdate('YmdHis');
 
 	$visa = 4111111111111111;
 	$mastercard = 5431111111111111;
@@ -232,6 +232,7 @@ public function add_check() {
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
 		$incoming['payment'] = 'check';
 		$incoming['type'] = 'sale';
+		$incoming['payment'] = 'check';
 				
 		$incoming['checkname'] = $this->request->data['Transaction']['checkname'];						
 		$incoming['checkaba'] = $this->request->data['Transaction']['checkaba'];
@@ -252,36 +253,46 @@ public function add_check() {
 		$incoming['phone'] = $this->request->data['Transaction']['phone'];
 		$incoming['fax'] = $this->request->data['Transaction']['fax'];
 		$incoming['email'] = $this->request->data['Transaction']['email'];
+		
+		$this->request->data['Transaction']['time'] = $time;
+		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
+		
+
+		$response = $this->Payscape->Sale($incoming);
+		
+		parse_str($response, $result_array);
+		
+		if($result_array['response']==1){
 
 						$this->Transaction->create();
 						if ($this->Transaction->save($this->request->data)) {
-						$this->Session->setFlash(__('The transaction has been saved.'));
+						$this->Session->setFlash(__('Transaction successful, and the data has been saved.'));
 
-	$payscape = array();
-		
-		$payscape = $this->Payscape->Sale($incoming);
+		} else {
+			$this->Session->setFlash(__('Transaction unsuccessful, no data has been saved'));
+		}		
 						
 						
-	//debug($incoming);
+	//debug($response);
 	//	exit();
-		
+		/*
 		echo "INCOMING: <br>";
 		echo "<pre>";
 		debug($incoming);
-		echo "<br>PAYSCAPE:<br>";
-		debug($payscape);
+		echo "<br>RESPONSE:<br>";
+		debug($response);
 
 		echo "</pre>";
 
 		exit();
-		
+		*/
 
 
 		//$this->Session->setFlash(__($payscape));
 		//		return $this->redirect(array('action' => 'index'));
 
 		} else {
-		$this->Session->setFlash(__('The transaction could not be saved. Please, try again.'));
+		$this->Session->setFlash(__('Transaction unsuccessful, no data has been saved. Please, try again.'));
 		}
 	}// post
 
@@ -297,7 +308,7 @@ public function add_credit_card() {
 
 	$username = 'demo';
 	$password = 'password';
-
+	$time = gmdate('YmdHis');
 
 	$visa = 4111111111111111;
 	$mastercard = 5431111111111111;
@@ -341,12 +352,10 @@ public function add_credit_card() {
 		$incoming = array();
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
 					
-	/* credit card or check transactions */
-		$payment = $this->request->data['Transaction']['payment'];
 
 
 
-		$incoming['payment'] = 'credit card';
+
 		$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
 		$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
 		$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
@@ -362,10 +371,23 @@ public function add_credit_card() {
 		$incoming['phone'] = $this->request->data['Transaction']['phone'];
 		$incoming['fax'] = $this->request->data['Transaction']['fax'];
 		$incoming['email'] = $this->request->data['Transaction']['email'];
+		$this->request->data['Transaction']['time'] = $time;
+		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
 
+		
+		$response = $this->Payscape->Sale($incoming);
+		
+		parse_str($response, $result_array);
+		
+		if($result_array['response']==1){
+		
 						$this->Transaction->create();
 						if ($this->Transaction->save($this->request->data)) {
-						$this->Session->setFlash(__('The transaction has been saved.'));
+						$this->Session->setFlash(__('Transaction successful, and data has been saved.'));
+		} else {
+						$this->Session->setFlash(__('Transaction was not successful, no data has been saved'));
+		}
+						
 
 	//debug($incoming);
 		//exit();
@@ -381,9 +403,10 @@ public function add_credit_card() {
 
 
 
-		$payscape = $this->Payscape->Sale($incoming);
+		
 
 
+/*
 		echo "<pre>";
 		echo "PAYSCAPE DEBUG: <br>";
 		
@@ -393,9 +416,7 @@ public function add_credit_card() {
 		debug($incoming);
 		echo "<pre>";
 		exit();
-
-		$this->Session->setFlash(__($payscape));
-		//		return $this->redirect(array('action' => 'index'));
+*/
 
 		} else {
 		$this->Session->setFlash(__('The transaction could not be saved. Please, try again.'));

@@ -11,8 +11,8 @@ class PayscapeComponent extends Component
 						// to this \!b2#I/wu%)4_tUdpAxO|GDWW?20:V.w
 	const key 		= '\!b2#I/wu%)4_tUdpAxO|GDWW?20:V.w';		// Replace with your Payscape Key
 	const keyid 		= '449510';				// Replace with your Payscape Key ID
-	//const url 		= 'https://secure.payscapegateway.com/api/transact.php';
-	const url			= 'https://secure.networkmerchants.com/api/transact.php';
+	const url 		= 'https://secure.payscapegateway.com/api/transact.php';
+
 	const userid 	= 'demo'; 					//Replace with your UserID from Payscape.com
 	const password	= 'password';				//Replace with your Password from Payscape.com
 
@@ -44,7 +44,7 @@ class PayscapeComponent extends Component
 		/* use the CakePHP HttpSocket to send the request */
 		App::uses('HttpSocket', 'Network/Http');
 		$HttpSocket = new HttpSocket();
-		return $HttpSocket->post(self::url,$query);
+		return $HttpSocket->post(self::url, $query);
 		curl_close($ch);
 		
 	/*	
@@ -91,7 +91,7 @@ class PayscapeComponent extends Component
 		$transactiondata['type'] = 'sale';
 //		$transactiondata['key_id'] = self::keyid;
 //		$transactiondata['hash'] = $hash;
-//		$transactiondata['time'] = $time;
+		$transactiondata['time'] = $time;
 //		$transactiondata['redirect'] = self::redirect_url;	
 //		$transactiondata['key'] = self::key;
 //		$transactiondata['redirect'] = self::redirect_url;
@@ -102,6 +102,7 @@ class PayscapeComponent extends Component
 			$transactiondata['checkaccount'] = (isset($incoming['checkaccount']) ? $incoming['checkaccount'] : '');				
 			$transactiondata['account_holder_type'] = (isset($incoming['account_holder_type']) ? $incoming['account_holder_type'] : '');
 			$transactiondata['account_type'] = (isset($incoming['account_type']) ? $incoming['account_type'] : '');
+			$transactiondata['payment'] = 'check';
 		} else {
 			$transactiondata['ccnumber'] = (isset($incoming['ccnumber']) ? $incoming['ccnumber'] : '');
 			$transactiondata['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');
@@ -125,14 +126,16 @@ class PayscapeComponent extends Component
 		$transactiondata['fax'] = (isset($incoming['fax']) ? $incoming['fax'] : '');
 		$transactiondata['email'] = (isset($incoming['email']) ? $incoming['email'] : '');
 		$transactiondata['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');
-
+		$transactiondata['ipaddress'] = $_SERVER["REMOTE_ADDR"];
+		
 		/*
-		echo "DATA:";
+		echo "TRANSACTION DATA:";
 		echo "<pre>";
 		print_r($transactiondata);
 		echo "</pre>";
-		exit();
+		//exit();
 		*/
+		
 		return self::send($transactiondata);
 
 

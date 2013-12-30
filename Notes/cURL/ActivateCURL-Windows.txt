@@ -1,6 +1,6 @@
 12/30/2013 
 
-Windows
+Windows enable cURL SSL
 
 Activation of PHP/CURL on windows is starting up notepad (or similar) 
 and removing a semicolon from the following line in php.ini:

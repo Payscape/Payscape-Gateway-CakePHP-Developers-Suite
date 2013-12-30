@@ -2,6 +2,7 @@
 
 switch ($step) {
 	case 'photos' :
+}
 		/*
 		 * Here url parameter "file" is used for
 		 * uploading image files using drag and drop feature

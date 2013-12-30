@@ -20,7 +20,7 @@ class Payscape
 	var $routing_ach = '123123123'; // Replace with your Bank Routing Number (ACH)
 	var $account_holder_type = 'business'; // Replace with your Payscape Account Holder Type (business / personal)
 	var $account_type = 'checking'; // Replace with your bank account type (checking / savings)
-	var $checkname = 'Test' // Replace with the name on your ACH Account
+	var $checkname = 'Test'; // Replace with the name on your ACH Account
 	
 	protected function send($data){
 		$ch = curl_init();
@@ -51,10 +51,10 @@ class Payscape
 
 		
 		// check for required fields
-		$required = array('ccnumber', 'ccexp', 'amount')
+		$required = array('ccnumber', 'ccexp', 'amount');
 				
 
-			if(count(array_intersect_key(array_flip($incoming, $required))===count($required)){
+			if(count(array_intersect_key(array_flip($incoming, $required))===count($required))){
 				$data = array();
 				$data['username'] = $userid;
 				$data['password'] = $password;
@@ -76,9 +76,9 @@ class Payscape
 				$data['checkaba'] = $routing_ach;
 				$data['redirect'] = $redirect_url;
 				
-				/* user supplied required data */
+				
 		
-				$data['ccnumber'] = (isset($incoming[''ccnumber'']) ? $incoming['ccnumber'] : '');
+				$data['ccnumber'] = (isset($incoming['ccnumber']) ? $incoming['ccnumber'] : '');
 				$data['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');
 				$data['amount'] = (isset($incoming['amount']) ? $incoming['amount'] : '');
 				

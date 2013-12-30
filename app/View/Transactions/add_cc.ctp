@@ -26,7 +26,7 @@
 	<label for="TransactionKeyID">Key ID</label><input name="data[Transaction][key_id]" step="any" type="text" id="TransactionKeyID" value="<?php echo $key_id; ?> required="required"/>
 </div>
 				<?php 		
-		echo $this->form->input('order_id', array('value'=>$order_id))				
+		echo $this->form->input('order_id', array('value'=>$order_id));				
 		echo $this->Form->input('ccnumber', array('value'=>$visa));
 		echo $this->Form->input('ccexp', array('value'=>'1010'));
 		echo $this->Form->input('ccv', array('value'=>$ccv));

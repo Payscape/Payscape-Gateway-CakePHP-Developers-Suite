@@ -1,6 +1,8 @@
 <?php 
+switch ($destination){
 case 'photos' :
 
+}
 	/*
 	 * bof: new uploader
 	 */

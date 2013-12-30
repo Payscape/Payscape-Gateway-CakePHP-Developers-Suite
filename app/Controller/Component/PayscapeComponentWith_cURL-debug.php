@@ -1,7 +1,7 @@
 <?php 
 class PayscapeComponent extends Component
 {
-
+	//const ipaddress = $_SERVER['SERVER_ADDR'];
 	const key 		= '\!b2#1wu%4_tUdpAxO|GDWW?20:V.w';		// Replace with your Payscape Key
 	const keyid 		= '449510';				// Replace with your Payscape Key ID
 	
@@ -15,7 +15,7 @@ class PayscapeComponent extends Component
 	const account_holder_type = 'business'; // Replace with your Payscape Account Holder Type (business / personal)
 	const account_type = 'checking'; // Replace with your bank account type (checking / savings)
 	const checkname = 'Test'; // Replace with the name on your ACH Account
-	const ipaddress = $_SERVER['SERVER_ADDR'];
+
 
 	//protected function send($query){
 	public function send($query){

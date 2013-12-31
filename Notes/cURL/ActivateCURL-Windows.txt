@@ -19,3 +19,63 @@ PHP/ binary package to the SYSTEM folder of your Windows machine.
 (Ex: C:\WINNT\SYSTEM32 or C:\WINDOWS\SYSTEM).
 
 (Michael Wallner contributed to this)
+
+Additional steps:
+
+Download http://curl.haxx.se/ca/cacert.pem
+save this to xampp/crt folder, then use this in your cRUL OPTS:
+
+			curl_setopt($ch, CURLOPT_CAINFO, "C:\xampp-payscape\crt\cacert.pem");
+			
+this makes a hard-coded link to the cacert.pem file that enables 
+SSL authorization for cURL.
+
+		here is the full function
+		
+		
+	protected function _send($trans){
+		
+	//	$trans['type'] = 'sale';
+		$trans['username'] = $this->userid;
+		$trans['password'] = $this->password;		
+		
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $this->url);
+			curl_setopt($ch, CURLOPT_POST, 1);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $trans);
+			curl_setopt($ch, CURLOPT_REFERER, "");
+			
+			/* gateway SSL certificate options */
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+
+// for xampp on Windows development
+// download http://curl.haxx.se/ca/cacert.pem
+// put it into a directory and link cURL to it like this: 
+
+			curl_setopt($ch, CURLOPT_CAINFO, getcwd() . "/crt/cacert.pem");
+				
+			$outcome = curl_exec($ch);
+			if(curl_errno($ch)){
+				die('Could not send request: ' .curl_error($ch));
+				exit();
+			}
+			curl_close($ch);		
+			unset($ch);
+
+			
+			/*
+			echo "<pre>";
+			echo "cURL QUERY: ";
+			print_r($trans);
+			echo "cURL OUTCOME: ";
+			
+			echo "<br>$outcome";
+			*/ 
+			
+			return $outcome;
+			//echo "</pre>";
+			
+			
+}// send

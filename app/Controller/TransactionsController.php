@@ -220,7 +220,7 @@ public function add_check() {
 			
 		$incoming = array();
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
-		$incoming['payment'] = 'check';
+
 		$incoming['type'] = 'sale';
 		$incoming['payment'] = 'check';
 				

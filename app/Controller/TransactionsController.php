@@ -193,12 +193,7 @@ public function add_check() {
 	$password = 'password';
 	$time = gmdate('YmdHis');
 
-	$visa = 4111111111111111;
-	$mastercard = 5431111111111111;
-	$discover = 6011601160116611;
-	$american_express = 341111111111111;
-	$cc_expire = '1025'; // 10/25
-	$cvv = 123;
+
 
 	/* triggers */
 
@@ -209,11 +204,6 @@ public function add_check() {
 	* To simulate a CVV match, pass 999 in the cvv field.
 	*
 	* */
-
-
-	$this->set(compact('visa', 'mastercard', 'discover', 'american_express', 'cc_expire', 'account_ach', 'routing_ach'));
-
-
 
 	if ($this->request->is('post')) {
 				
@@ -267,10 +257,11 @@ public function add_check() {
 						$this->Transaction->create();
 						if ($this->Transaction->save($this->request->data)) {
 						$this->Session->setFlash(__('Transaction successful, and the data has been saved.'));
+						
 
-		} else {
-			$this->Session->setFlash(__('Transaction unsuccessful, no data has been saved'));
-		}		
+						} else {
+							$this->Session->setFlash(__('Transaction unsuccessful, no data has been saved'));
+						}		
 						
 						
 	//debug($response);
@@ -310,12 +301,12 @@ public function add_credit_card() {
 	$password = 'password';
 	$time = gmdate('YmdHis');
 
-	$visa = 4111111111111111;
-	$mastercard = 5431111111111111;
-	$discover = 6011601160116611;
-	$american_express = 341111111111111;
+	$visa = "4111111111111111";
+	$mastercard = "5431111111111111";
+	$discover = "6011601160116611";
+	$american_express = "341111111111111";
 	$cc_expire = '1025'; // 10/25
-	$cvv = 123;
+	$cvv = "123";
 
 	/* triggers */
 
@@ -377,6 +368,8 @@ public function add_credit_card() {
 		
 		$response = $this->Payscape->Sale($incoming);
 		
+		debug($response);
+		
 		parse_str($response, $result_array);
 		
 		if($result_array['response']==1){
@@ -384,9 +377,9 @@ public function add_credit_card() {
 						$this->Transaction->create();
 						if ($this->Transaction->save($this->request->data)) {
 						$this->Session->setFlash(__('Transaction successful, and data has been saved.'));
-		} else {
-						$this->Session->setFlash(__('Transaction was not successful, no data has been saved'));
-		}
+						} else {
+										$this->Session->setFlash(__('Transaction was not successful, no data has been saved'));
+						}
 						
 
 	//debug($incoming);

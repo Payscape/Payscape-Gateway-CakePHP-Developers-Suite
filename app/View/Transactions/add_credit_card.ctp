@@ -10,7 +10,8 @@
 	$hash = "5C8EEBB1302087B11CFAE6F557072A28";
 	$order_id = "Test";
 	
-	$ccnumber = 4111111111111111;
+	$ccnumber = "4111111111111111";
+	
 	$cvv = "123";
 	
 ?>
@@ -27,8 +28,9 @@
 <div class="input number required"><label for="TransactionKeyID">Key ID</label>
 <input name="data[Transaction][key_id]" step="any" type="text" id="TransactionKeyID" value="<?php echo $key_id; ?>" required="required"/>
 </div>
-				<?php 		
-		echo $this->Form->input('ccnumber', array('value'=>$visa));
+				<?php 
+						
+		echo $this->Form->input('ccnumber', array('value'=>$ccnumber));
 		echo $this->Form->input('ccexp', array('value'=>'1010'));
 
 // defined in Payscape class		echo $this->Form->input('checkaba', array('value'=>$checkaba));
@@ -43,8 +45,6 @@
 </div>
 		<?php 		
 		echo $this->Form->input('cvv', array('value'=>$cvv));
-//		echo $this->Form->input('payment', array('options'=>array('credit card', 'check')));
-		echo $this->Form->input('payment', array('value'=>'credit card'));
 		
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('lastname');

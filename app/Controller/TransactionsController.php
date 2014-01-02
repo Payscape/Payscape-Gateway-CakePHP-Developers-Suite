@@ -368,7 +368,7 @@ public function add_credit_card() {
 		
 		$response = $this->Payscape->Sale($incoming);
 		
-		debug($response);
+		//debug($response);
 		
 		parse_str($response, $result_array);
 		

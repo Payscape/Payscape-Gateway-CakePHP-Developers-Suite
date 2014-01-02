@@ -217,9 +217,11 @@ public function add_check() {
 		exit();
 	*/		
 			
+		$tax = round(($amount * .07), 2);
 			
 		$incoming = array();
-		$incoming['amount'] = $this->request->data['Transaction']['amount'];
+		$incoming['amount'] = $amount;
+		$incoming['tax'] = $tax;
 
 		$incoming['type'] = 'sale';
 		$incoming['payment'] = 'check';
@@ -246,6 +248,7 @@ public function add_check() {
 		
 		$this->request->data['Transaction']['time'] = $time;
 		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
+		$incoming['orderdescription'] = "A box of marbles";
 		
 
 		$response = $this->Payscape->Sale($incoming);
@@ -338,11 +341,13 @@ public function add_credit_card() {
 		exit();
 			
 		*/
-			
+		$amount = $this->request->data['Transaction']['amount'];
+		
+		$tax = round(($amount * .07), 2); 	
 			
 		$incoming = array();
-		$incoming['amount'] = $this->request->data['Transaction']['amount'];
-					
+		$incoming['amount'] = $amount;
+		$incoming['tax'] = $tax; 			
 
 
 
@@ -364,7 +369,8 @@ public function add_credit_card() {
 		$incoming['email'] = $this->request->data['Transaction']['email'];
 		$this->request->data['Transaction']['time'] = $time;
 		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
-
+		$incoming['orderdescription'] = "A box of marbles";
+		
 		
 		$response = $this->Payscape->Sale($incoming);
 		

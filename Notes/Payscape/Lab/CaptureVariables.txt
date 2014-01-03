@@ -1,0 +1,13 @@
+
+INCOMING 71: 
+Array
+(
+    [type] => capture
+    [key_id] => 449510
+    [hash] => 13434f2db64b53b6a0506edcda816bf2
+    [time] => 20140102195846
+    [redirect] => http://localhost/sporty.localdomain/transactions.php?transactionid=2113176819
+    [transactionid] => 123456
+    [amount] => 22
+    [authcode] => 123456
+)

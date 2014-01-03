@@ -1,0 +1,27 @@
+
+INCOMING: required fields
+
+Array
+(
+    [type] => refund
+    [transactionid] => 2110078105
+)
+
+RESPONSE:
+response=1&responsetext=SUCCESS&authcode=&transactionid=2114491871&avsresponse=&cvvresponse=&orderid=20131230143848Test&type=refund&response_code=100&merchant_defined_field_6=&merchant_defined_field_7=&customer_vault_id=
+
+RESULT ARRAY: Array
+(
+    [response] => 1
+    [responsetext] => SUCCESS
+    [authcode] => 
+    [transactionid] => 2114491871
+    [avsresponse] => 
+    [cvvresponse] => 
+    [orderid] => 20131230143848Test
+    [type] => refund
+    [response_code] => 100
+    [merchant_defined_field_6] => 
+    [merchant_defined_field_7] => 
+    [customer_vault_id] => 
+)

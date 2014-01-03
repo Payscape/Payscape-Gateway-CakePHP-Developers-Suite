@@ -1,0 +1,30 @@
+
+INCOMING:
+Array
+(
+    [type] => update
+    [transactionid] => 2114757737
+    [orderid] => 20140103151413Test
+    [tracking_number] => 12345678
+    [shipping_carrier] => usps
+)
+
+RESPONSE:
+response=1&responsetext=&authcode=123456&transactionid=2114757737&avsresponse=&cvvresponse=&orderid=20140103151413Test&type=update&response_code=100&merchant_defined_field_6=&merchant_defined_field_7=&customer_vault_id=
+
+RESULT ARRAY: Array
+(
+    [response] => 1
+    [responsetext] => 
+    [authcode] => 123456
+    [transactionid] => 2114757737
+    [avsresponse] => 
+    [cvvresponse] => 
+    [orderid] => 20140103151413Test
+    [type] => update
+    [response_code] => 100
+    [merchant_defined_field_6] => 
+    [merchant_defined_field_7] => 
+    [customer_vault_id] => 
+)
+

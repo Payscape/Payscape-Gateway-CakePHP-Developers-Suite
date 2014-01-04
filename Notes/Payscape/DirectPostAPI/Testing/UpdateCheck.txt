@@ -1,0 +1,29 @@
+INCOMING 101: 
+Array
+(
+    [type] => update
+    [transactionid] => 2115747114
+    [orderid] => 20140104160839TestCheck
+    [tracking_number] => 12345667788
+    [shipping_carrier] => dhl
+)
+
+RESPONSE:
+response=3&responsetext=Transaction not found REFID:6181678&authcode=&transactionid=&avsresponse=&cvvresponse=&orderid=20140104160839TestCheck&type=update&response_code=300&merchant_defined_field_6=&merchant_defined_field_7=&customer_vault_id=
+RESULT ARRAY: Array
+(
+    [response] => 3
+    [responsetext] => Transaction not found REFID:6181678
+    [authcode] => 
+    [transactionid] => 
+    [avsresponse] => 
+    [cvvresponse] => 
+    [orderid] => 20140104160839TestCheck
+    [type] => update
+    [response_code] => 300
+    [merchant_defined_field_6] => 
+    [merchant_defined_field_7] => 
+    [customer_vault_id] => 
+)
+Update Transaction has failed.     
+Update Transaction has failed.

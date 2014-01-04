@@ -1,0 +1,31 @@
+TODO: 
+	Auth Check ACH
+	Validate
+
+
+
+Auth
+We have cc-auth, but do not have check-auth
+
+Validate
+We do not have Validate method
+
+1
+While reviewing PayscapeDirectPostAPI.pdf, 
+we see that transaction variable payment 
+should be "creditcard" or "check", 
+not "credit card"
+
+The details in this PDF are different than 
+the NMI 2007 notes. Review these and check against 
+the completed work. 
+
+2
+orderid defaults to the gateway transactionid
+
+3 Capture:
+"amount" is indicated as required
+
+4 Sale / Credit / Auth
+sec_code is required for ACH transactions
+

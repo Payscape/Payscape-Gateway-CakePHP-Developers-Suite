@@ -1,0 +1,33 @@
+SALE
+SUCCESS Sale Check
+SUCCESS Sale CC
+
+AUTHORIZATION
+SUCCESS Auth CC
+FAILS Auth Check ['the credit card cc_number is required'] error
+
+CAPTURE
+SUCCESS Capture auth
+
+VOID
+Void CC
+Void Check
+
+REFUND
+Refund CC
+Refund Check
+
+CREDIT
+Credit CC
+Credit Check
+	Payscape API Guide indicates using Refund rather than Credit.
+
+VALIDATE
+SUCCESS Validate CC
+
+UPDATE
+SUCCESS	Update CC 
+FAILS Update Check
+
+
+

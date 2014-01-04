@@ -1,0 +1,43 @@
+INCOMING 104: 
+Array
+(
+    [type] => auth
+    [key_id] => 449510
+    [time] => 20140104165918
+    [checkname] => Test
+    [checkaba] => 123123123
+    [checkaccount] => 123123123
+    [account_holder_type] => business
+    [account_type] => checking
+    [sec_code] => WEB
+    [amount] => 2.00
+    [payment] => check
+    [firstname] => Stephen
+    [lastname] => Mareches
+    [company] => SoSo
+    [address1] => 1647 Frazier Road
+    [city] => Decatur
+    [state] => Georgia
+    [zip] => 30033
+    [country] => United States
+    [phone] => 4048200331
+    [fax] => 
+    [email] => stephen@sophiasolutions.net
+    [orderid] => 20140104175918TestCheck
+)
+RESPONSE: 107response=3&responsetext=The ccnumber field is required REFID:6180857&authcode=&transactionid=&avsresponse=&cvvresponse=&orderid=20140104175918TestCheck&type=auth&response_code=300&merchant_defined_field_6=&merchant_defined_field_7=&customer_vault_id=RESULT ARRAY: Array
+(
+    [response] => 3
+    [responsetext] => The ccnumber field is required REFID:6180857
+    [authcode] => 
+    [transactionid] => 
+    [avsresponse] => 
+    [cvvresponse] => 
+    [orderid] => 20140104175918TestCheck
+    [type] => auth
+    [response_code] => 300
+    [merchant_defined_field_6] => 
+    [merchant_defined_field_7] => 
+    [customer_vault_id] => 
+)
+Transaction has failed.

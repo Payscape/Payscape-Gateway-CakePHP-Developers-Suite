@@ -10,16 +10,19 @@ CAPTURE
 SUCCESS Capture auth
 
 VOID
-Void CC
-Void Check
+SUCCESS Void CC
+FAILS Void Check
+	Transaction not found	
 
 REFUND
-Refund CC
-Refund Check
+SUCCESS Refund CC
+FAILS Refund Check
+	Transaction not found
 
 CREDIT
-Credit CC
-Credit Check
+SUCCESS Credit CC
+FAILS Credit Check
+	Transaction not found
 	Payscape API Guide indicates using Refund rather than Credit.
 
 VALIDATE
@@ -28,6 +31,12 @@ SUCCESS Validate CC
 UPDATE
 SUCCESS	Update CC 
 FAILS Update Check
+	Transaction not found
 
 
-
+ACH Transactions fail for 
+	Auth
+	Void
+	Update
+	Credit
+	Refund

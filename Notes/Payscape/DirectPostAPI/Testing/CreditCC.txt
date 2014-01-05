@@ -1,0 +1,32 @@
+INCOMING: 
+Array
+(
+    [type] => credit
+    [amount] => 1.90
+    [payment] => credit card
+    [ccnumber] => 4111111111111111
+    [ccexp] => 1010
+    [cvv] => 123
+    [orderid] => 20140104154708Test
+    [transactionid] => 2115736909
+)
+
+RESPONSE:
+response=1&responsetext=SUCCESS&authcode=&transactionid=2116694006&avsresponse=&cvvresponse=&orderid=&type=credit&response_code=100&merchant_defined_field_6=&merchant_defined_field_7=&customer_vault_id=
+RESULT ARRAY: Array
+(
+    [response] => 1
+    [responsetext] => SUCCESS
+    [authcode] => 
+    [transactionid] => 2116694006
+    [avsresponse] => 
+    [cvvresponse] => 
+    [orderid] => 
+    [type] => credit
+    [response_code] => 100
+    [merchant_defined_field_6] => 
+    [merchant_defined_field_7] => 
+    [customer_vault_id] => 
+)
+		     
+The transaction was successful  and has been Saved to the database.

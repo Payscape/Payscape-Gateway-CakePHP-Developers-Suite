@@ -52,11 +52,14 @@ $base_url = $this->base;
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transactions <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
-                <?php echo $this->Html->link('New Credit Card', array('controller' => 'transactions', 'action' => 'add_credit_card')); ?>
+                <?php echo $this->Html->link('Sale Credit Card', array('controller' => 'transactions', 'action' => 'add_credit_card')); ?>
                 </li>
                 <li>
-                <?php echo $this->Html->link('New Check', array('controller' => 'transactions', 'action' => 'add_check')); ?>
+                <?php echo $this->Html->link('Sale Check', array('controller' => 'transactions', 'action' => 'add_check')); ?>
                 </li>
+				<li>
+                <?php echo $this->Html->link('Auth Credit Card', array('controller' => 'transactions', 'action' => 'authorize_credit_card')); ?>
+                </li>                
           <li>
           	<?php echo $this->Html->link('View Transactions', array('controller' => 'transactions', 'action' => 'index')); ?>
           </li> 

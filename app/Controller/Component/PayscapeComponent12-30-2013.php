@@ -14,7 +14,7 @@ class PayscapeComponent extends Component
 	const url 		= 'https://secure.payscapegateway.com/api/transact.php';
 
 	const userid 	= 'demo'; 					//Replace with your UserID from Payscape.com
-	const userpass	= 'password';				//Replace with your Password from Payscape.com
+	const password	= 'password';				//Replace with your Password from Payscape.com
 
 	
 
@@ -45,7 +45,7 @@ class PayscapeComponent extends Component
 		App::uses('HttpSocket', 'Network/Http');
 		$HttpSocket = new HttpSocket();
 		return $HttpSocket->post(self::url, $query);
-	//	curl_close($ch);
+		curl_close($ch);
 		
 	/*	
 
@@ -74,24 +74,26 @@ class PayscapeComponent extends Component
 		// check for required fields
 		
 		if($payment=='check'){
-			$required = array('checkname', 'checkaba', 'checkaccount', 'account_holder_type', 'account_type', 'sec_code', 'amount');
+			$required = array('checkname', 'checkaba', 'checkaccount', 'account_holder_type', 'account_type', 'amount');
 		} else {
 			$required = array('ccnumber', 'ccexp', 'amount');
-		}	
+		}
+
+		
+	
 		
 	if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
 	
 		
 		$transactiondata = array();
 		$transactiondata['username'] = self::userid;
-		$transactiondata['password'] = self::userpass;		
-		$transactiondata['type'] = $type;
+		$transactiondata['password'] = self::password;		
+		$transactiondata['type'] = 'sale';
 //		$transactiondata['key_id'] = self::keyid;
-//		$transactiondata['key'] = self::key;
 //		$transactiondata['hash'] = $hash;
 		$transactiondata['time'] = $time;
 //		$transactiondata['redirect'] = self::redirect_url;	
-
+//		$transactiondata['key'] = self::key;
 //		$transactiondata['redirect'] = self::redirect_url;
 
 		if($payment=='check'){
@@ -100,13 +102,10 @@ class PayscapeComponent extends Component
 			$transactiondata['checkaccount'] = (isset($incoming['checkaccount']) ? $incoming['checkaccount'] : '');				
 			$transactiondata['account_holder_type'] = (isset($incoming['account_holder_type']) ? $incoming['account_holder_type'] : '');
 			$transactiondata['account_type'] = (isset($incoming['account_type']) ? $incoming['account_type'] : '');
-			$transactiondata['sec_code'] = 'WEB';
 			$transactiondata['payment'] = 'check';
 		} else {
 			$transactiondata['ccnumber'] = (isset($incoming['ccnumber']) ? $incoming['ccnumber'] : '');
 			$transactiondata['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');
-			$transactiondata['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');
-				
 				
 		}
 		
@@ -153,77 +152,7 @@ class PayscapeComponent extends Component
 	
 	
 	public function Auth($incoming=null){
-
-		$time = gmdate('YmdHis');
-		$type = 'auth';
 		
-		$amount = (isset($incoming['amount']) ? $incoming['amount'] : '');
-		
-		$order_id = (isset($incoming['order_id']) ? $incoming['order_id'] : '');
-		
-		$hash = md5($order_id|$amount|$time|self::key);
-		$payment = 'creditcard';
-		
-		
-		// check for required fields
-		
-			$required = array('ccnumber', 'ccexp', 'amount');
-		
-		if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
-		
-		
-			$transactiondata = array();
-			$transactiondata['username'] = self::userid;
-			$transactiondata['password'] = self::userpass;
-			$transactiondata['type'] = $type;
-			//		$transactiondata['key_id'] = self::keyid;
-			//		$transactiondata['key'] = self::key;
-			//		$transactiondata['hash'] = $hash;
-			$transactiondata['time'] = $time;
-			//		$transactiondata['redirect'] = self::redirect_url;
-		
-			//		$transactiondata['redirect'] = self::redirect_url;
-	
-				$transactiondata['ccnumber'] = (isset($incoming['ccnumber']) ? $incoming['ccnumber'] : '');
-				$transactiondata['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');
-				$transactiondata['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');
-		
-			/* user supplied required data */
-		
-			$transactiondata['amount'] = (isset($incoming['amount']) ? $incoming['amount'] : '');
-		
-			/* user supplied optional data */
-			$transactiondata['firstname'] = (isset($incoming['firstname']) ? $incoming['firstname'] : '');
-			$transactiondata['lastname'] = (isset($incoming['lastname']) ? $incoming['lastname'] : '');
-			$transactiondata['company'] = (isset($incoming['company']) ? $incoming['company'] : '');
-			$transactiondata['address1'] = (isset($incoming['address1']) ? $incoming['address1'] : '');
-			$transactiondata['city'] = (isset($incoming['city']) ? $incoming['city'] : '');
-			$transactiondata['state'] = (isset($incoming['state']) ? $incoming['state'] : '');
-			$transactiondata['zip'] = (isset($incoming['zip']) ? $incoming['zip'] : '');
-			$transactiondata['country'] = (isset($incoming['country']) ? $incoming['country'] : '');
-			$transactiondata['phone'] = (isset($incoming['phone']) ? $incoming['phone'] : '');
-			$transactiondata['fax'] = (isset($incoming['fax']) ? $incoming['fax'] : '');
-			$transactiondata['email'] = (isset($incoming['email']) ? $incoming['email'] : '');
-			$transactiondata['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');
-			$transactiondata['ipaddress'] = $_SERVER["REMOTE_ADDR"];
-		
-			/*
-				echo "TRANSACTION DATA:";
-			echo "<pre>";
-			print_r($transactiondata);
-			echo "</pre>";
-			//exit();
-			*/
-		
-			return self::send($transactiondata);
-		
-		
-		} else {
-		
-			$response['Message'] = 'Required Values Are Missing';
-			$response['error'] = 1;
-			return $response;
-		}// count array
 	}// auth
 	
 	public function Credit($incoming=null){

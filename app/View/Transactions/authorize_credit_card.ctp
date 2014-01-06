@@ -4,7 +4,6 @@
 	 * Some values have been hard coded for testing.
 	 * */
 
-	$type = "sale"; 
 	$time = gmdate("YmdHis");
 	$key_id = 449510;
 	$hash = "5C8EEBB1302087B11CFAE6F557072A28";
@@ -19,24 +18,22 @@
 <div class="transactions form">
 <?php echo $this->Form->create('Transaction'); ?>
 	<fieldset>
-		<legend><?php echo __('Sale Credit Card Transaction'); ?></legend>
+		<legend><?php echo __('Authorize Credit Card Transaction'); ?></legend>
 
-				<?php 
+	<?php 
 						
 		echo $this->Form->input('ccnumber', array('value'=>$ccnumber));
 		echo $this->Form->input('ccexp', array('value'=>'1010'));
-		echo $this->Form->input('cvv', array('value'=>$cvv));
-		?>
+		echo $this->Form->input('cvv', array('value'=>'123'));
+	?>
 		
 <div class="input number required"><label for="TransactionAmount">Amount</label><input name="data[Transaction][amount]" step="any" type="text" id="TransactionAmount" required="required" value="2.00" />
 </div>
 <div class="input number required"><label for="TransactionTax">Tax</label><input name="data[Transaction][tax]" step="any" type="text" id="TransactionTax" required="required" />
 </div>
-		<?php
-		echo $this->Form->textarea(
-				'orderdescription',
-				array('rows' => '5', 'cols' => '20')
-		);
+		<?php 		
+	
+		
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('lastname');
 		echo $this->Form->input('company');

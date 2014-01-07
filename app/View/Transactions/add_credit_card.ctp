@@ -4,7 +4,7 @@
 	 * Some values have been hard coded for testing.
 	 * */
 
-	$type = "sale"; 
+
 	$time = gmdate("YmdHis");
 	$key_id = 449510;
 	$hash = "5C8EEBB1302087B11CFAE6F557072A28";
@@ -13,6 +13,18 @@
 	$ccnumber = "4111111111111111";
 	
 	$cvv = "123";
+	
+	// for testing
+	if(isset($result_array)){
+		echo "INCOMING: <br>";
+		debug($incoming);
+	}
+	
+	if(isset($result_array)){
+		echo "RESULT ARRAY: <br>";
+		debug($result_array);
+	}
+	
 	
 ?>
 
@@ -30,13 +42,16 @@
 		
 <div class="input number required"><label for="TransactionAmount">Amount</label><input name="data[Transaction][amount]" step="any" type="text" id="TransactionAmount" required="required" value="2.00" />
 </div>
-<div class="input number required"><label for="TransactionTax">Tax</label><input name="data[Transaction][tax]" step="any" type="text" id="TransactionTax" required="required" />
+<div class="input number"><label for="TransactionTax">Tax</label><input name="data[Transaction][tax]" step="any" type="text" id="TransactionTax" />
+</div>
+<div class="input number"><label for="TransactionOrderID">Order ID</label><input name="data[Transaction][orderid]" step="any" type="text" id="TransactionOrderID" />
+</div>
+<div class="input">
+<label for="TransactionOrderDescription">Order Description</label><br>
+<textarea name="data[Transaction][orderdescription]" step="any" id="TransactionOrderdescription"></textarea>
 </div>
 		<?php
-		echo $this->Form->textarea(
-				'orderdescription',
-				array('rows' => '5', 'cols' => '20')
-		);
+
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('lastname');
 		echo $this->Form->input('company');

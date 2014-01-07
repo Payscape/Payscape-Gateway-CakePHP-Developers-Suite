@@ -2,7 +2,6 @@
 	<h2><?php echo __('Transactions'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-		<th class="actions"><?php echo __('Actions'); ?></th>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('type'); ?></th>
 			<th><?php echo $this->Paginator->sort('key_id'); ?></th>
@@ -32,17 +31,10 @@
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
 			<th><?php echo $this->Paginator->sort('fax'); ?></th>
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
-		
+			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($transactions as $transaction): ?>
 	<tr>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $transaction['Transaction']['id'])); ?>
-		<?php if($transaction['Transaction']['type']=='auth'){?>
-			<?php echo $this->Html->link(__('Capture'), array('action' => 'capture', $transaction['Transaction']['id'])); ?>		
-		<?php } ?>	
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $transaction['Transaction']['id']), null, __('Are you sure you want to delete # %s?', $transaction['Transaction']['id'])); ?>
-		</td>
 		<td><?php echo h($transaction['Transaction']['id']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['type']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['key_id']); ?>&nbsp;</td>
@@ -72,7 +64,11 @@
 		<td><?php echo h($transaction['Transaction']['phone']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['fax']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['email']); ?>&nbsp;</td>
-
+		<td class="actions">
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $transaction['Transaction']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $transaction['Transaction']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $transaction['Transaction']['id']), null, __('Are you sure you want to delete # %s?', $transaction['Transaction']['id'])); ?>
+		</td>
 	</tr>
 <?php endforeach; ?>
 	</table>

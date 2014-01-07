@@ -47,9 +47,9 @@ $base_url = $this->base;
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/">Home</a></li>
+          <li class="active"><a href="<?php echo $this->webroot; ?>">Home</a></li>
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transactions <b class="caret"></b></a>
+              <a href="<?php echo $this->webroot; ?>" class="dropdown-toggle" data-toggle="dropdown">Transactions <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
                 <?php echo $this->Html->link('Sale Credit Card', array('controller' => 'transactions', 'action' => 'add_credit_card')); ?>

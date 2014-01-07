@@ -9,22 +9,28 @@
 	$account_holder_type = 'business'; // test Payscape Account Holder Type (business / personal)
 	$account_type = 'checking'; // test bank account type (checking / savings)
 	$checkname = 'Test'; // 	
+	
+	// for testing
+	if(isset($result_array)){
+		echo "INCOMING: <br>";
+		debug($incoming);
+	}	
+	if(isset($result_array)){
+		echo "RESULT ARRAY: <br>";
+		debug($result_array);
+	}
 ?>
 
 <div class="transactions form">
 <?php echo $this->Form->create('Transaction'); ?>
 	<fieldset>
-		<legend><?php echo __('New Check Transaction'); ?></legend>
-	<?php
-		echo $this->Form->input('payment', array('value'=>'check', 'type'=>'hidden'));
-		echo $this->Form->input('sec_code', array('value'=>'WEB', 'type'=>'hidden'));
-		
-		?>
+		<legend><?php echo __('Sale Check Transaction'); ?></legend>
+
 				
 <div class="input select"><label for="TransactionAccountHolderType">Account Holder Type</label>
 	<select name="data[Transaction][account_holder_type]" id="TransactionAccountHolderType">
-		<option value="business" selected="selected">Business</option>
-		<option value="personal">personal</option>
+		<option value="personal" selected="selected">Personal</option>
+		<option value="business">Business</option>
 	</select>
 </div>
 
@@ -36,11 +42,7 @@
 </div>
 				<?php 	
 			
-//	echo $this->Form->input('account_holder_type', array('value'=>$account_holder_type));
-//		echo $this->Form->input('account_holder_type', array('options'=>array('business', 'personal')));
-//		echo $this->Form->input('account_type', array('value'=>$account_type));
-//		echo $this->Form->input('account_type', array('options'=>array('checking', 'savings')));
-		
+	
 ?>		
 <?php 		
 		
@@ -48,13 +50,25 @@
 		echo $this->Form->input('checkaccount', array('value'=>$checkaccount));
 		echo $this->Form->input('checkaba', array('value'=>$checkaba));		
 
-// optional 	echo $this->Form->input('sec_code');
-// optional 	echo $this->Form->input('processor_id');
+
 		?>
 		
-<div class="input number required"><label for="TransactionAmount">Amount</label><input name="data[Transaction][amount]" step="any" type="text" id="TransactionAmount" required="required" value="2.00" />
+<div class="input number required"><label for="TransactionAmount">Amount</label>
+<input name="data[Transaction][amount]" step="any" type="text" id="TransactionAmount" required="required" value="2.00" />
 </div>
-		<?php 		
+<div class="input number required"><label for="TransactionTax">Tax</label>
+<input name="data[Transaction][tax]" step="any" type="text" id="TransactionTax" />
+</div>	
+<div class="input number"><label for="TransactionOrderID">Order ID</label><input name="data[Transaction][orderid]" step="any" type="text" id="TransactionOrderID" />
+</div>
+
+
+<div class="input">
+<label for="TransactionOrderDescription">Order Description</label><br>
+<textarea name="data[Transaction][orderdescription]" step="any" id="TransactionOrderdescription"></textarea>
+</div>
+
+<?php 		
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('lastname');
 		echo $this->Form->input('company');

@@ -1,1 +1,0 @@
-a:6:{s:17:"sleeping_capacity";s:1:"1";s:8:"bedrooms";a:2:{s:3:"min";s:0:"";s:3:"max";s:0:"";}s:14:"square_footage";a:2:{s:3:"min";s:0:"";s:3:"max";s:0:"";}s:9:"bathrooms";a:2:{s:3:"min";s:0:"";s:3:"max";s:0:"";}s:10:"daily_rate";a:2:{s:3:"min";s:0:"";s:3:"max";s:0:"";}s:9:"amenities";a:1:{i:0;s:2:"24";}}

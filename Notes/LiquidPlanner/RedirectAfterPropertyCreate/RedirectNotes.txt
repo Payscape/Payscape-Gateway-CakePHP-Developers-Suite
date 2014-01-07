@@ -1,4 +1,0 @@
-
-his will return last inserted id of last loaded model
-
-	$property_id = $this->Property->id;

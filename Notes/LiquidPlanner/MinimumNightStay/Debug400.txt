@@ -1,6 +1,0 @@
-ReferenceError: minimum_nightid400 is not defined
-	
-
-"data[Night][id]": minimum_nightid400,
-
-			var minimum_nightsid<?php echo $minimum_nights_counter3; ?> = $("#id<?php echo $minimum_nights_counter3; ?>").val();

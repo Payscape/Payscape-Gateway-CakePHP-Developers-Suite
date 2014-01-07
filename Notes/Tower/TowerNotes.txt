@@ -1,9 +1,0 @@
-
-1 Open Tower, Create Repository
-browse to the folder you are creating the repo for.
-click the boxes next to the files, folders you want to Commit to the repo
-click "Commit"
-
-2 Right click on the files / folders we want to add to .gitignore
-3 Now commit your .gitignore file
-

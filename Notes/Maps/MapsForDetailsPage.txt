@@ -1,2 +1,0 @@
-The code for the map is on the Searches/results.ctp
-

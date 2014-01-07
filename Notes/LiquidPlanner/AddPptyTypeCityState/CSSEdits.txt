@@ -1,4 +1,0 @@
-style.css line 1114
-
-.search-results li after 
-increased height from 35px to 60px

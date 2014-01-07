@@ -1,5 +1,0 @@
-
-We see in php.ini that PDO is in fact installed. 
-now to test. 
-
-	print_r(PDO::getAvailableDrivers());

@@ -1,8 +1,0 @@
-hts.ctp, line 440]
-Notice (8): 
-
-Undefined variable: 
-minimum_nights_counter [
-APP\View\Elements\add_minimum_nights.ctp, line 443]
-
-Notice (8):

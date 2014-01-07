@@ -1,5 +1,0 @@
-
-$('#fileupload')
-    .bind('fileuploadstop', function (e, data) {
-        window.location.href = 'http://example.org';
-    })

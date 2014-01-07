@@ -1,1 +1,0 @@
-<?php echo $number->currency ((isset($item['total']) ? $item['total'] : $item['quantity'] * $item['price']),'GBP'); ?>

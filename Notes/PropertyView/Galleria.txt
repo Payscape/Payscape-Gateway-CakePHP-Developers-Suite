@@ -1,6 +1,0 @@
-
-js/property-landing.js
-
-js/propertyHandling.js
-
-Property/View/view.ctp

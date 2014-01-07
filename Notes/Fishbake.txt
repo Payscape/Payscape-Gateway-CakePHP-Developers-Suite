@@ -1,5 +1,0 @@
-
-70.548 dowloads by FTP 
-using skip if the file exists. 
-then uploaded, appeared to upload another 50,000 files. 
-

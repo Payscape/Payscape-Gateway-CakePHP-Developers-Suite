@@ -1,5 +1,0 @@
-
-We see render->results_ajax
-
-this is a view in Searches/
-that loads an element Elements/property_create_json

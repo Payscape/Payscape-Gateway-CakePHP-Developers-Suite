@@ -1,7 +1,0 @@
-Smoking Allowed 
-Pets Allowed 
-Suitable for Elderly 
-Wheelchair Accessible 
-Suitable for Children
-
-	View/Properties/view

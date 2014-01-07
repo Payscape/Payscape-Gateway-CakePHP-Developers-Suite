@@ -1,9 +1,0 @@
- cake bake db_config
- cake bake model
- cake bake view
- cake bake controller
- cake bake project
- cake bake fixture
- cake bake test
- cake bake plugin plugin_name
- cake bake all

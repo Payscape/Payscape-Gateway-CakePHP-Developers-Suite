@@ -1,9 +1,0 @@
-"Contace Me" form field requirements
-
-Check-In, 
-Check-Out, 
-First Name, 
-Last Name, 
-Email, 
-Guests, 
-and message should all be mandatory fields for the contact me popup before a user can complete the form and "send message."  

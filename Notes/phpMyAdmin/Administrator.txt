@@ -1,8 +1,0 @@
-
-	username: root
-	password: root
-	
-	
-	database: payscape
-	username: tonto
-	password: tonto

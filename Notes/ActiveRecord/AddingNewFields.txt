@@ -1,9 +1,0 @@
-
-When adding a new field to the DB 
-for a site on a production server, 
-the Config/core.php Debug value needs to 
-be set to at least 2. 
-
-Cake does cache the tables of the database, 
-so it will not recognize the new field 
-if the site is not in Debug (2) or greater. 

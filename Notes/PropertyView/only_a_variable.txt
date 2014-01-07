@@ -1,6 +1,0 @@
-
-http://stackoverflow.com/questions/2967597/only-variables-can-be-passed-by-reference
-
-Error: Only variables can be passed by reference    
-File: C:\xampp\htdocs\vacationfish.localdomain\app\View\Elements\property_info_panel.ctp    
-Line: 3

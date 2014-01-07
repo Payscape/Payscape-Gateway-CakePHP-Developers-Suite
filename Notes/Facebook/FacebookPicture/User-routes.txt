@@ -1,7 +1,0 @@
-	Router::connect('/dashboard', array('controller' => 'users', 'action' => 'info'));
-	Router::connect('/mylistings', array('controller' => 'properties', 'action' => 'listings'));
-	Router::connect('/dashboard/edit', array('controller' => 'users', 'action' => 'edit'));
-	Router::connect('/register', array('controller' => 'users', 'action' => 'add'));
-	Router::connect('/signup', array('controller' => 'users', 'action' => 'add')); // just to make sure I got them all, and for bookmarks
-	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
-	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));

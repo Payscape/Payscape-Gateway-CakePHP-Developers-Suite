@@ -1,9 +1,0 @@
-
-
-UTC is the universal time zone, (equivelent to GMT). 
-All other time zones are defined relative to UTC. 
-For more information about time zones, or to work out how to convert UTC into your time zone, 
-visit TimeAndDate.com.
-
-
-so we want gmdate('YmdHis');

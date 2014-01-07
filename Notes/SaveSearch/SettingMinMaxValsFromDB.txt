@@ -1,5 +1,0 @@
-
-		var sq_foot_val = "500;4000";
-		var bath_val = "1;2";
-		var bed_val = "1;2";
-		var daily_rate_val = "100;300";

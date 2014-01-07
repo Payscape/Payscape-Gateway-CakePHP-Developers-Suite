@@ -1,8 +1,0 @@
-Google has disabled use of the Maps API for this application. 
-The provided key is not a valid Google API Key, 
-or it is not authorized for the Google Maps Javascript API v3 
-on this site. 
-
-If you are the owner of this application, 
-you can learn about obtaining a valid key here: 
-https://developers.google.com/maps/documentation/javascript/tutorial#api_key

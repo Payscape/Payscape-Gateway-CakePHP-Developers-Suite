@@ -1,3 +1,0 @@
-Elements/prop_page_elem.ctp
-	this is where we do our magic to display listing data
-	

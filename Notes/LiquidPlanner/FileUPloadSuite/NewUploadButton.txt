@@ -1,8 +1,0 @@
-     <!-- 
-                <div style="font-weight:bold; padding:4px; margin-left:5px; width:600px; height:45px; line-height:45px; color:#cccccc; border:solid #cccccc 1px;">Or Upload photos
-                   <div style="float:right;" class="btn btn-success fileinput-button-two">
-                       
-                        <span>BROWSE</span>
-                        <input type="file" name="files[]" multiple>
-                    </div> 
-           -->

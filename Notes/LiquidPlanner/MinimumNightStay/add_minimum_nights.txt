@@ -1,4 +1,0 @@
-ALTER TABLE `properties`  
-ADD `minimum_nights` 
-INT(2) NULL DEFAULT '1' 
-AFTER `weekend_rate`

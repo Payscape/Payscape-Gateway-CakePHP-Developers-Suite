@@ -1,9 +1,0 @@
-We need to add a field for users to enter a minimum nights stay 
-duration while creating a listing. 
-This should be in the pricing section under "Weekend Per Night" rate. 
-On the vacationers view of the listing page, we also need to display the minimum night stay 
-somewhere on the page and also create a popup window for the check availability calender. 
-
-I've added pictures with descriptions. 
-Please see the links below for references, review the images, 
-and contact me with any questions.

@@ -1,6 +1,0 @@
-
-$this -> render(/TestView/index); is the correct way of doing it. as the answer above mention, you can use $this->set to pass variable to the View.
-
-However, if that doesn't give u what u want I'm guessing that you also want to action to display another layout (non-default layout). You can try doing $this -> layout = 'layoutname'; (Layouts are in the layout folder, default on is default.ctp)
-
-and erm.. CakePHP's controller isn't designed to be able to pass data to a non-view file (like .php). CakePHP's views should be ending with .ctp

@@ -229,7 +229,7 @@ class PayscapeComponent extends Component
 	public function Credit($incoming=null){
 
 		$time = gmdate('YmdHis');
-		$type = 'sale';
+		$type = 'credit';
 		
 		$amount = (isset($incoming['amount']) ? $incoming['amount'] : '');
 		
@@ -255,8 +255,8 @@ class PayscapeComponent extends Component
 		
 			$transactiondata = array();
 			$transactiondata['username'] = self::userid;
-			$transactiondata['password'] = self::password;
-			$transactiondata['type'] = 'sale';
+			$transactiondata['password'] = self::userpass;
+			$transactiondata['type'] = 'credit';
 			//		$transactiondata['key_id'] = self::keyid;
 			//		$transactiondata['hash'] = $hash;
 			$transactiondata['time'] = $time;
@@ -274,7 +274,7 @@ class PayscapeComponent extends Component
 			} else {
 				$transactiondata['ccnumber'] = (isset($incoming['ccnumber']) ? $incoming['ccnumber'] : '');
 				$transactiondata['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');
-		
+				$transactiondata['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');		
 			}
 		
 			/* user supplied required data */
@@ -319,9 +319,33 @@ class PayscapeComponent extends Component
 		
 	}// validate
 	
+	
 	public function Capture($incoming=null){
 		
-	}// capture
+			$type = 'capture';
+		
+		
+			$required = array('type', 'transactionid');
+		
+			if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
+				$transactiondata = array();
+				$transactiondata['username'] = self::userid;
+				$transactiondata['password'] = self::userpass;
+				$transactiondata['type'] = 'capture';
+				$transactiondata['transactionid'] = (isset($incoming['transactionid']) ? $incoming['transactionid'] : '');
+		
+				return self::send($transactiondata);
+		
+			} else {
+				$response['Message'] = 'Required Values <strong>type or transactionid</strong> Are Missing';
+				$response['error'] = 1;
+				return $response;
+			}
+		
+}// Capture
+		
+		
+
 	
 	public function Void($incoming=null){
 		

@@ -1,159 +1,144 @@
-<div class="transactions view">
-<h2><?php echo __('Transaction'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Type'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['type']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Key Id'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['key_id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Hash'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['hash']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Time'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['time']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Ccnumber'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['ccnumber']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Ccexp'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['ccexp']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Checkname'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['checkname']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Checkaba'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['checkaba']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Checkaccount'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['checkaccount']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Account Holder Type'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['account_holder_type']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Account Type'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['account_type']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Sec Code'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['sec_code']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Processor Id'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['processor_id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Amount'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['amount']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Cvv'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['cvv']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Payment'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['payment']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Ipaddress'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['ipaddress']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Firstname'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['firstname']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Lastname'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['lastname']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Company'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['company']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Address1'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['address1']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('City'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['city']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('State'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['state']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Zip'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['zip']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Country'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['country']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Phone'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['phone']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Fax'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['fax']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Email'); ?></dt>
-		<dd>
-			<?php echo h($transaction['Transaction']['email']); ?>
-			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Transaction'), array('action' => 'edit', $transaction['Transaction']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Transaction'), array('action' => 'delete', $transaction['Transaction']['id']), null, __('Are you sure you want to delete # %s?', $transaction['Transaction']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Transactions'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Transaction'), array('action' => 'add')); ?> </li>
-	</ul>
-</div>
+
+<div class="row">
+
+	<h2>Transaction #<?php echo $transaction['Transaction']['transactionid']; ?></h2>
+
+	<div class="span7">
+		<table class="transaction">
+		<caption><h3>Customer</h3></caption>
+		<tr>
+			<th>Name</th><th>Phone</th><th>Fax</th><th>Email</th><th>Company</th><th>IP Address</th>
+		</tr>
+		<tr>
+			<td><?php echo $transaction['Transaction']['firstname'];?>&nbsp;<?php echo $transaction['Transaction']['lastname']; ?></td>
+			<td><?php echo $transaction['Transaction']['phone']; ?></td>
+			<td><?php echo $transaction['Transaction']['fax']; ?></td>
+			<td><?php echo $transaction['Transaction']['email']; ?></td>
+			<td><?php echo $transaction['Transaction']['company']; ?></td>
+			<td><?php echo $transaction['Transaction']['ipaddress']; ?></td>
+		</tr>	
+	</table>
+	<hr>
+	</div>
+	
+	<div class="span7">
+		<table class="transaction">
+			<caption><h3>Order</h3></caption>
+			<tr>
+				<th>Action</th><th>Id</th><th>Amount</th><th>Type</th><th>Time</th><th>Payment</th><th>Transaction ID</th><th>Order Id</th><th>Auth Code</th>
+			</tr>
+			<tr>
+			<td>
+		<?php if($transaction['Transaction']['type']=='auth'){ ?>
+			 <?php echo $this->Html->link('Capture', array('controller' => 'transactions', 'action'=>'capture', $transaction['Transaction']['transactionid'])); ?><br>
+		<?php } 	
+			if($transaction['Transaction']['type']=='sale') { ?>
+			 <?php echo $this->Html->link('Refund', array('controller' => 'transactions', 'action'=>'refund', $transaction['Transaction']['transactionid'])); ?><br>
+             <?php echo $this->Html->link('Credit', array('controller' => 'transactions', 'action'=>'credit', $transaction['Transaction']['transactionid'])); ?><br>
+			 <?php echo $this->Html->link('Update', array('controller' => 'transactions', 'action'=>'update', $transaction['Transaction']['transactionid'])); ?><br>
+			 <?php echo $this->Html->link('Void', array('controller' => 'transactions', 'action'=>'void', $transaction['Transaction']['transactionid'])); ?><br>
+		<?php } ?>
+				</td>
+				<td class="highlight"><?php echo $transaction['Transaction']['id']; ?></td>
+				<td><?php echo $transaction['Transaction']['amount']; ?></td>
+				<td><?php echo $transaction['Transaction']['type']; ?></td>
+				
+				<td><?php echo $transaction['Transaction']['time']; ?></td>
+				<td><?php echo $transaction['Transaction']['payment']; ?></td>
+				<td><?php echo $transaction['Transaction']['transactionid']; ?></td>
+				<td><?php echo $transaction['Transaction']['orderid']; ?></td>
+				<td><?php echo $transaction['Transaction']['authcode']; ?></td>
+				
+			</tr>
+		
+		</table>
+		<hr>
+	
+	</div>
+
+	
+	<div class="span7">
+	
+	<table class="transaction">
+	<caption><h3>Shipping</h3></caption>
+	<tr>
+		<th>Address</th><th>City</th><th>State</th><th>Zip</th><th>Country</th>
+	</tr>
+	<tr>
+		<td><?php echo $transaction['Transaction']['address1']; ?></td>
+		<td><?php echo $transaction['Transaction']['city']; ?></td>
+		<td><?php echo $transaction['Transaction']['state']; ?></td>
+		<td><?php echo $transaction['Transaction']['zip']; ?></td>
+		<td><?php echo $transaction['Transaction']['country']; ?></td>
+	</tr>
+	
+	</table>
+		<hr>
+	
+	</div>
+	
+	
+	<div class="span7">
+	<table class="transaction">
+		<caption><h3>Payment</h3></caption>
+		
+<?php if($transaction['Transaction']['payment']=='credit card'){ ?>
+	<tr>
+		<th>Payment</th><th>Credit Card Number</th><th>Expiration</th><th>CVV</th>
+		</tr>
+	<tr>	
+		<td><?php echo $transaction['Transaction']['payment']; ?></td>
+		<td><?php echo $transaction['Transaction']['ccnumber']; ?></td>
+		<td><?php echo $transaction['Transaction']['ccexp']; ?></td>
+		<td><?php echo $transaction['Transaction']['cvv']; ?></td>
+	</tr>
+
+<?php } else { ?>
+	<tr>
+	<th>Checkname</th><th>Check Account </th><th>Routing Number</th><th>Account Type</th><th>Account Holder Type</th>
+	</tr>
+	<tr>
+	<td><?php echo $transaction['Transaction']['checkname']; ?></td>
+	<td><?php echo $transaction['Transaction']['checkaccount']; ?></td>
+	<td><?php echo $transaction['Transaction']['checkaba']; ?></td>
+	<td>	<?php echo $transaction['Transaction']['account_type']; ?></td>
+	<td>	<?php echo $transaction['Transaction']['account_holder_type']; ?></td>
+	
+	</tr>
+<?php } ?>
+
+	
+	</table>
+		<hr>
+	
+	</div>
+	<div class="span7">
+	
+		<table class="transaction">
+	<caption><strong>Credentials</strong></caption>
+	<tr>
+		<th>Key ID</th><th>Hash</th><th>Sec Code</th><th>Processor ID</th>
+	</tr>
+	<tr>
+		<td><?php echo $transaction['Transaction']['key_id']; ?>
+		</td>
+		<td><?php echo $transaction['Transaction']['hash']; ?></td>
+		<td><?php echo $transaction['Transaction']['sec_code']; ?></td>
+		<td><?php echo $transaction['Transaction']['processor_id']; ?></td>
+	
+	</tr>
+	
+	</table>
+		<hr>
+	
+	</div>
+
+	
+	
+	</div>
+	<div class="clearfix"></div>
+	
+		<hr>
+
+	
+

@@ -161,7 +161,6 @@ public function add_check() {
 		*/
 
 
-		//$this->Session->setFlash(__($payscape));
 		//		return $this->redirect(array('action' => 'index'));
 
 		} else {
@@ -450,45 +449,320 @@ public function authorize_credit_card() {
 
 }// auth_credit_card
 
-public function credit($id=0){
+public function capture($transactionid=0){
 	
-	if(isset($id)){
-		$id = (int) $id;
+	$type = 'capture';
+	
+
+	
+	
+	if($this->request->is('post')){
+
+		
+	//	$transactionid = $this->request->data['Transaction']['transactionid'];
+
+			if(isset($transactionid)){
+				$transactionid = (int) $transactionid;
+			}
+		
+		$sql = "SELECT id, amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
+		
+		$transaction = $this->Transaction->query($sql);
+		$transaction = array_shift($transaction);		
+		
+		//debug($transaction);
+		//exit();
+		
+		$transactions_id = $transaction['transactions']['id'];
+		$auth_amount = $transaction['transactions']['amount'];
+		$transactionid = $transaction['transactions']['transactionid'];
+		$orderid = $transaction['transactions']['orderid'];
+		$authcode = $transaction['transactions']['authcode'];
+		$process = 1;
+		$capture_message = "Process Authorization Capture for Transaction  #$transactionid";
+		
+		
+		$transactionid = $this->request->data['Transaction']['transactionid'];
+		
+			if(isset($transactionid)){
+				$transactionid = (int) $transactionid;
+			}
+										
+		$amount = $this->request->data['Transaction']['amount'];
+		
+		$incoming = array();
+		$incoming['type'] = $type;
+		$incoming['transactionid'] = $transactionid;
+		
+		/* 
+		 * Required only if Amount is less than Authorized Amount 
+		 * cannot be greater than Authorized Amount
+		 * 
+		 * */
+		
+			if($amount < $auth_amount){
+				$incoming['amount'] = $amount;
+			} else {
+				$incoming['amount'] = $auth_amount;
+			}
+	
+		$response = $this->Payscape->Capture($incoming);
+		parse_str($response, $result_array);
+
+
+	
+		if($result_array['response']==1){
+			$response_code = $result_array['response'];
+			$authtransactionid = $result_array['transactionid'];
+			$authcode = $result_array['authcode'];
+			$capture_message = "The Capture was successful ";
+			
+				
+			$transaction_data = array(
+					'id'=>$transactions_id,
+					'capture'=>$response_code,
+					'type'=>'capture'
+			);
+			
+			// debug($transaction_data);
+			// exit();
+			
+		
+		
+			/* save the submission and transaction details */
+
+		
+				if(! $this->Transaction->save($transaction_data)){
+					
+					$capture_message .= " but could not be saved to the database";
+					$this->Session->setFlash($capture_message);
+					
+				} else {
+					$capture_message .= " and has been Saved to the database.";
+					$this->Session->setFlash($capture_message);
+					$process = 2;
+					
+				}
+				
+		} else {
+			$capture_message = "Transaction has failed.";
+			$this->Session->setFlash($capture_message);
+		}
+		
+		/*
+		 * for testing
+		 * */
+		$this->set(compact('result_array', 'incoming', 'process'));
+					
+		
+	}// post
+	
+	/*
+	 * get the Auth information for the Capture Form
+	*
+	* */
+	
+	if(isset($transactionid)){
+		$transactionid = (int) $transactionid;
 	}
 	
-	if($id==0){
-		$this->redirect(array('controller'=>'transactions', 'action'=>'index'));
+	if($transactionid==0){
+		$this->redirect(array('controller' => 'transactions',
+				'action' => 'index'
+		));
 	}
+	
+	$sql = "SELECT id, amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
+	
+	$transaction = $this->Transaction->query($sql);
+	$transaction = array_shift($transaction);
+	
+	//debug($transaction);
+	//exit();
+	
+	$amount = $transaction['transactions']['amount'];
+	$transactionid = $transaction['transactions']['transactionid'];
+	$orderid = $transaction['transactions']['orderid'];
+	$authcode = $transaction['transactions']['authcode'];
+	$process = 1;
+	$capture_message = "Process Authorization Capture for Transaction  #$transactionid";
+	
+	
+	$this->set(compact('process', 'transaction', 'amount', 'orderid', 'authcode', 'capture_message', 'transactionid'));
+	
+	
+	
+	
+}// captdure
+
+public function credit($transactionid=0){
+	
+		if(isset($transactionid)){
+			$transactionid = (int) $transactionid;
+		}
+		
+		if($transactionid==0){
+		
+			$this->Session->setFlash(__('Invalid Transaction.'));
+		
+			$this->redirect(array('controller'=>'transactions', 'action'=>'index'));
+		}
+
+	$type = 'credit';
+	$process = 1;
+	$time = gmdate('YmdHis');
+	
 	
 	$base_url = $this->base;
 	$this->set('base_url', $base_url);
 	
-	$sql = "SELECT key_id,
+		if ($this->request->is('post')) {
+		
+		$amount = $this->request->data['Transaction']['amount'];
+		
+		
+		
+		$sql = "SELECT
+		id,
+		amount,
+		transactionid
+		FROM `transactions`
+		WHERE transactionid = $transactionid";
+		
+	//	echo $sql;
+	//	echo "<br>";
+		
+		$transaction = $this->Transaction->query($sql);
+		$transaction = array_shift($transaction);
+		
+	//	debug($transaction);
+		
+		$transactions_id = $transaction['transactions']['id'];
+	
+		$incoming = array();
+		$incoming['amount'] = $this->request->data['Transaction']['amount'];
+		$incoming['tax'] = $this->request->data['Transaction']['tax']; 			
+		$incoming['orderdescription'] = $this->request->data['Transaction']['orderdescription'];
+		$incoming['orderid'] = $this->request->data['Transaction']['orderid'];
+		
+		$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
+		$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
+		$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
+
+		$incoming['firstname'] = $this->request->data['Transaction']['firstname'];
+		$incoming['lastname'] = $this->request->data['Transaction']['lastname'];
+		$incoming['company'] = $this->request->data['Transaction']['company'];
+		$incoming['address1'] = $this->request->data['Transaction']['address1'];
+		$incoming['city'] = $this->request->data['Transaction']['city'];
+		$incoming['state'] = $this->request->data['Transaction']['state'];
+		$incoming['zip'] = $this->request->data['Transaction']['zip'];
+		$incoming['country'] = $this->request->data['Transaction']['country'];
+		$incoming['phone'] = $this->request->data['Transaction']['phone'];
+		$incoming['fax'] = $this->request->data['Transaction']['fax'];
+		$incoming['email'] = $this->request->data['Transaction']['email'];
+		$this->request->data['Transaction']['time'] = $time;
+		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
+	
+		$this->request->data['Transaction']['type'] = 'sale';
+		$this->request->data['Transaction']['payment'] = 'credit card';
+			
+		$response = $this->Payscape->Credit($incoming);
+		
+		parse_str($response, $result_array);
+		
+		// for testing
+		$this->set('incoming', $incoming);
+	
+
+		if($result_array['response']==1){
+			$transactiondata = array();
+			
+			$transactiondata['id'] = $transactions_id;
+			$transactiondata['type'] = 'credit';
+			$transactiondata['transactionid'] = $result_array['transactionid'];
+			$transactiondata['authcode'] = $result_array['authcode'];
+
+//	debug($transactiondata);
+//	exit();		
+		
+			$this->set('result_array', $result_array);
+		
+			if ($this->Transaction->save($transactiondata)) {
+				$process = 2;
+				$this->Session->setFlash(__('Credit Transaction successful, and the data has been saved.'));
+			} else {
+				$this->Session->setFlash(__('Credit Transaction unsuccessful, no data has been saved'));
+			}
+		
+		
+			//debug($response);
+			//	exit();
+			/*
+			echo "INCOMING: <br>";
+			echo "<pre>";
+			debug($incoming);
+			echo "<br>RESPONSE:<br>";
+			debug($response);
+		
+			echo "</pre>";
+		
+			exit();
+			*/
+		
+		
+		
+		} else {
+			$this->Session->setFlash(__('Credit Transaction unsuccessful, no data has been saved. Please, try again.'));
+		} // result array
+		
+		/* for testing */
+		
+		$this->set(compact('incoming', 'result_array', 'process'));
+	
+	}// is post
+	
+	
+	/*
+	 * get the Sale information for the Credit Form
+	* */
+	
+	$sql = "SELECT 
+	id,
+	key_id,
 	time,
 	ccnumber,
 	ccexp,
+	amount,	
+	tax,
 	cvv,
-	checkname,
-	checkaba,
-	checkaccount,
-	account_holder_type,
-	account_type,
-	amount,
 	payment,
+	orderdescription,
+	firstname,
+	lastname,
+	company,
+	address1,
+	city,
+	state,
+	zip,
+	country,
+	phone,
+	fax,
+	email,
 	orderid,
 	transactionid
 	FROM `transactions`
-	WHERE transactionid = $id";
+	WHERE transactionid = $transactionid";
 	
 	$transaction = $this->Transaction->query($sql);
-	
-	debug($transaction);
-	exit();
-	
-	$this->set('transaction', $transaction);
+	$transaction = array_shift($transaction);
 	
 	
-}
+	$this->set(compact('process', 'transaction'));
+	
+
+	
+	
+}// Credit
 
 
 /**

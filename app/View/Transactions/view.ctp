@@ -71,6 +71,10 @@
 		<td><?php echo $transaction['Transaction']['zip']; ?></td>
 		<td><?php echo $transaction['Transaction']['country']; ?></td>
 	</tr>
+	<tr>
+		<td colspan="3"><strong>Carrier: <?php echo $transaction['Transaction']['shipping_carrier']; ?></strong></td>
+		<td colspan="2"><strong>Tracking Number: <?php echo $transaction['Transaction']['tracking_number']; ?></strong></td>
+	</tr>
 	
 	</table>
 		<hr>

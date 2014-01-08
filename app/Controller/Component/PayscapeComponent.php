@@ -411,7 +411,29 @@ public function ValidateCreditCard($incoming=null){
 	
 	public function Void($incoming=null){
 		
-	}// void
+		$key = self::key;
+		$time = gmdate('YmdHis');
+		$type = 'void';
+		
+		
+		$required = array('type', 'transactionid');
+		
+		if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
+			$transactiondata = array();
+			$transactiondata['username'] = self::userid;
+			$transactiondata['password'] = self::userpass;
+			$transactiondata['type'] = 'void';
+			$transactiondata['transactionid'] = (isset($incoming['transactionid']) ? $incoming['transactionid'] : '');
+		
+			return self::send($transactiondata);
+		
+		} else {
+			$response['Message'] = $response['Message'] = 'Required Values <strong>type or transactionid</strong> Are Missing';
+			$response['error'] = 1;
+			return $response;
+		}
+		
+	}// Void
 	
 	public function Refund($incoming=null){
 		
@@ -444,6 +466,29 @@ public function ValidateCreditCard($incoming=null){
 	
 	
 	public function Update($incoming=null){
+		$type = 'update';
+		
+		$required = array('type', 'transactionid');
+		
+		if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
+			$transactiondata = array();
+				
+			$transactiondata['type'] = $type;
+			$transactiondata['username'] = self::userid;
+			$transactiondata['password'] = self::userpass;
+			$transactiondata['transactionid'] = (isset($incoming['transactionid']) ? $incoming['transactionid'] : '');
+				
+			/* optional fields */
+			$transactiondata['tracking_number'] = (isset($incoming['tracking_number']) ? $incoming['tracking_number'] : '');
+			$transactiondata['shipping_carrier'] = (isset($incoming['shipping_carrier']) ? $incoming['shipping_carrier'] : '');
+			$transactiondata['orderid'] = (isset($incoming['orderid']) ? $incoming['orderid'] : '');
+		
+			return self::send($transactiondata);
+		} else {
+			$response['Message'] = 'Required Values <strong>type or transactionid</strong> Are Missing';
+			$response['error'] = 1;
+			return $response;
+		}
 		
 	}// update
 	

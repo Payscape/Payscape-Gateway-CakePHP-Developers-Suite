@@ -590,7 +590,7 @@ public function capture($transactionid=0){
 	
 	
 	
-}// captdure
+}// capture
 
 public function credit($transactionid=0){
 	
@@ -1055,10 +1055,259 @@ public function validate_credit_card() {
 	}// refund
 	
 	public function update($transactionid=0){
+		$type = 'update';
+		
+		if($this->request->is('post')){
+		
+		
+			//	$transactionid = $this->request->data['Transaction']['transactionid'];
+		
+			if(isset($transactionid)){
+				$transactionid = (int) $transactionid;
+			}
+		
+			$sql = "SELECT id, amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
+		
+			$transaction = $this->Transaction->query($sql);
+			$transaction = array_shift($transaction);
+		
+			//debug($transaction);
+			//exit();
+		
+			$transactions_id = $transaction['transactions']['id'];
+			$auth_amount = $transaction['transactions']['amount'];
+			$transactionid = $transaction['transactions']['transactionid'];
+			$orderid = $transaction['transactions']['orderid'];
+			$authcode = $transaction['transactions']['authcode'];
+			$process = 1;
+			$update_message = "Process Update for Transaction  #$transactionid";
+		
+		
+			$transactionid = $this->request->data['Transaction']['transactionid'];
+			$shipping_carrier = $this->request->data['Transaction']['shipping_carrier'];
+			$tracking_number = $this->request->data['Transaction']['tracking_number'];
+		
+			if(isset($transactionid)){
+				$transactionid = (int) $transactionid;
+			}
+		
+			$amount = $this->request->data['Transaction']['amount'];
+		
+			$incoming = array();
+			$incoming['type'] = $type;
+			$incoming['transactionid'] = $transactionid;
+			$incoming['shipping_carrier'] = $shipping_carrier;
+			$incoming['tracking_number'] = $tracking_number;
+		
+
+		
+			$response = $this->Payscape->Update($incoming);
+			parse_str($response, $result_array);
+		
+		
+		
+			if($result_array['response']==1){
+				$response_code = $result_array['response'];
+				$authtransactionid = $result_array['transactionid'];
+				$authcode = $result_array['authcode'];
+				$update_message = "The Update was successful ";
+					
+		
+				$transaction_data = array(
+						'id'=>$transactions_id,
+						'shipping_carrier'=>$shipping_carrier,
+						'tracking_number'=>$tracking_number,
+				);
+					
+				// debug($transaction_data);
+				// exit();
+					
+		
+		
+				/* save the submission and transaction details */
+		
+		
+				if(! $this->Transaction->save($transaction_data)){
+						
+					$update_message .= " but could not be saved to the database";
+					$this->Session->setFlash($update_message);
+						
+				} else {
+					$update_message .= " and has been Saved to the database.";
+					$this->Session->setFlash($update_message);
+					$process = 2;
+						
+				}
+		
+			} else {
+				$update_message = "Transaction has failed.";
+				$this->Session->setFlash($update_message);
+			}
+		
+			/*
+			 * for testing
+			* */
+			$this->set(compact('result_array', 'incoming', 'process'));
+				
+		
+		}// post
+		
+		/*
+		 * get the Auth information for the Capture Form
+		*
+		* */
+		
+		if(isset($transactionid)){
+			$transactionid = (int) $transactionid;
+		}
+		
+		if($transactionid==0){
+			$this->redirect(array('controller' => 'transactions',
+					'action' => 'index'
+			));
+		}
+		
+		$sql = "SELECT id, amount, transactionid, orderid, authcode, shipping_carrier, tracking_number FROM transactions WHERE `transactionid` = $transactionid";
+		
+		$transaction = $this->Transaction->query($sql);
+		$transaction = array_shift($transaction);
+		
+		//debug($transaction);
+		//exit();
+		
+		$amount = $transaction['transactions']['amount'];
+		$transactionid = $transaction['transactions']['transactionid'];
+		$orderid = $transaction['transactions']['orderid'];
+		$authcode = $transaction['transactions']['authcode'];
+		$process = 1;
+		$update_message = "Process Update for Transaction  #$transactionid";
+		
+		
+		$this->set(compact('process', 'transaction', 'amount', 'orderid', 'authcode', 'capture_message', 'transactionid'));
+		
 		
 	}// update
 	
 	public function void($transactionid){
+		$type = 'void';
+		
+		if($this->request->is('post')){
+		
+		
+			if(isset($transactionid)){
+				$transactionid = (int) $transactionid;
+			}
+		
+			$sql = "SELECT id, amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
+		
+			$transaction = $this->Transaction->query($sql);
+			$transaction = array_shift($transaction);
+		
+			//debug($transaction);
+			//exit();
+		
+			$auth_amount = $transaction['transactions']['amount'];
+			$transactionid = $transaction['transactions']['transactionid'];
+			$orderid = $transaction['transactions']['orderid'];
+			$authcode = $transaction['transactions']['authcode'];
+			$process = 1;
+			$void_message = "Process Void for Transaction  #$transactionid";
+		
+		
+			$transactionid = $this->request->data['Transaction']['transactionid'];
+		
+			if(isset($transactionid)){
+				$transactionid = (int) $transactionid;
+			}
+		
+			$amount = $this->request->data['Transaction']['amount'];
+		
+			$incoming = array();
+			$incoming['type'] = $type;
+			$incoming['transactionid'] = $transactionid;
+		
+			$incoming['amount'] = $amount;
+		
+			$response = $this->Payscape->Void($incoming);
+			parse_str($response, $result_array);
+		
+		
+		
+			if($result_array['response']==1){
+				$response_code = $result_array['response'];
+				$authtransactionid = $result_array['transactionid'];
+				$authcode = $result_array['authcode'];
+				$void_message = "The Void was successful ";
+					
+		
+				$this->request->data['Transaction']['type'] = 'refund';
+				$this->request->data['Transaction']['transactionid'] = $authtransactionid;
+				$this->request->data['Transaction']['authcode'] = $authcode;
+		
+					
+		
+		
+				/* save the submission and transaction details */
+		
+				$this->Transaction->create();
+				if($this->Transaction->save($this->request->data)){
+		
+					$void_message .= " and has been saved to the database";
+					$this->Session->setFlash($void_message);
+		
+				} else {
+					$void_message .= " but could not be Saved to the database.";
+					$this->Session->setFlash($void_message);
+					$process = 2;
+		
+				}
+		
+			} else {
+				$refund_message = "Transaction has failed.";
+				$this->Session->setFlash($void_message);
+			}
+		
+			/*
+			 * for testing
+			* */
+			$this->set(compact('result_array', 'incoming', 'process'));
+		
+		
+		}// post
+		
+		/*
+		 * get the Auth information for the Void Form
+		*
+		* */
+		
+		if(isset($transactionid)){
+			$transactionid = (int) $transactionid;
+		}
+		
+		if($transactionid==0){
+			$this->redirect(array('controller' => 'transactions',
+					'action' => 'index'
+			));
+		}
+		
+		$sql = "SELECT id, amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
+		
+		$transaction = $this->Transaction->query($sql);
+		$transaction = array_shift($transaction);
+		
+		//debug($transaction);
+		//exit();
+		
+		$amount = $transaction['transactions']['amount'];
+		$transactionid = $transaction['transactions']['transactionid'];
+		$orderid = $transaction['transactions']['orderid'];
+		$authcode = $transaction['transactions']['authcode'];
+		$process = 1;
+		$void_message = "Process Void Sale Credit Card for Transaction  #$transactionid";
+		
+		
+		$this->set(compact('process', 'transaction', 'amount', 'orderid', 'authcode', 'transactionid'));
+		
 		
 	}// void
 

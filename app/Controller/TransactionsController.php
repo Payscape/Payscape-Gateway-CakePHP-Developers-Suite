@@ -677,14 +677,16 @@ public function credit($transactionid=0){
 		$this->request->data['Transaction']['time'] = $time;
 		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
 	
-		$this->request->data['Transaction']['type'] = 'credit';
-		$this->request->data['Transaction']['payment'] = 'credit card';
-		$this->request->data['Transaction']['transactionid'] = $result_array['transactionid'];
-		$this->request->data['Transaction']['authcode'] = $result_array['authcode'];
 			
 		$response = $this->Payscape->Credit($incoming);
 		
 		parse_str($response, $result_array);
+		
+		$this->request->data['Transaction']['type'] = 'credit';
+		$this->request->data['Transaction']['payment'] = 'credit card';
+		$this->request->data['Transaction']['transactionid'] = $result_array['transactionid'];
+		$this->request->data['Transaction']['authcode'] = $result_array['authcode'];
+		
 		
 		// for testing
 		$this->set('incoming', $incoming);
@@ -826,15 +828,11 @@ public function validate_credit_card() {
 			
 		$incoming = array();
 		$incoming['type'] = $type;
-		$incoming['amount'] = $this->request->data['Transaction']['amount'];
-		$incoming['tax'] = $this->request->data['Transaction']['tax'];
-		$incoming['orderdescription'] = $this->request->data['Transaction']['orderdescription'];
-		$incoming['orderid'] = $this->request->data['Transaction']['orderid'];
 
 		$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
 		$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
 		$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
-		$incoming['payment'] = 'credit card';
+		
 
 		$incoming['firstname'] = $this->request->data['Transaction']['firstname'];
 		$incoming['lastname'] = $this->request->data['Transaction']['lastname'];
@@ -851,7 +849,6 @@ public function validate_credit_card() {
 		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
 
 		$this->request->data['Transaction']['type'] = $type;
-		$this->request->data['Transaction']['payment'] = 'credit card';
 
 
 		$response = $this->Payscape->ValidateCreditCard($incoming);

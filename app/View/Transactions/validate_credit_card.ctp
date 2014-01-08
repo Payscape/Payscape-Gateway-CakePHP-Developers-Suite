@@ -35,7 +35,6 @@
 		echo $this->Form->input('ccexp', array('type'=>'text', 'class'=>'required', 'value'=>$ccexp));
 		echo $this->Form->input('cvv', array('type'=>'text', 'class'=>'required', 'value'=>$cvv));
 
-		echo $this->Form->input('orderid', array('type'=>'text'));
 		?>
 		
 

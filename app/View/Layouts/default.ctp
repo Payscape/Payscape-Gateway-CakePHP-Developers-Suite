@@ -59,9 +59,12 @@ $base_url = $this->base;
                 </li>
 				<li>
                 <?php echo $this->Html->link('Auth Credit Card', array('controller' => 'transactions', 'action' => 'authorize_credit_card')); ?>
-                </li>                
+                </li>   
+               <li>
+                <?php echo $this->Html->link('Validate Credit Card', array('controller' => 'transactions', 'action' => 'validate_credit_card')); ?>
+               </li>              
           <li>
-          	<?php echo $this->Html->link('View Transactions', array('controller' => 'transactions', 'action' => 'index')); ?>
+          	<?php echo $this->Html->link('List Transactions', array('controller' => 'transactions', 'action' => 'index')); ?>
           </li> 
 		        
 

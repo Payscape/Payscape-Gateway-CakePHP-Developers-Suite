@@ -315,9 +315,71 @@ class PayscapeComponent extends Component
 		}// count array
 	}// credit
 	
-	public function Validate($incoming=null){
+public function ValidateCreditCard($incoming=null){
+
+	$key = self::key;
+	$time = gmdate('YmdHis');
+	$type = 'validate';
+	
+	/*
+	echo "<pre>";
+	echo "INCOMING";
+	debug($incoming);
+	echo "<pre>";
+	exit();
+	*/
+	
+	$response = array();
+
+		$required = array('type', 'ccnumber', 'ccexp');
+	
+
+	if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
+		$transactiondata = array();
+		$transactiondata['username'] = self::userid;
+		$transactiondata['password'] = self::userpass;
+
+		$transactiondata['type'] = $type;
+
+		/* user supplied required data */
 		
-	}// validate
+		$transactiondata['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');
+		$transactiondata['ccnumber'] = (isset($incoming['ccnumber']) ? $incoming['ccnumber'] : '');
+
+		/* user supplied optional data */
+		$transactiondata['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');
+		
+		$transactiondata['firstname'] = (isset($incoming['firstname']) ? $incoming['firstname'] : '');
+		$transactiondata['lastname'] = (isset($incoming['lastname']) ? $incoming['lastname'] : '');
+		$transactiondata['company'] = (isset($incoming['company']) ? $incoming['company'] : '');
+		$transactiondata['address1'] = (isset($incoming['address1']) ? $incoming['address1'] : '');
+		$transactiondata['city'] = (isset($incoming['city']) ? $incoming['city'] : '');
+		$transactiondata['state'] = (isset($incoming['state']) ? $incoming['state'] : '');
+		$transactiondata['zip'] = (isset($incoming['zip']) ? $incoming['zip'] : '');
+		$transactiondata['country'] = (isset($incoming['country']) ? $incoming['country'] : '');
+		$transactiondata['phone'] = (isset($incoming['phone']) ? $incoming['phone'] : '');
+		$transactiondata['fax'] = (isset($incoming['fax']) ? $incoming['fax'] : '');
+		$transactiondata['email'] = (isset($incoming['email']) ? $incoming['email'] : '');
+		$transactiondata['orderid'] = (isset($incoming['orderid']) ? $incoming['orderid'] : '');
+
+
+
+		/*
+		 echo "TRANSACTIONDATA:";
+		echo "<pre>";
+		print_r($transactiondata);
+		echo "</pre>";
+		exit();
+		*/
+
+			return self::send($transactiondata);
+
+	} else {
+		$response['Message'] = 'Required Values Are Missing';
+		$response['error'] = 1;
+		return $response;
+	}
+}// end ValidateCreditCard()
 	
 	
 	public function Capture($incoming=null){
@@ -353,7 +415,32 @@ class PayscapeComponent extends Component
 	
 	public function Refund($incoming=null){
 		
-	}// refund
+		$type = 'refund';
+		$required = array('type', 'transactionid');
+		
+		if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
+			$transactiondata = array();
+			$transactiondata['username'] = self::userid;
+			$transactiondata['password'] = self::userpass;
+			
+			$transactiondata['type'] = 'refund';
+			$transactiondata['transactionid'] = (isset($incoming['transactionid']) ? $incoming['transactionid'] : '');
+				
+			// Optional, used only if you are making a partial refund.
+			if(isset($incoming['amount'])){
+				$transactiondata['amount'] = (isset($incoming['amount']) ? $incoming['amount'] : '');
+			}
+		
+		
+			return self::send($transactiondata);
+		
+		} else {
+			$response['Message'] = 'Required Values <strong>type or transactionid</strong> Are Missing';
+			$response['error'] = 1;
+			return $response;
+		}
+		
+	}// Refund
 	
 	
 	public function Update($incoming=null){

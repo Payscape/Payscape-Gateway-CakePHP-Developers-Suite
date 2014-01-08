@@ -43,17 +43,15 @@
 		echo $this->Form->input('ccexp', array('type'=>'text', 'value'=>$transaction['transactions']['ccexp']));
 		echo $this->Form->input('cvv', array('type'=>'text', 'value'=>$transaction['transactions']['cvv']));
 		echo $this->Form->input('amount', array('type'=>'text', 'value'=>$transaction['transactions']['amount']));
+		echo $this->Form->input('tax', array('type'=>'text', 'value'=>$transaction['transactions']['tax']));
+		echo $this->Form->input('payment', array('type'=>'text', 'value'=>$transaction['transactions']['payment']));
+		echo $this->Form->input('orderid', array('type'=>'text', 'value'=>$transaction['transactions']['orderid']));
 		
 		?>
-		
-<div class="input number"><label for="TransactionTax">Tax</label><input name="data[Transaction][tax]" step="any" type="text" id="TransactionTax" value="<?php echo $transaction['transactions']['tax']; ?>" />
-</div>
-<div class="input number"><label for="TransactionOrderID">Order ID</label><input name="data[Transaction][orderid]" step="any" type="text" id="TransactionOrderID" value="<?php echo $transaction['transactions']['transactionid']; ?>" />
-</div>
-<div class="input">
-<label for="TransactionOrderDescription">Order Description</label><br>
-<textarea name="data[Transaction][orderdescription]" step="any" id="TransactionOrderdescription"><?php echo $transaction['transactions']['orderdescription']?></textarea>
-</div>
+
+	<div class="input"><label for="TransactionOrderDescription">Order Description</label><br>
+		<textarea name="data[Transaction][orderdescription]" step="any" id="TransactionOrderdescription"><?php echo $transaction['transactions']['orderdescription']?></textarea>
+	</div>
 		<?php
 
 		echo $this->Form->input('firstname', array('value'=>$transaction['transactions']['firstname']));

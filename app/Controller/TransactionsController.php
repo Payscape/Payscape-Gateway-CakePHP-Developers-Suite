@@ -1075,7 +1075,6 @@ public function validate_credit_card() {
 			//exit();
 		
 			$transactions_id = $transaction['transactions']['id'];
-			$auth_amount = $transaction['transactions']['amount'];
 			$transactionid = $transaction['transactions']['transactionid'];
 			$orderid = $transaction['transactions']['orderid'];
 			$authcode = $transaction['transactions']['authcode'];
@@ -1091,7 +1090,6 @@ public function validate_credit_card() {
 				$transactionid = (int) $transactionid;
 			}
 		
-			$amount = $this->request->data['Transaction']['amount'];
 		
 			$incoming = array();
 			$incoming['type'] = $type;

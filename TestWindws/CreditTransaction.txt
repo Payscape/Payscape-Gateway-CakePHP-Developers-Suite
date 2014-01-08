@@ -1,0 +1,39 @@
+Credit Transaction successful, and the data has been saved.
+INCOMING: 
+\app\View\Transactions\credit.ctp (line 20)
+array(
+	'amount' => '.50',
+	'tax' => '0.40',
+	'orderdescription' => 'We credited 25% for this order.',
+	'orderid' => 'ChaCha30',
+	'ccexp' => '1010',
+	'ccnumber' => '4111111111111111',
+	'cvv' => '123',
+	'firstname' => 'Stephen',
+	'lastname' => 'Mareches',
+	'company' => 'SoSo',
+	'address1' => '1647 Frazier Road',
+	'city' => 'Decatur',
+	'state' => 'Georgia',
+	'zip' => '30033',
+	'country' => 'United States',
+	'phone' => '6783898837',
+	'fax' => '',
+	'email' => 'stephen@sophiasolutions.net'
+)
+RESULT ARRAY: 
+\app\View\Transactions\credit.ctp (line 25)
+array(
+	'response' => '1',
+	'responsetext' => 'SUCCESS',
+	'authcode' => '',
+	'transactionid' => '2120488843',
+	'avsresponse' => '',
+	'cvvresponse' => '',
+	'orderid' => '',
+	'type' => 'credit',
+	'response_code' => '100',
+	'merchant_defined_field_6' => '',
+	'merchant_defined_field_7' => '',
+	'customer_vault_id' => ''
+)

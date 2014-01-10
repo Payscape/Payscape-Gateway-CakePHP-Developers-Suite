@@ -1,28 +1,4 @@
-<?php
-
-	/*
-	 * Some values have been hard coded for testing.
-	 * */
-
-	$ccnumber = "4111111111111111";
-	$ccexp = "1010";
-	$cvv = "123";
-	$amount = "5.00";
-	$tax = ".35";
-	
-	// for testing
-	if(isset($result_array)){
-		echo "INCOMING: <br>";
-		debug($incoming);
-	}
-	
-	if(isset($result_array)){
-		echo "RESULT ARRAY: <br>";
-		debug($result_array);
-	}
-	
-	
-?>
+<?php if($process==1){ ?>
 
 <div class="transactions form">
 <?php echo $this->Form->create('Transaction'); ?>
@@ -30,16 +6,11 @@
 		<legend><?php echo __('Validate Credit Card Transaction'); ?></legend>
 
 				<?php 
-		echo $this->Form->input('type', array('type'=>'text', 'value'=>'validate'));				
-		echo $this->Form->input('ccnumber', array('type'=>'text', 'class'=>'required', 'value'=>$ccnumber));
-		echo $this->Form->input('ccexp', array('type'=>'text', 'class'=>'required', 'value'=>$ccexp));
-		echo $this->Form->input('cvv', array('type'=>'text', 'class'=>'required', 'value'=>$cvv));
+		echo $this->Form->input('type', array('type'=>'hidden', 'value'=>'validate'));				
+		echo $this->Form->input('ccnumber', array('type'=>'text', 'class'=>'required'));
+		echo $this->Form->input('ccexp', array('type'=>'text', 'class'=>'required'));
+		echo $this->Form->input('cvv', array('type'=>'text', 'class'=>'required'));
 
-		?>
-		
-
-
-		<?php
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('lastname');
 		echo $this->Form->input('company');
@@ -62,3 +33,4 @@
 		<li><?php echo $this->Html->link(__('List Transactions'), array('action' => 'index')); ?></li>
 	</ul>
 </div>
+<?php } ?>

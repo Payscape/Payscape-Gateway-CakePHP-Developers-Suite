@@ -13,7 +13,7 @@ class TransactionsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session', 'Payscape');
+	public $components = array('Paginator', 'Session', 'Payscape.Payscape');
 
 /**
  * index method
@@ -144,29 +144,21 @@ public function add_check() {
 						} else {
 							$this->Session->setFlash(__('Transaction unsuccessful, no data has been saved'));
 						}		
-						
-						
-	//debug($response);
-	//	exit();
-		/*
-		echo "INCOMING: <br>";
-		echo "<pre>";
-		debug($incoming);
-		echo "<br>RESPONSE:<br>";
-		debug($response);
-
-		echo "</pre>";
-
-		exit();
-		*/
-
 
 		//		return $this->redirect(array('action' => 'index'));
 
 		} else {
 		$this->Session->setFlash(__('Transaction unsuccessful, no data has been saved. Please, try again.'));
 		}
-	}// post
+		
+		$process = 2;
+	
+	} else {
+		$process = 1;
+	}	// post
+	
+		
+		$this->set('process', $process);
 
 }// add_check
 
@@ -253,8 +245,14 @@ public function add_credit_card() {
 		//debug($response);
 		
 		// for testing
+
+		/*
+		echo "INCOMING: <br>";
+		debug($incoming);
+		echo "RESPONSE: <br>";
+		debug($response);
 		$this->set('incoming', $incoming);
-		
+		*/
 		
 		parse_str($response, $result_array);
 		
@@ -273,39 +271,19 @@ public function add_credit_card() {
 						}
 						
 
-	//debug($incoming);
-		//exit();
-		/*
-		echo "PAYSCAPE: <br>";
-		echo "<pre>";
-		print_r($incoming);
-		echo "</pre>";
 
-		exit();
-		*/
-
-
-
-
-		
-
-
-/*
-		echo "<pre>";
-		echo "PAYSCAPE DEBUG: <br>";
-		
-		debug($payscape);
-		echo "<hr>";
-		echo "INCOMING: <br>";
-		debug($incoming);
-		echo "<pre>";
-		exit();
-*/
 
 		} else {
-		$this->Session->setFlash(__('The transaction could not be saved. Please, try again.'));
+		$this->Session->setFlash(__('The transaction was not successful, no data has been saved. Please, try again.'));
 		}
+			$process = 2;
+			
+		} else { 
+			$process = 1;
+			
 		}// post
+		
+		$this->set('process', $process);
 
 }// add_credit_card
 
@@ -413,39 +391,18 @@ public function authorize_credit_card() {
 			}
 
 
-			//debug($incoming);
-			//exit();
-			/*
-			 echo "PAYSCAPE: <br>";
-			echo "<pre>";
-			print_r($incoming);
-			echo "</pre>";
-
-			exit();
-			*/
-
-
-
-
-
-
-
-			/*
-			 echo "<pre>";
-			echo "PAYSCAPE DEBUG: <br>";
-
-			debug($payscape);
-			echo "<hr>";
-			echo "INCOMING: <br>";
-			debug($incoming);
-			echo "<pre>";
-			exit();
-			*/
-
-		} else {
-			$this->Session->setFlash(__('The transaction could not be saved. Please, try again.'));
-		}
-	}// post
+			} else {
+				$this->Session->setFlash(__('The transaction could not be saved. Please, try again.'));
+			}
+	
+			$process = 2;
+			
+		} else { 
+			$process = 1;
+			
+		} // post
+		
+		$this->set('process', $process);
 
 }// auth_credit_card
 
@@ -606,7 +563,7 @@ public function credit($transactionid=0){
 		}
 
 	$type = 'credit';
-	$process = 1;
+
 	$time = gmdate('YmdHis');
 	
 	
@@ -620,9 +577,6 @@ public function credit($transactionid=0){
 	
 		$sql = "SELECT
 		time,
-		ccnumber,
-		ccexp,
-		cvv,
 		ipaddress,
 		firstname,
 		lastname,
@@ -651,18 +605,16 @@ public function credit($transactionid=0){
 		
 	//	debug($transaction);
 		
-
-	
 		$incoming = array();
+		$incoming['type'] = $type;
+		$incoming['transactionid'] = $transactionid;
+		
+		// optional fields for the database record
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
 		$incoming['tax'] = $this->request->data['Transaction']['tax']; 			
 		$incoming['orderdescription'] = $this->request->data['Transaction']['orderdescription'];
 		$incoming['orderid'] = $this->request->data['Transaction']['orderid'];
 		
-		$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
-		$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
-		$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
-
 		$incoming['firstname'] = $this->request->data['Transaction']['firstname'];
 		$incoming['lastname'] = $this->request->data['Transaction']['lastname'];
 		$incoming['company'] = $this->request->data['Transaction']['company'];
@@ -679,6 +631,7 @@ public function credit($transactionid=0){
 	
 			
 		$response = $this->Payscape->Credit($incoming);
+debug($response);
 		
 		parse_str($response, $result_array);
 		
@@ -691,6 +644,7 @@ public function credit($transactionid=0){
 		// for testing
 		$this->set('incoming', $incoming);
 	
+		
 
 		if($result_array['response']==1){
 		
@@ -734,6 +688,9 @@ public function credit($transactionid=0){
 		
 		$this->set(compact('incoming', 'result_array', 'process'));
 	
+		$process = 2;
+	} else {
+		$process = 1; 
 	}// is post
 	
 	
@@ -743,13 +700,9 @@ public function credit($transactionid=0){
 	
 	$sql = "SELECT 
 	id,
-	key_id,
 	time,
-	ccnumber,
-	ccexp,
 	amount,	
 	tax,
-	cvv,
 	payment,
 	orderdescription,
 	firstname,
@@ -781,50 +734,10 @@ public function credit($transactionid=0){
 
 
 public function validate_credit_card() {
-
 	$type = 'validate';
 	$time = gmdate('YmdHis');
-	
-	/* test data */
-
-	$visa = "4111111111111111";
-	$mastercard = "5431111111111111";
-	$discover = "6011601160116611";
-	$american_express = "341111111111111";
-	$cc_expire = '1025'; // 10/25
-	$cvv = "123";
-
-	/* triggers */
-
-	/*
-	 * To cause a declined message, pass an amount less than 1.00.
-	* To trigger a fatal error message, pass an invalid card number.
-	* To simulate an AVS match, pass 888 in the address1 field, 77777 for zip.
-	* To simulate a CVV match, pass 999 in the cvv field.
-	*
-	* */
-
-
-	$this->set(compact('visa', 'mastercard', 'discover', 'american_express', 'cc_expire', 'account_ach', 'routing_ach'));
-
-
 
 	if ($this->request->is('post')) {
-			
-
-	//	 for testing
-		
-		/*
-		$data_debug = $this->request->data;
-
-		echo "<pre>";
-		echo "Debug DATA";
-		debug($data_debug);
-		echo "</pre>";
-
-		exit();
-		*/	
-		
 			
 		$incoming = array();
 		$incoming['type'] = $type;
@@ -853,21 +766,14 @@ public function validate_credit_card() {
 
 		$response = $this->Payscape->ValidateCreditCard($incoming);
 
-	//	debug($response);
-
-		// for testing
-		$this->set('incoming', $incoming);
-
-
 		parse_str($response, $result_array);
 
 		if($result_array['response']==1){
-				
+			$this->request->data['Transaction']['validated'] = $result_array['response'];	
 			$this->request->data['Transaction']['transactionid'] = $result_array['transactionid'];
 			$this->request->data['Transaction']['authcode'] = $result_array['authcode'];
 			
-			
-	//debug($this->request->data);
+
 			
 
 			$this->set('result_array', $result_array);
@@ -882,44 +788,21 @@ public function validate_credit_card() {
 			}
 
 
-			//debug($incoming);
-			//exit();
-			/*
-			 echo "PAYSCAPE: <br>";
-			echo "<pre>";
-			print_r($incoming);
-			echo "</pre>";
-
-			exit();
-			*/
-
-
-
-
-
-
-
-			/*
-			 echo "<pre>";
-			echo "PAYSCAPE DEBUG: <br>";
-
-			debug($payscape);
-			echo "<hr>";
-			echo "INCOMING: <br>";
-			debug($incoming);
-			echo "<pre>";
-			exit();
-			*/
-
 		} else {
 			$this->Session->setFlash(__('The transaction could not be saved. Please, try again.'));
 		}
+		$process = 2;
+	} else {
+		$process = 1; 
 	}// post
+	
+		$this->set('process', $process);
 
 }// validate
 
 	public function refund($transactionid=0){
 		$type = 'refund';
+	
 		
 		if($this->request->is('post')){
 
@@ -927,18 +810,51 @@ public function validate_credit_card() {
 			if(isset($transactionid)){
 				$transactionid = (int) $transactionid;
 			}
+
 		
-			$sql = "SELECT id, amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
+			$sql = "SELECT 
+			id, 
+			amount, 
+			tax,
+			payment,
+			ipaddress,
+			firstname,
+			lastname,
+			company,
+			address1,
+			city,
+			state,
+			zip,
+			country,
+			phone,
+			fax,
+			email,
+			transactionid, 
+			orderid,
+			orderdescription, 
+			authcode 
+			FROM transactions WHERE `transactionid` = $transactionid";
 		
 			$transaction = $this->Transaction->query($sql);
 			$transaction = array_shift($transaction);
 		
-			//debug($transaction);
-			//exit();
 		
 			$auth_amount = $transaction['transactions']['amount'];
-			$transactionid = $transaction['transactions']['transactionid'];
+			$refund_transactionid = $transaction['transactions']['transactionid'];
+			$firstname = $transaction['transactions']['firstname'];
+			$lasttname = $transaction['transactions']['lastname'];
+			$address1 = $transaction['transactions']['address1'];
+			$city = $transaction['transactions']['city'];
+			$state = $transaction['transactions']['state'];
+			$zip = $transaction['transactions']['zip'];
+			$country = $transaction['transactions']['country'];
+			$phone = $transaction['transactions']['phone'];
+			$fax = $transaction['transactions']['fax'];
+			$email = $transaction['transactions']['email'];
+			$ipaddress = $transaction['transactions']['ipaddress'];	
+			
 			$orderid = $transaction['transactions']['orderid'];
+			$orderdescription = $transaction['transactions']['orderdescription'];
 			$authcode = $transaction['transactions']['authcode'];
 			$process = 1;
 			$refund_message = "Process Authorization Capture for Transaction  #$transactionid";
@@ -951,6 +867,9 @@ public function validate_credit_card() {
 			}
 		
 			$amount = $this->request->data['Transaction']['amount'];
+			if(empty($amount)){
+				$amount = "0";
+			}
 		
 			$incoming = array();
 			$incoming['type'] = $type;
@@ -961,11 +880,12 @@ public function validate_credit_card() {
 			* cannot be greater than Authorized Amount
 			*
 			* */
-		
-			if($amount < $auth_amount){
+
+			if(($amount < $auth_amount) && ($amount > 0)){
 				$incoming['amount'] = $amount;
 			} else {
 				$incoming['amount'] = $auth_amount;
+				$amount = $auth_amount;
 			}
 		
 			$response = $this->Payscape->Refund($incoming);
@@ -978,21 +898,53 @@ public function validate_credit_card() {
 				$authtransactionid = $result_array['transactionid'];
 				$authcode = $result_array['authcode'];
 				$refund_message = "The Refund was successful ";
+				
+				if(($amount < $auth_amount) && ($amount > 0)){
+					$this->request->data['Transaction']['amount'] = $amount;
+				} else {
+					$this->request->data['Transaction']['amount'] = $auth_amount;
+				}
 					
+				$time = gmdate('YmdHis');
+				$this->request->data['Transaction']['time'] = $time;
 		
 				$this->request->data['Transaction']['type'] = 'refund';
 				$this->request->data['Transaction']['transactionid'] = $authtransactionid;
+				$this->request->data['Transaction']['refund_transactionid'] = $transactionid;
 				$this->request->data['Transaction']['authcode'] = $authcode;
 
-					
-		
+				$this->request->data['Transaction']['firstname'] = $firstname;
+				$this->request->data['Transaction']['lastname'] = $lasttname;
+				$this->request->data['Transaction']['address1'] = $address1;
+				$this->request->data['Transaction']['city'] = $city;
+				$this->request->data['Transaction']['state'] = $state;
+				$this->request->data['Transaction']['zip'] = $zip;
+				$this->request->data['Transaction']['country'] = $country;
+				$this->request->data['Transaction']['phone'] = $phone;
+				$this->request->data['Transaction']['fax'] = $fax;
+				$this->request->data['Transaction']['email'] = $email;
+				$this->request->data['Transaction']['ipaddress'] = $ipaddress;
+				
+				$this->request->data['Transaction']['orderid'] = $orderid;
+				$this->request->data['Transaction']['orderdescription'] = $orderdescription;
+				
+	//debug($this->request->data);
+	//debug($incoming);
 		
 				/* save the submission and transaction details */
 		
 				$this->Transaction->create();
 				if($this->Transaction->save($this->request->data)){
-						
 					$refund_message .= " and has been saved to the database";
+					
+						$id = $transaction['transactions']['id'];
+						$sql_update = "UPDATE transactions SET type = 'refunded' WHERE id = $id";
+					
+							if($query = $this->Transaction->query($sql_update)){
+								$refund_message .= " The original transaction has been updated to 'refunded'";
+							}	
+						
+				
 					$this->Session->setFlash($refund_message);
 						
 				} else {
@@ -1006,17 +958,17 @@ public function validate_credit_card() {
 				$refund_message = "Transaction has failed.";
 				$this->Session->setFlash($refund_message);
 			}
-		
-			/*
-			 * for testing
-			* */
+	
 			$this->set(compact('result_array', 'incoming', 'process'));
-				
+
+			$process = 2;
 		
-		}// post
+		} else {
+			$process = 1;	
+		}	// post
 		
 		/*
-		 * get the Auth information for the Capture Form
+		 * get the Auth information for the Refund Form
 		*
 		* */
 		
@@ -1042,7 +994,7 @@ public function validate_credit_card() {
 		$transactionid = $transaction['transactions']['transactionid'];
 		$orderid = $transaction['transactions']['orderid'];
 		$authcode = $transaction['transactions']['authcode'];
-		$process = 1;
+		
 		$refund_message = "Process Refund Sale Credit Card for Transaction  #$transactionid";
 		
 		

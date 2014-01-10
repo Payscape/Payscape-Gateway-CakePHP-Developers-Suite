@@ -1,0 +1,15 @@
+
+	In your controller, set(compact('incoming', 'result_array');
+
+<?php
+// for testing
+if(isset($result_array)){
+	echo "INCOMING: <br>";
+	debug($incoming);
+}
+
+if(isset($result_array)){
+	echo "RESULT ARRAY: <br>";
+	debug($result_array);
+}
+?>

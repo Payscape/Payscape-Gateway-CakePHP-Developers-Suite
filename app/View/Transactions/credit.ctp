@@ -1,21 +1,6 @@
 <?php
-
-	/*
-	 * Some values have been hard coded for testing.
-	 * */
-
-
-	$time = gmdate("YmdHis");
-	$key_id = 449510;
-	$hash = "5C8EEBB1302087B11CFAE6F557072A28";
-	$order_id = "Test";
-	
-	$ccnumber = "4111111111111111";
-	
-	$cvv = "123";
-	
 	// for testing
-	if(isset($result_array)){
+	if(isset($incoming)){
 		echo "INCOMING: <br>";
 		debug($incoming);
 	}
@@ -24,12 +9,7 @@
 		echo "RESULT ARRAY: <br>";
 		debug($result_array);
 	}
-	
-//	if(isset($transaction)){
-//		debug($transaction);
-//		exit();
-//	}
-	
+
 ?>
 
 <div class="transactions form">
@@ -39,9 +19,7 @@
 
 				<?php 
 						
-		echo $this->Form->input('ccnumber', array('type'=>'text', 'value'=>$transaction['transactions']['ccnumber']));
-		echo $this->Form->input('ccexp', array('type'=>'text', 'value'=>$transaction['transactions']['ccexp']));
-		echo $this->Form->input('cvv', array('type'=>'text', 'value'=>$transaction['transactions']['cvv']));
+
 		echo $this->Form->input('amount', array('type'=>'text', 'value'=>$transaction['transactions']['amount']));
 		echo $this->Form->input('tax', array('type'=>'text', 'value'=>$transaction['transactions']['tax']));
 		echo $this->Form->input('payment', array('type'=>'text', 'value'=>$transaction['transactions']['payment']));

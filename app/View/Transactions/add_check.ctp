@@ -1,25 +1,4 @@
-<?php
-
-	/*
-	 * Some values have been hard coded for testing.
-	 * */
-
-	$checkaccount = '123123123'; // test Bank Account Number (ACH)
-	$checkaba = '123123123'; // test Bank Routing Number (ACH)
-	$account_holder_type = 'business'; // test Payscape Account Holder Type (business / personal)
-	$account_type = 'checking'; // test bank account type (checking / savings)
-	$checkname = 'Test'; // 	
-	
-	// for testing
-	if(isset($result_array)){
-		echo "INCOMING: <br>";
-		debug($incoming);
-	}	
-	if(isset($result_array)){
-		echo "RESULT ARRAY: <br>";
-		debug($result_array);
-	}
-?>
+<?php if($process==1){ ?>
 
 <div class="transactions form">
 <?php echo $this->Form->create('Transaction'); ?>
@@ -40,32 +19,20 @@
 		<option value="savings">savings</option>
 	</select>
 </div>
-				<?php 	
-			
 	
-?>		
 <?php 		
 		
-		echo $this->Form->input('checkname', array('value'=>$checkname));
-		echo $this->Form->input('checkaccount', array('value'=>$checkaccount));
-		echo $this->Form->input('checkaba', array('value'=>$checkaba));		
-
-
-		?>
-		
-<div class="input number required"><label for="TransactionAmount">Amount</label>
-<input name="data[Transaction][amount]" step="any" type="text" id="TransactionAmount" required="required" value="2.00" />
-</div>
-<div class="input number required"><label for="TransactionTax">Tax</label>
-<input name="data[Transaction][tax]" step="any" type="text" id="TransactionTax" />
-</div>	
-<div class="input number"><label for="TransactionOrderID">Order ID</label><input name="data[Transaction][orderid]" step="any" type="text" id="TransactionOrderID" />
-</div>
-
+		echo $this->Form->input('checkname', array('type'=>'text'));
+		echo $this->Form->input('checkaccount', array('type'=>'text'));
+		echo $this->Form->input('checkaba', array('type'=>'text'));	
+		echo $this->Form->input('amount', array('type'=>'text'));
+		echo $this->Form->input('tax', array('type'=>'text'));
+		echo $this->Form->input('orderid', array('type'=>'text'));
+?>
 
 <div class="input">
 <label for="TransactionOrderDescription">Order Description</label><br>
-<textarea name="data[Transaction][orderdescription]" step="any" id="TransactionOrderdescription"></textarea>
+<textarea name="data[Transaction][orderdescription]" id="TransactionOrderdescription"></textarea>
 </div>
 
 <?php 		
@@ -91,3 +58,4 @@
 		<li><?php echo $this->Html->link(__('List Transactions'), array('action' => 'index')); ?></li>
 	</ul>
 </div>
+<?php } ?>

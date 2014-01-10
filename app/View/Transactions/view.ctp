@@ -50,7 +50,24 @@
 				<td><?php echo $transaction['Transaction']['authcode']; ?></td>
 				
 			</tr>
-		
+		<?php if($transaction['Transaction']['type']=='refund'){ ?>
+			<tr>
+			<td colspan="8"><strong>Refund Transaction ID: <?php echo $transaction['Transaction']['refund_transactionid']; ?></strong></td>
+			</tr>
+			<?php } ?>
+		<?php 
+			if($transaction['Transaction']['type']=='validate'){ 
+				if($transaction['Transaction']['validated']==1){
+				
+				?>
+			<tr>
+			<td colspan="8"><strong>Credit Card Validated</strong></td>
+			</tr>
+			<?php 
+					}
+				} 	
+		?>
+			
 		</table>
 		<hr>
 	
@@ -88,23 +105,17 @@
 		
 <?php if($transaction['Transaction']['payment']=='credit card'){ ?>
 	<tr>
-		<th>Payment</th><th>Credit Card Number</th><th>Expiration</th><th>CVV</th>
+		<th>Payment</th>
 		</tr>
 	<tr>	
 		<td><?php echo $transaction['Transaction']['payment']; ?></td>
-		<td><?php echo $transaction['Transaction']['ccnumber']; ?></td>
-		<td><?php echo $transaction['Transaction']['ccexp']; ?></td>
-		<td><?php echo $transaction['Transaction']['cvv']; ?></td>
 	</tr>
 
 <?php } else { ?>
 	<tr>
-	<th>Checkname</th><th>Check Account </th><th>Routing Number</th><th>Account Type</th><th>Account Holder Type</th>
+	<th>Account Type</th><th>Account Holder Type</th>
 	</tr>
 	<tr>
-	<td><?php echo $transaction['Transaction']['checkname']; ?></td>
-	<td><?php echo $transaction['Transaction']['checkaccount']; ?></td>
-	<td><?php echo $transaction['Transaction']['checkaba']; ?></td>
 	<td>	<?php echo $transaction['Transaction']['account_type']; ?></td>
 	<td>	<?php echo $transaction['Transaction']['account_holder_type']; ?></td>
 	
@@ -121,15 +132,12 @@
 		<table class="transaction">
 	<caption><strong>Credentials</strong></caption>
 	<tr>
-		<th>Key ID</th><th>Hash</th><th>Sec Code</th><th>Processor ID</th>
+		<th>Sec Code</th><th>Processor ID</th>
 	</tr>
 	<tr>
-		<td><?php echo $transaction['Transaction']['key_id']; ?>
-		</td>
-		<td><?php echo $transaction['Transaction']['hash']; ?></td>
+		
 		<td><?php echo $transaction['Transaction']['sec_code']; ?></td>
-		<td><?php echo $transaction['Transaction']['processor_id']; ?></td>
-	
+		
 	</tr>
 	
 	</table>

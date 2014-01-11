@@ -211,23 +211,27 @@ class PayscapeComponent extends Component
 
 		$time = gmdate('YmdHis');
 		$type = 'credit';
+		
+		$amount = (isset($incoming['amount']) ? $incoming['amount'] : '');
+		$order_id = (isset($incoming['order_id']) ? $incoming['order_id'] : '');
+		$payment = (isset($incoming['payment']) ? $incoming['payment'] : '');
 
 			$required = array('type', 'transactionid');
 		
 		if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
 			
-			$amount = (isset($incoming['amount']) ? $incoming['amount'] : '');			
-			$order_id = (isset($incoming['order_id']) ? $incoming['order_id'] : '');
-			$payment = (isset($incoming['payment']) ? $incoming['payment'] : '');
+
 				
 
 			$transactiondata = array();
 			// required fields
 			$transactiondata['type'] = 'credit';
+			$transactiondata['amount'] = $amount;
 			$transactiondata['transactionid'] = (isset($incoming['transactionid']) ? $incoming['transactionid'] : '');
-
-			// optional fields for database record
 			$transactiondata['time'] = $time;
+			
+			// optional fields for database record
+
 			$transactiondata['firstname'] = (isset($incoming['firstname']) ? $incoming['firstname'] : '');
 			$transactiondata['lastname'] = (isset($incoming['lastname']) ? $incoming['lastname'] : '');
 			$transactiondata['company'] = (isset($incoming['company']) ? $incoming['company'] : '');

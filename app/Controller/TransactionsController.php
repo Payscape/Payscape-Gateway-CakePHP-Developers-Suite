@@ -563,16 +563,13 @@ public function credit($transactionid=0){
 		}
 
 	$type = 'credit';
-
 	$time = gmdate('YmdHis');
-	
-	
 	$base_url = $this->base;
 	$this->set('base_url', $base_url);
 	
 		if ($this->request->is('post')) {
 		
-		$amount = $this->request->data['Transaction']['amount'];	
+		
 		
 	
 		$sql = "SELECT
@@ -590,15 +587,13 @@ public function credit($transactionid=0){
 		fax,
 		email,
 		amount,
+		tax,
 		payment,
 		orderdescription,
 		orderid,
 		transactionid
 		FROM `transactions`
 		WHERE transactionid = $transactionid";		
-		
-	//	echo $sql;
-	//	echo "<br>";
 		
 		$transaction = $this->Transaction->query($sql);
 		$transaction = array_shift($transaction);
@@ -608,52 +603,62 @@ public function credit($transactionid=0){
 		$incoming = array();
 		$incoming['type'] = $type;
 		$incoming['transactionid'] = $transactionid;
+		$incoming['amount'] = $transaction['transactions']['amount'];
+		$incoming['tax'] = $transaction['transactions']['tax'];
+		$incoming['payment'] = $transaction['transactions']['payment'];
+		$incoming['orderid'] = $transaction['transactions']['orderid'];
+		$incoming['orderdescription'] = $transaction['transactions']['orderdescription'];		
+		$incoming['time'] = $time;	
+	
 		
-		// optional fields for the database record
-		$incoming['amount'] = $this->request->data['Transaction']['amount'];
-		$incoming['tax'] = $this->request->data['Transaction']['tax']; 			
-		$incoming['orderdescription'] = $this->request->data['Transaction']['orderdescription'];
-		$incoming['orderid'] = $this->request->data['Transaction']['orderid'];
-		
-		$incoming['firstname'] = $this->request->data['Transaction']['firstname'];
-		$incoming['lastname'] = $this->request->data['Transaction']['lastname'];
-		$incoming['company'] = $this->request->data['Transaction']['company'];
-		$incoming['address1'] = $this->request->data['Transaction']['address1'];
-		$incoming['city'] = $this->request->data['Transaction']['city'];
-		$incoming['state'] = $this->request->data['Transaction']['state'];
-		$incoming['zip'] = $this->request->data['Transaction']['zip'];
-		$incoming['country'] = $this->request->data['Transaction']['country'];
-		$incoming['phone'] = $this->request->data['Transaction']['phone'];
-		$incoming['fax'] = $this->request->data['Transaction']['fax'];
-		$incoming['email'] = $this->request->data['Transaction']['email'];
-		$this->request->data['Transaction']['time'] = $time;
-		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
+		$incoming['firstname'] = $transaction['transactions']['firstname'];
+		$incoming['lastname'] = $transaction['transactions']['lastname'];
+		$incoming['company'] = $transaction['transactions']['company'];
+		$incoming['address1'] = $transaction['transactions']['address1'];
+		$incoming['city'] = $transaction['transactions']['city'];
+		$incoming['state'] = $transaction['transactions']['state'];
+		$incoming['zip'] = $transaction['transactions']['zip'];
+		$incoming['country'] = $transaction['transactions']['country'];
+		$incoming['phone'] = $transaction['transactions']['phone'];
+		$incoming['fax'] = $transaction['transactions']['fax'];
+		$incoming['email'] = $transaction['transactions']['email'];
 	
 			
 		$response = $this->Payscape->Credit($incoming);
-debug($response);
 		
 		parse_str($response, $result_array);
 		
-		$this->request->data['Transaction']['type'] = 'credit';
-		$this->request->data['Transaction']['payment'] = 'credit card';
-		$this->request->data['Transaction']['transactionid'] = $result_array['transactionid'];
-		$this->request->data['Transaction']['authcode'] = $result_array['authcode'];
-		
-		
-		// for testing
-		$this->set('incoming', $incoming);
-	
-		
-
 		if($result_array['response']==1){
 		
+				
+			
+			$this->request->data['Transaction']['time'] = $time;
+			$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
+			$this->request->data['Transaction']['type'] = $type;
 	
-
-//	debug($transactiondata);
-//	exit();		
+			$this->request->data['Transaction']['transactionid'] = $result_array['transactionid'];
+			$this->request->data['Transaction']['authcode'] = $result_array['authcode'];
+			
+	/* begin */ 		
+			$this->request->data['Transaction']['amount'] = $transaction['transactions']['amount'];
+			$this->request->data['Transaction']['tax'] = $transaction['transactions']['tax'];
+			$this->request->data['Transaction']['payment'] = $transaction['transactions']['payment'];
+			$this->request->data['Transaction']['orderid'] = $transaction['transactions']['orderid'];
+			$this->request->data['Transaction']['orderdescription'] = $transaction['transactions']['orderdescription'];
 		
-			$this->set('result_array', $result_array);
+			
+			
+			$this->request->data['Transaction']['firstname'] = $transaction['transactions']['firstname'];
+			$this->request->data['Transaction']['lastname'] = $transaction['transactions']['lastname'];
+			$this->request->data['Transaction']['company'] = $transaction['transactions']['company'];
+			$this->request->data['Transaction']['address1'] = $transaction['transactions']['address1'];
+			$this->request->data['Transaction']['city'] = $transaction['transactions']['city'];
+			$this->request->data['Transaction']['state'] = $transaction['transactions']['state'];
+			$this->request->data['Transaction']['zip'] = $transaction['transactions']['zip'];
+			$this->request->data['Transaction']['country'] = $transaction['transactions']['country'];
+			$this->request->data['Transaction']['phone'] = $transaction['transactions']['phone'];
+			$this->request->data['Transaction']['fax'] = $transaction['transactions']['fax'];
+			$this->request->data['Transaction']['email'] = $transaction['transactions']['email'];
 	
 			$this->Transaction->create();
 			if ($this->Transaction->save($this->request->data)) {
@@ -685,10 +690,10 @@ debug($response);
 		} // result array
 		
 		/* for testing */
-		
-		$this->set(compact('incoming', 'result_array', 'process'));
-	
 		$process = 2;
+		$this->set('process', $process);
+	
+	
 	} else {
 		$process = 1; 
 	}// is post
@@ -726,9 +731,6 @@ debug($response);
 	
 	
 	$this->set(compact('process', 'transaction'));
-	
-
-	
 	
 }// Credit
 

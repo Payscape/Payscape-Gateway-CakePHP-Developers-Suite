@@ -1,49 +1,40 @@
 <?php
-	// for testing
-	if(isset($incoming)){
-		echo "INCOMING: <br>";
-		debug($incoming);
-	}
-	
-	if(isset($result_array)){
-		echo "RESULT ARRAY: <br>";
-		debug($result_array);
-	}
+
 
 ?>
 
 <div class="transactions form">
 <?php echo $this->Form->create('Transaction'); ?>
 	<fieldset>
-		<legend><?php echo __('Credit Transaction'); ?></legend>
-
-				<?php 
-						
-
-		echo $this->Form->input('amount', array('type'=>'text', 'value'=>$transaction['transactions']['amount']));
-		echo $this->Form->input('tax', array('type'=>'text', 'value'=>$transaction['transactions']['tax']));
-		echo $this->Form->input('payment', array('type'=>'text', 'value'=>$transaction['transactions']['payment']));
-		echo $this->Form->input('orderid', array('type'=>'text', 'value'=>$transaction['transactions']['orderid']));
+	<legend>Process Credit for Transaction ID #<?php echo $transaction['transactions']['transactionid']; ?></legend>
+			<input name="action" value="credit" type="hidden" id="TransactionAction"/>
+				
+			<div class="input text"><label for="Transactionid">Transaction ID: #<?php echo $transaction['transactions']['transactionid']; ?></label>
+				</div>
+			<div class="input text"><label for="Orderid">Order ID: <?php echo $transaction['transactions']['orderid']; ?></label></div>
+			<div class="input text"><label for="TransactionType">Type: credit</label></div>	
 		
-		?>
-
-	<div class="input"><label for="TransactionOrderDescription">Order Description</label><br>
-		<textarea name="data[Transaction][orderdescription]" step="any" id="TransactionOrderdescription"><?php echo $transaction['transactions']['orderdescription']?></textarea>
-	</div>
-		<?php
-
-		echo $this->Form->input('firstname', array('value'=>$transaction['transactions']['firstname']));
-		echo $this->Form->input('lastname', array('value'=>$transaction['transactions']['lastname']));
-		echo $this->Form->input('company', array('value'=>$transaction['transactions']['company']));
-		echo $this->Form->input('address1', array('value'=>$transaction['transactions']['address1']));
-		echo $this->Form->input('city', array('value'=>$transaction['transactions']['city']));
-		echo $this->Form->input('state', array('value'=>$transaction['transactions']['state']));
-		echo $this->Form->input('zip', array('value'=>$transaction['transactions']['zip']));
-		echo $this->Form->input('country', array('value'=>$transaction['transactions']['country']));
-		echo $this->Form->input('phone', array('value'=>$transaction['transactions']['phone']));
-		echo $this->Form->input('fax', array('value'=>$transaction['transactions']['fax']));
-		echo $this->Form->input('email', array('value'=>$transaction['transactions']['email']));
-	?>
+			<div class="input number required"><label for="TransactionAmount">Amount: <?php echo $transaction['transactions']['amount']; ?></label></div>
+			
+			<div class="input text"><label for="TransactionPayment">Payment: <?php echo $transaction['transactions']['payment']; ?></label></div>
+			<div class="input number"><label for="TransactionTax">Tax: <?php echo $transaction['transactions']['tax']; ?></label></div>
+			<div class="input number"><label for="TransactionOrderID">Order ID: <?php echo $transaction['transactions']['orderid']; ?></label></div>
+			<div class="input"><label for="TransactionOrderDescription">Order Description: </label><br>
+			<p><?php echo $transaction['transactions']['orderdescription']; ?></p></div>
+		<!--  optional user information -->	
+			<div class="input text"><label for="TransactionFirstname">First Name: <?php echo $transaction['transactions']['firstname']; ?></label></div>
+	 		<div class="input text"><label for="TransactionLastname">Last Name: <?php echo $transaction['transactions']['lastname']; ?></label></div>
+	 		<div class="input text"><label for="TransactionCompany">Company: <?php echo $transaction['transactions']['company']; ?></label></div>
+	 		<div class="input text"><label for="TransactionAddress1">Address: <?php echo $transaction['transactions']['address1']; ?></label></div>
+	 		<div class="input text"><label for="TransactionCity">City: <?php echo $transaction['transactions']['city']; ?></label></div>
+	 		<div class="input text"><label for="TransactionState">State: <?php echo $transaction['transactions']['state']; ?></label></div>
+	 		<div class="input text"><label for="TransactionZip">Zip: <?php echo $transaction['transactions']['zip']; ?></label></div>
+	 		<div class="input text"><label for="TransactionCountry">Country: <?php echo $transaction['transactions']['country']; ?></label></div>
+	 		<div class="input tel"><label for="TransactionPhone">Phone: <?php echo $transaction['transactions']['phone']; ?></label></div>
+	 		<div class="input text"><label for="TransactionFax">Fax: <?php echo $transaction['transactions']['fax']; ?></label></div>
+	 		<div class="input email"><label for="TransactionEmail">Email: <?php echo $transaction['transactions']['email']; ?></label></div>	
+	
+	
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>

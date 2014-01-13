@@ -1,6 +1,6 @@
 <div class="transactions index">
 	<h2><?php echo __('Transactions'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table>
 	<tr>
 
 	

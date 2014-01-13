@@ -18,7 +18,7 @@
 		
 <div class="input">
 <label for="TransactionOrderDescription">Order Description</label><br>
-<textarea name="data[Transaction][orderdescription]" step="any" id="TransactionOrderdescription"></textarea>
+<textarea name="data[Transaction][orderdescription]" id="TransactionOrderdescription"></textarea>
 </div>
 		<?php
 

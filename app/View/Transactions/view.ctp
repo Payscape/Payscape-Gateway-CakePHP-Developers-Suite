@@ -5,7 +5,7 @@
 
 	<div class="span7">
 		<table class="transaction">
-		<caption><h3>Customer</h3></caption>
+		<caption><strong>Customer</strong></caption>
 		<tr>
 			<th>Name</th><th>Phone</th><th>Fax</th><th>Email</th><th>Company</th><th>IP Address</th>
 		</tr>
@@ -23,7 +23,7 @@
 	
 	<div class="span7">
 		<table class="transaction">
-			<caption><h3>Order</h3></caption>
+			<caption><strong>Order</strong></caption>
 			<tr>
 				<th>Action</th><th>Id</th><th>Amount</th><th>Type</th><th>Time</th><th>Payment</th><th>Transaction ID</th><th>Order Id</th><th>Auth Code</th>
 			</tr>
@@ -77,7 +77,7 @@
 	<div class="span7">
 	
 	<table class="transaction">
-	<caption><h3>Shipping</h3></caption>
+	<caption><strong>Shipping</strong></caption>
 	<tr>
 		<th>Address</th><th>City</th><th>State</th><th>Zip</th><th>Country</th>
 	</tr>
@@ -101,7 +101,7 @@
 	
 	<div class="span7">
 	<table class="transaction">
-		<caption><h3>Payment</h3></caption>
+		<caption><strong>Payment</strong></caption>
 		
 <?php if($transaction['Transaction']['payment']=='credit card'){ ?>
 	<tr>

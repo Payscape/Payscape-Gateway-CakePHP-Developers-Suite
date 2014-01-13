@@ -47,7 +47,7 @@ $base_url = $this->base;
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="<?php echo $this->webroot; ?>">Home</a></li>
+          <li class="active"><a href="<?php echo $this->base; ?>/">Home</a></li>
           <li class="dropdown">
               <a href="<?php echo $this->webroot; ?>" class="dropdown-toggle" data-toggle="dropdown">Transactions <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -66,7 +66,7 @@ $base_url = $this->base;
           <li>
           	<?php echo $this->Html->link('List Transactions', array('controller' => 'transactions', 'action' => 'index')); ?>
           </li> 
-		        
+		        <li><?php echo $this->base; ?></li>
 
               </ul>
            </li> 
@@ -85,7 +85,7 @@ $base_url = $this->base;
 				);
 			?>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        <p><a class="btn btn-lg btn-success" href="#">Sign up today</a></p>
       </div>
 
       <div class="span9">

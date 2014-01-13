@@ -25,7 +25,6 @@
 		<?php if($transaction['Transaction']['type']=='auth'){?>
 		<br>	<?php echo $this->Html->link(__('Capture'), array('action' => 'capture', $transaction['Transaction']['transactionid'])); ?>		
 		<?php } ?>	
-		<br>	<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $transaction['Transaction']['id']), null, __('Are you sure you want to delete # %s?', $transaction['Transaction']['id'])); ?>
 		</td>
 		<td><?php echo h($transaction['Transaction']['id']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['firstname']); ?>&nbsp;<?php echo h($transaction['Transaction']['lastname']); ?></td>

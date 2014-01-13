@@ -26,7 +26,6 @@
 		echo $this->Form->input('checkaccount', array('type'=>'text'));
 		echo $this->Form->input('checkaba', array('type'=>'text'));	
 		echo $this->Form->input('amount', array('type'=>'text'));
-		echo $this->Form->input('tax', array('type'=>'text'));
 		echo $this->Form->input('orderid', array('type'=>'text'));
 ?>
 

@@ -73,22 +73,10 @@ public function add_check() {
 	* */
 
 	if ($this->request->is('post')) {
-				
-	/*	 	
-		$data_debug = $this->request->data;
-
-		echo "<pre>";
-		debug($data_debug);
-		echo "</pre>";
-
-		exit();
-	*/		
-			
-
 			
 		$incoming = array();
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
-		$incoming['tax'] = $this->request->data['Transaction']['tax'];
+		$incoming['tax'] = "0.00";
 		$incoming['orderdescription'] = $this->request->data['Transaction']['orderdescription'];
 
 		$incoming['type'] = 'sale';
@@ -115,16 +103,15 @@ public function add_check() {
 		$incoming['fax'] = $this->request->data['Transaction']['fax'];
 		$incoming['email'] = $this->request->data['Transaction']['email'];
 		
+		$this->request->data['Transaction']['tax'] = '0.00';
 		$this->request->data['Transaction']['time'] = $time;
 		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
 		$this->request->data['Transaction']['type'] = 'sale';
 		$this->request->data['Transaction']['payment'] = 'check';
 
 
-		$response = $this->Payscape->Sale($incoming);
-		
-		parse_str($response, $result_array);
-		
+		$result_array = $this->Payscape->Sale($incoming);
+			
 		// for testing 
 		$this->set('incoming', $incoming);
 		
@@ -240,21 +227,7 @@ public function add_credit_card() {
 		$this->request->data['Transaction']['payment'] = 'credit card';
 		
 		
-		$response = $this->Payscape->Sale($incoming);
-		
-		//debug($response);
-		
-		// for testing
-
-		/*
-		echo "INCOMING: <br>";
-		debug($incoming);
-		echo "RESPONSE: <br>";
-		debug($response);
-		$this->set('incoming', $incoming);
-		*/
-		
-		parse_str($response, $result_array);
+		$result_array = $this->Payscape->Sale($incoming);
 		
 		if($result_array['response']==1){
 			
@@ -365,15 +338,7 @@ public function authorize_credit_card() {
 
 
 
-		$response = $this->Payscape->Auth($incoming);
-
-		//debug($response);
-		
-		// for testing
-		$this->set('incoming', $incoming);
-		
-
-		parse_str($response, $result_array);
+		$result_array = $this->Payscape->Auth($incoming);
 
 		if($result_array['response']==1){
 			
@@ -460,10 +425,7 @@ public function capture($transactionid=0){
 				$incoming['amount'] = $auth_amount;
 			}
 	
-		$response = $this->Payscape->Capture($incoming);
-		parse_str($response, $result_array);
-
-
+		$result_array = $this->Payscape->Capture($incoming);
 	
 		if($result_array['response']==1){
 			$response_code = $result_array['response'];
@@ -624,9 +586,7 @@ public function credit($transactionid=0){
 		$incoming['email'] = $transaction['transactions']['email'];
 	
 			
-		$response = $this->Payscape->Credit($incoming);
-		
-		parse_str($response, $result_array);
+		$result_array = $this->Payscape->Credit($incoming);
 		
 		if($result_array['response']==1){
 		
@@ -667,23 +627,6 @@ public function credit($transactionid=0){
 			} else {
 				$this->Session->setFlash(__('Credit Transaction unsuccessful, no data has been saved'));
 			}
-		
-		
-			//debug($response);
-			//	exit();
-			/*
-			echo "INCOMING: <br>";
-			echo "<pre>";
-			debug($incoming);
-			echo "<br>RESPONSE:<br>";
-			debug($response);
-		
-			echo "</pre>";
-		
-			exit();
-			*/
-		
-		
 		
 		} else {
 			$this->Session->setFlash(__('Credit Transaction unsuccessful, no data has been saved. Please, try again.'));
@@ -766,9 +709,9 @@ public function validate_credit_card() {
 		$this->request->data['Transaction']['type'] = $type;
 
 
-		$response = $this->Payscape->ValidateCreditCard($incoming);
+		$result_array = $this->Payscape->ValidateCreditCard($incoming);
 
-		parse_str($response, $result_array);
+
 
 		if($result_array['response']==1){
 			$this->request->data['Transaction']['validated'] = $result_array['response'];	
@@ -890,8 +833,8 @@ public function validate_credit_card() {
 				$amount = $auth_amount;
 			}
 		
-			$response = $this->Payscape->Refund($incoming);
-			parse_str($response, $result_array);
+			$result_array = $this->Payscape->Refund($incoming);
+
 		
 		
 		
@@ -930,8 +873,7 @@ public function validate_credit_card() {
 				$this->request->data['Transaction']['orderid'] = $orderid;
 				$this->request->data['Transaction']['orderdescription'] = $orderdescription;
 				
-	//debug($this->request->data);
-	//debug($incoming);
+
 		
 				/* save the submission and transaction details */
 		
@@ -1050,8 +992,8 @@ public function validate_credit_card() {
 		
 
 		
-			$response = $this->Payscape->Update($incoming);
-			parse_str($response, $result_array);
+			$result_array = $this->Payscape->Update($incoming);
+			
 		
 		
 		
@@ -1139,6 +1081,7 @@ public function validate_credit_card() {
 	
 	public function void($transactionid){
 		$type = 'void';
+		$time = gmdate('YmdHis');
 		
 		if($this->request->is('post')){
 		
@@ -1147,14 +1090,13 @@ public function validate_credit_card() {
 				$transactionid = (int) $transactionid;
 			}
 		
-			$sql = "SELECT id, amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
+			$sql = "SELECT id, firstname, lastname, address1, city, state, zip, country, 
+			phone, fax, email, 
+			amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
 		
 			$transaction = $this->Transaction->query($sql);
 			$transaction = array_shift($transaction);
-		
-			//debug($transaction);
-			//exit();
-		
+			
 			$auth_amount = $transaction['transactions']['amount'];
 			$transactionid = $transaction['transactions']['transactionid'];
 			$orderid = $transaction['transactions']['orderid'];
@@ -1177,8 +1119,8 @@ public function validate_credit_card() {
 		
 			$incoming['amount'] = $amount;
 		
-			$response = $this->Payscape->Void($incoming);
-			parse_str($response, $result_array);
+			$result_array = $this->Payscape->Void($incoming);
+			
 		
 		
 		
@@ -1188,11 +1130,24 @@ public function validate_credit_card() {
 				$authcode = $result_array['authcode'];
 				$void_message = "The Void was successful ";
 					
-		
-				$this->request->data['Transaction']['type'] = 'refund';
+				
+				$this->request->data['Transaction']['type'] = 'void';
+				$this->request->data['Transaction']['firstname'] = $transaction['transactions']['firstname'];
+				$this->request->data['Transaction']['lastname'] = $transaction['transactions']['lastname'];
+				$this->request->data['Transaction']['address1'] = $transaction['transactions']['address1'];
+				$this->request->data['Transaction']['city'] = $transaction['transactions']['city'];
+				$this->request->data['Transaction']['state'] = $transaction['transactions']['state'];
+				$this->request->data['Transaction']['zip'] = $transaction['transactions']['zip'];
+				$this->request->data['Transaction']['country'] = $transaction['transactions']['country'];
+				$this->request->data['Transaction']['phone'] = $transaction['transactions']['phone'];
+				$this->request->data['Transaction']['fax'] = $transaction['transactions']['fax'];
+				$this->request->data['Transaction']['email'] = $transaction['transactions']['email'];
+				
 				$this->request->data['Transaction']['transactionid'] = $authtransactionid;
 				$this->request->data['Transaction']['authcode'] = $authcode;
-		
+				$this->request->data['Transaction']['orderid'] = $transaction['transactions']['orderid'];
+				$this->request->data['Transaction']['time'] = $time;
+				
 					
 		
 		
@@ -1207,19 +1162,20 @@ public function validate_credit_card() {
 				} else {
 					$void_message .= " but could not be Saved to the database.";
 					$this->Session->setFlash($void_message);
-					$process = 2;
+				
 		
 				}
 		
 			} else {
-				$refund_message = "Transaction has failed.";
+				$void_message = "Transaction has failed.";
 				$this->Session->setFlash($void_message);
 			}
 		
 			/*
 			 * for testing
 			* */
-			$this->set(compact('result_array', 'incoming', 'process'));
+			$process = 2;
+			$this->set(compact('result_array', 'incoming', 'process', 'void_message'));
 		
 		
 		}// post
@@ -1244,18 +1200,15 @@ public function validate_credit_card() {
 		$transaction = $this->Transaction->query($sql);
 		$transaction = array_shift($transaction);
 		
-		//debug($transaction);
-		//exit();
-		
 		$amount = $transaction['transactions']['amount'];
 		$transactionid = $transaction['transactions']['transactionid'];
 		$orderid = $transaction['transactions']['orderid'];
 		$authcode = $transaction['transactions']['authcode'];
 		$process = 1;
-		$void_message = "Process Void Sale Credit Card for Transaction  #$transactionid";
+		$void_message = "Process Void for Credit Card Transaction  #$transactionid";
 		
-		
-		$this->set(compact('process', 'transaction', 'amount', 'orderid', 'authcode', 'transactionid'));
+
+		$this->set(compact('process', 'transaction', 'amount', 'orderid', 'authcode', 'transactionid', 'void_message'));
 		
 		
 	}// void

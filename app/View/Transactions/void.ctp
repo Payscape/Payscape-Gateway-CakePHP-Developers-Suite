@@ -1,14 +1,5 @@
 <?php
-// for testing
-if(isset($result_array)){
-	echo "INCOMING: <br>";
-	debug($incoming);
-}
-
-if(isset($result_array)){
-	echo "RESULT ARRAY: <br>";
-	debug($result_array);
-}
+	echo $void_message;
 ?>
 	
 
@@ -20,7 +11,7 @@ if(isset($result_array)){
 <input type="hidden" name="_method" value="POST"/>
 </div>	
 <fieldset>
-		<legend>Void Sale Credit Card for Transaction ID <?php echo $transactionid; ?></legend>
+		<legend>Void for Credit Card Transaction ID <?php echo $transactionid; ?></legend>
 	<?php echo $this->Form->input('action', array('type' => 'hidden', 'value'=>'capture')); ?>			
 		
 	<div class="input text"><label for="TransactionType">Type:</label> Void. 	</div>				

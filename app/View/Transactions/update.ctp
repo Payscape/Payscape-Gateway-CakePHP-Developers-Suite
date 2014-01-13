@@ -1,14 +1,5 @@
 <?php
-// for testing
-if(isset($result_array)){
-	echo "INCOMING: <br>";
-	debug($incoming);
-}
 
-if(isset($result_array)){
-	echo "RESULT ARRAY: <br>";
-	debug($result_array);
-}
 ?>
 
 	<?php if($process==1){ ?>

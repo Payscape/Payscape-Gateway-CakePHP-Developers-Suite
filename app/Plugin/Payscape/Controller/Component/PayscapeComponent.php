@@ -32,7 +32,7 @@ class PayscapeComponent extends Component
 	
 
 	/* send using the Cake HTTPSocket */	
-	public function sendHTTPSocket($trans){
+	protected function sendHTTPSocket($trans){
 		$query['ipaddress'] = $_SERVER["REMOTE_ADDR"];
 		$query['username'] = self::userid;
 		$query['password'] = self::userpass;
@@ -41,6 +41,41 @@ class PayscapeComponent extends Component
 		$HttpSocket = new HttpSocket();
 		return $HttpSocket->post(self::url, $trans);
 	}// sendHTTPSocket
+	
+	/* send using cURL */
+	protected function sendCURL($trans){
+	
+		$trans['username'] = self::userid;
+		$trans['password'] = self::userpass;
+	
+	
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, self::url);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $trans);
+		curl_setopt($ch, CURLOPT_REFERER, "");
+	
+		/* gateway SSL certificate options for Apache on Windows */
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+			
+		curl_setopt($ch, CURLOPT_CAINFO, getcwd() . "/crt/cacert.pem");
+	
+		$outcome = curl_exec($ch);
+	
+		/* display cURL errors */
+		if(curl_errno($ch)){
+			die('Could not send request: ' .curl_error($ch));
+			exit();
+		}
+	
+		curl_close($ch);
+		unset($ch);
+			
+		return $outcome;
+	
+	}// sendCURL
 	
 	
 	protected function send($trans){
@@ -139,7 +174,13 @@ class PayscapeComponent extends Component
 		$transactiondata['ipaddress'] = $_SERVER["REMOTE_ADDR"];
 		
 
-		return self::send($transactiondata);
+		$response = self::send($transactiondata);
+		
+		parse_str($response, $result_array);
+		
+		return $result_array;
+		
+	
 
 
 			} else {
@@ -196,8 +237,13 @@ class PayscapeComponent extends Component
 			$transactiondata['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');
 			$transactiondata['ipaddress'] = $_SERVER["REMOTE_ADDR"];
 				
-			return self::send($transactiondata);
+		$response = self::send($transactiondata);
 		
+		parse_str($response, $result_array);
+		
+		return $result_array;
+		
+			
 		
 		} else {
 		
@@ -205,7 +251,7 @@ class PayscapeComponent extends Component
 			$response['error'] = 1;
 			return $response;
 		}// count array
-	}// auth
+	}// Auth
 	
 	public function Credit($incoming=null){
 
@@ -244,8 +290,12 @@ class PayscapeComponent extends Component
 			$transactiondata['fax'] = (isset($incoming['fax']) ? $incoming['fax'] : '');
 			$transactiondata['email'] = (isset($incoming['email']) ? $incoming['email'] : '');
 			$transactiondata['ipaddress'] = $_SERVER["REMOTE_ADDR"];
-		
-			return self::send($transactiondata);
+				
+			$response = self::send($transactiondata);
+			
+			parse_str($response, $result_array);
+			return $result_array;
+			
 		} else {		
 			$response['Message'] = 'Required Values Are Missing';
 			$response['error'] = 1;
@@ -289,7 +339,11 @@ public function ValidateCreditCard($incoming=null){
 		$transactiondata['email'] = (isset($incoming['email']) ? $incoming['email'] : '');
 		$transactiondata['orderid'] = (isset($incoming['orderid']) ? $incoming['orderid'] : '');
 
-		return self::send($transactiondata);
+		$response = self::send($transactiondata);
+		
+		parse_str($response, $result_array);
+		
+		return $result_array;
 
 	} else {
 		$response['Message'] = 'Required Values Are Missing';
@@ -311,7 +365,11 @@ public function ValidateCreditCard($incoming=null){
 				$transactiondata['type'] = 'capture';
 				$transactiondata['transactionid'] = (isset($incoming['transactionid']) ? $incoming['transactionid'] : '');
 		
-				return self::send($transactiondata);
+					$response = self::send($transactiondata);
+					
+					parse_str($response, $result_array);
+					
+					return $result_array;
 		
 			} else {
 				$response['Message'] = 'Required Values <strong>type or transactionid</strong> Are Missing';
@@ -331,7 +389,11 @@ public function ValidateCreditCard($incoming=null){
 			$transactiondata['type'] = 'void';
 			$transactiondata['transactionid'] = (isset($incoming['transactionid']) ? $incoming['transactionid'] : '');
 		
-			return self::send($transactiondata);
+				$response = self::send($transactiondata);
+				
+				parse_str($response, $result_array);
+				
+				return $result_array;
 		
 		} else {
 			$response['Message'] = $response['Message'] = 'Required Values <strong>type or transactionid</strong> Are Missing';
@@ -359,7 +421,11 @@ public function ValidateCreditCard($incoming=null){
 			}
 		
 		
-			return self::send($transactiondata);
+				$response = self::send($transactiondata);
+				
+				parse_str($response, $result_array);
+				
+				return $result_array;
 		
 		} else {
 			$response['Message'] = 'Required Values <strong>type or transactionid</strong> Are Missing';
@@ -386,7 +452,11 @@ public function ValidateCreditCard($incoming=null){
 			$transactiondata['shipping_carrier'] = (isset($incoming['shipping_carrier']) ? $incoming['shipping_carrier'] : '');
 			$transactiondata['orderid'] = (isset($incoming['orderid']) ? $incoming['orderid'] : '');
 		
-			return self::send($transactiondata);
+				$response = self::send($transactiondata);
+				
+				parse_str($response, $result_array);
+				
+				return $result_array;
 			
 		} else {
 			$response['Message'] = 'Required Values <strong>type or transactionid</strong> Are Missing';

@@ -2,28 +2,45 @@
 class PayscapeComponent extends Component
 {
 	/*
-	 * Payscape CakePHP Component v3.0
+	 * Payscape Direct Post API CakePHP Plugin v3.0
 	 * 
+	 * Edit userid: replace with your User ID from your Payscape account
+	 * Edit userpass: replace with your Password from your Payscape account
+	 * 
+	 * Place this Plugin in your app/Plugin directory.
+	 * Load the Plugin in your Config/bootstrap file. 
+	 * 
+	 * CakePlugin::load('Payscape');
+	 * 
+	 * Include the Payscape Component in your Controller 
+	 * public $components = array('Payscape.Payscape');
+	 * 
+	 *  /webroot/crt/cacert.pem is included so that you may use cURL. 
+	 * 
+	 * You may use either cURL or Cake's HTTPSocket for your send() function.
+	 * Both are included here. 
 	 * 
 	 * Sale() detects if your transaction is Credit Card or eCheck and sends the correct params 
 	 * Two send() methods are included, one that uses Cake's HTTPSocket, as well as one that uses cURL.
 	 * To use the Cake HTTPSocket version, simply rename sendHTTPSocket() to send(), and the current send() to sendcURL(). 
 	 * 
-	 * Place this Component in /Controller/Component
+	 * 
 	 * Add 'Payscape' to your array of components in your Controller, or AppController 
 	 * to make the Class available for all of your Controllers
 	 * 
-	 * Payscape CakePHP Component exposes all of the methods of the Payscape NMI API
+	 * Payscape Direct Post API CakePHP Plugin exposes all of the methods of the Payscape NMI API
 	 * 
-	 * See Payscape CakePHP Component Documentation for complete notes.
+	 * See Payscape Direct Post API Documentation for complete notes on variables:
+	 * 
+	 * Direct Post API / Documentation / Transaction Variables
+	 * http://payscape.com/developers/direct-post-api.php
+	 * 
 	 * See the Payscape CakePHP Developers Suite for examples of each of the methods.
 	 * 
-	 * 1/09/2014
+	 * 1/14/2014
 	 * 
 	 * */
 
-	const key 		= '\!b2#I/wu%)4_tUdpAxO|GDWW?20:V.w';		// Replace with your Payscape Key
-	const keyid 		= '449510';				// Replace with your Payscape Key ID
 	const url 		= 'https://secure.payscapegateway.com/api/transact.php';
 
 	const userid 	= 'demo'; 					//Replace with your UserID from Payscape.com
@@ -118,11 +135,8 @@ class PayscapeComponent extends Component
 		$time = gmdate('YmdHis');
 		$type = 'sale';
 		
-		$amount = (isset($incoming['amount']) ? $incoming['amount'] : '');
-		
+		$amount = (isset($incoming['amount']) ? $incoming['amount'] : '');	
 		$order_id = (isset($incoming['order_id']) ? $incoming['order_id'] : '');
-		
-		$hash = md5($order_id|$amount|$time|self::key);
 		$payment = (isset($incoming['payment']) ? $incoming['payment'] : '');
 		
 		if($payment=='check'){
@@ -132,12 +146,12 @@ class PayscapeComponent extends Component
 		}	
 		
 	if(count(array_intersect_key(array_flip($required), $incoming)) === count($required)) {
-	
 		
 		$transactiondata = array();
 		$transactiondata['type'] = $type;
+		$transactiondata['amount'] = $amount;
+		$transactiondata['order_id'] = $order_id;
 		$transactiondata['time'] = $time;
-
 
 		if($payment=='check'){
 			$transactiondata['checkname'] = (isset($incoming['checkname']) ? $incoming['checkname'] : '');
@@ -152,11 +166,7 @@ class PayscapeComponent extends Component
 			$transactiondata['ccexp'] = (isset($incoming['ccexp']) ? $incoming['ccexp'] : '');
 			$transactiondata['cvv'] = (isset($incoming['cvv']) ? $incoming['cvv'] : '');
 		}
-		
-		/* user supplied required data */
-		
-		$transactiondata['amount'] = (isset($incoming['amount']) ? $incoming['amount'] : '');
-		
+
 		/* user supplied optional data */
 		
 		$transactiondata['firstname'] = (isset($incoming['firstname']) ? $incoming['firstname'] : '');
@@ -179,9 +189,6 @@ class PayscapeComponent extends Component
 		parse_str($response, $result_array);
 		
 		return $result_array;
-		
-	
-
 
 			} else {
 				

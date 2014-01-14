@@ -66,7 +66,7 @@ $base_url = $this->base;
           <li>
           	<?php echo $this->Html->link('List Transactions', array('controller' => 'transactions', 'action' => 'index')); ?>
           </li> 
-		        <li><?php echo $this->base; ?></li>
+
 
               </ul>
            </li> 
@@ -75,7 +75,7 @@ $base_url = $this->base;
       </div>
 
       <div class="jumbotron">
-        <h1>Payscape Development Lab</h1>
+        <h1>Payscape CakePHP Developers Suite</h1>
         		<?php 
 		$description = "Payscape Advisor";
 		echo $this->Html->link(
@@ -84,8 +84,7 @@ $base_url = $this->base;
 					array('target' => '_blank', 'escape' => false)
 				);
 			?>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Sign up today</a></p>
+        <p> Rapid eCommerce Web Development with CakePHP and the Payscape Direct Post API.</p>
       </div>
 
       <div class="span9">
@@ -96,7 +95,7 @@ $base_url = $this->base;
       </div>
 
       <div class="footer">
-        <p>&copy; Payscape Advisors 2013</p>
+        <p>&copy; Payscape Advisors 2014</p>
       </div>
 <footer>
 		<?php 

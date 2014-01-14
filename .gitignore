@@ -16,9 +16,7 @@
 ._*
 .Spotlight-V100
 .Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
+
 /.buildpath
 
 /.editorconfig
@@ -31,11 +29,9 @@ Thumbs.db
 
 /build.xml
 
-/CONTRIBUTING.md
-
 /lib/
 
-/README.md
+
 /tmp
-/.gitignore
-/cURL
+.gitignore
+

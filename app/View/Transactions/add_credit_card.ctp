@@ -1,4 +1,18 @@
 <?php 
+
+/* for testing 
+	if(isset($incoming)){
+		echo "INCOMING:";		
+		debug($incoming);
+	}
+	
+	if(isset($result_array)){
+		echo "RESULT ARRAY:";
+		debug($result_array);
+		
+	}
+*/	
+
 	if($process==1){
 ?>
 <div class="transactions form">

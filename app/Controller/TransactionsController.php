@@ -109,11 +109,11 @@ public function add_check() {
 		$this->request->data['Transaction']['type'] = 'sale';
 		$this->request->data['Transaction']['payment'] = 'check';
 
-
 		$result_array = $this->Payscape->Sale($incoming);
 			
 		// for testing 
-		$this->set('incoming', $incoming);
+	//	$this->set('incoming', $incoming);
+	//	$this->set('result_array', $result_array);
 		
 		if($result_array['response']==1){
 			
@@ -152,14 +152,12 @@ public function add_check() {
 
 public function add_credit_card() {
 
-	$posturl = 'https://secure.payscapegateway.com/api/transact.php';
-	$order_id = 'Test';
 
 	/* test data */
 
 	$username = 'demo';
 	$password = 'password';
-	$time = gmdate('YmdHis');
+
 
 	$visa = "4111111111111111";
 	$mastercard = "5431111111111111";
@@ -178,26 +176,11 @@ public function add_credit_card() {
 	*
 	* */
 
-
-	$this->set(compact('visa', 'mastercard', 'discover', 'american_express', 'cc_expire', 'account_ach', 'routing_ach'));
-
-
+	$time = gmdate('YmdHis');
 
 	if ($this->request->is('post')) {
-			
 
-		/* for testing
-		 	
-		$data_debug = $this->request->data;
 
-		echo "<pre>";
-		echo "Debug DATA";
-		debug($data_debug);
-		echo "</pre>";
-
-		exit();
-			
-		*/
 			
 		$incoming = array();
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
@@ -220,6 +203,7 @@ public function add_credit_card() {
 		$incoming['phone'] = $this->request->data['Transaction']['phone'];
 		$incoming['fax'] = $this->request->data['Transaction']['fax'];
 		$incoming['email'] = $this->request->data['Transaction']['email'];
+				
 		$this->request->data['Transaction']['time'] = $time;
 		$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
 	
@@ -228,6 +212,9 @@ public function add_credit_card() {
 		
 		
 		$result_array = $this->Payscape->Sale($incoming);
+		
+		/* for testing */
+	//	$this->set(compact('incoming', 'result_array'));
 		
 		if($result_array['response']==1){
 			
@@ -288,26 +275,9 @@ public function authorize_credit_card() {
 	*
 	* */
 
-
-	$this->set(compact('visa', 'mastercard', 'discover', 'american_express', 'cc_expire', 'account_ach', 'routing_ach'));
-
-
-
 	if ($this->request->is('post')) {
 			
 
-		/* for testing
-
-		$data_debug = $this->request->data;
-
-		echo "<pre>";
-		echo "Debug DATA";
-		debug($data_debug);
-		echo "</pre>";
-
-		exit();
-			
-		*/
 			
 		$incoming = array();
 		$incoming['amount'] =  $this->request->data['Transaction']['amount'];

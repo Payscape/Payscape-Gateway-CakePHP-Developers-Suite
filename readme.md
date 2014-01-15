@@ -13,12 +13,8 @@ Database schema included builds the table that saves transactions and their deta
 ## Requirements
 * PHP 5.2.8 or greater
 
-Database server in one of these flavors: 
-
-+ mySQL 4.2 or greater
-+ PostgreSQL
-+ Microsoft SQL Server
-+ SQLite
+* Database server in one of these flavors 
+** mySQL 4.2 or greater, PostgreSQL, Microsoft SQL Server or SQLite
 
  if you wish to use cURL posts: 
 

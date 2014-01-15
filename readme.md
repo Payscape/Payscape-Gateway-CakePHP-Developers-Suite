@@ -4,14 +4,14 @@
 	 
 Includes examples for all of the methods in the Payscape Gateway Direct Post API
 
-##Configuration## 
+##Configuration 
 1. Create the table `transactions` in your database. 
 2. Import schema/transactions.sql into your database
 3. Edit config.php for your base URL.
 4. Edit db-config.php for your database credentials.
  	  
 	
-##Payscape Direct Post API CakePHP Plugin v3.0##
+##Payscape Direct Post API CakePHP Plugin v3.0
 	  
 1. Place the Payscape plugin folder in your app/Plugin directory. 
 2. Place Payscape/Config/payscape.php in your /app/Config folder

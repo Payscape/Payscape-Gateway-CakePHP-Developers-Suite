@@ -12,7 +12,11 @@ Database schema included builds the table that saves transactions and their deta
 
 ## Requirements
 * PHP 5.2.8 or greater
-* mySQL 4.2 or greater
+* Database server in one of these flavors:
+** mySQL 4.2 or greater
+** PostgreSQL
+** Microsoft SQL Server
+** SQLite
 * cURL if you wish to use cURL posts, or you may opt to use the native Cake HTTPSocket for your posts.
 
 ## Database

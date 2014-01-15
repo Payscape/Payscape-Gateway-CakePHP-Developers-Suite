@@ -6,17 +6,19 @@ and their success responses.
 
 Controllers, Views and Forms are included to assist your development
 
-Build with the latest release of Twitter Bootstrap for Responsive web development.
+Built with the latest release of Twitter Bootstrap for Responsive web development.
 
 Database schema included builds the table that saves transactions and their details.
 
 ## Requirements
 * PHP 5.2.8 or greater
-* Database server in one of these flavors:
-** mySQL 4.2 or greater
-** PostgreSQL
-** Microsoft SQL Server
-** SQLite
+
+Database server in one of these flavors: 
+* mySQL 4.2 or greater
+* PostgreSQL
+* Microsoft SQL Server
+* SQLite
+
 * cURL if you wish to use cURL posts, or you may opt to use the native Cake HTTPSocket for your posts.
 
 ## Database

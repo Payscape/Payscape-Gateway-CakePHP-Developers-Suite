@@ -1,32 +1,41 @@
 
 #Payscape Gateway CakePHP Developers Suite#
+Rapid eCommerce development with CakePHP and the Payscape Gateway.
+Includes examples for all of the methods in the Payscape Gateway Direct Post API 
+and their success responses. 
 
-Includes examples for all of the methods in the Payscape Gateway Direct Post API
+Controllers, Views and Forms are included to assist your development
 
-##Configuration 
-1. Create the table `transactions` in your database. 
-2. Import schema/transactions.sql into your database
-3. Edit config.php for your base URL.
-4. Edit db-config.php for your database credentials.
+Build with the latest release of Twitter Bootstrap for Responsive web development.
+
+Database schema included builds the table that saves transactions and their details.
+
+## Requirements
+* PHP 5.2.8 or greater
+* mySQL 4.2 or greater
+* cURL if you wish to use cURL posts, or you may opt to use the native Cake HTTPSocket for your posts.
+
+## Database
+Import schema/transactions.sql into your database
  	  
 	
-##Payscape Direct Post API CakePHP Plugin v3.0
+##Payscape Gateway CakePHP Plugin v3.0
 	  
 1. Place the Payscape plugin folder in your app/Plugin directory. 
-2. Place Payscape/Config/payscape.php in your /app/Config folder
-3. Edit userid: replace with your User ID from your Payscape account
-4. Edit userpass: replace with your Password from your Payscape account
-	  
-	  
-Load the Plugin in your Config/bootstrap file. 
+2. Move Payscape/Config/payscape.php to your /app/Config folder
+3. Edit payscape.php userid: replace with your User ID from your Payscape account
+4. Edit payscape.php userpass: replace with your Password from your Payscape account
+5. Load the Plugin in your Config/bootstrap file. 
 ```
 CakePlugin::load('Payscape');
 ```	  
-Include the Payscape Component in your Controller 
+6. Include the Payscape Component in your Controller 
 ```
 public $components = array('Paginator', 'Session', 'Payscape.Payscape');
 ```
-	  
+See the readme.md file in the Payscape Plugin for examples of the methods available in the Payscape Gateway
+
+## cURL notes	  
 /webroot/crt/cacert.pem is included so that you may use cURL. 
 You may also download this file at the cURL website http://curl.haxx.se/ca/cacert.pem 
 	 

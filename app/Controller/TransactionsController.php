@@ -183,14 +183,17 @@ public function add_credit_card() {
 
 			
 		$incoming = array();
+		/* required fields*/
 		$incoming['amount'] = $this->request->data['Transaction']['amount'];
+		$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
+		$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
+
+
+		/* optional fields*/
+		$incoming['cvv'] = $this->request->data['Transaction']['cvv'];		
 		$incoming['tax'] = $this->request->data['Transaction']['tax']; 			
 		$incoming['orderdescription'] = $this->request->data['Transaction']['orderdescription'];
 		$incoming['orderid'] = $this->request->data['Transaction']['orderid'];
-		
-		$incoming['ccexp'] = $this->request->data['Transaction']['ccexp'];
-		$incoming['ccnumber'] = $this->request->data['Transaction']['ccnumber'];
-		$incoming['cvv'] = $this->request->data['Transaction']['cvv'];
 
 		$incoming['firstname'] = $this->request->data['Transaction']['firstname'];
 		$incoming['lastname'] = $this->request->data['Transaction']['lastname'];

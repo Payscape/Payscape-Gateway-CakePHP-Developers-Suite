@@ -49,23 +49,15 @@ You may also download this file at the cURL website http://curl.haxx.se/ca/cacer
 	  
 You may use either cURL or Cake's HTTPSocket for your send() function.
 Both are included here. 
+	
+##Features	  
+* Sale() detects if your transaction is Credit Card or eCheck and sends the correct params 
+* Two send() methods are included, one that uses Cake's HTTPSocket, as well as one that uses cURL.
+* To use the Cake HTTPSocket version, simply rename sendHTTPSocket() to send(), and the current send() to sendcURL(). 
+* Payscape Gateway CakePHP Plugin exposes all of the methods of the Payscape NMI API
+* See Payscape Direct Post API Documentation for complete notes on variables: http://payscape.com/developers/direct-post-api.php *Direct Post API / Documentation / Transaction Variables*
 	  
-Sale() detects if your transaction is Credit Card or eCheck and sends the correct params 
-Two send() methods are included, one that uses Cake's HTTPSocket, as well as one that uses cURL.
-To use the Cake HTTPSocket version, simply rename sendHTTPSocket() to send(), and the current send() to sendcURL(). 
-	  
-	  
-Add 'Payscape' to your array of components in your Controller, or AppController 
-to make the Class available for all of your Controllers
-	  
-Payscape Gateway CakePHP Plugin exposes all of the methods of the Payscape NMI API
-	  
-See Payscape Direct Post API Documentation for complete notes on variables:
-	  
-*Direct Post API / Documentation / Transaction Variables*
-http://payscape.com/developers/direct-post-api.php
-	  
-##Features## 
+## Transactions available
 * Sale - credit card transaction
 * Sale - eCheck ACH transaction
 * Validate - credit card validation
@@ -77,5 +69,3 @@ http://payscape.com/developers/direct-post-api.php
 * Void - void credit card transaction
  	  
 1/15/2014
-	  
-	 

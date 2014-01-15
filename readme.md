@@ -1,7 +1,6 @@
 
 #Payscape Gateway CakePHP Developers Suite#
-============================================
-	 
+
 Includes examples for all of the methods in the Payscape Gateway Direct Post API
 
 ##Configuration 

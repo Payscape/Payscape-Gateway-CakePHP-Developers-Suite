@@ -28,7 +28,7 @@ or you may opt to use the native Cake HTTPSocket for your posts.
 * Run the following command to install Payscape Gateway CakePHP Developers Suite, including the Payscape Gateway CakePHP Plugin.
 * That dot . at the end will  
 ```
-git clone https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite.git .
+git clone https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite.git . 
 ```
 * Edit /Config/database.php for your database connection 
 * Move /Plugin/Payscape/Config/payscape.php to your /app/Config folder

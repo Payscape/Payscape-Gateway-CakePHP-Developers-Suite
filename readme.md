@@ -22,13 +22,14 @@ Database schema included builds the table that saves transactions and their deta
 
 or you may opt to use the native Cake HTTPSocket for your posts.
 
-## Installation
+## Developers Suite Installation
 * Open your command line interface
 * Navigate to the directory where you want to create your application
 * Run the following command to install Payscape Gateway CakePHP Developers Suite, including the Payscape Gateway CakePHP Plugin.
-* That dot . at the end will  
+* That dot . at the end will install the repo within the current directory
+* --recursive pulls the Payscape Gateway CakePHP Plugin submodule when you clone the Developers Suite supermodule  
 ```
-git clone https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite.git . 
+git clone --recursive https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite.git . 
 ```
 * Edit /Config/database.php for your database connection 
 * Move /Plugin/Payscape/Config/payscape.php to your /app/Config folder

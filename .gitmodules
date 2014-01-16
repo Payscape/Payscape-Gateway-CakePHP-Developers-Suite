@@ -1,3 +1,0 @@
-[submodule "app/Plugin/Payscape"]
-	path = app/Plugin/Payscape
-	url = https://zorro2013@github.com/Payscape/Payscape-Gateway-CakePHP-Plugin.git

@@ -1,5 +1,5 @@
 
-#Payscape Gateway CakePHP Developers Suite#
+#Payscape Gateway CakePHP Developers Suite
 Rapid eCommerce development with CakePHP and the Payscape Gateway.
 Includes examples for all of the methods in the Payscape Gateway Direct Post API 
 and their success responses. 
@@ -21,6 +21,19 @@ Database schema included builds the table that saves transactions and their deta
 * cURL 
 
 or you may opt to use the native Cake HTTPSocket for your posts.
+
+## Installation
+* Open your command line interface
+* Navigate to the directory where you want to create your application
+* Run the following command to install Payscape Gateway CakePHP Developers Suite, including the Payscape Gateway CakePHP Plugin.
+* That dot . at the end will  
+```
+git clone https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite.git .
+```
+* Edit /Config/database.php for your database connection 
+* Move /Plugin/Payscape/Config/payscape.php to your /app/Config folder
+* Edit payscape.php for your Payscape username and password
+
 
 ## Database
 Import schema/transactions.sql into your database

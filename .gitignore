@@ -2,7 +2,7 @@
 #################################################
 
 /app/tmp
-
+/app/Plugin/Payscape
 /plugins
 /vendors
 /build

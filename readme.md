@@ -64,4 +64,4 @@ Both are included here.
 * Void - void credit card transaction
 * See the readme.md file in /app/Plugin/Payscape for examples of these transactions.
  	  
-1/15/2014
+1/17/2014

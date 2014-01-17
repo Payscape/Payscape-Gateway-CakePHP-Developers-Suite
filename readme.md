@@ -1,4 +1,3 @@
-
 #Payscape Gateway CakePHP Developers Suite
 Rapid eCommerce development with CakePHP and the Payscape Gateway.
 Includes examples for all of the methods in the Payscape Gateway Direct Post API 
@@ -27,7 +26,7 @@ Database schema included builds the table that saves transactions and their deta
 git clone --recursive https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite.git . 
 ```
 * Edit /Config/database.php for your database connection 
-* Move /Plugin/Payscape/Config/payscape.php to your /app/Config folder
+* Copy /Plugin/Payscape/Config/payscape.php to your /app/Config folder
 * Edit payscape.php for your Payscape username and password
 * Make sure that your /app/tmp directory is writable. 
 
@@ -36,19 +35,6 @@ Import schema/transactions.sql into your database
  	  
 	
 ##Payscape Gateway CakePHP Plugin v3.0
-	  
-1. Place the Payscape plugin folder in your app/Plugin directory. 
-2. Move Payscape/Config/payscape.php to your /app/Config folder
-3. Edit payscape.php userid: replace with your User ID from your Payscape account
-4. Edit payscape.php userpass: replace with your Password from your Payscape account
-5. Load the Plugin in your Config/bootstrap file. 
-```
-CakePlugin::load('Payscape');
-```	  
-6. Include the Payscape Component in your Controller 
-```
-public $components = array('Paginator', 'Session', 'Payscape.Payscape');
-```
 See the readme.md file in the Payscape Plugin for examples of the methods available in the Payscape Gateway
 
 ## cURL notes	  

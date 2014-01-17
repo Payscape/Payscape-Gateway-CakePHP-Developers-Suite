@@ -14,13 +14,8 @@ Database schema included builds the table that saves transactions and their deta
 * PHP 5.2.8 or greater
 
 * Database server in one of these flavors 
-** mySQL 4.2 or greater, PostgreSQL, Microsoft SQL Server or SQLite
-
- if you wish to use cURL posts: 
-
-* cURL 
-
-or you may opt to use the native Cake HTTPSocket for your posts.
+*mySQL 4.2 or greater, PostgreSQL, Microsoft SQL Server or SQLite*
+ * cURL - if you wish to use cURL posts, or you may opt to use the native Cake HTTPSocket for your posts.
 
 ## Developers Suite Installation
 * Open your command line interface
@@ -34,7 +29,7 @@ git clone --recursive https://github.com/Payscape/Payscape-Gateway-CakePHP-Devel
 * Edit /Config/database.php for your database connection 
 * Move /Plugin/Payscape/Config/payscape.php to your /app/Config folder
 * Edit payscape.php for your Payscape username and password
-
+* Make sure that your /app/tmp directory is writable. 
 
 ## Database
 Import schema/transactions.sql into your database

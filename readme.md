@@ -76,5 +76,6 @@ Both are included here.
 * Refund - refund amounts for credit card transaction
 * Credit - credit a credit card transaction
 * Void - void credit card transaction
+* See the readme.md file in /app/Plugin/Payscape for examples of these transactions.
  	  
 1/15/2014

@@ -15,7 +15,7 @@ Database schema included in /schema/transactions.sql to create the table that sa
 *mySQL 4.2 or greater, PostgreSQL, Microsoft SQL Server or SQLite*
 * cURL - if you wish to use cURL posts, or you may opt to use the native Cake HTTPSocket for your posts.
 
-## Developers Suite Installation 
+## Developers Suite Installation: Clone With GIT or Download the ZIP File 
 ### Clone With GIT
 * Open your command line interface
 * Navigate to the directory where you want to create your application
@@ -41,7 +41,7 @@ Import schema/transactions.sql into your database
  	  
 	
 ## Payscape Gateway CakePHP Plugin v3.0
-See the readme.md file in the Payscape Plugin for examples of the methods available in the Payscape Gateway
+See the readme.md file in the Payscape Plugin for examples of the methods available in the Payscape Gateway.
 
 ## cURL notes	  
 /webroot/crt/cacert.pem is included so that you may use cURL. 
@@ -69,4 +69,4 @@ Both are included here.
 * Void - void credit card transaction
 * See the readme.md file in /app/Plugin/Payscape for examples of these transactions.
  	  
-1/20/2014
+*1/20/2014*

@@ -15,7 +15,7 @@ Database schema included in /schema/transactions.sql to create the table that sa
 *mySQL 4.2 or greater, PostgreSQL, Microsoft SQL Server or SQLite*
 * cURL - if you wish to use cURL posts, or you may opt to use the native Cake HTTPSocket for your posts.
 
-## Developers Suite Installation: Clone With GIT or Download the ZIP File 
+## Installation: Clone With GIT or Download the ZIP File 
 ### Clone With GIT
 * Open your command line interface
 * Navigate to the directory where you want to create your application

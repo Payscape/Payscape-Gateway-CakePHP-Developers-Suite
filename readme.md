@@ -25,6 +25,7 @@ Database schema included in /schema/transactions.sql to create the table that sa
 ```
 git clone --recursive https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite.git . 
 ```
+
 ### Download the ZIP File
 * Download the ZIP file to your machine from here: https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite/archive/master.zip
 * Unzip the archive and copy it to your local development server.

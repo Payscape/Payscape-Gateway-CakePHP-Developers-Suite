@@ -3,20 +3,20 @@ Rapid eCommerce development with CakePHP and the Payscape Gateway.
 Includes examples for all of the methods in the Payscape Gateway Direct Post API 
 and their success responses. 
 
-Controllers, Views and Forms are included to assist your development
-
+Controllers, Views and Forms are included to jump start your development
+Utilizes the CakePHP framework for rapid web development.
 Built with the latest release of Twitter Bootstrap for Responsive web development.
 
-Database schema included builds the table that saves transactions and their details.
+Database schema included in /schema/transactions.sql to create the table that saves transactions and their details.
 
 ## Requirements
 * PHP 5.2.8 or greater
-
 * Database server in one of these flavors 
 *mySQL 4.2 or greater, PostgreSQL, Microsoft SQL Server or SQLite*
  * cURL - if you wish to use cURL posts, or you may opt to use the native Cake HTTPSocket for your posts.
 
-## Developers Suite Installation
+## Developers Suite Installation 
+### Clone With GIT
 * Open your command line interface
 * Navigate to the directory where you want to create your application
 * Run the following command to install Payscape Gateway CakePHP Developers Suite, including the Payscape Gateway CakePHP Plugin.
@@ -25,6 +25,11 @@ Database schema included builds the table that saves transactions and their deta
 ```
 git clone --recursive https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite.git . 
 ```
+### Download the ZIP File
+* Download the ZIP file to your machine from here: https://github.com/Payscape/Payscape-Gateway-CakePHP-Developers-Suite/archive/master.zip
+* Unzip the archive and copy it to your local development server.
+
+### Configuration
 * Edit /Config/database.php for your database connection 
 * Copy /Plugin/Payscape/Config/payscape.php to your /app/Config folder
 * Edit payscape.php for your Payscape username and password
@@ -34,13 +39,12 @@ git clone --recursive https://github.com/Payscape/Payscape-Gateway-CakePHP-Devel
 Import schema/transactions.sql into your database
  	  
 	
-##Payscape Gateway CakePHP Plugin v3.0
+## Payscape Gateway CakePHP Plugin v3.0
 See the readme.md file in the Payscape Plugin for examples of the methods available in the Payscape Gateway
 
 ## cURL notes	  
 /webroot/crt/cacert.pem is included so that you may use cURL. 
-You may also download this file at the cURL website http://curl.haxx.se/ca/cacert.pem 
-	 
+You may also download this file at the cURL website http://curl.haxx.se/ca/cacert.pem  
 	  
 You may use either cURL or Cake's HTTPSocket for your send() function.
 Both are included here. 
@@ -64,4 +68,4 @@ Both are included here.
 * Void - void credit card transaction
 * See the readme.md file in /app/Plugin/Payscape for examples of these transactions.
  	  
-1/17/2014
+1/20/2014

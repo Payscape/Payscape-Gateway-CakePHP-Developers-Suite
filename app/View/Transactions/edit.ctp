@@ -5,14 +5,21 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('type');
+		echo $this->Form->input('key_id');
+		echo $this->Form->input('hash');
 		echo $this->Form->input('time');
+		echo $this->Form->input('ccnumber');
+		echo $this->Form->input('ccexp');
+		echo $this->Form->input('checkname');
+		echo $this->Form->input('checkaba');
+		echo $this->Form->input('checkaccount');
 		echo $this->Form->input('account_holder_type');
 		echo $this->Form->input('account_type');
 		echo $this->Form->input('sec_code');
+		echo $this->Form->input('processor_id');
 		echo $this->Form->input('amount');
-		echo $this->Form->input('tax');
+		echo $this->Form->input('cvv');
 		echo $this->Form->input('payment');
-		echo $this->Form->input('orderdescription');
 		echo $this->Form->input('ipaddress');
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('lastname');
@@ -25,15 +32,6 @@
 		echo $this->Form->input('phone');
 		echo $this->Form->input('fax');
 		echo $this->Form->input('email');
-		echo $this->Form->input('orderid');
-		echo $this->Form->input('transactionid');
-		echo $this->Form->input('authcode');
-		echo $this->Form->input('capture_transactionid');
-		echo $this->Form->input('capture');
-		echo $this->Form->input('refund_transactionid');
-		echo $this->Form->input('tracking_number');
-		echo $this->Form->input('shipping_carrier');
-		echo $this->Form->input('validated');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
@@ -44,7 +42,5 @@
 
 		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Transaction.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Transaction.id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List Transactions'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Refunds'), array('controller' => 'refunds', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Refund'), array('controller' => 'refunds', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

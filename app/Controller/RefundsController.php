@@ -32,11 +32,11 @@ class RefundsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
-		if (!$this->Refund->exists($id)) {
-			throw new NotFoundException(__('Invalid refund'));
+	public function view($transaction_id = null) {
+		if (isset($_GET['transaction_id'])) {
+			$transaction_id = (int) $transaction_id;
 		}
-		$options = array('conditions' => array('Refund.' . $this->Refund->primaryKey => $id));
+		$options = array('conditions' => array('Refund.' . $this->Refund->transaction_id => $id));
 		$this->set('refund', $this->Refund->find('first', $options));
 	}
 
@@ -45,6 +45,7 @@ class RefundsController extends AppController {
  *
  * @return void
  */
+	/* the following methods are not used, Refund records are created by the Transactions controller */
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Refund->create();

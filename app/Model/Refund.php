@@ -71,4 +71,4 @@ class Refund extends AppModel {
 			'order' => ''
 		)
 	);
-}
+}// end Refund model

@@ -508,6 +508,7 @@ public function credit($transactionid=0){
 		
 	
 		$sql = "SELECT
+		id,
 		time,
 		ipaddress,
 		firstname,
@@ -561,6 +562,8 @@ public function credit($transactionid=0){
 			
 		$result_array = $this->Payscape->Credit($incoming);
 		
+		echo "$result_array";
+		
 		if($result_array['response']==1){
 		
 				
@@ -596,6 +599,14 @@ public function credit($transactionid=0){
 			$this->Transaction->create();
 			if ($this->Transaction->save($this->request->data)) {
 				$process = 2;
+				
+				$id = $transaction['transactions']['id'];
+				$sql_update = "UPDATE transactions SET type = 'credited' WHERE id = $id";
+					
+				if($query = $this->Transaction->query($sql_update)){
+					$refund_message .= " The original transaction has been updated to 'credited'";
+				}
+				
 				$this->Session->setFlash(__('Credit Transaction successful, and the data has been saved.'));
 			} else {
 				$this->Session->setFlash(__('Credit Transaction unsuccessful, no data has been saved'));
@@ -860,7 +871,21 @@ public function validate_credit_card() {
 							if($query = $this->Transaction->query($sql_update)){
 								$refund_message .= " The original transaction has been updated to 'refunded'";
 							}	
+							
+				/* create the Refund record */
+
+						$refund_data = array();
+						$refund_data['transactionid'] =  $authtransactionid;
+						$refund_data['transaction_id'] = $transaction['transactions']['id'];
+						$refund_data['refund_amount'] = $amount;
+						$refund_data['refund_date'] = gmdate('YmdHis');
 						
+								$this->Refund->create();
+								if($this->Transaction->save($this->request->data)){
+									$refund_message .= " and Refund data has been saved to the database";
+								} else {
+									$refund_massage .= " but Refund data could not be saved to the database";
+								}
 				
 					$this->Session->setFlash($refund_message);
 						

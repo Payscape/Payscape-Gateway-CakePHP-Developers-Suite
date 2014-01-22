@@ -37,7 +37,30 @@ class TransactionsController extends AppController {
 			throw new NotFoundException(__('Invalid transaction'));
 		}
 		$options = array('conditions' => array('Transaction.' . $this->Transaction->primaryKey => $id));
-		$this->set('transaction', $this->Transaction->find('first', $options));
+		
+		$transaction = $this->Transaction->find('first', $options);
+		
+		$type = $transaction['Transaction']['type'];
+		
+			if($type=='refund'){
+				
+				$refund_transactionid = $transaction['Transaction']['refund_transactionid'];
+				
+		
+				
+				$sql = "SELECT id, amount FROM transactions WHERE transactionid = $refund_transactionid";				
+				$order = $this->Transaction->query($sql);
+				
+				
+				$order = array_shift($order);
+				
+				$this->set('order', $order);
+			}
+
+		$this->set('transaction', $transaction);
+		
+		
+		debug($transaction);
 	}
 
 /**

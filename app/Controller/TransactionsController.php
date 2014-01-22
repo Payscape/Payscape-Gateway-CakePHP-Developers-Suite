@@ -1092,11 +1092,12 @@ public function refund($transactionid=0){
 	
 	public function void($transactionid){
 		$type = 'void';
-		$time = gmdate('YmdHis');
+
 		$process = 1;
+		$ipaddress = $_SERVER['REMOTE_ADDR'];
 		
 		if($this->request->is('post')){
-		
+				$time = gmdate('YmdHis');
 			
 			$process = 2;
 			if(isset($transactionid)){

@@ -59,8 +59,6 @@ class TransactionsController extends AppController {
 
 		$this->set('transaction', $transaction);
 		
-		
-		debug($transaction);
 	}
 
 /**

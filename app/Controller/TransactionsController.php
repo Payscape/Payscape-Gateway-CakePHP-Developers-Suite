@@ -816,10 +816,15 @@ public function validate_credit_card() {
 				$incoming['amount'] = $auth_amount;
 				$amount = $auth_amount;
 			}
+			
+		echo "INCOMING: ";
+		debug($incoming);			
 		
 			$result_array = $this->Payscape->Refund($incoming);
 
-		
+		echo "RESULT ARRAY: ";
+		debug($result_array);
+				
 		
 		
 			if($result_array['response']==1){
@@ -1087,12 +1092,13 @@ public function validate_credit_card() {
 		
 		if($this->request->is('post')){
 		
+			
 			$process = 2;
 			if(isset($transactionid)){
 				$transactionid = (int) $transactionid;
 			}
 		
-			$sql = "SELECT id, firstname, lastname, address1, city, state, zip, country, 
+			$sql = "SELECT id, firstname, lastname, company, address1, city, state, zip, country, 
 			phone, fax, email, 
 			amount, transactionid, orderid, orderdescription, 
 			authcode FROM transactions WHERE `transactionid` = $transactionid";
@@ -1113,13 +1119,10 @@ public function validate_credit_card() {
 			$incoming['transactionid'] = $transactionid;
 			$incoming['amount'] = $amount;
 			
-	echo "INCOMING: ";		
-	debug($incoming);		
+	
 		
 			$result_array = $this->Payscape->Void($incoming);
 			
-	echo "RESULT ARRAY: ";
-	debug($result_array);	
 		
 		
 			if($result_array['response']==1){
@@ -1130,8 +1133,16 @@ public function validate_credit_card() {
 					
 				
 				$this->request->data['Transaction']['type'] = 'void';
+				$this->request->data['Transaction']['time'] = $time;				
+				
+				$this->request->data['Transaction']['amount'] = $amount;
+				$this->request->data['Transaction']['orderid'] = $transaction['transactions']['orderid'];
+				$this->request->data['Transaction']['orderdescription'] = $transaction['transactions']['orderdescription'];
+				$this->request->data['Transaction']['ipaddress'] = $_SERVER['REMOTE_ADDR'];
 				$this->request->data['Transaction']['firstname'] = $transaction['transactions']['firstname'];
 				$this->request->data['Transaction']['lastname'] = $transaction['transactions']['lastname'];
+				$this->request->data['Transaction']['company'] = $transaction['transactions']['company'];
+				
 				$this->request->data['Transaction']['address1'] = $transaction['transactions']['address1'];
 				$this->request->data['Transaction']['city'] = $transaction['transactions']['city'];
 				$this->request->data['Transaction']['state'] = $transaction['transactions']['state'];
@@ -1141,13 +1152,9 @@ public function validate_credit_card() {
 				$this->request->data['Transaction']['fax'] = $transaction['transactions']['fax'];
 				$this->request->data['Transaction']['email'] = $transaction['transactions']['email'];
 				
+				$this->request->data['Transaction']['authcode'] = $authcode;				
 				$this->request->data['Transaction']['transactionid'] = $authtransactionid;
-				$this->request->data['Transaction']['amount'] = $amount;
-				$this->request->data['Transaction']['authcode'] = $authcode;
-				$this->request->data['Transaction']['orderid'] = $transaction['transactions']['orderid'];
-				$this->request->data['Transaction']['orderdescription'] = $transaction['transactions']['orderdescription'];
-				
-				$this->request->data['Transaction']['time'] = $time;
+								
 				
 					
 		

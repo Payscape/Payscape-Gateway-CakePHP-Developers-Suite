@@ -31,19 +31,6 @@ class Transaction extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Void' => array(
-			'className' => 'Void',
-			'foreignKey' => 'transaction_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
 	);
 
 }// end Transaction model

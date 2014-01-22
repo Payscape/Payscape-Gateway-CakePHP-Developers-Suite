@@ -780,8 +780,8 @@ public function refund($transactionid=0){
 			fax,
 			email,
 			transactionid, 
+			orderdescription, 			
 			orderid,
-			orderdescription, 
 			authcode 
 			FROM transactions WHERE `transactionid` = $transactionid";
 		
@@ -838,13 +838,13 @@ public function refund($transactionid=0){
 				$amount = $auth_amount;
 			}
 			
-		echo "INCOMING: ";
-		debug($incoming);			
+	//	echo "INCOMING: ";
+	//	debug($incoming);			
 		
 			$result_array = $this->Payscape->Refund($incoming);
 
-		echo "RESULT ARRAY: ";
-		debug($result_array);
+	//	echo "RESULT ARRAY: ";
+	//	debug($result_array);
 				
 		
 		
@@ -895,27 +895,11 @@ public function refund($transactionid=0){
 						$sql_update = "UPDATE transactions SET type = 'refunded' WHERE id = $id";
 					
 							if($query = $this->Transaction->query($sql_update)){
-								$refund_message .= " The original transaction has been updated to 'refunded'";
+								$refund_message .= "  and the original record has been Updated to 'refunded'";
 							} else {
-								$refund_message .= " but the original transaction could not be updated.";
+								$refund_message .= " but the original record could not be Updated in the database.";
 							}	
-							
-				/* create the Refund record */
-						$this->loadModel('Refund');
-
-						$refund_data = array();
-						$refund_data['transactionid'] =  $authtransactionid;
-						$refund_data['transaction_id'] = $transaction['transactions']['id'];
-						$refund_data['refund_amount'] = $amount;
-						$refund_data['refund_date'] = gmdate('YmdHis');
-						
-								$this->Refund->create();
-								if($this->Refund->save($refund_data)){
-									$refund_message .= " and Refund data has been saved to the database";
-								} else {
-									$refund_massage .= " but Refund data could not be saved to the database";
-								}
-				
+											
 					$this->Session->setFlash($refund_message);
 						
 				} else {
@@ -926,7 +910,7 @@ public function refund($transactionid=0){
 				}
 		
 			} else {
-				$refund_message = "Transaction has failed.";
+				$refund_message = "Refund Transaction has failed.";
 				$this->Session->setFlash($refund_message);
 			}
 	
@@ -939,7 +923,7 @@ public function refund($transactionid=0){
 		}	// post
 		
 		/*
-		 * get the Auth information for the Refund Form
+		 * get the transaction information for the Refund Form
 		*
 		* */
 		

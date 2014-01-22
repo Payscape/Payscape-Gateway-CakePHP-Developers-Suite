@@ -57,8 +57,7 @@
 				Refund for Order Transaction ID: 
 						<strong>
 						<?php echo $this->Html->link(__($transaction['Transaction']['refund_transactionid']), array('action' => 'view', $order['transactions']['id'])); ?>
-						</strong>,
-						Order Amount: <strong><?php echo $order['transactions']['amount']; ?></strong>
+						</strong>, Order Amount: <strong><?php echo $order['transactions']['amount']; ?></strong>
 				</td>
 			</tr>
 			<?php } ?>

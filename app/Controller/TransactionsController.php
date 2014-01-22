@@ -1083,46 +1083,43 @@ public function validate_credit_card() {
 	public function void($transactionid){
 		$type = 'void';
 		$time = gmdate('YmdHis');
+		$process = 1;
 		
 		if($this->request->is('post')){
 		
-		
+			$process = 2;
 			if(isset($transactionid)){
 				$transactionid = (int) $transactionid;
 			}
 		
 			$sql = "SELECT id, firstname, lastname, address1, city, state, zip, country, 
 			phone, fax, email, 
-			amount, transactionid, orderid, authcode FROM transactions WHERE `transactionid` = $transactionid";
+			amount, transactionid, orderid, orderdescription, 
+			authcode FROM transactions WHERE `transactionid` = $transactionid";
 		
 			$transaction = $this->Transaction->query($sql);
 			$transaction = array_shift($transaction);
 			
-			$auth_amount = $transaction['transactions']['amount'];
-			$transactionid = $transaction['transactions']['transactionid'];
+			$amount = $transaction['transactions']['amount'];
+			
 			$orderid = $transaction['transactions']['orderid'];
 			$authcode = $transaction['transactions']['authcode'];
-			$process = 1;
+			
 			$void_message = "Process Void for Transaction  #$transactionid";
 		
-		
-			$transactionid = $this->request->data['Transaction']['transactionid'];
-		
-			if(isset($transactionid)){
-				$transactionid = (int) $transactionid;
-			}
-		
-			$amount = $this->request->data['Transaction']['amount'];
-		
+	
 			$incoming = array();
 			$incoming['type'] = $type;
 			$incoming['transactionid'] = $transactionid;
-		
 			$incoming['amount'] = $amount;
+			
+	echo "INCOMING: ";		
+	debug($incoming);		
 		
 			$result_array = $this->Payscape->Void($incoming);
 			
-		
+	echo "RESULT ARRAY: ";
+	debug($result_array);	
 		
 		
 			if($result_array['response']==1){
@@ -1145,8 +1142,11 @@ public function validate_credit_card() {
 				$this->request->data['Transaction']['email'] = $transaction['transactions']['email'];
 				
 				$this->request->data['Transaction']['transactionid'] = $authtransactionid;
+				$this->request->data['Transaction']['amount'] = $amount;
 				$this->request->data['Transaction']['authcode'] = $authcode;
 				$this->request->data['Transaction']['orderid'] = $transaction['transactions']['orderid'];
+				$this->request->data['Transaction']['orderdescription'] = $transaction['transactions']['orderdescription'];
+				
 				$this->request->data['Transaction']['time'] = $time;
 				
 					
@@ -1167,23 +1167,6 @@ public function validate_credit_card() {
 						$void_message .= " but the original transaction could not be updated.";
 					}
 				
-	
-						
-					
-					/* create the record in the Void table */
-					$this->loadModel('Void');
-					
-					$void_data = array();
-					$void_data['transactionid'] =  $authtransactionid;
-					$void_data['transaction_id'] = $transaction['transactions']['id'];
-					$void_data['void_date'] = gmdate('YmdHis');
-					
-					$this->Void->create();
-					if($this->Void->save($void_data)){
-						$void_message .= " and Void data has been saved to the database";
-					} else {
-						$void_massage .= " but Void data could not be saved to the database";
-					}			
 					
 					$this->Session->setFlash($void_message);
 		
@@ -1202,7 +1185,7 @@ public function validate_credit_card() {
 			/*
 			 * for testing
 			* */
-			$process = 2;
+			
 			$this->set(compact('result_array', 'incoming', 'process', 'void_message'));
 		
 		
@@ -1232,7 +1215,7 @@ public function validate_credit_card() {
 		$transactionid = $transaction['transactions']['transactionid'];
 		$orderid = $transaction['transactions']['orderid'];
 		$authcode = $transaction['transactions']['authcode'];
-		$process = 1;
+	
 		$void_message = "Process Void for Credit Card Transaction  #$transactionid";
 		
 

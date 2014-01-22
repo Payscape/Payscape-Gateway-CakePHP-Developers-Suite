@@ -1,5 +1,6 @@
 <?php
 	echo $void_message;
+	
 ?>
 	
 
@@ -12,18 +13,17 @@
 </div>	
 <fieldset>
 		<legend>Void for Credit Card Transaction ID <?php echo $transactionid; ?></legend>
-	<?php echo $this->Form->input('action', array('type' => 'hidden', 'value'=>'capture')); ?>			
+	<?php echo $this->Form->input('action', array('type' => 'hidden', 'value'=>'void')); ?>			
 		
 	<div class="input text"><label for="TransactionType">Type:</label> Void. 	</div>				
 
-	<div class="input number required">
-	
-<?php echo $this->Form->input('transactionid', array('value' => $transactionid, 'type'=>'text', 'required'=>'required')); ?>
+	<div class="input text">
+	<label for="TransactionID">Transaction ID:</label> <?php echo $transactionid; ?>
+<?php echo $this->Form->input('transactionid', array('value' => $transactionid, 'type'=>'hidden', 'required'=>'required')); ?>
 	</div>
 	
-	<div class="input number required">
-
-<?php echo $this->Form->input('amount', array('value' => $amount, 'type'=>'text', 'required'=>'required')); ?>	
+	<div class="input text">
+		<label for="TransactionAmount">Amount:</label> <?php echo $amount; ?>
 	</div>
 
 </fieldset>

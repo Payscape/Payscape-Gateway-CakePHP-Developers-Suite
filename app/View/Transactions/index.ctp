@@ -25,6 +25,9 @@
 		<?php if($transaction['Transaction']['type']=='auth'){?>
 		<br>	<?php echo $this->Html->link(__('Capture'), array('action' => 'capture', $transaction['Transaction']['transactionid'])); ?>		
 		<?php } ?>	
+		<?php if($transaction['Transaction']['type']=='void'){?>
+		<br>	<?php echo $this->Html->link(__('Details'), array('controller'=>'voids', 'action' => 'view_void', $transaction['Transaction']['id'])); ?>		
+		<?php } ?>	
 		</td>
 		<td><?php echo h($transaction['Transaction']['id']); ?>&nbsp;</td>
 		<td><?php echo h($transaction['Transaction']['firstname']); ?>&nbsp;<?php echo h($transaction['Transaction']['lastname']); ?></td>

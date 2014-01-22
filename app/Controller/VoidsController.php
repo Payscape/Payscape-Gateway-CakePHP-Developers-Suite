@@ -14,6 +14,32 @@ class VoidsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
+	
+	/* view the details for a Void transaction */
+	
+	public function view_void($transaction_id = null) {
+		if (isset($_GET['transaction_id'])) {
+			$transaction_id = (int) $transaction_id;
+		}
+		
+		$sql = "SELECT tr.amount, 
+				tr.time,
+				tr.transactionid,
+				vd.void_date,
+				vd.transactionid AS void_transactionid 
+				FROM voids vd 
+				LEFT JOIN transactions tr ON(tr.transaction_id = vd.transaction_id)
+				WHERE vd.transaction_id = $transaction_id";
+	
+	echo "$sql";
+	exit();	
+		
+//		$options = array('conditions' => array('Void.' . $this->Void->transaction_id => $transaction_id));
+//		$this->set('void', $this->Void->find('first', $options));
+		
+		$this->set('void', $this->Void->query($sql));
+	}	
+	
 
 /**
  * index method
@@ -25,29 +51,32 @@ class VoidsController extends AppController {
 		$this->set('voids', $this->Paginator->paginate());
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($transaction_id = null) {
-		if (isset($_GET['transaction_id'])) {
-			$transaction_id = (int) $transaction_id;
-		}
-		
-		$options = array('conditions' => array('Void.' . $this->Void->transaction_id => $transaction_id));
-		$this->set('void', $this->Void->find('first', $options));
-	}
 
-/**
- * add method
- *
- * @return void
- */
+
+
 	
 	/* the following methods are not used, Void records are created by the Transactions controller */
+
+	/**
+	 * view method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */	
+	public function view($id = null) {
+		if (!$this->Void->exists($id)) {
+			throw new NotFoundException(__('Invalid void'));
+		}
+		$options = array('conditions' => array('Void.' . $this->Void->primaryKey => $id));
+		$this->set('void', $this->Void->find('first', $options));
+	}	
+
+	/**
+	 * add method
+	 *
+	 * @return void
+	 */
 	
 	public function add() {
 		if ($this->request->is('post')) {

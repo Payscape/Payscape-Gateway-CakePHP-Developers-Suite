@@ -562,7 +562,7 @@ public function credit($transactionid=0){
 			
 		$result_array = $this->Payscape->Credit($incoming);
 		
-		echo "$result_array";
+	
 		
 		if($result_array['response']==1){
 		
@@ -604,10 +604,10 @@ public function credit($transactionid=0){
 				$sql_update = "UPDATE transactions SET type = 'credited' WHERE id = $id";
 					
 				if($query = $this->Transaction->query($sql_update)){
-					$refund_message .= " The original transaction has been updated to 'credited'";
+					$refund_message = "<br> The original transaction has been updated to 'credited'";
 				}
 				
-				$this->Session->setFlash(__('Credit Transaction successful, and the data has been saved.'));
+				$this->Session->setFlash(__('Credit Transaction successful, and the data has been saved.' . $refund_message));
 			} else {
 				$this->Session->setFlash(__('Credit Transaction unsuccessful, no data has been saved'));
 			}
@@ -870,9 +870,12 @@ public function validate_credit_card() {
 					
 							if($query = $this->Transaction->query($sql_update)){
 								$refund_message .= " The original transaction has been updated to 'refunded'";
+							} else {
+								$refund_message .= " but the original transaction could not be updated.";
 							}	
 							
 				/* create the Refund record */
+						$this->loadModel('Refund');
 
 						$refund_data = array();
 						$refund_data['transactionid'] =  $authtransactionid;
@@ -881,7 +884,7 @@ public function validate_credit_card() {
 						$refund_data['refund_date'] = gmdate('YmdHis');
 						
 								$this->Refund->create();
-								if($this->Transaction->save($this->request->data)){
+								if($this->Refund->save($refund_data)){
 									$refund_message .= " and Refund data has been saved to the database";
 								} else {
 									$refund_massage .= " but Refund data could not be saved to the database";
@@ -1155,6 +1158,33 @@ public function validate_credit_card() {
 				if($this->Transaction->save($this->request->data)){
 		
 					$void_message .= " and has been saved to the database";
+											
+				/* update the original record */
+					$this->Transaction->id = $transaction['transactions']['id'];
+					if($this->Transaction->saveField('type','voided')){
+						$void_message .= " The original transaction has been updated to 'voided'";
+					} else {
+						$void_message .= " but the original transaction could not be updated.";
+					}
+				
+	
+						
+					
+					/* create the record in the Void table */
+					$this->loadModel('Void');
+					
+					$void_data = array();
+					$void_data['transactionid'] =  $authtransactionid;
+					$void_data['transaction_id'] = $transaction['transactions']['id'];
+					$void_data['void_date'] = gmdate('YmdHis');
+					
+					$this->Void->create();
+					if($this->Void->save($void_data)){
+						$void_message .= " and Void data has been saved to the database";
+					} else {
+						$void_massage .= " but Void data could not be saved to the database";
+					}			
+					
 					$this->Session->setFlash($void_message);
 		
 				} else {

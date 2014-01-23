@@ -56,6 +56,20 @@ class TransactionsController extends AppController {
 				
 				$this->set('order', $order);
 			}
+			
+			if($type=='void'){
+			
+				$void_transaction_id = $transaction['Transaction']['void_transaction_id'];
+			
+				$sql = "SELECT transactionid FROM transactions WHERE id = $void_transaction_id";
+			
+				$voidorder = $this->Transaction->query($sql);
+			
+			
+				$voidorder = array_shift($voidorder);
+			
+				$this->set('voidorder', $voidorder);
+			}			
 
 		$this->set('transaction', $transaction);
 		
@@ -1112,6 +1126,8 @@ public function refund($transactionid=0){
 			$transaction = $this->Transaction->query($sql);
 			$transaction = array_shift($transaction);
 			
+			$void_transaction_id = $transaction['transactions']['id'];
+			
 			$amount = $transaction['transactions']['amount'];
 			
 			$orderid = $transaction['transactions']['orderid'];
@@ -1159,9 +1175,9 @@ public function refund($transactionid=0){
 				$this->request->data['Transaction']['email'] = $transaction['transactions']['email'];
 				
 				$this->request->data['Transaction']['authcode'] = $authcode;				
-				$this->request->data['Transaction']['transactionid'] = $authtransactionid;
+				$this->request->data['Transaction']['transactionid'] = $authtransactionid; 
 								
-				
+				$this->request->data['Transaction']['void_transaction_id'] = $void_transaction_id;
 					
 		
 		

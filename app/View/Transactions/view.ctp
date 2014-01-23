@@ -61,6 +61,20 @@
 				</td>
 			</tr>
 			<?php } ?>
+			
+			
+		<?php if($transaction['Transaction']['type']=='void'){ ?>
+			<tr>
+				<td colspan="9">
+				<hr>
+				Void for Order Transaction ID: 
+						<strong>
+						<?php echo $this->Html->link(__($voidorder['transactions']['transactionid']), array('action' => 'view', $transaction['Transaction']['void_transaction_id'])); ?>
+						</strong>
+				</td>
+			</tr>
+			<?php } ?>			
+			
 		<?php 
 			if($transaction['Transaction']['type']=='validate'){ 
 				if($transaction['Transaction']['validated']==1){
@@ -138,7 +152,7 @@
 		<table class="transaction">
 	<caption><strong>Credentials</strong></caption>
 	<tr>
-		<th>Sec Code</th><th>Processor ID</th>
+		<th>Sec Code</th>
 	</tr>
 	<tr>
 		

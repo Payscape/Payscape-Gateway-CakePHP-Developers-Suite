@@ -1,3 +1,31 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.9
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jan 23, 2014 at 10:57 AM
+-- Server version: 5.5.34
+-- PHP Version: 5.4.22
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `payscape`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transactions`
+--
+
 CREATE TABLE IF NOT EXISTS `transactions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(20) NOT NULL,
@@ -30,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `tracking_number` varchar(50) DEFAULT NULL,
   `shipping_carrier` varchar(10) DEFAULT NULL,
   `validated` tinyint(1) DEFAULT '0',
+  `void_transaction_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `orderid` (`orderid`),
   KEY `transactionid` (`transactionid`),
@@ -37,5 +66,18 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   KEY `authcode` (`authcode`),
   KEY `type` (`type`),
   KEY `tracking_id` (`tracking_number`),
-  KEY `validated` (`validated`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+  KEY `validated` (`validated`),
+  KEY `void_transactionid` (`void_transaction_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=502 ;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`id`, `type`, `time`, `account_holder_type`, `account_type`, `sec_code`, `amount`, `tax`, `payment`, `orderdescription`, `ipaddress`, `firstname`, `lastname`, `company`, `address1`, `city`, `state`, `zip`, `country`, `phone`, `fax`, `email`, `orderid`, `transactionid`, `authcode`, `capture_transactionid`, `capture`, `refund_transactionid`, `tracking_number`, `shipping_carrier`, `validated`, `void_transaction_id`) VALUES
+(500, 'voided', '20140122225327', NULL, NULL, NULL, '400.00', '0.00', 'credit card', 'fly bizz', '::1', 'Stephen', 'Mareches', 'SoSo', '1647 Frazier Road', 'Decatur', 'Georgia', '30033', 'United States', '4048200331', '', 'stephen@sophiasolutions.net', 'CC7040', 2136630034, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(501, 'void', '20140122225349', NULL, NULL, NULL, '400.00', '0.00', '', 'fly bizz', '::1', 'Stephen', 'Mareches', 'SoSo', '1647 Frazier Road', 'Decatur', 'Georgia', '30033', 'United States', '4048200331', '', 'stephen@sophiasolutions.net', 'CC7040', 2136630034, '123456', NULL, NULL, NULL, NULL, NULL, 0, 500);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

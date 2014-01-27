@@ -8,6 +8,11 @@ Utilizes the CakePHP framework for rapid web development.
 Built with the latest release of Twitter Bootstrap for Responsive web development.
 
 Database schema included in /schema/transactions.sql to create the table that saves transactions and their details.
+## Author
+* github@payscape.com
+## Contact
+* github@payscape.com
+
 
 ## Requirements
 * PHP 5.2.8 or greater

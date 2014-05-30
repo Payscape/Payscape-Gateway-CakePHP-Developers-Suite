@@ -50,11 +50,11 @@ foreach ($scaffoldFields as $_field) {
 	<ul>
 <?php
 	echo "\t\t<li>";
-	echo $this->Html->link(__d('cake', 'Edit %s', $singularHumanName),   array('action' => 'edit', ${$singularVar}[$modelClass][$primaryKey]));
+	echo $this->Html->link(__d('cake', 'Edit %s', $singularHumanName), array('action' => 'edit', ${$singularVar}[$modelClass][$primaryKey]));
 	echo " </li>\n";
 
 	echo "\t\t<li>";
-	echo $this->Form->postLink(__d('cake', 'Delete %s', $singularHumanName), array('action' => 'delete', ${$singularVar}[$modelClass][$primaryKey]), null, __d('cake', 'Are you sure you want to delete # %s?', ${$singularVar}[$modelClass][$primaryKey]));
+	echo $this->Form->postLink(__d('cake', 'Delete %s', $singularHumanName), array('action' => 'delete', ${$singularVar}[$modelClass][$primaryKey]), array(), __d('cake', 'Are you sure you want to delete # %s?', ${$singularVar}[$modelClass][$primaryKey]));
 	echo " </li>\n";
 
 	echo "\t\t<li>";
@@ -134,7 +134,7 @@ $otherSingularVar = Inflector::variable($_alias);
 <div class="related">
 	<h3><?php echo __d('cake', "Related %s", Inflector::humanize($_details['controller'])); ?></h3>
 <?php if (!empty(${$singularVar}[$_alias])): ?>
-	<table>
+	<table cellpadding="0" cellspacing="0">
 	<tr>
 <?php
 		$otherFields = array_keys(${$singularVar}[$_alias][0]);
@@ -174,7 +174,7 @@ $otherSingularVar = Inflector::variable($_alias);
 			echo $this->Form->postLink(
 				__d('cake', 'Delete'),
 				array('plugin' => $_details['plugin'], 'controller' => $_details['controller'], 'action' => 'delete', ${$otherSingularVar}[$_details['primaryKey']]),
-				null,
+				array(),
 				__d('cake', 'Are you sure you want to delete # %s?', ${$otherSingularVar}[$_details['primaryKey']])
 			);
 			echo "\n";

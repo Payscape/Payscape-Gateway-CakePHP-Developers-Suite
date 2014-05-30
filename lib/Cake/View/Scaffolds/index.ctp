@@ -18,7 +18,7 @@
 ?>
 <div class="<?php echo $pluralVar; ?> index">
 <h2><?php echo $pluralHumanName; ?></h2>
-<table>
+<table cellpadding="0" cellspacing="0">
 <tr>
 <?php foreach ($scaffoldFields as $_field): ?>
 	<th><?php echo $this->Paginator->sort($_field); ?></th>
@@ -50,7 +50,7 @@ foreach (${$pluralVar} as ${$singularVar}):
 		echo ' ' . $this->Form->postLink(
 			__d('cake', 'Delete'),
 			array('action' => 'delete', ${$singularVar}[$modelClass][$primaryKey]),
-			null,
+			array(),
 			__d('cake', 'Are you sure you want to delete # %s?', ${$singularVar}[$modelClass][$primaryKey])
 		);
 		echo '</td>';
